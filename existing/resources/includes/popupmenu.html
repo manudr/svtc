@@ -1,0 +1,170 @@
+<div class="navBg">
+
+<ul id="sddm">
+    <li><a href="/homepage.php"
+        onmouseover="mopen('m1')"
+        onmouseout="mclosetime()">Home</a>
+        <div id="m1"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+        <a href="/mission.php">Mission</a>
+        <a href="/bot.php">Board Of Trustees</a>
+        <a href="/ec.php">Executive Committee</a>
+        <a href="/committees.php">Committees</a>
+
+        <!-- Commented as per the e-mail from Mahesh Potluri on 04/06/2013
+	<a href="/members.php">Members</a>
+	-->
+
+        <a href="/newsletters.php">Newsletters</a>
+		<!-- Commented the elections page from Menu by Srinivasa Guntupalli as per BOT Request -->
+        <!-- 
+		<a href="/elections.php">Elections</a>
+	-->
+		<a href="/faq.php">FAQ</a>
+        </div>
+    </li>
+
+    <li><a href="/upcomingevents.php"
+        onmouseover="mopen('m2')"
+        onmouseout="mclosetime()">Events</a>
+        <div id="m2"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+        <a href="/upcomingevents.php">Upcoming Events</a>
+		<a href="/news.php">News</a>
+
+<!--
+	<a href="/kumbhabhishekam.php">Maha Kumbhabhishekam</a>
+-->
+
+        <a href="/photos.php">Photos</a>
+
+        </div>
+    </li>
+
+    <li>
+	<a href="/documents.php"
+        onmouseover="mopen('m3')"
+        onmouseout="mclosetime()">Links</a>
+        <div id="m3"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+        <a href="http://svtempleco.org/GoverningDocs/BYLAWS_April_19_2015.pdf">ByLaws</a>
+		<a href="/agbmJan2015.php">AGBM Jan 2015</a>
+		<a href="https://googledrive.com/host/0B-6b3TJdCtEjX1ItUDBaVEExTTA">Meeting Minutes</a>
+		<a href="/tirumala.php">Tirumala&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		<a href="/hinduism.php">Hinduism</a>
+		<a href="/documents.php">Documents</a>
+		<a href="/frontdeskduties.php">Front Desk Duty</a>
+		<a href="/annapurnaduties.php">Annapurna Duty</a>
+		<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == 'svtc_com'  || $activeUserId == 'admin')
+{
+
+     echo "<a href='/manageannouncements.php'> Manage Announcements </a>";
+
+     echo "<a href='/managebulk.php'> Manage Bulk Notifications </a>";
+
+     echo "<a href='/manageevents.php'> Manage Events </a>";
+}
+?>
+
+        </div>
+	</li>
+
+    <li>
+	<a href="/onlinedonation.php"
+        onmouseover="mopen('m4')"
+        onmouseout="mclosetime()">Donate</a>
+        <div id="m4"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+        <a href="/pledgeform.php">Pledge Form</a>
+        <a href="/guidelines.php">Guidelines</a>
+		<a href="/onlinedonation.php">Online Donation</a>
+        </div>
+	</li>
+	 <li>
+	<a href="/poojaandreligiousservices.php"
+        onmouseover="mopen('m5')"
+        onmouseout="mclosetime()">Services</a>
+        <div id="m5"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+        <a href="/poojaandreligiousservices.php">Pooja and Religious Services</a>
+        <a href="http://svtempleco.org/userfiles/file/2014Oct_ArjitaSevaList.pdf">Arjita Seva List</a>
+        <a href="http://svtempleco.org/Docs/Pooja_items_list_March2014.pdf">Pooja Items List</a>		
+        </div>
+	</li>
+
+	<li><a href="/SchoolofFineArts/sofa_mainpage.php">School</a></li>
+
+	 <li>
+	<a href="/contactinfo.php"
+        onmouseover="mopen('m6')"
+        onmouseout="mclosetime()">Contact Us</a>
+        <div id="m6"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+        <a href="/contactinfo.php">Information&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+		<a href="/directions.php">Directions</a>
+        <a href="/feedback.php">Feedback</a>
+
+        </div>
+	</li>
+
+	 <li>
+
+<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == null  )
+{
+
+    echo "<a href='/registerpage.php'";
+}
+else
+{
+	echo "<a href='/unregisterpage.php'";
+}
+
+?>
+        onmouseover="mopen('m7')"
+        onmouseout="mclosetime()">Registration</a>
+        <div id="m7"
+            onmouseover="mcancelclosetime()"
+            onmouseout="mclosetime()">
+
+<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == null  )
+{
+    echo "<a  href='/registerpage.php'>Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</a>";}
+else
+{
+	echo "<a href='/unregisterpage.php'>Unregister</a>";
+	echo "<a href='/profilepage.php'>My Profile</a>";
+	echo "<a href='/changepasswordpage.php'>Change Password&nbsp;</a>";
+}
+
+?>
+
+        </div>
+	</li>
+
+	<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == null )
+ echo "<li><a href='/loginpage.php'>Login</a></li>";
+else
+ echo "<li><a href='/logout.php'>Logout</a></li>";
+?>
+</ul>
+<div style="clear:both"></div>
+
+</div>

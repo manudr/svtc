@@ -1,0 +1,212 @@
+<table valign=top cellpadding=0 cellspacing=0 width=710 border=0>
+<tr><td bgcolor=#223344>
+<table align=center class=tab><tr>
+
+<td id=0 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu0",'0') style="color: #ff7777"> <b><a style="color: #ff7777" href="homepage.php">Home</b></td>
+<td style="color: #ffffff;"> &nbsp; || &nbsp; </td><td id=2 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu1",'2') style="color: #ff7777"> <b>Events</b></td>
+<td style="color: #ffffff;"> &nbsp; || &nbsp; </td><td id=3 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu2",'3') style="color: #ff7777"> <b>Links</b></td>
+<td style="color: #ffffff;"> &nbsp; || &nbsp; </td><td id=4 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu3",'4') style="color: #ff7777"> <b>Donate</b></td>
+<td style="color: #ffffff;"> &nbsp; || &nbsp; </td><td id=5 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu4",'5') style="color: #ff7777"> <b>Services</b></td>
+<td style="color: #ffffff;"> &nbsp; || &nbsp; </td><td id=6 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu5",'6') style="color: #ff7777"> <b>Contact Us</b></td>
+
+<td style="color: #ffffff;"> &nbsp; || &nbsp; </td><td id=7 align=center onmouseout=btnTimer() onmouseover=showLayer("Menu6",'7') style="color: #ff7777"> <b>Registration</b></td>
+
+
+<!-- <td style="color: #ffffff"> &nbsp; || &nbsp; <a style="color: #ff7777" href="registerpage.php"> <b> Registrer </b></td></a> -->
+
+
+
+<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == null )
+ echo "<td style='color: #ffffff'> &nbsp; || &nbsp; <a style='color: #ff7777' href='https://www.svtempleco.org/loginpage.php'> <b> Login </b></td></a>";
+else
+ echo "<td style='color: #ffffff'> &nbsp; || &nbsp; <a style='color: #ff7777' href='logout.php'> <b> Logout </b></td></a>";
+?>
+
+</tr>
+
+</table>
+
+<div id=Menu0 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="mission.php"> &nbsp;Mission &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="bot.php"> &nbsp;Board Of Trustees &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="committees.php"> &nbsp;Committees &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="members.php"> &nbsp;members &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="newsletters.php"> &nbsp;Newsletters &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="elections.php"> &nbsp;Elections &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="faq.php"> &nbsp;FAQ &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+</table></div>
+
+
+<div id=Menu1 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="photos.php"> &nbsp;Photos &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="upcomingevents.php"> &nbsp;Upcoming Events &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+</table></div>
+
+
+<div id=Menu2 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="tirumala.php"> &nbsp;Tirumala &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="news.php"> &nbsp;News &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="hinduism.php"> &nbsp;Hinduism &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="documents.php"> &nbsp;Documents &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+
+<!--
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="poojarequestpage.php"> &nbsp;Register for Puja &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="tomorrows_pooja.php"> &nbsp;Puja Reports &nbsp;</a> &nbsp; &nbsp;</td></tr>
+-->
+
+<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == 'srajamani'  || $activeUserId == 'admin')
+{
+     echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+	 echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+     echo "<a class=asd href='manageannouncements.php'> &nbsp;Manage Announcements &nbsp;</a> &nbsp; &nbsp;</td></tr>";
+
+	 echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+     echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+     echo "<a class=asd href='managebulk.php'> &nbsp;Manage Bulk Notifications&nbsp;</a> &nbsp; &nbsp;</td></tr>";
+
+	 echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+     echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+     echo "<a class=asd href='manageevents.php'> &nbsp;Manage Events&nbsp;</a> &nbsp; &nbsp;</td></tr>";
+}
+?>
+
+
+
+</table></div>
+
+
+<div id=Menu3 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="pledgeform.php"> &nbsp;Pledge Form &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="guidelines.php"> &nbsp;Guidelines &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="onlinedonation.php"> &nbsp;Online Donation &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+</table></div>
+
+<div id=Menu4 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="priestservices.php"> &nbsp;Priest Services &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="listofpoojas.php"> &nbsp;List of Poojas&nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+</table></div>
+
+
+<div id=Menu5 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="contactinfo.php">&nbsp;Information &nbsp;</a> &nbsp; &nbsp;</td></tr>
+
+<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>
+<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>
+<a class=asd href="feedback.php"> &nbsp;Feedback &nbsp;</a> &nbsp; &nbsp;</td></tr>
+</table></div>
+
+
+
+<div id=Menu6 style="position: absolute; border: 1px solid #000000; visibility:hidden; z-ndex: 1">
+<table bgcolor=#ffeecc cellspacing=0 cellpadding=0 style="border-collapse: collapse;">
+
+<?php
+$activeUserId = $_SESSION['username'];
+
+if( $activeUserId == null  )
+{
+	echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+    echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+    echo "<a class=asd href='registerpage.php'>&nbsp;Register &nbsp;</a> &nbsp; &nbsp;</td></tr>";
+}
+else
+{
+	echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+	echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+	echo "<a class=asd href='unregisterpage.php'> &nbsp;Unregister &nbsp;</a> &nbsp; &nbsp;</td></tr>";
+
+	echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+	echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+	echo "<a class=asd href='profilepage.php'> &nbsp;My Profile &nbsp;</a> &nbsp; &nbsp;</td></tr>";
+
+	echo "<tr height=25 onmouseout=menuOut(this,'#ffeecc') onmouseover=menuOver(this,'#FFFFFF')>";
+	echo "<td bgcolor=#223344>&nbsp; &nbsp;</td><td align=left>";
+	echo "<a class=asd href='changepasswordpage.php'> &nbsp;Change Password&nbsp;</a> &nbsp; &nbsp;</td></tr>";
+
+}
+
+?>
+
+</table></div>
+
+
+</td></tr></table>
