@@ -10,7 +10,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 body {
-    margin: auto;
+    margin: 0;
 }
 article,
 aside,
@@ -4496,7 +4496,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     }
 }
 .navbar-default {
-    background-color: #990000;
+    background-color: #cc7a00;
     border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
