@@ -61,12 +61,12 @@ color:#000000;
 text-decoration:none;
 float:right;
 }
-.templeMerge
-{
-margin:0 auto;
-background:URL('../image/templeMerge.jpg') no-repeat top left;
-height:172px;
-width:822px;
+.templeMerge {
+    margin:0 auto;
+    background:URL('../image/banner51Small.jpg') no-repeat top left;
+    height:83px;
+    width:822px;
+
 }
 .timingBg
 {
