@@ -16,7 +16,7 @@ body {
     padding: 0 15px;
 }
 
-@media(min-width:768px) {
+@media(min-width:68px) {
     body {
         padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
     }
@@ -24,4 +24,17 @@ body {
     .navbar-fixed-top .navbar-brand {
         padding: 15px 0;
     }
+
+    .img {
+        height: 25%;;
+        width: 25%;;
+    }
 }
+
+
+@media screen and (min-width: 480px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+
