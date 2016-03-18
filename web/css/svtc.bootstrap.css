@@ -1079,14 +1079,14 @@ html {
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
-    line-height: 1.42857143;
     color: #ffc266;
-    background-color: #990000;
-    padding: 25px;
+    background-color: #fff5e6;
 }
+
 input,
 button,
 select,
@@ -5459,6 +5459,8 @@ button.list-group-item-danger.active:focus {
 }
 .panel-body {
     padding: 15px;
+    font-size: 15px;
+    font-weight: normal;
 }
 .panel-heading {
     padding: 10px 15px;
@@ -5726,7 +5728,7 @@ button.list-group-item-danger.active:focus {
 .panel-success > .panel-heading {
     color: #800000;
     font-weight: bold;
-    background-color: #FFA500;
+    background-color: #ffa500;
     border-color: #d6e9c6;
 }
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
@@ -6757,4 +6759,13 @@ button.close {
         display: none !important;
     }
 }
+
+.body-footer {
+    height: 25px;
+    background-color: #800000;
+    color:#ffc266;
+    text-align: center;
+    font-size: 12px;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
