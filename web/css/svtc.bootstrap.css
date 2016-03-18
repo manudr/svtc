@@ -1084,7 +1084,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     color: #ffc266;
-    background-color: #fff5e6;
+    background-color: #d9d9d9;
 }
 
 input,
@@ -5451,16 +5451,17 @@ button.list-group-item-danger.active:focus {
 }
 .panel {
     margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid transparent;
+    border: 5px solid;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 .panel-body {
     padding: 15px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: normal;
+    color: #800000;
+
 }
 .panel-heading {
     padding: 10px 15px;
@@ -5729,7 +5730,6 @@ button.list-group-item-danger.active:focus {
     color: #800000;
     font-weight: bold;
     background-color: #ffa500;
-    border-color: #d6e9c6;
 }
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #d6e9c6;
