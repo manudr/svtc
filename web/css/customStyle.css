@@ -1,3 +1,14 @@
+.customBox {
+    display: block;
+    background-color: #f57a00;
+    text-align: justify;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .col-sm-1 {
     width: 10%;
     padding: 0px;
@@ -39,7 +50,7 @@
 }
 
 .body-footer {
-    height: 25px;
+    height: 55px;
     background-color: #800000;
     color:#ffc266;
     text-align: center;
