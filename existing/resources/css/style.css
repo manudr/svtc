@@ -456,3 +456,13 @@ color:#fa8c2c;
 .bluebtn A.button_2 .btn_rbg {
 	DISPLAY: block; BACKGROUND: url(../image/btn_b_b1_rbg.jpg) no-repeat right top;height:26px;padding-right:10px;
 }
+
+.boxStyle {
+	margin: 5px;
+	padding: 5px;
+	font-size: 12px;
+	color: #800000;
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	box-shadow: 3px 3px 10px gray;
+}
