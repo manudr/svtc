@@ -31,5 +31,11 @@ App.config(['$routeProvider', function($routeProvider) {
         .when('/login', {
             templateUrl: 'views/login.html'
         })
+        .when('/faq', {
+            templateUrl: 'views/faq.html'
+        })
+        .when('/albums', {
+            templateUrl: 'views/albums.html'
+        })
 		.otherwise({redirectTo:'/home'});
 }]);
