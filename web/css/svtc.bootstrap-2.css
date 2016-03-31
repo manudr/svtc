@@ -12,11 +12,9 @@ html {
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     color: #ffc266;
-    background-color: #800000;
-    background: url('../images/background9.jpg');
-    background-repeat:repeat;
+    background-color: #B13E05;
 }
 article,
 aside,

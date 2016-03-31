@@ -11,10 +11,29 @@
     .sidebar-nav .navbar li {
         float: none;
         display: block;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        box-shadow: 3px 3px 10px gray;
     }
     .sidebar-nav .navbar li a {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding: 5px;
+        text-align: center;
+    }
+    .sidebar-nav .navbar li a {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .sidebar-nav .navbar li a:hover {
+        background-color: #0a6ebd;
+        color: #23527c;
+        text-decoration: underline;
+    }
+
+    .sidebar-nav .navbar li a:active {
+        background-color: #0a6ebd;
+        color: #23527c;
+        text-decoration: underline;
     }
 }
 
