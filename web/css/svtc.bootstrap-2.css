@@ -14,7 +14,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     color: #ffc266;
-    background-color: #B13E05;
+    background-color: #f2f2f2;
 }
 article,
 aside,
@@ -5725,9 +5725,9 @@ button.list-group-item-danger.active:focus {
     border-color: #d6e9c6;
 }
 .panel-success > .panel-heading {
-    color: #800000;
+    color: #ffa500;
     font-weight: bold;
-    background-color: #ffa500;
+    background-color: #800000;
     border-color: #d6e9c6;
 }
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
