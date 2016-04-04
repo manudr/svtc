@@ -70,19 +70,16 @@ document.onclick = mclose;
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
   
   <tr>
-    <td width="226%" align="left" valign="top" class="headingmain_txt">Religious Committee Volunteers</td>
+    <td width="226%" align="left" valign="top" class="headingmain_txt">All Calendars Merged</td>
   </tr>
   <tr>
 		<td> <br /> </td>
   </tr>
   <tr>
     <td colspan="2" align="left" valign="top">
-	  <iframe src="https://www.google.com/calendar/embed?title=SVTC+RC+Monthly+Event+Volunteers&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=3o1ojgh0em741ae5vurlmcbf84%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FDenver"
-	    style=" border:solid 1px #777 " width="630" height="600" frameborder="0" scrolling="no">
-	  </iframe>
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;src=dfsfcm65hoqppdnhc9fdd5nq4g%40group.calendar.google.com&amp;color=%23528800&amp;src=qa88jgfo2kv6dh34g47i5cepko%40group.calendar.google.com&amp;color=%2323164E&amp;src=0kveo67d3he4vkgfvhgu82l41g%40group.calendar.google.com&amp;color=%23B1365F&amp;src=3o1ojgh0em741ae5vurlmcbf84%40group.calendar.google.com&amp;color=%23711616&amp;src=frp9dkf77kqeqbg3d5q0irend8%40group.calendar.google.com&amp;color=%23711616&amp;ctz=America%2FDenver" style="border-width:0" width="650" height="600" frameborder="0" scrolling="no"></iframe>
     </td>
-  </tr>	
-  
+  </tr>
 </table>
 
 </div>
