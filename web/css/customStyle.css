@@ -199,3 +199,8 @@
 .custStyle {
     text-align: center;
 }
+
+.custPanelBodyStyle {
+    text-align: center;
+    height: 200px;
+}
