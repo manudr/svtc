@@ -1,206 +1,54 @@
-/* make sidebar nav vertical */
-@media (min-width: 768px) {
-    .sidebar-nav .navbar .navbar-collapse {
-        padding: 0;
-        max-height: none;
-    }
-    .sidebar-nav .navbar ul {
-        float: none;
-        display: block;
-    }
-    .sidebar-nav .navbar li {
-        float: none;
-        display: block;
-        border: 1px solid #e3e3e3;
-        border-radius: 4px;
-        box-shadow: 3px 3px 10px gray;
-    }
-    .sidebar-nav .navbar li a {
-        padding: 5px;
-        text-align: center;
-    }
-    .sidebar-nav .navbar li a {
-        padding: 5px;
-        text-align: center;
-    }
-
-    .sidebar-nav .navbar li a:hover {
-        background-color: #0a6ebd;
-        color: #23527c;
-        text-decoration: underline;
-    }
-
-    .sidebar-nav .navbar li a:active {
-        background-color: #0a6ebd;
-        color: #23527c;
-        text-decoration: underline;
-    }
-}
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
-    body {
-        margin-top: auto;
-    }
-
-    .imageSize {
-        height: 32px;
-        width: 320px;
-    }
-
-    .logoSize {
-        height: 50%;
-        width: 100%;
-    }
-
-    .image {
-        position: relative;
-        width: 100%; /* for IE 6 */
-    }
-
-    .customHeader {
-        position: absolute;
-        top: 35px;
-        font-weight: bold;
-        font-size: 5px;
-        width: 100%;
-        color: #800000;
-    }
-
-}
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
-    .imageSize {
-        height: 48px;
-        width: 480px;
-    }
-
-    .logoSize {
-        height: 50%;
-        width: 100%;
-    }
-
-    .image {
-        position: relative;
-        width: 100%; /* for IE 6 */
-    }
-
-    .customHeader {
-        position: absolute;
-        top: 70px;
-        font-weight: bold;
-        font-size: 13px;
-        width: 100%;
-        color: #800000;
-    }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-    .imageSize {
-        height: 77px;
-        width: 768px;
-    }
-
-    .logoSize {
-        height: 50%;
-        width: 100%;
-    }
-
-    .image {
-        position: relative;
-        width: 100%; /* for IE 6 */
-    }
-
-    .customHeader {
-        position: absolute;
-        top: 95px;
-        font-weight: bold;
-        font-size: 13px;
-        width: 100%;
-        color: #800000;
-    }
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-    .imageSize {
-        height: 99px;
-        width: 992px;
-    }
-
-    .logoSize {
-        height: 50%;
-        width: 95%;
-    }
-
-    .image {
-        position: relative;
-        width: 100%; /* for IE 6 */
-    }
-
-    .customHeader {
-        position: absolute;
-        top: 80px;
-        font-weight: bold;
-        font-size: 13px;
-        width: 100%;
-        color: #800000;
-    }
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-    .imageSize {
-        height: 120px;
-        width: 1200px;
-    }
-
-    .logoSize {
-        height: 50%;
-        width: 100%;
-    }
-
-    .image {
-        position: relative;
-        width: 100%; /* for IE 6 */
-    }
-
-    .customHeader {
-        position: absolute;
-        top: 92px;
-        font-weight: bold;
-        font-size: 13px;
-        width: 100%;
-        color: #800000;
-    }
-}
-
-
 .body-footer {
     height: 18px;
     background-color: #800000;
-    color:#ffc266;
+    color:#ffebcc;
     text-align: center;
     font-size: 12px;
 }
 
-.customHeading {
-    padding: 5px;
-    background-color: #800000;
+.imageText {
+    width: 100%; /* for IE 6 */
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.imageText a {
+    color: #ffffff;
+}
+
+.panel {
+    color: #800000;
+}
+
+.panel-body {
+    height: 225px;
+}
+
+.panel-default > .panel-heading {
     color: #ffffff;
     font-weight: bold;
-    border: 1px solid #800000;
-    border-radius: 5px;
-    text-align: center;
+    background: -webkit-linear-gradient(left, #ff9900, #cc6600, #ff9900); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, #ff9900, #cc6600, #ff9900); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, #ff9900, #cc6600, #ff9900); /* For Fx 3.6 to 15 */
+    background: linear-gradient(to right, #ff9900, #cc6600,#ff9900); /* Standard syntax (must be last) */
 }
 
-.custStyle {
-    text-align: center;
+.panel-success > .panel-heading {
+    color: #ffffff;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left, #003300, #33ff33, #003300); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, #003300, #33ff33, #003300); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, #003300, #33ff33, #003300); /* For Fx 3.6 to 15 */
+    background: linear-gradient(to right, #003300, #33ff33,#003300); /* Standard syntax (must be last) */
 }
 
-.custPanelBodyStyle {
-    text-align: center;
-    height: 200px;
+.navbar-default .navbar-nav > li > a {
+    background-color: #800000;
+    color: #ffffff;
+    height: 5px;
 }
