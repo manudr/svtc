@@ -72,7 +72,7 @@ document.onclick = mclose;
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:20px;">
-        <p><strong>Sri Sathyanarayana Velagapudi , Chairman</strong></p>
+        <p><strong>Sri Satyanarayana Velagapudi , Chairman</strong></p>
         <p><strong>Sri Jagadeeshwar Kalagiri, Treasurer</strong></p>
         <p><strong>Sri Ramakrishna Thurimella, Secretary</strong></p>
         <p><strong>Sri V.J. Chukkapalli</strong></p>
