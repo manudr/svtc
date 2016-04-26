@@ -9,7 +9,7 @@
 .imageText {
     width: 100%; /* for IE 6 */
     position: absolute;
-    top: 50px;
+    top: 70px;
     text-align: center;
     font-size: 24px;
     font-weight: normal;
@@ -31,24 +31,137 @@
 
 .panel-default > .panel-heading {
     color: #ffffff;
-    font-weight: bold;
     background: -webkit-linear-gradient(left, #ff9900, #cc6600, #ff9900); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(left, #ff9900, #cc6600, #ff9900); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(left, #ff9900, #cc6600, #ff9900); /* For Fx 3.6 to 15 */
     background: linear-gradient(to right, #ff9900, #cc6600,#ff9900); /* Standard syntax (must be last) */
+    border: 2px solid #cc6600;
 }
 
 .panel-success > .panel-heading {
     color: #ffffff;
-    font-weight: bold;
-    background: -webkit-linear-gradient(left, #003300, #33ff33, #003300); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, #003300, #33ff33, #003300); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, #003300, #33ff33, #003300); /* For Fx 3.6 to 15 */
-    background: linear-gradient(to right, #003300, #33ff33,#003300); /* Standard syntax (must be last) */
+    background: -webkit-linear-gradient(left, #003300, #99ff99, #66ff66); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, #003300, #99ff99, #66ff66); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, #003300, #99ff99, #66ff66); /* For Fx 3.6 to 15 */
+    background: linear-gradient(to right, #003300, #99ff99, #66ff66); /* Standard syntax (must be last) */
+    border: 2px solid #003300;
 }
 
-.navbar-default .navbar-nav > li > a {
-    background-color: #800000;
-    color: #ffffff;
-    height: 5px;
+.panel-success > .panel-body {
+    border-bottom: 2px solid #003300;
+    border-left: 2px solid #003300;
+    border-right: 2px solid #003300;
+}
+
+.panel-default > .panel-body {
+    border-bottom: 2px solid #cc6600;
+    border-left: 2px solid #cc6600;
+    border-right: 2px solid #cc6600;
+}
+
+.upComingEvents {
+    height: 325px;
+}
+
+.templeCalendar {
+    height: 325px;
+}
+
+.panchangam {
+    height: 325px;
+}
+
+.templeTimings {
+    height: 200px;
+}
+
+.dailySchedule {
+    height: 200px;
+}
+
+.festivals {
+    height: 600px;
+}
+
+.visionAndMission {
+    height: 110px;
+}
+
+.boardOfTrustees {
+    height: 250px;
+}
+
+.executiveCommittee {
+    height: 250px;
+}
+
+.templeTeam {
+    height: 800px;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(51, 204, 51, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 18px;
+    background-color: rgba(51, 204, 51, 1);
+    background: -webkit-linear-gradient(top, rgba(41, 97, 57, 1) 0%, rgba(51, 204, 51, 1) 100%);
+    background: linear-gradient(to bottom, rgba(41, 97, 57, 1) 0%, rgba(51, 204, 51, 1) 100%);
+    border-width: 1px;
+    border-radius: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(51, 204, 51, 1);
+    background: -webkit-linear-gradient(top, rgba(22, 110, 22, 1) 0%, rgba(51, 204, 51, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 110, 22, 1) 0%, rgba(51, 204, 51, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(128, 0, 0, 1);
+    background-color: rgba(51, 204, 51, 1);
+    background: -webkit-linear-gradient(top, rgba(22, 110, 22, 1) 0%, rgba(51, 204, 51, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 110, 22, 1) 0%, rgba(51, 204, 51, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(255, 238, 0, 1);
+    background-color: rgba(51, 204, 51, 1);
+    background: -webkit-linear-gradient(top, rgba(22, 110, 22, 1) 0%, rgba(51, 204, 51, 1) 100%);
+    background: linear-gradient(to bottom, rgba(22, 110, 22, 1) 0%, rgba(51, 204, 51, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #33cc33;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #33cc33;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #33cc33;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #33cc33;
+}
+
+.table-small-font {
+    font-size: 11px;
+}
+
+.alert-danger {
+    color: #800000;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px;
+}
+.alert-danger hr {
+    border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+    color: #843534;
 }
