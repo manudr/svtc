@@ -25,7 +25,7 @@
 	        	<br>
 	        	You will be redirected in 10 seconds...
 	        </div>
-	        <img src="resources/image/brahmotsavamSlide1.jpg" />
+	        <img src="flyers/guruPoornima.png" />
         </center>
     </body>
 </html>
