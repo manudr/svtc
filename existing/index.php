@@ -18,6 +18,7 @@
 			}
 		</style>
     </head>
+
     <body class="grad1">
     	<center>
 	        <div class="headerStyle">
@@ -25,7 +26,8 @@
 	        	<br>
 	        	You will be redirected in 10 seconds...
 	        </div>
-	        <img src="flyers/guruPoornima.png" />
+	        <img src="flyers/2016-07-22.png" />
         </center>
     </body>
+
 </html>
