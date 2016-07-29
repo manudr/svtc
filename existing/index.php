@@ -22,11 +22,11 @@
     <body class="grad1">
     	<center>
 	        <div class="headerStyle">
-	        	Welcome to Sri Venkateswara Swamy Temple of Colorado
-	        	<br>
 	        	You will be redirected in 10 seconds...
 	        </div>
-	        <img src="flyers/2016-07-22.png" />
+			<div>
+	        	<img src="flyers/flyer.png" />
+			</div>
         </center>
     </body>
 
