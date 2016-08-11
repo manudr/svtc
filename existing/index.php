@@ -1,6 +1,12 @@
 <html>
     <head>
-        <meta http-equiv="refresh" content="10;url=homepage.php"/>
+        <meta http-equiv="refresh" content="15;url=homepage.php"/>
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 		<style>
 			.grad1 {
 				background: red; /* For browsers that do not support gradients */
@@ -15,19 +21,40 @@
 				font-size: 32px;
 				font-weight: bold;
 				font-style: normal;
+				text-align: center;
 			}
+
+			.center-block {
+				display: block;
+				margin: 0 auto;
+				vertical-align: middle;
+			}
+
 		</style>
     </head>
 
     <body class="grad1">
-    	<center>
-	        <div class="headerStyle">
-	        	You will be redirected in 10 seconds...
-	        </div>
-			<div>
-	        	<img src="flyers/flyer.png" />
+
+		<div class="row">
+			<div class="col-md-12 headerStyle">
+				You will be redirected in 15 seconds...
 			</div>
-        </center>
+		</div>
+		<br><br><br><br>
+		<div class="row">
+			<!--
+			<div class="col-md-6">
+				<img class="center-block" src="flyers/flyer3.jpg">
+			</div>
+			-->
+			<div class="col-md-6">
+				<img class="center-block" src="flyers/flyer1.png">
+			</div>
+			<div class="col-md-6">
+				<img class="center-block" src="flyers/flyer2.png">
+			</div>
+		</div>
+
     </body>
 
 </html>
