@@ -47,12 +47,14 @@
 				<img class="center-block" src="flyers/flyer3.jpg">
 			</div>
 			-->
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<img class="center-block" src="flyers/flyer1.png">
 			</div>
+			<!--
 			<div class="col-md-6">
 				<img class="center-block" src="flyers/flyer2.png">
 			</div>
+			-->
 		</div>
 
     </body>
