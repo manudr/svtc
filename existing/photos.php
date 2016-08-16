@@ -93,7 +93,7 @@ document.onclick = mclose;
 	<tr>
 
     <td align="left" valign="top" style="padding-left:200px;">
-	<a target="_blank" href="http://picasaweb.google.com/svtempleco?noredirect=1" style="font-size:14px;font-weight:bold;color:#FF9900">Photo Albums</a>
+	<a target="_blank" href="//get.google.com/albumarchive/101238918833592901576?source=pwa" style="font-size:14px;font-weight:bold;color:#FF9900">Photo Albums</a>
 	<br />
 	<br />
     </td>

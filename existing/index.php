@@ -38,6 +38,8 @@
 		<div class="row">
 			<div class="col-md-12 headerStyle">
 				You will be redirected in 15 seconds...
+				<br>
+				Please click <a href="//www.svtempleco.org/homepage.php"><b style="color: #FFFFFF; font-style: oblique; stroke: 1px; ">here</b></a> to skip.
 			</div>
 		</div>
 		<br><br><br><br>
