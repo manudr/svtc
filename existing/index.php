@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta http-equiv="refresh" content="15;url=homepage.php"/>
+        <meta http-equiv="refresh" content="10;url=homepage.php"/>
 
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -37,26 +37,17 @@
 
 		<div class="row">
 			<div class="col-md-12 headerStyle">
-				You will be redirected in 15 seconds...
-				<br>
+				You will be redirected in 10 seconds...
 				Please click <a href="//www.svtempleco.org/homepage.php"><b style="color: #FFFFFF; font-style: oblique; stroke: 1px; ">here</b></a> to skip.
 			</div>
 		</div>
-		<br><br><br><br>
+		<br>
 		<div class="row">
-			<!--
-			<div class="col-md-6">
-				<img class="center-block" src="flyers/flyer3.jpg">
-			</div>
-			-->
 			<div class="col-md-12">
-				<img class="center-block" src="flyers/flyer1.png">
+				<a href="https://tickets.lonetreeartscenter.org/online/mapSelect.asp?BOset::WSmap::seatmap::performance_ids=8C1B92AF-9F97-4780-83D2-81285150E20C" target="_blank">
+					<img class="center-block" src="flyers/flyer.jpg">
+				</a>
 			</div>
-			<!--
-			<div class="col-md-6">
-				<img class="center-block" src="flyers/flyer2.png">
-			</div>
-			-->
 		</div>
 
     </body>
