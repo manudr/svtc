@@ -155,7 +155,25 @@ flashvars="height=20&width=55&file=NAMO_VENKATESAYA.mp3&volume=1&autostart=true&
   <tr>
     <td colspan="2" align="center" valign="top" style="padding-left:10px; height: 10px;">Phone: Temple - 303-660-9555, Manager - 303-898-5514    Email: manager@svtempleco.org</td>
   </tr>
-<!-- 9/1/2015 - Add upcoming events from google slides-->  
+
+<!-- 9/1/2015 - Add upcoming events from google slides-->
+
+        <tr>
+            <td colspan="0" align="center" valign="top">
+                <center>
+                    <a href="https://tickets.lonetreeartscenter.org/online/mapSelect.asp?BOset%3A%3AWSmap%3A%3Aseatmap%3A%3Aperformance_ids=8C1B92AF-9F97-4780-83D2-81285150E20C" target="_blank">
+                        <b style="color: #006666; font-size: 13px;">
+                            Click here to buy tickets for
+                            <b style="color: #ff3300; font-size: 15px;">Sita Swayamwaram</b>
+                            by Laya Arts Academy.
+                            <br>
+                            A Fundraising event for the benefit of
+                            <b style="color: #ff3300; font-size: 13px;">Sri Venkateswara Swamy Temple of Colorado</b>
+                        </b>
+                    </a>
+                </center>
+            </td>
+        </tr>
   <tr>
     <td colspan="0" align="left" valign="top">
       <iframe src="https://docs.google.com/presentation/d/1aSYmB04l47_H76nsmxxb2h2yiBmN_3ArKLdOj3Lx9J8/embed?start=true&loop=true&delayms=10000" frameborder="0" width="640" height="425" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
