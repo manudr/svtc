@@ -36,7 +36,8 @@
     <body class="grad1">
 
 		<div class="row">
-			<div class="col-md-12 headerStyle">
+			<div class="col-lg-12 headerStyle">
+				<img class="center-block" src="resources/image/SVTempleFinalLogoSmall.png" width="10%">
 				You will be redirected in 10 seconds...
 				Please click <a href="//www.svtempleco.org/homepage.php"><b style="color: #FFFFFF; font-style: oblique; stroke: 1px; ">here</b></a> to skip.
 			</div>
@@ -44,14 +45,9 @@
 		<br>
 		<div class="row">
 			<div class="col-md-12">
-				<!--
 				<a href="https://tickets.lonetreeartscenter.org/online/mapSelect.asp?BOset::WSmap::seatmap::performance_ids=8C1B92AF-9F97-4780-83D2-81285150E20C" target="_blank">
 					<img class="center-block" src="flyers/flyer.jpg">
 				</a>
-				-->
-
-				<img class="center-block" src="flyers/flyer.png">
-
 			</div>
 		</div>
 
