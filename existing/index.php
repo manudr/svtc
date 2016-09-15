@@ -45,12 +45,9 @@
 		<br>
 		<div class="row">
 			<div class="col-md-12">
-				<!--
 				<a href="https://tickets.lonetreeartscenter.org/online/mapSelect.asp?BOset::WSmap::seatmap::performance_ids=8C1B92AF-9F97-4780-83D2-81285150E20C" target="_blank">
 					<img class="center-block" src="flyers/flyer.jpg">
 				</a>
-				-->
-				<img class="center-block" src="flyers/flyer.png">
 			</div>
 		</div>
 
