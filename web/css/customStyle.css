@@ -7,13 +7,12 @@
 }
 
 .imageText {
-    padding: 5px;
-    width: 100%; /* for IE 6 */
     text-align: center;
     font-size: 21px;
     font-weight: normal;
     color: #ffffff;
     text-shadow: 2px 2px 4px #000000;
+    background: linear-gradient(to right, #800000, #ffc266, #800000);  /* Standard syntax (must be last) */
 }
 
 .imageText a {
@@ -32,7 +31,7 @@
 
 .redBackground {
     /*background: linear-gradient(to right, #ffc266, #800000, #ffc266); */ /* Standard syntax (must be last) */
-    /*background: linear-gradient(to right, #800000, #ffc266, #800000); */ /* Standard syntax (must be last) */
+    background: linear-gradient(to right, #800000, #ffc266, #800000);  /* Standard syntax (must be last) */
 }
 
 .panel {

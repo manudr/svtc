@@ -1,0 +1,115 @@
+body {
+
+}
+
+.h1Style {
+    color: #880000;
+    font-style: normal;
+    font-weight: bolder;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 61px;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+.bgColor1 {
+    background-color: #880000;
+    padding: 3px;
+}
+
+.bgColor2 {
+    background-color: #ffdf99;
+    padding: 3px;
+}
+
+.grad1 {
+    background: -webkit-linear-gradient(#b37700, #e6b800, #cc6600); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#b37700, #e6b800, #cc6600); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#b37700, #e6b800, #cc6600); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#b37700, #e6b800, #cc6600); /* Standard syntax */
+}
+
+.bannerFontStyle {
+    color: #880000;
+    font-style: normal;
+    font-weight: bolder;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.paddingClass {
+    padding: 15px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 90%;
+    margin: auto;
+    height: 500px;
+
+}
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.carousel-control.left {
+    background-color: #b37700;
+}
+.carousel-control.right {
+    background-color: #b37700;
+}
+.carousel-control:hover,
+.carousel-control:focus {
+    color: #fff;
+}
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+    left: 50%;
+    margin-left: -10px;
+}
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+    right: 50%;
+    margin-right: -10px;
+}
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+    width: 20px;
+    height: 20px;
+    font-family: serif;
+    line-height: 1;
+}
+.carousel-control .icon-prev:before {
+    content: '\2039';
+}
+.carousel-control .icon-next:before {
+    content: '\203a';
+}
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-footer {
+    background-color: #f9f9f9;
+}

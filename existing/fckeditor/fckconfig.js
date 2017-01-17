@@ -26,7 +26,7 @@
 
 FCKConfig.CustomConfigurationsPath = '' ;
 
-FCKConfig.EditorAreaCSS = FCKConfig.BasePath + 'css/fck_editorarea.css' ;
+FCKConfig.EditorAreaCSS = FCKConfig.BasePath + 'css.css/fck_editorarea.css' ;
 FCKConfig.EditorAreaStyles = '' ;
 FCKConfig.ToolbarComboPreviewCSS = '' ;
 
@@ -43,8 +43,8 @@ FCKConfig.Debug = false ;
 FCKConfig.AllowQueryStringDebug = true ;
 
 FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/default/' ;
-FCKConfig.SkinEditorCSS = '' ;	// FCKConfig.SkinPath + "|<minified css>" ;
-FCKConfig.SkinDialogCSS = '' ;	// FCKConfig.SkinPath + "|<minified css>" ;
+FCKConfig.SkinEditorCSS = '' ;	// FCKConfig.SkinPath + "|<minified css.css>" ;
+FCKConfig.SkinDialogCSS = '' ;	// FCKConfig.SkinPath + "|<minified css.css>" ;
 
 FCKConfig.PreloadImages = [ FCKConfig.SkinPath + 'images/toolbar.start.gif', FCKConfig.SkinPath + 'images/toolbar.buttonarrow.gif' ] ;
 

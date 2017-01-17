@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta http-equiv="refresh" content="15;url=homepage.php"/>
+        <meta http-equiv="refresh" content="0;url=homepage.php"/>
 
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -39,6 +39,7 @@
 
 	<body class="blackBg">
 
+	<!--
 	<div class="row">
 		<div class="col-lg-12 headerStyle">
 			You will be redirected in 15 seconds...
@@ -54,6 +55,7 @@
 			<img class="center-block" src="flyers/flyer_1.2.png" width="100%">
 		</div>
 	</div>
+	-->
 
 	</body>
 

@@ -63,7 +63,7 @@ FCKTools._GetUrlFixedCss = function( cssStyles, urlFixPrefix )
 }
 
 /**
- * Appends a <link css> or <style> element to the document.
+ * Appends a <link css.css> or <style> element to the document.
  * @param (Object) documentElement The DOM document object to which append the
  *		stylesheet.
  * @param (Variant) cssFileOrDef A String pointing to the CSS file URL or an
@@ -106,7 +106,7 @@ FCKTools.GetStyleHtml = (function()
 			return '' ;
 
 		var temp = markTemp ? ' _fcktemp="true"' : '' ;
-		return '<' + 'style type="text/css"' + temp + '>' + styleDef + '<' + '/style>' ;
+		return '<' + 'style type="text/css.css"' + temp + '>' + styleDef + '<' + '/style>' ;
 	}
 
 	var getLink = function( cssFileUrl, markTemp )
@@ -115,7 +115,7 @@ FCKTools.GetStyleHtml = (function()
 			return '' ;
 
 		var temp = markTemp ? ' _fcktemp="true"' : '' ;
-		return '<' + 'link href="' + cssFileUrl + '" type="text/css" rel="stylesheet" ' + temp + '/>' ;
+		return '<' + 'link href="' + cssFileUrl + '" type="text/css.css" rel="stylesheet" ' + temp + '/>' ;
 	}
 
 	return function( cssFileOrArrayOrDef, markTemp )
@@ -691,8 +691,8 @@ FCKTools.AppendLengthProperty = function( targetObject, propertyName )
 }
 
 /**
- * Gets the browser parsed version of a css text (style attribute value). On
- * some cases, the browser makes changes to the css text, returning a different
+ * Gets the browser parsed version of a css.css text (style attribute value). On
+ * some cases, the browser makes changes to the css.css text, returning a different
  * value. For example, hexadecimal colors get transformed to rgb().
  */
 FCKTools.NormalizeCssText = function( unparsedCssText )

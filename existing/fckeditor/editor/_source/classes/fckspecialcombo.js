@@ -49,7 +49,7 @@ var FCKSpecialCombo = function( caption, fieldWidth, panelWidth, panelMaxHeight,
 	if ( FCK.IECleanup )
 		FCK.IECleanup.AddItem( this, FCKSpecialCombo_Cleanup ) ;
 
-//	this._Panel.StyleSheet = FCKConfig.SkinPath + 'fck_contextmenu.css' ;
+//	this._Panel.StyleSheet = FCKConfig.SkinPath + 'fck_contextmenu.css.css' ;
 //	this._Panel.Create() ;
 //	this._Panel.PanelDiv.className += ' SC_Panel' ;
 //	this._Panel.PanelDiv.innerHTML = '<table cellpadding="0" cellspacing="0" width="100%" style="TABLE-LAYOUT: fixed"><tr><td nowrap></td></tr></table>' ;
