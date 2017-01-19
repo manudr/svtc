@@ -3,9 +3,25 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
-  background-color: #f2f2f2;
+background-color: #F9F8F2;
 }
+
+.banner {
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.address {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+
 
 
 /* CUSTOMIZE THE NAVBAR
@@ -33,6 +49,62 @@ body {
   width: auto;
 }
 
+.card1 {
+  width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  height: 50px;
+}
+
+.card1.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+}
+
+.card1.container {
+  padding: 10px;
+  height: 450px;
+}
+
+.card2 {
+  width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  height: 50px;
+}
+
+.card2.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+}
+
+.card2.container {
+  padding: 10px;
+  height: 500px;
+}
+
+.card3 {
+  width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  height: 50px;
+}
+
+.card3.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+}
+
+.card3.container {
+  padding: 10px;
+  height: 300px;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -40,11 +112,10 @@ body {
 /* Carousel base class */
 .carousel {
   height: 500px;
-  margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
+  z-index: 1;
   background-color: #990000;
 }
 
@@ -67,15 +138,13 @@ body {
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
-  margin-bottom: 20px;
   text-align: center;
 }
 .marketing h2 {
   font-weight: normal;
 }
 .marketing .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
+
 }
 
 

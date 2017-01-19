@@ -5451,10 +5451,8 @@ button.list-group-item-danger.active:focus {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  border-radius: 15px;
+
 }
 .panel-body {
   padding: 15px;
@@ -5756,8 +5754,8 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #bce8f1;
 }
 .panel-warning {
-  border-color: #faebcc;
   height: 500px;
+  border: 3px solid #800000;
 }
 .panel-warning > .panel-heading {
   color: #8a6d3b;
