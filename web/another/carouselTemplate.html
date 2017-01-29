@@ -12,247 +12,199 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <link href="./css/carousel.css" rel="stylesheet">
+
+  <script src="./js/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script>
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/holder.min.js"></script>
+  <script src="./js/ie10-viewport-bug-workaround.js"></script>
+
 </head>
 
 <body>
-<div class="container-fluid">
-
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="https://getbootstrap.com/examples/carousel/#">Home</a></li>
-          <li><a href="https://getbootstrap.com/examples/carousel/#about">About</a></li>
-          <li><a href="https://getbootstrap.com/examples/carousel/#contact">Contact</a></li>
-          <li class="dropdown">
-            <a href="https://getbootstrap.com/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="https://getbootstrap.com/examples/carousel/#">Action</a></li>
-              <li><a href="https://getbootstrap.com/examples/carousel/#">Another action</a></li>
-              <li><a href="https://getbootstrap.com/examples/carousel/#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="https://getbootstrap.com/examples/carousel/#">Separated link</a></li>
-              <li><a href="https://getbootstrap.com/examples/carousel/#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-  </nav>
-  <br><br><br>
-  <div class="row">
-    <div class="col-lg-1">
-      <img class="img-responsive" src="images/SVTempleFinalLogo.png" alt="banner" width="100%">
-    </div>
-    <div class="col-lg-11">
-      <div class="banner">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</div>
-      <div class="address">
-        1495 S Ridge Road Castle Rock CO 80104&nbsp;|&nbsp;Temple:&nbsp;303-660-9555&nbsp;|&nbsp;Manager:&nbsp;303-898-5514&nbsp;|&nbsp;Email:&nbsp;manager@svtempleco.org
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-3">
-      <div class="card1">
-        <div class="card1 header">
-          <h1>1</h1>
-        </div>
-
-        <div class="card1 container">
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-          <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <h1>Example headline.</h1>
-              <h1>Example headline.</h1>
-
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Sign up today</a></p>
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-          </div>
-          <div class="item">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Learn more</a></p>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="https://getbootstrap.com/examples/carousel/#">Home</a></li>
+                    <li><a href="https://getbootstrap.com/examples/carousel/#about">About</a></li>
+                    <li><a href="https://getbootstrap.com/examples/carousel/#contact">Contact</a></li>
+                    <li class="dropdown">
+                    <a href="https://getbootstrap.com/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://getbootstrap.com/examples/carousel/#">Action</a></li>
+                            <li><a href="https://getbootstrap.com/examples/carousel/#">Another action</a></li>
+                            <li><a href="https://getbootstrap.com/examples/carousel/#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="https://getbootstrap.com/examples/carousel/#">Separated link</a></li>
+                            <li><a href="https://getbootstrap.com/examples/carousel/#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <br><br><br>
+        <div class="row">
+            <div class="col-lg-2" style="background-color: #800000; height: 210px;">
+                <img class="img-responsive" src="images/SVTempleFinalLogo.png" alt="banner" width="100%">
+            </div>
+            <div class="col-lg-10"  style="background-color: #000000; height: 210px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="address">
+                            1495 S Ridge Road Castle Rock CO 80104&nbsp;|&nbsp;Temple:&nbsp;303-660-9555&nbsp;|&nbsp;Manager:&nbsp;303-898-5514&nbsp;|&nbsp;Email:&nbsp;manager@svtempleco.org
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card1">
+                    <div class="card1 header">
+                        <h1>1</h1>
+                    </div>
+                    <div class="card1 container">
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="carousel-caption">
+                                <h1>Example headline.</h1>
+                                <h1>Example headline.</h1>
+                                <h1>Example headline.</h1>
+
+                                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                                <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Sign up today</a></p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <h1>Another example headline.</h1>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Learn more</a></p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <h1>One more for good measure.</h1>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Browse gallery</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card1">
+                    <div class="card1 header">
+                        <h1>1</h1>
+                    </div>
+
+                    <div class="card1 container">
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card1">
+                    <div class="card1 header">
+                        <h1>1</h1>
+                    </div>
+                    <div class="card1 container">
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card1">
+                    <div class="card1 header">
+                        <h1>1</h1>
+                    </div>
+                    <div class="card1 container">
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                    </div>
+                </div>
             </div>
 
-          </div>
-          <div class="item">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/examples/carousel/#" role="button">Browse gallery</a></p>
+            <div class="col-lg-4">
+                <div class="card1">
+                    <div class="card1 header">
+                        <h1>1</h1>
+                    </div>
+
+                    <div class="card1 container">
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                        <p>January 1, 2016</p>
+                    </div>
+                </div>
             </div>
-
-          </div>
         </div>
-        <a class="left carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        <br><br><br>
     </div>
-    <div class="col-lg-3">
-      <div class="card1">
-        <div class="card1 header">
-          <h1>1</h1>
-        </div>
-
-        <div class="card1 container">
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-lg-4">
-      <div class="panel panel-warning">
-        <div class="panel-body">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="https://getbootstrap.com/examples/carousel/#" role="button">View details »</a></p>
-        </div>
-      </div>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <div class="panel panel-warning">
-        <div class="panel-body">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="https://getbootstrap.com/examples/carousel/#" role="button">View details »</a></p>
-        </div>
-      </div>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <div class="panel panel-warning">
-        <div class="panel-body">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="https://getbootstrap.com/examples/carousel/#" role="button">View details »</a></p>
-        </div>
-      </div>
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card3">
-        <div class="card3 header">
-          <h1>1</h1>
-        </div>
-
-        <div class="card3 container">
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card3">
-        <div class="card3 header">
-          <h1>1</h1>
-        </div>
-
-        <div class="card3 container">
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card3">
-        <div class="card3 header">
-          <h1>1</h1>
-        </div>
-
-        <div class="card3 container">
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card3">
-        <div class="card3 header">
-          <h1>1</h1>
-        </div>
-
-        <div class="card3 container">
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-          <p>January 1, 2016</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-<script src="./js/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script>
-<script src="./js/bootstrap.js"></script>
-<script src="./js/holder.min.js"></script>
-<script src="./js/ie10-viewport-bug-workaround.js"></script>
-
-
-
-
-</div>
+    <br><br><br><br><br>
 </body>
 </html>
