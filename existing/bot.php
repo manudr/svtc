@@ -75,14 +75,14 @@ document.onclick = mclose;
         <p><strong>Sri Satyanarayana Velagapudi , Chairman</strong></p>
         <p><strong>Sri Ramakrishna Thurimella, Secretary</strong></p>
         <p><strong>Sri Mohan Koneru, Treasurer</strong></p>
-        <p><strong>Sri V.J. Chukkapalli</strong></p>
         <p><strong>Sri Gupta B. Kuna, MD</strong></p>
-        <p><strong>Sri Ramarao Pentela</strong></p>
-        <p><strong>Sri Sreedhar Donthula</strong></p>
-        <p><strong>Sri Baburao Karamsetty</strong></p>
-        <p><strong>Sri Narsimha Reddy Mudupu</strong></p>
         <p><strong>Sri Nandu Sankaran</strong></p>
-        <p><strong>Sri Dharmendra Apparasu</strong></p>
+        <p><strong>Sri V.J. Chukkapalli</strong></p>
+        <p><strong>Sri Sreenivasa Katamaneni</strong></p>
+        <p><strong>Sri Srinivas Panati</strong></p>
+        <p><strong>Sri Srini Surapaneni</strong></p>
+        <p><strong>Sri Venkateswararao Bandla</strong></p>
+        <p><strong>Sri Ramarao Pentela</strong></p>
     </td>
   </tr>
 </table>
