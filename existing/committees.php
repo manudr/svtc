@@ -66,9 +66,13 @@ document.onclick = mclose;
 <?php include 'resources\includes\leftmenu.html' ?>
 
     <center>
+		<!--
         <a href="2016SVTCTeam.pdf" target="_blank">
             <img src="2016SVTCTeam.jpg" alt="Team" width="75%" height="50%"/>
         </a>
+        -->
+		<br><br><br><br>
+		<h1>Coming Soon...</h1>
     </center>
     
 </div>

@@ -72,14 +72,14 @@ document.onclick = mclose;
 
     <tr>
         <td align="left" valign="top" style="padding-left:20px;">
-            <p><strong>Sri Nandu Sankaran - President</strong></p>
-            <p><strong>Sri Srinivas Katamaneni - Religious Chair</strong></p>
-            <p><strong>Sri Mohan Koneru - Finance Chair</strong></p>
-            <p><strong>Smt Aruna Maddala - SVTC School Chair</strong></p>
-            <p><strong>Smt Madhuri Mohan - Annapurna Chair</strong></p>
-            <p><strong>Sri Ravichandran Packirisamy - Facilities Chair</strong></p>
-            <p><strong>Sri Saiganesh Rajamani - Web and Communications Chair</strong></p>
-            <p><strong>Sri Srinivas Panati - Temple Manager</strong></p>
+            <p><strong>Sri Nandu Sankaran - Executive Committee President</strong></p>
+            <p><strong>Sri Saiganesh Rajamani - Religious Committee Chair</strong></p>
+            <p><strong>Sri Baburao Karamsetty - Finance Committee Chair</strong></p>
+            <p><strong>Smt Madhuri Mohan - Annapurna Committee Chair</strong></p>
+            <p><strong>Sri Ratnakar Kalangi - Facilities Committee Chair</strong></p>
+            <p><strong>Sri Sreedhar Donthula - Education and Cultural Committee Chair</strong></p>
+            <p><strong>Sri Manmohan Dronamraju - Web and Communications Committee Chair</strong></p>
+            <p><strong>Smt Soummya Nandireddy - Temple Manager</strong></p>
         </td>
     </tr>
 </table>
