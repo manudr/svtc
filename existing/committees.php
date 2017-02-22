@@ -14,7 +14,7 @@ var ddmenuitem	= 0;
 
 // open hidden layer
 function mopen(id)
-{	
+{
 	// cancel close timer
 	mcancelclosetime();
 
@@ -49,7 +49,7 @@ function mcancelclosetime()
 }
 
 // close layer when click-out
-document.onclick = mclose; 
+document.onclick = mclose;
 
 </script>
 </head>
@@ -74,7 +74,7 @@ document.onclick = mclose;
 		<br><br><br><br>
 		<h1>Coming Soon...</h1>
     </center>
-    
+
 </div>
 <?php include 'resources\includes\footer.html' ?>
 </div>

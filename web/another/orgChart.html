@@ -9,13 +9,37 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
 
     <style>
-        .box1 {
+
+        body {
+            margin: 0px;
+        }
+
+        .box {
+            margin: 5px;
             width: 100%;
-            height: 100%;
-            border-radius: 25px 125px 25px 125px;
-            border: 5px solid #800000;
+            box-shadow: 10px 10px 5px #888888;
+            background-color: #ffd699;
+            border-radius: 10px;
+        }
+
+        .box .title {
+            border-radius: 10px;
+            background-color: #ff9900;
+            font-style: normal;
+            font-weight: bold;
             text-align: center;
-            padding-top: 60px;
+            padding: 5px;
+
+        }
+
+        .box .content {
+            font-size: x-large;
+            font-style: normal;
+            font-weight: normal;
+            font-size: small;
+            text-align: left;
+            padding: 5px;
+            margin: 5px;
         }
     </style>
 </head>
@@ -24,33 +48,39 @@
 <br>
 
 <div class="container-fluid">
-    <div style="background-color: #FF6600; border: 2px solid #800000; color: #FFFFFF; border-radius: 15px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive" src="./images/banner5.jpg" width="100%">
+        </div>
+    </div>
+    <div class="well well-sm">
         <center>
-            <h1>SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</h1>
-            <h2>2017 TEAM</h2>
+            <h1>2017 TEAM</h1>
         </center>
     </div>
-    <br><br>
+    <br>
     <div class="row">
         <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ff9900;">
-                    <center>
-                        <h3>Board Of Trustees</h3>
-                        <h4>Chairman: Satyanarayana Velagapudi</h4>
-                        <h4>Secretary: Ramakrishna Thurimella</h4>
-                        <h4>Treasurer: Mohan Koneru</h4>
-                </center>
+            <div class="box">
+                <div class="title">
+                    <h4>Board Of Trustees</h4>
                 </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
+                <div class="content">
                     <ul>
                         <li>
-                            Gupta B.Kuna, MD
+                            <b>Satyanarayana Velagapudi (Chairman)</b>
                         </li>
                         <li>
-                            Nandu Sankaran
+                            <b>Ramakrishna Thurimella (Secretary)</b>
+                        </li>
+                        <li>
+                            <b>Mohan Koneru (Treasurer)</b>
+                        </li>
+                        <li>
+                            <b>Nandu Sankaran (Executive Committee President)</b>
+                        </li>
+                        <li>
+                            Gupta B.Kuna, MD
                         </li>
                         <li>
                             V.J.Chukkapalli
@@ -75,13 +105,46 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ffc266;">
-                    <center>
-                    <h4>Temple Manager</h4>
-                    </center>
+            <div class="box">
+                <div class="title">
+                    <h4>Executive Committee</h4>
                 </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
+                <div class="content">
+                    <ul>
+                        <li>
+                            Nandu Sankaran <b>(Executive Committee President)</b>
+                        </li>
+                        <li>
+                            Saiganesh Rajamani <b>(Religious Committee Chair)</b>
+                        </li>
+                        <li>
+                            Baburao Karamsetty <b>(Finance Committee Chair)</b>
+                        </li>
+                        <li>
+                            Madhuri Mohan <b>(Annapurna Committee Chair)</b>
+                        </li>
+                        <li>
+                            Ratnakar Kalangi <b>(Facilities Committee Chair)</b>
+                        </li>
+                        <li>
+                            Sreedhar Donthula <b>(Education & Cultural Committee Chair)</b>
+                        </li>
+                        <li>
+                            Manmohan Dronamraju <b>(Web & Communications Committee Chair)</b>
+                        </li>
+                        <li>
+                            Soummya Nandireddy <b>(Temple Manager)</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="box">
+                <div class="title">
+                    <h4>Temple Manager</h4>
+                </div>
+                <div class="content">
                     <ul>
                         <li>
                             Soumya Nandireddy
@@ -91,16 +154,15 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-lg-2">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ff9900;">
-                    <center>
-                        <h4>Religious</h4>
-                        <h4>Saiganesh Rajamani</h4>
-                    </center>
+            <div class="box">
+                <div class="title">
+                    <h4>Religious</h4>
+                    <h5>Saiganesh Rajamani</h5>
                 </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
+                <div class="content">
                     <ul>
                         <li>
                             Sreenivas Katamaneni
@@ -140,14 +202,12 @@
             </div>
         </div>
         <div class="col-lg-2">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ffc266;">
-                    <center>
-                        <h4>Finance</h4>
-                        <h4>Baburao Karamsetty</h4>
-                    </center>
+            <div class="box">
+                <div class="title">
+                    <h4>Finance</h4>
+                    <h5>Baburao Karamsetty</h5>
                 </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
+                <div class="content">
                     <ul>
                         <li>
                             Mohan Koneru
@@ -178,43 +238,12 @@
             </div>
         </div>
         <div class="col-lg-2">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ff9900;">
-                    <center>
-                    <h4>Web & Communications</h4>
-                        <h4>Manmohan Dronamraju</h4>
-                    </center>
+            <div class="box">
+                <div class="title">
+                    <h4>Annapurna</h4>
+                    <h5>Madhuri Mohan</h5>
                 </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
-                    <ul>
-                        <li>
-                            Smitha Thurimella
-                        </li>
-                        <li>
-                            Saiganesh Rajamani
-                        </li>
-                        <li>
-                            Sreedhar Donthula
-                        </li>
-                        <li>
-                            Suresh Kommula
-                        </li>
-                        <li>
-                            Ravichandran Packirisamy
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ffc266;">
-                    <center>
-                        <h4>Annapurna</h4>
-                        <h4>Madhuri Mohan</h4>
-                    </center>
-                </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
+                <div class="content">
                     <ul>
                         <li>
                             Sandhya Karamsetty
@@ -284,40 +313,12 @@
             </div>
         </div>
         <div class="col-lg-2">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ff9900;">
-                    <center>
-                        <h4>Education and Cultural</h4>
-                        <h4>Sreedhar Donthula</h4>
-                    </center>
+            <div class="box">
+                <div class="title">
+                    <h4>Facilities</h4>
+                    <h5>Ratnakar Kalangi</h5>
                 </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
-                    <ul>
-                        <li>
-                            Nandu Sankaran
-                        </li>
-                        <li>
-                            Aruna Maddala
-                        </li>
-                        <li>
-                            Gowri Nandakumar
-                        </li>
-                        <li>
-                            Madhavi Panati
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel">
-                <div class="panel-heading" style="background-color: #ffc266;">
-                    <center>
-                        <h4>Facilities</h4>
-                        <h4>Ratnakar Kalangi</h4>
-                    </center>
-                </div>
-                <div class="panel-body" style="background-color: #fff5e6;">
+                <div class="content">
                     <ul>
                         <li>
                             Aaron Brachfeld
@@ -351,6 +352,57 @@
                         </li>
                         <li>
                             Venu Anumayam
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="box">
+                <div class="title">
+                    <h4>Web & Communications</h4>
+                    <h5>Manmohan Dronamraju</h5>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>
+                            Smitha Thurimella
+                        </li>
+                        <li>
+                            Saiganesh Rajamani
+                        </li>
+                        <li>
+                            Sreedhar Donthula
+                        </li>
+                        <li>
+                            Suresh Kommula
+                        </li>
+                        <li>
+                            Ravichandran Packirisamy
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="box">
+                <div class="title">
+                    <h4>Education and Cultural</h4>
+                    <h5>Sreedhar Donthula</h5>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>
+                            Nandu Sankaran
+                        </li>
+                        <li>
+                            Aruna Maddala
+                        </li>
+                        <li>
+                            Gowri Nandakumar
+                        </li>
+                        <li>
+                            Madhavi Panati
                         </li>
                     </ul>
                 </div>
