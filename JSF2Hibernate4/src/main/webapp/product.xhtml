@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Sri Venkateswara Swamy Temple Of Colorado-Add Temple Service</title>
+</h:head>
+
+<h:body>
+
+	<h2>Sri Venkateswara Swamy Temple Of Colorado- Add Temple Service</h2>
+
+	<h:form>
+
+		<p:panel id="panel" header="Add New Service">
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="name" value="Name"/>
+				<p:inputText id="name"/>
+
+				<p:outputLabel for="price" value="Price"/>
+				<p:inputText id="price"/>
+
+				<p:outputLabel for="location" value="Location"/>
+				<p:selectOneMenu id="location">
+					<f:selectItem itemLabel="Home" itemValue="home" />
+					<f:selectItem itemLabel="Temple" itemValue="temple" />
+				</p:selectOneMenu>
+
+				<p:outputLabel for="schedule" value="Schedule"/>
+				<p:selectOneRadio id="schedule" >
+					<f:selectItem itemLabel="Daily" itemValue="daily" />
+					<f:selectItem itemLabel="Weekly" itemValue="weekly" />
+					<f:selectItem itemLabel="Monthly" itemValue="monthly" />
+					<f:selectItem itemLabel="Yearly" itemValue="yearly" />
+				</p:selectOneRadio>
+
+				<p:outputLabel for="description" value="Description"/>
+				<p:inputTextarea id="description"/>
+
+				<p:commandButton value="Save" update="panel" actionListener="#{productBean.addProduct}" icon="fa-close" />
+				<p:commandButton value="Cancel" update="panel" actionListener="#{productBean.cancel}" icon="fa-save" />
+
+			</h:panelGrid>
+
+
+		</p:panel>
+
+	</h:form>
+
+</h:body>
+</html>

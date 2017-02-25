@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+archivesBaseName = 'JSF2Hibernate4'
+version = '1' 
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'com.sun.faces:jsf-api:2.2.14'
+    compile 'com.sun.faces:jsf-impl:2.2.14'
+    compile 'org.primefaces:primefaces:6.0'
+    compile 'javax.enterprise:cdi-api:1.2'
+    compile 'jstl:jstl:1.2'
+    compile  'org.hibernate:hibernate-core:4.3.6.Final'
+    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.1.4.jre8-preview'
+} 
