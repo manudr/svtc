@@ -18,11 +18,15 @@ import com.dronamraju.svtemple.service.ProductService;
 
 @ManagedBean(name = "productBean", eager = true)
 @RequestScoped
-public class ProductBean implements Serializable {
+public class ProductBean {
 
+    private String name;
+    private String description;
+    private Double price;
+    private String location;
+    private String schedule;
 
     private List<Product> products = new ArrayList<Product>();
-
 
     @PostConstruct
     public void populateProductList() {
@@ -49,7 +53,7 @@ public class ProductBean implements Serializable {
     public String addProduct() {
         System.out.println("addProduct()...");
         ProductDAO productDAO = new ProductDAO();
-        Product product = new Product();
+        Product product = new Product(name, description, price, location, schedule);
         productDAO.save(product);
         System.out.println("New Temple Service has been successfully saved.");
         return "products";
@@ -70,4 +74,47 @@ public class ProductBean implements Serializable {
         this.productService = productService;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(String schedule) {
+        this.schedule = schedule;
+    }
+
+    public ProductService getProductService() {
+        return productService;
+    }
 }

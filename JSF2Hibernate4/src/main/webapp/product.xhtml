@@ -9,34 +9,32 @@
 
 <h:body>
 
-	<h2>Sri Venkateswara Swamy Temple Of Colorado- Add Temple Service</h2>
+	<h:form id="productForm">
 
-	<h:form>
-
-		<p:panel id="panel" header="Add New Service">
+		<p:panel id="panel" header="Add A New Temple Service">
 			<h:panelGrid columns="2" cellpadding="5">
-				<p:outputLabel for="name" value="Name"/>
-				<p:inputText id="name"/>
+				<p:outputLabel value="Name"/>
+				<p:inputText value="#{productBean.name}"/>
 
-				<p:outputLabel for="price" value="Price"/>
-				<p:inputText id="price"/>
+				<p:outputLabel value="Price"/>
+				<p:inputText value="#{productBean.price}"/>
 
-				<p:outputLabel for="location" value="Location"/>
-				<p:selectOneMenu id="location">
+				<p:outputLabel value="Location"/>
+				<p:selectOneMenu value="#{productBean.location}">
 					<f:selectItem itemLabel="Home" itemValue="home" />
 					<f:selectItem itemLabel="Temple" itemValue="temple" />
 				</p:selectOneMenu>
 
-				<p:outputLabel for="schedule" value="Schedule"/>
-				<p:selectOneRadio id="schedule" >
+				<p:outputLabel value="Schedule"/>
+				<p:selectOneRadio value="#{productBean.schedule}" >
 					<f:selectItem itemLabel="Daily" itemValue="daily" />
 					<f:selectItem itemLabel="Weekly" itemValue="weekly" />
 					<f:selectItem itemLabel="Monthly" itemValue="monthly" />
 					<f:selectItem itemLabel="Yearly" itemValue="yearly" />
 				</p:selectOneRadio>
 
-				<p:outputLabel for="description" value="Description"/>
-				<p:inputTextarea id="description"/>
+				<p:outputLabel value="Description"/>
+				<p:inputTextarea value="#{productBean.description}"/>
 
 				<p:commandButton value="Save" update="panel" actionListener="#{productBean.addProduct}" icon="fa-close" />
 				<p:commandButton value="Cancel" update="panel" actionListener="#{productBean.cancel}" icon="fa-save" />

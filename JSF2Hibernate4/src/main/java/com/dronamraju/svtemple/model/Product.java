@@ -1,5 +1,7 @@
 package com.dronamraju.svtemple.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,6 +18,7 @@ public class Product {
 
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id")
     private Long id;
 
@@ -37,6 +40,14 @@ public class Product {
 
     public Product(Long id, String name, String description, Double price, String location, String schedule) {
         this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.location = location;
+        this.schedule = schedule;
+    }
+
+    public Product(String name, String description, Double price, String location, String schedule) {
         this.name = name;
         this.description = description;
         this.price = price;
