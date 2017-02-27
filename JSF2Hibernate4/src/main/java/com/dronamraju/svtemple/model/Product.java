@@ -6,16 +6,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by mdronamr on 2/23/17.
  */
 
 @Entity
-@Table(name="svt0722712121140.dbo.Temple_Services")
+@Table(name="svt0722712121140.dbo.Product")
 public class Product {
-
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -37,26 +36,31 @@ public class Product {
     @Column(name="schedule")
     private String schedule;
 
+    @Column(name="updated_date")
+    private Date updatedDate;
 
-    public Product(Long id, String name, String description, Double price, String location, String schedule) {
-        this.id = id;
+    @Column(name="created_date")
+    private Date createdDate;
+
+    @Column(name="updated_user")
+    private String updatedUser;
+
+    @Column(name="created_user")
+    private String createdUser;
+
+    public Product(String name, String description, Double price, String location, String schedule, Date updatedDate, Date createdDate, String updatedUser, String createdUser) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.location = location;
         this.schedule = schedule;
-    }
-
-    public Product(String name, String description, Double price, String location, String schedule) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.location = location;
-        this.schedule = schedule;
+        this.updatedDate = updatedDate;
+        this.createdDate = createdDate;
+        this.updatedUser = updatedUser;
+        this.createdUser = createdUser;
     }
 
     public Product() {
-
     }
 
     public Long getId() {
@@ -107,15 +111,50 @@ public class Product {
         this.schedule = schedule;
     }
 
-    @Override
+    public Date getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updateDdate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public String getUpdatedUser() {
+        return updatedUser;
+    }
+
+    public void setUpdatedUser(String updatedUser) {
+        this.updatedUser = updatedUser;
+    }
+
+    public String getCreatedUser() {
+        return createdUser;
+    }
+
+    public void setCreatedUser(String createdUser) {
+        this.createdUser = createdUser;
+    }
+
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", location='" + location +
-                ", schedule='" + schedule +
+                ", location='" + location + '\'' +
+                ", schedule='" + schedule + '\'' +
+                ", updatedDate=" + updatedDate +
+                ", createdDate=" + createdDate +
+                ", updatedUser='" + updatedUser + '\'' +
+                ", createdUser='" + createdUser + '\'' +
                 '}';
     }
 }
