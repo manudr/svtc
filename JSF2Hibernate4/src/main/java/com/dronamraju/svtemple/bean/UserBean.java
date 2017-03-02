@@ -2,6 +2,8 @@ package com.dronamraju.svtemple.bean;
 
 import com.dronamraju.svtemple.dao.UserDAO;
 import com.dronamraju.svtemple.model.User;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -9,6 +11,8 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean(name = "userBean", eager = true)
 @RequestScoped
 public class UserBean {
+
+	private static Log log = LogFactory.getLog(UserBean.class);
 
 	private String name;
 	private Integer age;
@@ -18,7 +22,7 @@ public class UserBean {
 		Integer userId= userDao.getId();
 		User user = new User(userId, name, age);
 		userDao.save(user);
-		System.out.println("User successfully saved.");
+		log.info("User successfully saved.");
 		return "output";
 	}
 

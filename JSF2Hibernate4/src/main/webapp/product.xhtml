@@ -21,26 +21,33 @@
 
 				<p:outputLabel value="Location"/>
 				<p:selectOneMenu value="#{productBean.location}">
-					<f:selectItem itemLabel="Home" itemValue="home" />
-					<f:selectItem itemLabel="Temple" itemValue="temple" />
+					<f:selectItem itemLabel="Home" itemValue="Home" />
+					<f:selectItem itemLabel="Temple" itemValue="Temple" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="Schedule"/>
 				<p:selectOneRadio value="#{productBean.schedule}" >
-					<f:selectItem itemLabel="Daily" itemValue="daily" />
-					<f:selectItem itemLabel="Weekly" itemValue="weekly" />
-					<f:selectItem itemLabel="Monthly" itemValue="monthly" />
-					<f:selectItem itemLabel="Yearly" itemValue="yearly" />
+					<f:selectItem itemLabel="Daily" itemValue="Daily" />
+					<f:selectItem itemLabel="Weekly" itemValue="Weekly" />
+					<f:selectItem itemLabel="Monthly" itemValue="Monthly" />
+					<f:selectItem itemLabel="Yearly" itemValue="Yearly" />
 				</p:selectOneRadio>
 
 				<p:outputLabel value="Description"/>
 				<p:inputTextarea value="#{productBean.description}"/>
 
-				<p:commandButton value="Save" update="panel" actionListener="#{productBean.addProduct}" icon="fa-close" />
-				<p:commandButton value="Cancel" update="panel" actionListener="#{productBean.cancel}" icon="fa-save" />
+				<p:outputLabel value="Type"/>
+				<p:selectOneRadio value="#{productBean.type}" >
+					<f:selectItem itemLabel="A La Carte" itemValue="A La Carte"/>
+					<f:selectItem itemLabel="Package" itemValue="Package"/>
+				</p:selectOneRadio>
 
 			</h:panelGrid>
 
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:commandButton value="Save" actionListener="#{productBean.addProduct}" icon="fa-save"/>
+				<p:commandButton value="Cancel" actionListener="#{productBean.cancel}" icon="fa fa-fw fa-remove"/>
+			</h:panelGrid>
 
 		</p:panel>
 

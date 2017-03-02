@@ -1,10 +1,14 @@
 package com.dronamraju.svtemple.dao;
 
 import com.dronamraju.svtemple.model.Product;
+import com.dronamraju.svtemple.util.EntityManagerUtil;
 import com.dronamraju.svtemple.util.HibernateUtil;
-import org.hibernate.Query;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import javax.persistence.Query;
 import org.hibernate.Session;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 /**
@@ -12,19 +16,36 @@ import java.util.List;
  */
 public class ProductDAO {
 
-    Session session = HibernateUtil.getSessionFactory().openSession();
+    private static Log log = LogFactory.getLog(ProductDAO.class);
 
-    public List<Product> getProducts() {
-        String hql = "select product from Product product";
-        Query query = session.createQuery(hql);
-        List<Product> products = query.list();
-        System.out.println("ProductDAO - Products: " + products);
+    public List getProducts() {
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        Query query = em.createQuery("from Product" );
+        List products = query.getResultList();
+        log.info("ProductDAO - Products: " + products);
         return products;
     }
 
     public void save(Product product){
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(product);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public void updateProduct(Product selectedProduct) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(selectedProduct);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public void removeProduct(Product selectedProduct) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(selectedProduct);
         session.getTransaction().commit();
         session.close();
     }

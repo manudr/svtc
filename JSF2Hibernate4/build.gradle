@@ -1,22 +1,24 @@
 apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
 apply plugin: 'eclipse'
 apply plugin: 'war'
 archivesBaseName = 'JSF2Hibernate4'
 version = '1' 
+
 repositories {
-    mavenCentral()
+    mavenLocal()
 }
+
 dependencies {
-    compile 'com.sun.faces:jsf-api:2.2.14'
-    compile 'com.sun.faces:jsf-impl:2.2.14'
-    compile 'org.primefaces:primefaces:6.0'
+        compile files('/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/hibernate-core-5.2.8.Final.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/hibernate-commons-annotations-5.0.1.Final.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/commons-logging-1.2.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/hibernate-validator-5.2.4.Final.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/mssql-jdbc-6.1.4.jre8-preview.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/jsf-api-2.2.14.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/jsf-impl-2.2.14.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/primefaces-6.0.jar')
 
-    compile  'org.hibernate:hibernate-core:5.2.8.Final'
-    compile  'org.hibernate:hibernate-validator:5.2.4.Final'
-    compile  'org.hibernate:hibernate-ehcache:5.2.8.Final'
-
-    compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
-    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.1.4.jre8-preview'
-
-} 
-
+}

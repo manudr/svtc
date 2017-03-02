@@ -21,8 +21,10 @@
       <root url="jar://$PROJECT_DIR$/JSF2Hibernate4/lib/jstl-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/JSF2Hibernate4/lib/javax.inject-1.jar!/" />
       <root url="jar://$PROJECT_DIR$/JSF2Hibernate4/lib/jboss-logging-3.1.3.GA.jar!/" />
+      <root url="file://$PROJECT_DIR$/JSF2Hibernate4/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/JSF2Hibernate4/lib" recursive="false" />
   </library>
 </component>

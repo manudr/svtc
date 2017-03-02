@@ -23,5 +23,13 @@ public class ProductService {
         return list;
     }
 
+    public void updateProduct(Product selectedProduct) {
+        productDAO.updateProduct(selectedProduct);
+    }
+
+    public void removeProduct(Product selectedProduct) {
+        productDAO.removeProduct(selectedProduct);
+    }
+
 
 }

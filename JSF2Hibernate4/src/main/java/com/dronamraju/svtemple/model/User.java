@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name="svt0722712121140.dbo.User_Table")
+@Table(name="User_Table")
 public class User implements Serializable {
 	@Id
 	@Column(name="id")
@@ -21,6 +21,9 @@ public class User implements Serializable {
 		this.id = id;
 		this.name = name;
 		this.age = age;
+	}
+
+	public User() {
 	}
 
 	public int getId() {

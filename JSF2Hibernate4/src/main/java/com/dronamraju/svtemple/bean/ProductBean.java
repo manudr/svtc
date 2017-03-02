@@ -14,6 +14,8 @@ import java.util.List;
 import java.io.Serializable;
 import javax.faces.bean.ManagedProperty;
 import javax.persistence.Column;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import com.dronamraju.svtemple.service.ProductService;
 
@@ -25,11 +27,14 @@ import com.dronamraju.svtemple.service.ProductService;
 @RequestScoped
 public class ProductBean implements Serializable {
 
+    private static Log log = LogFactory.getLog(ProductBean.class);
+
     private String name;
     private String description;
     private Double price;
     private String location;
     private String schedule;
+    private String type;
     private Timestamp updatedDate;
     private Timestamp createdDate;
     private String updatedUser;
@@ -39,6 +44,8 @@ public class ProductBean implements Serializable {
 
     private List<Product> filteredProducts;
 
+    private Product selectedProduct;
+
     public List<Product> getFilteredProducts() {
         return filteredProducts;
     }
@@ -47,9 +54,17 @@ public class ProductBean implements Serializable {
         this.filteredProducts = filteredProducts;
     }
 
+    public Product getSelectedProduct() {
+        return selectedProduct;
+    }
+
+    public void setSelectedProduct(Product selectedProduct) {
+        this.selectedProduct = selectedProduct;
+    }
+
     public List<Product> getProducts() {
         products = productService.getProducts();
-        System.out.println("ProductBean - Products: " + products);
+        log.info("ProductBean - Products: " + products);
         return products;
     }
 
@@ -58,22 +73,34 @@ public class ProductBean implements Serializable {
     }
 
     public String addProduct() {
-        System.out.println("addProduct()...");
+        log.info("addProduct()...");
         ProductDAO productDAO = new ProductDAO();
-        Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
-        System.out.println("product: " + product);
+        Product product = new Product(name, description, price, location, schedule, type, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        log.info("product: " + product);
         productDAO.save(product);
-        System.out.println("New Temple Service has been successfully saved.");
+        log.info("New Temple Service has been successfully saved.");
         getProducts();
         return "products.xhtml";
     }
 
-    public void removeProduct() {
+    public String updateProduct() {
+        log.info("updateProduct()...");
+        Product product = new Product(name, description, price, location, schedule, type, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        product.setId(selectedProduct.getId());
+        productService.updateProduct(product);
+        log.info("Temple Service has been successfully updated.");
+        getProducts();
+        return "products.xhtml";
+    }
 
+    public void deleteProduct() {
+        productService.removeProduct(selectedProduct);
+        products.remove(selectedProduct);
+        selectedProduct = null;
     }
 
     public void cancel() {
-
+        log.info("cancel()..");
     }
 
     @ManagedProperty("#{productService}")
@@ -121,6 +148,14 @@ public class ProductBean implements Serializable {
 
     public void setSchedule(String schedule) {
         this.schedule = schedule;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Timestamp getUpdatedDate() {

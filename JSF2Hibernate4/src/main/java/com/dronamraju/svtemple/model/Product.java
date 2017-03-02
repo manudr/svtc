@@ -1,11 +1,7 @@
 package com.dronamraju.svtemple.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -14,11 +10,19 @@ import java.util.Date;
 
 @Entity
 @Table(name="svt0722712121140.dbo.Product")
-public class Product {
+public class Product implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.TABLE, generator="course")
+    @TableGenerator(
+            name="course",
+            table="Product",
+            pkColumnName = "key",
+            valueColumnName = "next",
+            pkColumnValue="course",
+            allocationSize=30
+    )
     private Long id;
 
     @Column(name="name")
@@ -36,6 +40,9 @@ public class Product {
     @Column(name="schedule")
     private String schedule;
 
+    @Column(name="type")
+    private String type;
+
     @Column(name="updated_date")
     private Date updatedDate;
 
@@ -48,12 +55,13 @@ public class Product {
     @Column(name="created_user")
     private String createdUser;
 
-    public Product(String name, String description, Double price, String location, String schedule, Date updatedDate, Date createdDate, String updatedUser, String createdUser) {
+    public Product(String name, String description, Double price, String location, String schedule, String type, Date updatedDate, Date createdDate, String updatedUser, String createdUser) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.location = location;
         this.schedule = schedule;
+        this.type = type;
         this.updatedDate = updatedDate;
         this.createdDate = createdDate;
         this.updatedUser = updatedUser;
@@ -111,6 +119,14 @@ public class Product {
         this.schedule = schedule;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public Date getUpdatedDate() {
         return updatedDate;
     }
@@ -151,6 +167,7 @@ public class Product {
                 ", price=" + price +
                 ", location='" + location + '\'' +
                 ", schedule='" + schedule + '\'' +
+                ", type='" + type + '\'' +
                 ", updatedDate=" + updatedDate +
                 ", createdDate=" + createdDate +
                 ", updatedUser='" + updatedUser + '\'' +
