@@ -3,23 +3,23 @@ package com.dronamraju.svtemple.dao;
 import java.util.List;
 
 import com.dronamraju.svtemple.model.User;
-import com.dronamraju.svtemple.util.HibernateUtil;
-import org.hibernate.Query;
-import org.hibernate.Session;
+import com.dronamraju.svtemple.util.EntityManagerUtil;
+import javax.persistence.Query;
+
+import javax.persistence.EntityManager;
 
 
 public class UserDAO {
-	Session session = HibernateUtil.getSessionFactory().openSession();
+
+	EntityManager em = EntityManagerUtil.getEntityManager();
+
 	public void save(User user){
-		session.beginTransaction();
-		session.save(user);
-		session.getTransaction().commit();
-		session.close();
+		em.persist(user);
 	}
 	public Integer getId (){
 		String hql = "select max(user.id) from User user";
-		Query query = session.createQuery(hql);
-		List<Integer> results = query.list();
+		Query query = em.createQuery(hql);
+		List<Integer> results = query.getResultList();
 		Integer userId = 1;
         if (results.get(0) != null ) {
         	userId = results.get(0) + 1;

@@ -11,10 +11,18 @@
 
     <h:form id="productForm">
 
-        <p:panel id="panel" header="Add A New Temple Service">
+        <p:panel id="panel" header="Register For A Temple Service or Puja">
             <h:panelGrid columns="2" cellpadding="5">
-                <p:outputLabel value="Name"/>
+                <p:outputLabel value="First Name"/>
+                <p:inputText value="#{productBean.products.name}"/>
+
+                <p:outputLabel value="Last Name"/>
                 <p:inputText value="#{productBean.name}"/>
+
+
+
+
+
 
                 <p:outputLabel value="Price"/>
                 <p:inputText value="#{productBean.price}"/>

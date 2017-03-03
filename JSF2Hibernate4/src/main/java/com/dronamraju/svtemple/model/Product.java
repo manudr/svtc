@@ -14,15 +14,8 @@ public class Product implements Serializable {
 
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.TABLE, generator="course")
-    @TableGenerator(
-            name="course",
-            table="Product",
-            pkColumnName = "key",
-            valueColumnName = "next",
-            pkColumnValue="course",
-            allocationSize=30
-    )
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+
     private Long id;
 
     @Column(name="name")
