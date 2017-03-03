@@ -111,18 +111,20 @@ public class ProductBean implements Serializable {
         product.setUpdatedUser("Manu");
         productService.updateProduct(product);
         log.info("Temple Service has been successfully updated.");
-        getProducts();
+        products = productService.getProducts();
         return "products.xhtml";
     }
 
-    public void deleteProduct() {
+    public String deleteProduct() {
         productService.removeProduct(selectedProduct);
-        products.remove(selectedProduct);
+        products = productService.getProducts();
         selectedProduct = null;
+        return "products.xhtml";
     }
 
-    public void cancel() {
+    public String cancel() {
         log.info("cancel()..");
+        return "products.xhtml";
     }
 
     public void setProductService(ProductService productService) {
