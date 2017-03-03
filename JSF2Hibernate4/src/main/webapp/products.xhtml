@@ -54,10 +54,6 @@
                 <h:outputText value="#{product.description}" />
             </p:column>
 
-            <p:column headerText="Type" filterBy="#{product.type}" filterMatchMode="contains" sortBy="#{product.type}" priority="6">
-                <h:outputText value="#{product.type}" />
-            </p:column>
-
             <p:column headerText="Created Date" filterBy="#{product.createdDate}" filterMatchMode="contains" sortBy="#{product.createdDate}" priority="7">
                 <h:outputText value="#{product.createdDate}">
                     <f:convertDateTime pattern="MM/dd/yyyy"/>
@@ -100,9 +96,6 @@
 
                     <h:outputText value="Color:" />
                     <h:outputText value="#{productBean.selectedProduct.schedule}"/>
-
-                    <h:outputText value="Color:" />
-                    <h:outputText value="#{productBean.selectedProduct.type}"/>
 
                     <h:outputText value="Color:" />
                     <h:inputText value="#{productBean.selectedProduct.description}"/>

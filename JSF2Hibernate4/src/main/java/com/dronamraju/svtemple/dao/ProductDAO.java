@@ -28,12 +28,11 @@ public class ProductDAO {
                 "p.description, " +
                 "p.location, " +
                 "p.schedule, " +
+                "p.price, " +
                 "p.updated_date, " +
                 "p.created_date, " +
                 "p.updated_user, " +
-                "p.created_user, " +
-                "p.price, " +
-                "p.type" +
+                "p.created_user " +
                 " FROM Product p ", Product.class);
         List<Product> products = query.getResultList();
         log.info("ProductDAO - Products: " + products);

@@ -77,7 +77,7 @@ public class ProductBean implements Serializable {
     public String addProduct() {
         log.info("addProduct()...");
         ProductDAO productDAO = new ProductDAO();
-        Product product = new Product(name, description, price, location, schedule, type, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
         log.info("product: " + product);
         productDAO.save(product);
         log.info("New Temple Service has been successfully saved.");
@@ -87,7 +87,7 @@ public class ProductBean implements Serializable {
 
     public String updateProduct() {
         log.info("updateProduct()...");
-        Product product = new Product(name, description, price, location, schedule, type, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
         product.setId(selectedProduct.getId());
         productService.updateProduct(product);
         log.info("Temple Service has been successfully updated.");
