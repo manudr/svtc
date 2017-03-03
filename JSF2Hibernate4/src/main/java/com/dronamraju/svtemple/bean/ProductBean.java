@@ -2,18 +2,14 @@ package com.dronamraju.svtemple.bean;
 
 import com.dronamraju.svtemple.dao.ProductDAO;
 import com.dronamraju.svtemple.model.Product;
-
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.annotation.PostConstruct;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.io.Serializable;
-import javax.faces.bean.ManagedProperty;
-import javax.persistence.Column;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -23,8 +19,8 @@ import com.dronamraju.svtemple.service.ProductService;
  * Created by mdronamr on 2/23/17.
  */
 
-@ManagedBean(name = "productBean", eager = true)
-@RequestScoped
+@ManagedBean(name = "productBean")
+@ViewScoped
 public class ProductBean implements Serializable {
 
     private static Log log = LogFactory.getLog(ProductBean.class);
@@ -39,6 +35,9 @@ public class ProductBean implements Serializable {
     private Timestamp createdDate;
     private String updatedUser;
     private String createdUser;
+
+    @ManagedProperty("#{productService}")
+    private ProductService productService;
 
     private List<Product> products;
 
@@ -63,13 +62,16 @@ public class ProductBean implements Serializable {
     }
 
     public List<Product> getProducts() {
-        products = productService.getProducts();
-        log.info("ProductBean - Products: " + products);
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    @PostConstruct
+    public void init() {
+        products = productService.getProducts();
     }
 
     public String addProduct() {
@@ -102,9 +104,6 @@ public class ProductBean implements Serializable {
     public void cancel() {
         log.info("cancel()..");
     }
-
-    @ManagedProperty("#{productService}")
-    private ProductService productService;
 
     public void setProductService(ProductService productService) {
         this.productService = productService;

@@ -34,11 +34,8 @@ public class ProductDAO {
                 "p.created_user, " +
                 "p.price, " +
                 "p.type" +
-                " FROM Product p " +
-                "order by p.created_date desc", Product.class);
+                " FROM Product p ", Product.class);
         List<Product> products = query.getResultList();
-
-
         log.info("ProductDAO - Products: " + products);
         return products;
     }
