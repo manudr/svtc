@@ -103,6 +103,11 @@ public class ProductBean implements Serializable {
             hasValidationErrors = true;
         }
 
+        if (product.getSchedule() == null || product.getSchedule().trim().length() < 1) {
+            FacesUtil.getFacesContext().addMessage("schedule", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Schedule is required.", null));
+            hasValidationErrors = true;
+        }
+
         if (product.getLocation() == null || product.getLocation().trim().length() < 1) {
             FacesUtil.getFacesContext().addMessage("location", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Location is required.", null));
             hasValidationErrors = true;
@@ -110,11 +115,6 @@ public class ProductBean implements Serializable {
 
         if (product.getDescription() == null || product.getDescription().trim().length() < 1) {
             FacesUtil.getFacesContext().addMessage("description", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Description is required.", null));
-            hasValidationErrors = true;
-        }
-
-        if (product.getSchedule() == null || product.getSchedule().trim().length() < 1) {
-            FacesUtil.getFacesContext().addMessage("schedule", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Schedule is required.", null));
             hasValidationErrors = true;
         }
 
