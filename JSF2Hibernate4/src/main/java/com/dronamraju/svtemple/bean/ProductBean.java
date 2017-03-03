@@ -2,6 +2,8 @@ package com.dronamraju.svtemple.bean;
 
 import com.dronamraju.svtemple.dao.ProductDAO;
 import com.dronamraju.svtemple.model.Product;
+
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -11,8 +13,11 @@ import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 import java.io.Serializable;
+
+import com.dronamraju.svtemple.util.FacesUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import javax.faces.context.FacesContext;
 
 import com.dronamraju.svtemple.service.ProductService;
 
@@ -41,6 +46,8 @@ public class ProductBean implements Serializable {
 
     @ManagedProperty("#{productService}")
     private ProductService productService;
+
+    private FacesContext facesContext = FacesContext.getCurrentInstance();
 
     private List<Product> products;
 
@@ -86,8 +93,41 @@ public class ProductBean implements Serializable {
         product = new Product();
     }
 
-    public String addProduct() {
+    public void addProduct() {
         log.info("addProduct()...");
+
+        Boolean hasValidationErrors = false;
+
+        if (product.getName() == null || product.getName().trim().length() < 1) {
+            FacesUtil.getFacesContext().addMessage("name", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Name is required.", null));
+            hasValidationErrors = true;
+        }
+
+        if (product.getLocation() == null || product.getLocation().trim().length() < 1) {
+            FacesUtil.getFacesContext().addMessage("location", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Location is required.", null));
+            hasValidationErrors = true;
+        }
+
+        if (product.getDescription() == null || product.getDescription().trim().length() < 1) {
+            FacesUtil.getFacesContext().addMessage("description", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Description is required.", null));
+            hasValidationErrors = true;
+        }
+
+        if (product.getSchedule() == null || product.getSchedule().trim().length() < 1) {
+            FacesUtil.getFacesContext().addMessage("schedule", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Schedule is required.", null));
+            hasValidationErrors = true;
+        }
+
+        if (product.getPrice() == null || product.getPrice() < 0.00) {
+            FacesUtil.getFacesContext().addMessage("price", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Price is required.", null));
+            hasValidationErrors = true;
+        }
+
+        if (hasValidationErrors) {
+            log.info("Validation Failed...");
+            return;
+        }
+
         ProductDAO productDAO = new ProductDAO();
         //Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
         product.setCreatedDate(Calendar.getInstance().getTime());
@@ -98,10 +138,10 @@ public class ProductBean implements Serializable {
         productDAO.save(product);
         log.info("New Temple Service has been successfully saved.");
         getProducts();
-        return "products.xhtml";
+        FacesUtil.redirect("products.xhtml");
     }
 
-    public String updateProduct() {
+    public void updateProduct() {
         log.info("updateProduct()...");
         //Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
         product.setId(selectedProduct.getId());
@@ -112,19 +152,19 @@ public class ProductBean implements Serializable {
         productService.updateProduct(product);
         log.info("Temple Service has been successfully updated.");
         products = productService.getProducts();
-        return "products.xhtml";
+        FacesUtil.redirect("products.xhtml");
     }
 
-    public String deleteProduct() {
+    public void deleteProduct() {
         productService.removeProduct(selectedProduct);
         products = productService.getProducts();
         selectedProduct = null;
-        return "products.xhtml";
+        FacesUtil.redirect("products.xhtml");
     }
 
-    public String cancel() {
+    public void cancel() {
         log.info("cancel()..");
-        return "products.xhtml";
+        FacesUtil.redirect("products.xhtml");
     }
 
     public void setProductService(ProductService productService) {

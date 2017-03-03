@@ -12,30 +12,35 @@
 	<h:form id="productForm">
 
 		<p:panel id="panel" header="Add A New Temple Service">
-			<h:panelGrid columns="2" cellpadding="5">
-				<p:outputLabel value="Name"/>
-				<p:inputText value="#{productBean.product.name}"/>
+			<p:messages autoUpdate="true"/>
+			<h:panelGrid id="grid" columns="3" cellpadding="5">
+				<p:outputLabel value="Name" style="font-weight:bold"/>
+				<p:inputText id="name" placeholder="Puja or Service Name" value="#{productBean.product.name}" label="Name"/>
+				<p:message for="name" />
 
-				<p:outputLabel value="Price"/>
-				<p:inputText value="#{productBean.product.price}"/>
+				<p:outputLabel value="Price" style="font-weight:bold"/>
+				<p:inputText id="price" placeholder="Price" value="#{productBean.product.price}" label="Price"/>
+				<p:message for="price" />
 
-				<p:outputLabel value="Location"/>
-				<p:selectOneMenu value="#{productBean.product.location}">
+				<p:outputLabel value="Location" style="font-weight:bold"/>
+				<p:selectOneMenu id="location" value="#{productBean.product.location}" label="Location">
 					<f:selectItem itemLabel="Home" itemValue="Home" />
 					<f:selectItem itemLabel="Temple" itemValue="Temple" />
 				</p:selectOneMenu>
+				<p:message for="location" />
 
-				<p:outputLabel value="Schedule"/>
-				<p:selectOneRadio value="#{productBean.product.schedule}" >
+				<p:outputLabel value="Schedule" style="font-weight:bold"/>
+				<p:selectOneRadio id="schedule" value="#{productBean.product.schedule}" label="Schedule">
 					<f:selectItem itemLabel="Daily" itemValue="Daily" />
 					<f:selectItem itemLabel="Weekly" itemValue="Weekly" />
 					<f:selectItem itemLabel="Monthly" itemValue="Monthly" />
 					<f:selectItem itemLabel="Yearly" itemValue="Yearly" />
 				</p:selectOneRadio>
+				<p:message for="schedule" />
 
-				<p:outputLabel value="Description"/>
-				<p:inputTextarea value="#{productBean.product.description}"/>
-
+				<p:outputLabel value="Description" style="font-weight:bold"/>
+				<p:inputTextarea id="description" placeholder="Puja or Service Description" value="#{productBean.product.description}" label="Description"/>
+				<p:message for="description" />
 			</h:panelGrid>
 
 			<h:panelGrid columns="2" cellpadding="5">
