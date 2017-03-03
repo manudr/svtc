@@ -19,7 +19,7 @@ public class Product implements Serializable {
     private Long id;
 
     @Column(name="name")
-    private String name;
+    public String name;
 
     @Column(name="description")
     private String description;
@@ -112,7 +112,7 @@ public class Product implements Serializable {
         return updatedDate;
     }
 
-    public void setUpdatedDate(Date updateDdate) {
+    public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
     }
 

@@ -4,6 +4,7 @@ import com.dronamraju.svtemple.dao.ProductDAO;
 import com.dronamraju.svtemple.model.Product;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.annotation.PostConstruct;
 import java.sql.Timestamp;
@@ -20,21 +21,23 @@ import com.dronamraju.svtemple.service.ProductService;
  */
 
 @ManagedBean(name = "productBean")
-@ViewScoped
+@RequestScoped
 public class ProductBean implements Serializable {
 
     private static Log log = LogFactory.getLog(ProductBean.class);
 
-    private String name;
-    private String description;
-    private Double price;
-    private String location;
-    private String schedule;
-    private String type;
-    private Timestamp updatedDate;
-    private Timestamp createdDate;
-    private String updatedUser;
-    private String createdUser;
+    public Product product;
+
+//    private String name;
+//    private String description;
+//    private Double price;
+//    private String location;
+//    private String schedule;
+//    private String type;
+//    private Timestamp updatedDate;
+//    private Timestamp createdDate;
+//    private String updatedUser;
+//    private String createdUser;
 
     @ManagedProperty("#{productService}")
     private ProductService productService;
@@ -69,15 +72,28 @@ public class ProductBean implements Serializable {
         this.products = products;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     @PostConstruct
     public void init() {
         products = productService.getProducts();
+        product = new Product();
     }
 
     public String addProduct() {
         log.info("addProduct()...");
         ProductDAO productDAO = new ProductDAO();
-        Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        //Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        product.setCreatedDate(Calendar.getInstance().getTime());
+        product.setUpdatedDate(Calendar.getInstance().getTime());
+        product.setCreatedUser("Manu");
+        product.setUpdatedUser("Manu");
         log.info("product: " + product);
         productDAO.save(product);
         log.info("New Temple Service has been successfully saved.");
@@ -87,8 +103,12 @@ public class ProductBean implements Serializable {
 
     public String updateProduct() {
         log.info("updateProduct()...");
-        Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        //Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
         product.setId(selectedProduct.getId());
+        product.setCreatedDate(Calendar.getInstance().getTime());
+        product.setUpdatedDate(Calendar.getInstance().getTime());
+        product.setCreatedUser("Manu");
+        product.setUpdatedUser("Manu");
         productService.updateProduct(product);
         log.info("Temple Service has been successfully updated.");
         getProducts();
@@ -109,6 +129,7 @@ public class ProductBean implements Serializable {
         this.productService = productService;
     }
 
+    /*
     public String getName() {
         return name;
     }
@@ -188,6 +209,8 @@ public class ProductBean implements Serializable {
     public void setCreatedUser(String createdUser) {
         this.createdUser = createdUser;
     }
+
+    */
 
     public ProductService getProductService() {
         return productService;
