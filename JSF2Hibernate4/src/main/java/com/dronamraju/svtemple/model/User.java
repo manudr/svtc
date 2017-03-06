@@ -1,17 +1,16 @@
 package com.dronamraju.svtemple.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name="User_Table")
 public class User implements Serializable {
 	@Id
 	@Column(name="id")
-    private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
 	@Column(name="first_name")
 	private String firstName;
@@ -25,7 +24,7 @@ public class User implements Serializable {
 	@Column(name="phone_number")
 	private String phoneNumber;
 
-	@Column(name="Street_address")
+	@Column(name="street_address")
 	private String streetAddress;
 
 	@Column(name="city")
@@ -38,7 +37,7 @@ public class User implements Serializable {
 	private String zip;
 
 	@Column(name="password")
-	private Integer password;
+	private String password;
 
 	@Column(name="family_gothram")
 	private String familyGothram;
@@ -77,7 +76,7 @@ public class User implements Serializable {
 	private String child2Padam;
 
 	@Column(name="child3_name")
-	private String child3eName;
+	private String child3Name;
 
 	@Column(name="child3_nakshathram")
 	private String child3Nakshathram;
@@ -94,12 +93,29 @@ public class User implements Serializable {
 	@Column(name="child4_padam")
 	private String child4Padam;
 
+	@Column(name="is_admin")
+	private String isAdmin;
 
-	public int getId() {
+	@Column(name="updated_date")
+	private Date updatedDate;
+
+	@Column(name="created_date")
+	private Date createdDate;
+
+	@Column(name="updated_user")
+	private String updatedUser;
+
+	@Column(name="created_user")
+	private String createdUser;
+
+	public User() {
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -167,11 +183,11 @@ public class User implements Serializable {
 		this.zip = zip;
 	}
 
-	public Integer getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(Integer password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -271,12 +287,12 @@ public class User implements Serializable {
 		this.child2Padam = child2Padam;
 	}
 
-	public String getChild3eName() {
-		return child3eName;
+	public String getChild3Name() {
+		return child3Name;
 	}
 
-	public void setChild3eName(String child3eName) {
-		this.child3eName = child3eName;
+	public void setChild3Name(String child3Name) {
+		this.child3Name = child3Name;
 	}
 
 	public String getChild3Nakshathram() {
@@ -319,38 +335,44 @@ public class User implements Serializable {
 		this.child4Padam = child4Padam;
 	}
 
-	public User() {
+	public String getIsAdmin() {
+		return isAdmin;
 	}
 
-	public User(int id, String firstName, String lastName, String email, String phoneNumber, String streetAddress, String city, String state, String zip, Integer password, String familyGothram, String primaryNakshathram, String primaryPadam, String spouseName, String spouseNakshathram, String spousePadam, String child1Name, String child1Nakshathram, String child1Padam, String child2Name, String child2Nakshathram, String child2Padam, String child3eName, String child3Nakshathram, String child3Padam, String child4Name, String child4Nakshathram, String child4Padam) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
-		this.streetAddress = streetAddress;
-		this.city = city;
-		this.state = state;
-		this.zip = zip;
-		this.password = password;
-		this.familyGothram = familyGothram;
-		this.primaryNakshathram = primaryNakshathram;
-		this.primaryPadam = primaryPadam;
-		this.spouseName = spouseName;
-		this.spouseNakshathram = spouseNakshathram;
-		this.spousePadam = spousePadam;
-		this.child1Name = child1Name;
-		this.child1Nakshathram = child1Nakshathram;
-		this.child1Padam = child1Padam;
-		this.child2Name = child2Name;
-		this.child2Nakshathram = child2Nakshathram;
-		this.child2Padam = child2Padam;
-		this.child3eName = child3eName;
-		this.child3Nakshathram = child3Nakshathram;
-		this.child3Padam = child3Padam;
-		this.child4Name = child4Name;
-		this.child4Nakshathram = child4Nakshathram;
-		this.child4Padam = child4Padam;
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedUser() {
+		return updatedUser;
+	}
+
+	public void setUpdatedUser(String updatedUser) {
+		this.updatedUser = updatedUser;
+	}
+
+	public String getCreatedUser() {
+		return createdUser;
+	}
+
+	public void setCreatedUser(String createdUser) {
+		this.createdUser = createdUser;
 	}
 
 	@Override
@@ -365,7 +387,7 @@ public class User implements Serializable {
 				", city='" + city + '\'' +
 				", state='" + state + '\'' +
 				", zip='" + zip + '\'' +
-				", password=" + password +
+				", password='" + password + '\'' +
 				", familyGothram='" + familyGothram + '\'' +
 				", primaryNakshathram='" + primaryNakshathram + '\'' +
 				", primaryPadam='" + primaryPadam + '\'' +
@@ -378,12 +400,17 @@ public class User implements Serializable {
 				", child2Name='" + child2Name + '\'' +
 				", child2Nakshathram='" + child2Nakshathram + '\'' +
 				", child2Padam='" + child2Padam + '\'' +
-				", child3eName='" + child3eName + '\'' +
+				", child3Name='" + child3Name + '\'' +
 				", child3Nakshathram='" + child3Nakshathram + '\'' +
 				", child3Padam='" + child3Padam + '\'' +
 				", child4Name='" + child4Name + '\'' +
 				", child4Nakshathram='" + child4Nakshathram + '\'' +
 				", child4Padam='" + child4Padam + '\'' +
+				", isAdmin='" + isAdmin + '\'' +
+				", updatedDate=" + updatedDate +
+				", createdDate=" + createdDate +
+				", updatedUser='" + updatedUser + '\'' +
+				", createdUser='" + createdUser + '\'' +
 				'}';
 	}
 }

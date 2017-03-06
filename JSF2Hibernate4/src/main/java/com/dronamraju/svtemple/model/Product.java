@@ -45,18 +45,6 @@ public class Product implements Serializable {
     @Column(name="created_user")
     private String createdUser;
 
-    public Product(String name, String description, Double price, String location, String schedule, Date updatedDate, Date createdDate, String updatedUser, String createdUser) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.location = location;
-        this.schedule = schedule;
-        this.updatedDate = updatedDate;
-        this.createdDate = createdDate;
-        this.updatedUser = updatedUser;
-        this.createdUser = createdUser;
-    }
-
     public Product() {
     }
 

@@ -33,17 +33,6 @@ public class ProductBean implements Serializable {
 
     public Product product;
 
-//    private String name;
-//    private String description;
-//    private Double price;
-//    private String location;
-//    private String schedule;
-//    private String type;
-//    private Timestamp updatedDate;
-//    private Timestamp createdDate;
-//    private String updatedUser;
-//    private String createdUser;
-
     @ManagedProperty("#{productService}")
     private ProductService productService;
 
@@ -54,6 +43,8 @@ public class ProductBean implements Serializable {
     private List<Product> filteredProducts;
 
     private Product selectedProduct;
+
+    private List<Product> selecetdProducts;
 
     public List<Product> getFilteredProducts() {
         return filteredProducts;
@@ -90,7 +81,7 @@ public class ProductBean implements Serializable {
     @PostConstruct
     public void init() {
         products = productService.getProducts();
-        product = new Product();
+        product = new Product(); //This is required for: Target Unreachable, 'null' returned null
     }
 
     public void addProduct() {
@@ -137,13 +128,14 @@ public class ProductBean implements Serializable {
         log.info("product: " + product);
         productDAO.save(product);
         log.info("New Temple Service has been successfully saved.");
-        getProducts();
+        products = productService.getProducts();
         FacesUtil.redirect("products.xhtml");
     }
 
-    public void updateProduct() {
+    public String updateProduct() {
         log.info("updateProduct()...");
-        //Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
+        log.info("Product: " + product);
+        log.info("selectedProduct: " + selectedProduct);
         product.setId(selectedProduct.getId());
         product.setCreatedDate(Calendar.getInstance().getTime());
         product.setUpdatedDate(Calendar.getInstance().getTime());
@@ -153,108 +145,36 @@ public class ProductBean implements Serializable {
         log.info("Temple Service has been successfully updated.");
         products = productService.getProducts();
         FacesUtil.redirect("products.xhtml");
+        return null;
     }
 
-    public void deleteProduct() {
+    public String deleteProduct() {
         productService.removeProduct(selectedProduct);
         products = productService.getProducts();
         selectedProduct = null;
         FacesUtil.redirect("products.xhtml");
+        return null;
     }
 
-    public void cancel() {
+    public String cancel() {
         log.info("cancel()..");
         FacesUtil.redirect("products.xhtml");
+        return null;
     }
 
     public void setProductService(ProductService productService) {
         this.productService = productService;
     }
 
-    /*
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(String schedule) {
-        this.schedule = schedule;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Timestamp getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(Timestamp updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public Timestamp getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getUpdatedUser() {
-        return updatedUser;
-    }
-
-    public void setUpdatedUser(String updatedUser) {
-        this.updatedUser = updatedUser;
-    }
-
-    public String getCreatedUser() {
-        return createdUser;
-    }
-
-    public void setCreatedUser(String createdUser) {
-        this.createdUser = createdUser;
-    }
-
-    */
-
     public ProductService getProductService() {
         return productService;
+    }
+
+    public List<Product> getSelecetdProducts() {
+        return selecetdProducts;
+    }
+
+    public void setSelecetdProducts(List<Product> selecetdProducts) {
+        this.selecetdProducts = selecetdProducts;
     }
 }

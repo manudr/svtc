@@ -9,6 +9,7 @@
 
         <class>com.dronamraju.svtemple.model.User</class>
         <class>com.dronamraju.svtemple.model.Product</class>
+        <class>com.dronamraju.svtemple.model.PujaRegistration</class>
 
         <properties>
             <!-- Configuring JDBC properties -->
@@ -18,7 +19,7 @@
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 
             <!-- Hibernate properties -->
-            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="false" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
 

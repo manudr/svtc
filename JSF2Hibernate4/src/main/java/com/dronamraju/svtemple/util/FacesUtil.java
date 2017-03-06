@@ -4,7 +4,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.faces.application.ConfigurableNavigationHandler;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by mdronamr on 3/3/17.
@@ -29,6 +31,22 @@ public class FacesUtil {
 
     public static FacesContext getFacesContext() {
         return FacesContext.getCurrentInstance();
+    }
+
+    public static HttpServletRequest getRequest() {
+        log.debug("getRequest(): Entry.");
+
+        if (getExternalContext() != null) {
+            return (HttpServletRequest) getExternalContext().getRequest();
+        }
+        return null;
+    }
+
+    public static ExternalContext getExternalContext() {
+        if (FacesContext.getCurrentInstance() != null) {
+            return FacesContext.getCurrentInstance().getExternalContext();
+        }
+        return null;
     }
 
 }
