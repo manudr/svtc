@@ -29,6 +29,9 @@ public class PujaRegistration implements Serializable {
     @Column(name="status")
     private String status;
 
+    @Column(name="date_time")
+    private Date dateAndTime;
+
     public PujaRegistration() {
     }
 
@@ -72,6 +75,14 @@ public class PujaRegistration implements Serializable {
         this.status = status;
     }
 
+    public Date getDateAndTime() {
+        return dateAndTime;
+    }
+
+    public void setDateAndTime(Date dateAndTime) {
+        this.dateAndTime = dateAndTime;
+    }
+
     @Override
     public String toString() {
         return "PujaRegistration{" +
@@ -80,6 +91,7 @@ public class PujaRegistration implements Serializable {
                 ", productId=" + productId +
                 ", notes='" + notes + '\'' +
                 ", status='" + status + '\'' +
+                ", dateAndTime='" + dateAndTime + '\'' +
                 '}';
     }
 }

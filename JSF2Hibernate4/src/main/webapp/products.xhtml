@@ -89,8 +89,6 @@
         <p:dialog header="Product Info" widgetVar="productDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
             <p:outputPanel id="productDetail" style="text-align:center; width: 50%">
                 <p:panelGrid  columns="2" rendered="#{not empty productBean.selectedProduct}" columnClasses="label,value">
-                    <h:outputText value="Id:" />
-                    <h:outputText value="#{productBean.selectedProduct.id}" />
 
                     <h:outputText value="Name" />
                     <h:inputText value="#{productBean.selectedProduct.name}" />

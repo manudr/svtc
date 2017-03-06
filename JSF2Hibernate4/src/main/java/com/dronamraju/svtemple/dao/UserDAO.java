@@ -60,6 +60,47 @@ public class UserDAO {
 		return users;
 	}
 
+	public List<User> getServicesByEmail() {
+		Query query = em.createNativeQuery("SELECT " +
+				"u.id, " +
+				"u.first_name, " +
+				"u.last_name, " +
+				"u.email, " +
+				"u.phone_number, " +
+				"u.street_address, " +
+				"u.city, " +
+				"u.state, " +
+				"u.zip, " +
+				"u.password, " +
+				"u.family_gothram, " +
+				"u.primary_nakshathram, " +
+				"u.primary_padam, " +
+				"u.spouse_name, " +
+				"u.spouse_nakshathram, " +
+				"u.spouse_padam, " +
+				"u.child1_name, " +
+				"u.child1_nakshathram, " +
+				"u.child1_padam, " +
+				"u.child2_name, " +
+				"u.child2_nakshathram, " +
+				"u.child2_padam, " +
+				"u.child3_name, " +
+				"u.child3_nakshathram, " +
+				"u.child3_padam, " +
+				"u.child4_name, " +
+				"u.child4_nakshathram, " +
+				"u.child4_padam, " +
+				"u.is_admin, " +
+				"u.updated_date, " +
+				"u.created_date, " +
+				"u.updated_user, " +
+				"u.created_user " +
+				" FROM User_Table u where u.email = ?", User.class);
+		List<User> users = query.getResultList();
+		log.info("UserDAO - users: " + users);
+		return users;
+	}
+
 	public Integer getId (){
 		String hql = "select max(user.id) from User user";
 		Query query = em.createQuery(hql);

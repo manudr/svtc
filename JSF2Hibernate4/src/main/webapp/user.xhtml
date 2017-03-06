@@ -132,15 +132,8 @@
 			</div>
 
 			<div class="ui-g">
-				<div class="ui-g-4">
-					<p:panel header="Additional Notes" style="height:300px">
-						<h:panelGrid columns="2" cellpadding="2">
-							<p:inputTextarea id="notes" maxlength="500" cols="50" rows="10" placeholder="Any Notes" value="#{userBean.pujaRegistration.notes}" label="Notes"/>
-							<p:message for="notes" />
-						</h:panelGrid>
-					</p:panel>
-				</div>
-				<div class="ui-g-8">
+
+				<div class="ui-g-5">
 					<p:panel header="Selecet Pujas/Services" style="height:300px">
 						<h:panelGrid columns="2" cellpadding="2">
 							<p:scrollPanel mode="native" style="height:200px">
@@ -152,6 +145,26 @@
 						</h:panelGrid>
 					</p:panel>
 				</div>
+
+				<div class="ui-g-4">
+					<p:panel header="Date and Time" style="height:300px">
+						<h:panelGrid columns="3" cellpadding="2">
+							<p:outputLabel value="Date And Time"/>
+							<p:calendar id="dateAndTime" value="#{userBean.pujaRegistration.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" />
+							<p:message for="dateAndTime" />
+						</h:panelGrid>
+					</p:panel>
+				</div>
+
+				<div class="ui-g-3">
+					<p:panel header="Additional Notes" style="height:300px">
+						<h:panelGrid columns="2" cellpadding="2">
+							<p:inputTextarea id="notes" maxlength="500" cols="30" rows="10" placeholder="Any Notes" value="#{userBean.pujaRegistration.notes}" label="Notes"/>
+							<p:message for="notes" />
+						</h:panelGrid>
+					</p:panel>
+				</div>
+
 			</div>
 
 			<h:panelGrid columns="2" cellpadding="2">

@@ -35,13 +35,15 @@ public class UserBean implements Serializable {
 
 	private User user;
 
+	private User selectedUser;
+
 	private PujaRegistration pujaRegistration;
 
 	private List<User> users;
 
 	@PostConstruct
 	public void init() {
-		//users = userService.getUsers();
+		users = userService.getUsers();
 		user = new User(); //This is required for: Target Unreachable, 'null' returned null
 		pujaRegistration = new PujaRegistration(); //This is required for: Target Unreachable, 'null' returned null
 	}
@@ -60,6 +62,14 @@ public class UserBean implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public User getSelectedUser() {
+		return selectedUser;
+	}
+
+	public void setSelectedUser(User selectedUser) {
+		this.selectedUser = selectedUser;
 	}
 
 	public UserService getUserService() {
@@ -158,6 +168,7 @@ public class UserBean implements Serializable {
 			pr.setUserId(user.getId());
 			pr.setStatus("Scheduled");
 			pr.setNotes(pujaRegistration.getNotes());
+			pr.setDateAndTime(pujaRegistration.getDateAndTime());
 			log.info("pr: " + pr);
 			userService.savePujaRegistration(pr);
 		}
@@ -167,5 +178,10 @@ public class UserBean implements Serializable {
 	public void cancel() {
 		log.info("cancel()..");
 		FacesUtil.redirect("users.xhtml");
+	}
+
+	public String updateUser() {
+		log.info("updateUser()...");
+		return null;
 	}
 }
