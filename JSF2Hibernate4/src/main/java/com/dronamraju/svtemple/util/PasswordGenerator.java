@@ -9,7 +9,7 @@ import java.math.BigInteger;
 /**
  * Created by mdronamr on 3/6/17.
  */
-public final  class PasswordGenerator {
+public final class PasswordGenerator {
     private static Log log = LogFactory.getLog(PasswordGenerator.class);
     private SecureRandom random = new SecureRandom();
 

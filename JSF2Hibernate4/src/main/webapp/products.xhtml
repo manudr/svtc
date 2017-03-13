@@ -10,7 +10,9 @@
 <h:body>
 
     <h:form>
-
+        <p:commandLink action="product.xhtml">
+            <h3>Click here to add a new puja or a new temple service</h3>
+        </p:commandLink>
         <p:dataTable id="products"
                      var="product"
                      rowKey="#{product.id}"
@@ -18,7 +20,6 @@
                      selectionMode="single"
                      value="#{productBean.products}"
                      reflow="true"
-                     tableStyleClass="ui-table-columntoggle"
                      rows="10"
                      paginator="true"
                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
@@ -26,12 +27,7 @@
                      rowsPerPageTemplate="25,100,500">
 
             <f:facet name="header">
-                <h3>
-                    List of all Temple Services and Pujas at Home or Temple. RightClick to View Options
-                </h3>
-                <p:commandLink action="product.xhtml">
-                    <h3>Click here to add a new puja or a new temple service</h3>
-                </p:commandLink>
+                List of all Temple Services and Pujas at Home or Temple. Right Click to View Options
             </f:facet>
 
             <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" priority="1">
@@ -87,7 +83,7 @@
         </p:contextMenu>
 
         <p:dialog header="Product Info" widgetVar="productDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-            <p:outputPanel id="productDetail" style="text-align:center; width: 50%">
+            <p:outputPanel id="productDetail">
                 <p:panelGrid  columns="2" rendered="#{not empty productBean.selectedProduct}" columnClasses="label,value">
 
                     <h:outputText value="Name" />

@@ -4,10 +4,8 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
 import com.dronamraju.svtemple.dao.UserDAO;
-import com.dronamraju.svtemple.model.PujaRegistration;
-import com.dronamraju.svtemple.model.User;
-
-import java.util.*;
+import com.dronamraju.svtemple.model.Category;
+import com.dronamraju.svtemple.model.Stock;
 
 /**
  * Created by mdronamr on 2/24/17.
@@ -18,28 +16,12 @@ import java.util.*;
 public class UserService {
     UserDAO userDAO = new UserDAO();
 
-    public List<User> getUsers() {
-        List<User> list = userDAO.getUsers();
-        return list;
+    public void saveCat(Category cat) {
+        userDAO.saveCat(cat);
     }
 
-    public void saveUser(User user) {
-        userDAO.saveUser(user);
+    public void saveStock(Stock stock) {
+        userDAO.saveStock(stock);
     }
 
-    public void savePujaRegistration(PujaRegistration pujaRegistration) {
-        userDAO.savePujaRegistration(pujaRegistration);
-    }
-
-    public void updateUser(User selectedUser) {
-        userDAO.updateUser(selectedUser);
-    }
-
-    public void removeUser(User selectedUser) {
-        userDAO.removeUser(selectedUser);
-    }
-
-    public User findUser(String email) {
-        return userDAO.findUser(email);
-    }
 }

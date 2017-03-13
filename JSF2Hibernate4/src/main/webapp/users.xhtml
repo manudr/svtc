@@ -26,31 +26,26 @@
                      rowsPerPageTemplate="25,100,500">
 
             <f:facet name="header">
-                <h3>
-                    List of all Temple Services and Pujas at Home or Temple. RightClick to View Options
-                </h3>
-                <p:commandLink action="user.xhtml">
-                    <h3>Click here to add a new puja or a new temple service</h3>
-                </p:commandLink>
+                List of all Temple Services and Pujas at Home or Temple. RightClick to View Options
             </f:facet>
 
-            <p:column headerText="Name" filterBy="#{user.firstName} #{user.firstName}" filterMatchMode="contains" sortBy="#{user.firstName} #{user.firstName}" priority="1">
-                <h:outputText value="#{user.firstName} #{user.firstName}" />
+            <p:column headerText="Name" filterBy="#{user.firstName} #{user.lasttName}" filterMatchMode="contains" sortBy="#{user.firstName} #{user.lastName}" priority="1">
+                <h:outputText value="#{user.firstName} #{user.lastName}" />
             </p:column>
 
-            <p:column headerText="Location" filterBy="#{user.email}" filterMatchMode="contains" sortBy="#{user.email}" priority="2">
+            <p:column headerText="Email" filterBy="#{user.email}" filterMatchMode="contains" sortBy="#{user.email}" priority="2">
                 <h:outputText value="#{user.email}" />
             </p:column>
 
-            <p:column headerText="Schedule" filterBy="#{user.phoneNumber}" filterMatchMode="contains" sortBy="#{user.phoneNumber}" priority="3">
+            <p:column headerText="Phone Number" filterBy="#{user.phoneNumber}" filterMatchMode="contains" sortBy="#{user.phoneNumber}" priority="3">
                 <h:outputText value="#{user.phoneNumber}" />
             </p:column>
 
-            <p:column headerText="Price" filterBy="#{user.familyGothram}" filterMatchMode="contains" sortBy="#{user.familyGothram}" priority="4">
+            <p:column headerText="Family Gothram" filterBy="#{user.familyGothram}" filterMatchMode="contains" sortBy="#{user.familyGothram}" priority="4">
                 <h:outputText value="#{user.familyGothram}"/>
             </p:column>
 
-            <p:column headerText="Description" filterBy="#{user.primaryNakshathram}" filterMatchMode="contains" sortBy="#{user.primaryNakshathram}" priority="5">
+            <p:column headerText="Primary Nakshathram" filterBy="#{user.primaryNakshathram}" filterMatchMode="contains" sortBy="#{user.primaryNakshathram}" priority="5">
                 <h:outputText value="#{user.primaryNakshathram}" />
             </p:column>
 
