@@ -21,8 +21,13 @@ import javax.persistence.Transient;
 public class UserProduct implements java.io.Serializable {
 
 	private UserProductId pk = new UserProductId();
+	private String notes;
+	private String status;
+	private Date dateAndTime;
+	private Date updatedDate;
 	private Date createdDate;
-	private String createdBy;
+	private String updatedUser;
+	private String createdUser;
 
 	public UserProduct() {
 	}
@@ -64,13 +69,58 @@ public class UserProduct implements java.io.Serializable {
 		this.createdDate = createdDate;
 	}
 
-	@Column(name = "CREATED_BY", nullable = false, length = 10)
-	public String getCreatedBy() {
-		return this.createdBy;
+	@Column(name="notes")
+	public String getNotes() {
+		return notes;
 	}
 
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	@Column(name="status")
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Column(name="date_time")
+	public Date getDateAndTime() {
+		return dateAndTime;
+	}
+
+	public void setDateAndTime(Date dateAndTime) {
+		this.dateAndTime = dateAndTime;
+	}
+
+	@Column(name="updated_date")
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	@Column(name="updated_user")
+	public String getUpdatedUser() {
+		return updatedUser;
+	}
+
+	public void setUpdatedUser(String updatedUser) {
+		this.updatedUser = updatedUser;
+	}
+
+	@Column(name="created_user")
+	public String getCreatedUser() {
+		return createdUser;
+	}
+
+	public void setCreatedUser(String createdUser) {
+		this.createdUser = createdUser;
 	}
 
 	public boolean equals(Object o) {
@@ -90,5 +140,19 @@ public class UserProduct implements java.io.Serializable {
 
 	public int hashCode() {
 		return (getPk() != null ? getPk().hashCode() : 0);
+	}
+
+	@Override
+	public String toString() {
+		return "UserProduct{" +
+				"pk=" + pk +
+				", notes='" + notes + '\'' +
+				", status='" + status + '\'' +
+				", dateAndTime=" + dateAndTime +
+				", updatedDate=" + updatedDate +
+				", createdDate=" + createdDate +
+				", updatedUser='" + updatedUser + '\'' +
+				", createdUser='" + createdUser + '\'' +
+				'}';
 	}
 }

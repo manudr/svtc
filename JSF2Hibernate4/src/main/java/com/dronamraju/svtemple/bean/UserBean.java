@@ -28,9 +28,9 @@ public class UserBean implements Serializable {
 	@ManagedProperty("#{productService}")
 	private ProductService productService;
 
-	private User user;
+	//private User user;
 
-	private Product product;
+	//private Product product;
 
 	private Date dateAndTime;
 
@@ -55,9 +55,9 @@ public class UserBean implements Serializable {
 		log.info("register()...");
 		try {
 			for (int i=0; i<50; i++) {
-				User user = new User();
-				user.setUserCode("7052" + "-" + i);
-				user.setUserName("PADINI" + "-" + i);
+				User user1 = new User();
+				user1.setUserCode("7052" + "-" + i);
+				user1.setUserName("PADINI" + "-" + i);
 
 
 				Product product1 = new Product();
@@ -77,15 +77,19 @@ public class UserBean implements Serializable {
 				//Product product1 = (Product)session.get(Product.class, 8);
 
 				UserProduct userProduct = new UserProduct();
-
-				userProduct.setUser(user);
+				userProduct.setStatus("Scheduled");
+				userProduct.setNotes(additionalNotes);
+				userProduct.setDateAndTime(Calendar.getInstance().getTime());
+				userProduct.setUser(user1);
 				userProduct.setProduct(product1);
-				userProduct.setCreatedDate(new Date());
-				userProduct.setCreatedBy("system" + "-" + i);
+				userProduct.setCreatedDate(Calendar.getInstance().getTime());
+				userProduct.setUpdatedDate(Calendar.getInstance().getTime());
+				userProduct.setCreatedUser("Manu");
+				userProduct.setUpdatedUser("Manu");
 
-				user.getUserCategories().add(userProduct);
+				user1.getUserCategories().add(userProduct);
 
-				userService.saveUser(user);
+				userService.saveUser(user1);
 			}
 
 
