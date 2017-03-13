@@ -1,23 +1,19 @@
 package com.dronamraju.svtemple.bean;
 
-import com.dronamraju.svtemple.model.Category;
-import com.dronamraju.svtemple.model.Stock;
-import com.dronamraju.svtemple.model.StockCategory;
+import com.dronamraju.svtemple.model.Product;
+import com.dronamraju.svtemple.model.User;
+import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.service.ProductService;
 import com.dronamraju.svtemple.service.UserService;
 import com.dronamraju.svtemple.util.FacesUtil;
-import com.dronamraju.svtemple.util.PasswordGenerator;
-import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @ManagedBean(name = "userBean")
@@ -32,9 +28,9 @@ public class UserBean implements Serializable {
 	@ManagedProperty("#{productService}")
 	private ProductService productService;
 
-	private Stock stock;
+	private User user;
 
-	private Category category;
+	private Product product;
 
 	private Date dateAndTime;
 
@@ -59,26 +55,26 @@ public class UserBean implements Serializable {
 		log.info("register()...");
 		try {
 
-			Stock stock = new Stock();
-			stock.setStockCode("7052");
-			stock.setStockName("PADINI");
+			User user = new User();
+			user.setUserCode("7052");
+			user.setUserName("PADINI");
 
-			Category category1 = new Category("CONSUMER", "CONSUMER COMPANY");
-			//new category, need save to get the id first
-			userService.saveCat(category1);
+			Product product1 = new Product("CONSUMER", "CONSUMER COMPANY");
+			//new product, need save to get the id first
+			userService.saveCat(product1);
 
-			//Category category1 = (Category)session.get(Category.class, 8);
+			//Product product1 = (Product)session.get(Product.class, 8);
 
-			StockCategory stockCategory = new StockCategory();
+			UserProduct userProduct = new UserProduct();
 
-			stockCategory.setStock(stock);
-			stockCategory.setCategory(category1);
-			stockCategory.setCreatedDate(new Date());
-			stockCategory.setCreatedBy("system");
+			userProduct.setUser(user);
+			userProduct.setProduct(product1);
+			userProduct.setCreatedDate(new Date());
+			userProduct.setCreatedBy("system");
 
-			stock.getStockCategories().add(stockCategory);
+			user.getUserCategories().add(userProduct);
 
-			userService.saveStock(stock);
+			userService.saveUser(user);
 
 
 

@@ -14,44 +14,44 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "stock_category")
+@Table(name = "STOCK_CATEGORY")
 @AssociationOverrides({
-		@AssociationOverride(name = "pk.stock", joinColumns = @JoinColumn(name = "STOCK_ID")),
-		@AssociationOverride(name = "pk.category", joinColumns = @JoinColumn(name = "CATEGORY_ID")) })
-public class StockCategory implements java.io.Serializable {
+		@AssociationOverride(name = "pk.user", joinColumns = @JoinColumn(name = "STOCK_ID")),
+		@AssociationOverride(name = "pk.product", joinColumns = @JoinColumn(name = "CATEGORY_ID")) })
+public class UserProduct implements java.io.Serializable {
 
-	private StockCategoryId pk = new StockCategoryId();
+	private UserProductId pk = new UserProductId();
 	private Date createdDate;
 	private String createdBy;
 
-	public StockCategory() {
+	public UserProduct() {
 	}
 
 	@EmbeddedId
-	public StockCategoryId getPk() {
+	public UserProductId getPk() {
 		return pk;
 	}
 
-	public void setPk(StockCategoryId pk) {
+	public void setPk(UserProductId pk) {
 		this.pk = pk;
 	}
 
 	@Transient
-	public Stock getStock() {
-		return getPk().getStock();
+	public User getUser() {
+		return getPk().getUser();
 	}
 
-	public void setStock(Stock stock) {
-		getPk().setStock(stock);
+	public void setUser(User user) {
+		getPk().setUser(user);
 	}
 
 	@Transient
-	public Category getCategory() {
-		return getPk().getCategory();
+	public Product getProduct() {
+		return getPk().getProduct();
 	}
 
-	public void setCategory(Category category) {
-		getPk().setCategory(category);
+	public void setProduct(Product product) {
+		getPk().setProduct(product);
 	}
 
 	@Temporal(TemporalType.DATE)
@@ -79,7 +79,7 @@ public class StockCategory implements java.io.Serializable {
 		if (o == null || getClass() != o.getClass())
 			return false;
 
-		StockCategory that = (StockCategory) o;
+		UserProduct that = (UserProduct) o;
 
 		if (getPk() != null ? !getPk().equals(that.getPk())
 				: that.getPk() != null)

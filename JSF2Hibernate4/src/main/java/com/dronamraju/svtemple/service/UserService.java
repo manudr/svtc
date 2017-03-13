@@ -4,8 +4,8 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
 import com.dronamraju.svtemple.dao.UserDAO;
-import com.dronamraju.svtemple.model.Category;
-import com.dronamraju.svtemple.model.Stock;
+import com.dronamraju.svtemple.model.Product;
+import com.dronamraju.svtemple.model.User;
 
 /**
  * Created by mdronamr on 2/24/17.
@@ -16,12 +16,12 @@ import com.dronamraju.svtemple.model.Stock;
 public class UserService {
     UserDAO userDAO = new UserDAO();
 
-    public void saveCat(Category cat) {
+    public void saveCat(Product cat) {
         userDAO.saveCat(cat);
     }
 
-    public void saveStock(Stock stock) {
-        userDAO.saveStock(stock);
+    public void saveUser(User user) {
+        userDAO.saveUser(user);
     }
 
 }

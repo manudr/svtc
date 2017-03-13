@@ -1,14 +1,10 @@
 package com.dronamraju.svtemple.dao;
 
-import java.util.List;
-
-import com.dronamraju.svtemple.model.Category;
-import com.dronamraju.svtemple.model.Stock;
+import com.dronamraju.svtemple.model.Product;
+import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.util.EntityManagerUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import javax.persistence.Query;
 
 import javax.persistence.EntityManager;
 
@@ -18,17 +14,17 @@ public class UserDAO {
 
 	EntityManager em = EntityManagerUtil.getEntityManager();
 
-	public void saveCat(Category cat){
+	public void saveCat(Product cat){
 		log.info("Saving cat: " + cat);
 		em.getTransaction().begin();
 		em.persist(cat);
 		em.getTransaction().commit();
 	}
 
-	public void saveStock(Stock stock){
-		log.info("Saving stock: " + stock);
+	public void saveUser(User user){
+		log.info("Saving user: " + user);
 		em.getTransaction().begin();
-		em.persist(stock);
+		em.persist(user);
 		em.getTransaction().commit();
 	}
 

@@ -3,7 +3,6 @@ package com.dronamraju.svtemple.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,37 +13,37 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class Category implements java.io.Serializable {
+@Table(name = "CATEGORY")
+public class Product implements java.io.Serializable {
 
-	private Integer categoryId;
+	private Integer productId;
 	private String name;
 	private String desc;
-	private Set<StockCategory> stockCategories = new HashSet<StockCategory>(0);
+	private Set<UserProduct> userCategories = new HashSet<UserProduct>(0);
 
-	public Category() {
+	public Product() {
 	}
 
-	public Category(String name, String desc) {
+	public Product(String name, String desc) {
 		this.name = name;
 		this.desc = desc;
 	}
 
-	public Category(String name, String desc, Set<StockCategory> stockCategories) {
+	public Product(String name, String desc, Set<UserProduct> userCategories) {
 		this.name = name;
 		this.desc = desc;
-		this.stockCategories = stockCategories;
+		this.userCategories = userCategories;
 	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "CATEGORY_ID", unique = true, nullable = false)
-	public Integer getCategoryId() {
-		return this.categoryId;
+	public Integer getProductId() {
+		return this.productId;
 	}
 
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
+	public void setProductId(Integer productId) {
+		this.productId = productId;
 	}
 
 	@Column(name = "NAME", nullable = false, length = 10)
@@ -65,13 +64,13 @@ public class Category implements java.io.Serializable {
 		this.desc = desc;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.category")
-	public Set<StockCategory> getStockCategories() {
-		return this.stockCategories;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.product")
+	public Set<UserProduct> getUserCategories() {
+		return this.userCategories;
 	}
 
-	public void setStockCategories(Set<StockCategory> stockCategories) {
-		this.stockCategories = stockCategories;
+	public void setUserCategories(Set<UserProduct> userCategories) {
+		this.userCategories = userCategories;
 	}
 
 }
