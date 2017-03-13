@@ -54,27 +54,39 @@ public class UserBean implements Serializable {
 	public void register() {
 		log.info("register()...");
 		try {
+			for (int i=0; i<50; i++) {
+				User user = new User();
+				user.setUserCode("7052" + "-" + i);
+				user.setUserName("PADINI" + "-" + i);
 
-			User user = new User();
-			user.setUserCode("7052");
-			user.setUserName("PADINI");
 
-			Product product1 = new Product("CONSUMER", "CONSUMER COMPANY");
-			//new product, need save to get the id first
-			userService.saveCat(product1);
+				Product product1 = new Product();
+				product1.setName("Test Puja1" + "-" + i);
+				product1.setSchedule("Any Time" + "-" + i);
+				product1.setLocation("Home" + "-" + i);
+				product1.setCreatedDate(Calendar.getInstance().getTime());
+				product1.setUpdatedDate(Calendar.getInstance().getTime());
+				product1.setUpdatedUser("Tester" + "-" + i);
+				product1.setCreatedUser("Tester" + "-" + i);
+				product1.setDescription("TestDesc" + "-" + i);
+				product1.setPrice(51.00);
 
-			//Product product1 = (Product)session.get(Product.class, 8);
+				//new product, need save to get the id first
+				userService.saveCat(product1);
 
-			UserProduct userProduct = new UserProduct();
+				//Product product1 = (Product)session.get(Product.class, 8);
 
-			userProduct.setUser(user);
-			userProduct.setProduct(product1);
-			userProduct.setCreatedDate(new Date());
-			userProduct.setCreatedBy("system");
+				UserProduct userProduct = new UserProduct();
 
-			user.getUserCategories().add(userProduct);
+				userProduct.setUser(user);
+				userProduct.setProduct(product1);
+				userProduct.setCreatedDate(new Date());
+				userProduct.setCreatedBy("system" + "-" + i);
 
-			userService.saveUser(user);
+				user.getUserCategories().add(userProduct);
+
+				userService.saveUser(user);
+			}
 
 
 
