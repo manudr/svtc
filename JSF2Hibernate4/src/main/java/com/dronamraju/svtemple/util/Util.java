@@ -53,4 +53,13 @@ public class Util {
     public static boolean isValidZip(String zip) {
         return (StringUtils.isNumeric(zip) && zip.length() == 5) ;
     }
+
+    public static boolean isDouble(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }

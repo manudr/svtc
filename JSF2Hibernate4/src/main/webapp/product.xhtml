@@ -13,9 +13,10 @@
 
 		<p:panel id="panel" header="Add A New Temple Service">
 			<p:messages autoUpdate="true"/>
-			<h:panelGrid id="grid" columns="3" cellpadding="5">
+			<h:panelGrid id="grid" columns="4" cellpadding="5">
 				<p:outputLabel value="Name" style="font-weight:bold"/>
 				<p:inputText id="name" placeholder="Puja or Service Name" value="#{productBean.product.name}" label="Name"/>
+				<b>(Required)</b>
 				<p:message for="name" />
 
 				<p:outputLabel value="Schedule" style="font-weight:bold"/>
@@ -26,6 +27,7 @@
 					<f:selectItem itemLabel="Yearly" itemValue="Yearly" />
 					<f:selectItem itemLabel="AnyTime" itemValue="AnyTime" />
 				</p:selectOneRadio>
+				<b>(Required)</b>
 				<p:message for="schedule" />
 
 				<p:outputLabel value="Location" style="font-weight:bold"/>
@@ -33,14 +35,17 @@
 					<f:selectItem itemLabel="Home" itemValue="Home" />
 					<f:selectItem itemLabel="Temple" itemValue="Temple" />
 				</p:selectOneRadio>
+				<b>(Required)</b>
 				<p:message for="location" />
 
 				<p:outputLabel value="Description" style="font-weight:bold"/>
-				<p:inputTextarea id="description" placeholder="Puja or Service Description" value="#{productBean.product.description}" label="Description"/>
+				<p:inputTextarea id="description" maxlength="500" cols="40" rows="10" placeholder="Puja or Service Description" value="#{productBean.product.description}" label="Description"/>
+				<b>(Required)</b>
 				<p:message for="description" />
 
 				<p:outputLabel value="Price" style="font-weight:bold"/>
 				<p:inputText id="price" placeholder="Price" value="#{productBean.product.price}" label="Price"/>
+				<b>(Required)</b>
 				<p:message for="price" />
 
 			</h:panelGrid>

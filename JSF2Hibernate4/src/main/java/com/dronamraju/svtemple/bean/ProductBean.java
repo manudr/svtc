@@ -14,6 +14,7 @@ import java.io.Serializable;
 
 import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.util.FacesUtil;
+import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import javax.faces.context.FacesContext;
@@ -81,7 +82,7 @@ public class ProductBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        //products = productService.getProducts();
+        products = productService.getProducts();
         product = new Product(); //This is required for: Target Unreachable, 'null' returned null
 
     }
@@ -92,7 +93,7 @@ public class ProductBean implements Serializable {
         Boolean hasValidationErrors = false;
 
         if (product.getName() == null || product.getName().trim().length() < 1) {
-            FacesUtil.getFacesContext().addMessage("name", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Name is required.", null));
+            FacesUtil.getFacesContext().addMessage("name", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Puja/ServiceName is required.", null));
             hasValidationErrors = true;
         }
 
@@ -111,7 +112,7 @@ public class ProductBean implements Serializable {
             hasValidationErrors = true;
         }
 
-        if (product.getPrice() == null || product.getPrice() < 0.00) {
+        if (product.getPrice() == null || product.getPrice() < 0.00 || !Util.isDouble(product.getPrice().toString())) {
             FacesUtil.getFacesContext().addMessage("price", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Price is required.", null));
             hasValidationErrors = true;
         }
