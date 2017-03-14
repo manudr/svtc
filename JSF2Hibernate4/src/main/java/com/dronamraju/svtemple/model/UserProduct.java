@@ -14,10 +14,10 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "STOCK_CATEGORY")
+@Table(name = "USER_PRODUCT_TABLE")
 @AssociationOverrides({
-		@AssociationOverride(name = "pk.user", joinColumns = @JoinColumn(name = "STOCK_ID")),
-		@AssociationOverride(name = "pk.product", joinColumns = @JoinColumn(name = "CATEGORY_ID")) })
+		@AssociationOverride(name = "pk.user", joinColumns = @JoinColumn(name = "USER_ID")),
+		@AssociationOverride(name = "pk.product", joinColumns = @JoinColumn(name = "PRODUCT_ID")) })
 public class UserProduct implements java.io.Serializable {
 
 	private UserProductId pk = new UserProductId();

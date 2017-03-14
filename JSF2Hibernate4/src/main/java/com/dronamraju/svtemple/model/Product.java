@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CATEGORY")
+@Table(name = "PRODUCT_TABLE")
 public class Product implements java.io.Serializable {
 
 	private Integer productId;
@@ -35,7 +35,7 @@ public class Product implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "CATEGORY_ID", unique = true, nullable = false)
+	@Column(name = "PRODUCT_ID", unique = true, nullable = false)
 	public Integer getProductId() {
 		return this.productId;
 	}

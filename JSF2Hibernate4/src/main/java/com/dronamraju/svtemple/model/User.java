@@ -15,9 +15,9 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "STOCK", uniqueConstraints = {
-		@UniqueConstraint(columnNames = "STOCK_NAME"),
-		@UniqueConstraint(columnNames = "STOCK_CODE") })
+@Table(name = "USER_TABLE", uniqueConstraints = {
+		@UniqueConstraint(columnNames = "USER_NAME"),
+		@UniqueConstraint(columnNames = "USER_CODE") })
 public class User implements java.io.Serializable {
 
 	private Integer userId;
@@ -42,7 +42,7 @@ public class User implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "STOCK_ID", unique = true, nullable = false)
+	@Column(name = "USER_ID", unique = true, nullable = false)
 	public Integer getUserId() {
 		return this.userId;
 	}
@@ -51,7 +51,7 @@ public class User implements java.io.Serializable {
 		this.userId = userId;
 	}
 
-	@Column(name = "STOCK_CODE", unique = true, nullable = false, length = 10)
+	@Column(name = "USER_CODE", unique = true, nullable = false, length = 10)
 	public String getUserCode() {
 		return this.userCode;
 	}
@@ -60,7 +60,7 @@ public class User implements java.io.Serializable {
 		this.userCode = userCode;
 	}
 
-	@Column(name = "STOCK_NAME", unique = true, nullable = false, length = 20)
+	@Column(name = "USER_NAME", unique = true, nullable = false, length = 20)
 	public String getUserName() {
 		return this.userName;
 	}
