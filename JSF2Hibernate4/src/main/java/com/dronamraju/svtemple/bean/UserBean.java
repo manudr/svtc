@@ -6,6 +6,7 @@ import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.service.ProductService;
 import com.dronamraju.svtemple.service.UserService;
 import com.dronamraju.svtemple.util.FacesUtil;
+import com.dronamraju.svtemple.util.PasswordGenerator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -58,6 +59,23 @@ public class UserBean implements Serializable {
 				User user1 = new User();
 				user1.setUserCode("7052" + "-" + i);
 				user1.setUserName("PADINI" + "-" + i);
+				user1.setIsAdmin("N");
+				user1.setCity("Aurora");
+				user1.setCreatedUser("Manu");
+				user1.setZip("80134");
+				user1.setUpdatedUser("Manu");
+				user1.setUpdatedDate(Calendar.getInstance().getTime());
+				user1.setStreetAddress("10234 Main St");
+				user1.setState("CO");
+				user1.setPrimaryPadam("1st");
+				user1.setPhoneNumber("1234567890");
+				PasswordGenerator passwordGenerator = new PasswordGenerator();
+				user1.setPassword(passwordGenerator.newPassword());
+				user1.setPrimaryNakshathram("UB");
+				user1.setLastName("Dr");
+				user1.setFirstName("Man");
+				user1.setEmail("testemail");
+				user1.setFamilyGothram("TestGothram");
 
 
 				Product product1 = new Product();
@@ -87,7 +105,7 @@ public class UserBean implements Serializable {
 				userProduct.setCreatedUser("Manu");
 				userProduct.setUpdatedUser("Manu");
 
-				user1.getUserCategories().add(userProduct);
+				user1.getUserProducts().add(userProduct);
 
 				userService.saveUser(user1);
 			}
