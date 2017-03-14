@@ -7,44 +7,43 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 
 public class UserDAO {
 	private static Log log = LogFactory.getLog(UserDAO.class);
 
-	EntityManager em = EntityManagerUtil.getEntityManager();
+	EntityManager entityManager = EntityManagerUtil.getEntityManager();
 
 	public void saveCat(Product cat){
+		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
 			log.info("Saving cat: " + cat);
-			em.getTransaction().begin();
-			em.persist(cat);
-			em.getTransaction().commit();
+			entityTransaction.begin();
+			entityManager.persist(cat);
+			entityTransaction.commit();
 		} catch (Exception e) {
-			em.getTransaction().rollback();
-			em.clear();
-			em.close();
+			entityTransaction.rollback();
 			throw new RuntimeException(e);
 		}
 	}
 
 	public void saveUser(User user){
 		log.info("Saving user: " + user);
+		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
-			em.getTransaction().begin();
-			em.persist(user);
-			em.getTransaction().commit();
+			entityTransaction.begin();
+			entityManager.persist(user);
+			entityTransaction.commit();
 		} catch (Exception e) {
-			em.getTransaction().rollback();
-			em.clear();
-			em.close();
+			entityTransaction.rollback();
 			throw new RuntimeException(e);
 		}
 	}
 
 	public User findUser(Long userId){
 		log.info("findUser..");
-		return em.find(User.class, userId);
+		return entityManager.find(User.class, userId);
 	}
 
 

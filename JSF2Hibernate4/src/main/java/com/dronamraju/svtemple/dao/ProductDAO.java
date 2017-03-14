@@ -7,6 +7,8 @@ import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.util.EntityManagerUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import javax.persistence.EntityManager;
@@ -20,15 +22,15 @@ public class ProductDAO {
 
     private static Log log = LogFactory.getLog(ProductDAO.class);
 
-    EntityManager em = EntityManagerUtil.getEntityManager();
+    EntityManager entityManager = EntityManagerUtil.getEntityManager();
 
     public Product findProduct(Long productId){
         log.info("findProduct..");
-        return em.find(Product.class, productId);
+        return entityManager.find(Product.class, productId);
     }
 
     public List getProducts() {
-        Query query = em.createQuery("SELECT product FROM Product product", Product.class);
+        Query query = entityManager.createQuery("SELECT product FROM Product product", Product.class);
         List results = query.getResultList();
         List<Product> products = query.getResultList();
         log.info("ProductDAO - Products: " + products);
@@ -36,7 +38,7 @@ public class ProductDAO {
     }
 
     public List getProducts(Long userId) {
-        Query query = em.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
+        Query query = entityManager.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
         query.setParameter("userId", userId);
         List results = query.getResultList();
         List<Product> products = query.getResultList();
@@ -44,34 +46,39 @@ public class ProductDAO {
         return products;
     }
 
-    public void save(Product product){
-        log.info("Saving product: " + product);
-        em.getTransaction().begin();
-        em.persist(product);
-        em.getTransaction().commit();
+    public void save(Product product) {
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            log.info("Saving product: " + product);
+            entityTransaction.begin();
+            entityManager.persist(product);
+            entityTransaction.commit();
+        } catch (Exception e) {
+            entityTransaction.rollback();
+            throw new RuntimeException(e);
+        }
     }
 
     public void save(UserProduct userProduct){
         log.info("Saving userProduct: " + userProduct);
-        em.getTransaction().begin();
-        em.persist(userProduct);
-        em.getTransaction().commit();
+        entityManager.getTransaction().begin();
+        entityManager.persist(userProduct);
+        entityManager.getTransaction().commit();
     }
 
     public void updateProduct(Product selectedProduct) {
-        em.getTransaction().begin();
-        em.persist(selectedProduct);
-        em.getTransaction().commit();
+        entityManager.getTransaction().begin();
+        entityManager.persist(selectedProduct);
+        entityManager.getTransaction().commit();
     }
 
     public void removeProduct(Product selectedProduct) {
-        em.getTransaction().begin();
-        em.remove(selectedProduct);
-        em.getTransaction().commit();
+        entityManager.getTransaction().begin();
+        entityManager.remove(selectedProduct);
+        entityManager.getTransaction().commit();
     }
 
     public Product find(Long id) {
-        return em.find(Product.class, id);
+        return entityManager.find(Product.class, id);
     }
-
 }

@@ -126,7 +126,7 @@ public class UserBean implements Serializable {
 			log.info("additionalNotes: " + additionalNotes);
 
 			log.info("dateAndTime: " + dateAndTime);
-			if (dateAndTime == null || !(Util.isValidDate(dateAndTime))) {
+			if (dateAndTime != null && !(Util.isValidDate(dateAndTime))) {
 				log.info("date failed");
 				FacesUtil.getFacesContext().addMessage("dateAndTime", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Date and Time is required.", null));
 				hasValidationErrors = true;
@@ -169,8 +169,10 @@ public class UserBean implements Serializable {
 				sb.append("<b>Puja/Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
 				sb.append("<b>Price: $</b>" + userProduct.getProduct().getPrice() + "<br></br>");
 				sb.append("<b>Location: </b>" + userProduct.getProduct().getLocation() + "<br></br>");
-				sb.append("<b>Date and Time: </b>" + DateFormat.getDateTimeInstance(
-						DateFormat.MEDIUM, DateFormat.SHORT).format(userProduct.getDateAndTime()) + "<br></br>");
+				if (userProduct.getDateAndTime() != null) {
+					sb.append("<b>Date and Time: </b>" + DateFormat.getDateTimeInstance(
+							DateFormat.MEDIUM, DateFormat.SHORT).format(userProduct.getDateAndTime()) + "<br></br>");
+				}
 				sb.append("<br></br><br></br>");
 			}
 

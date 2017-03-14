@@ -77,7 +77,7 @@
 							<h:panelGrid columns="2" cellpadding="2" style="font-size: 12px; border-width: 0px;">
 								<p:scrollPanel mode="native" style="height:300px; border-width: 0px;">
 									<p:selectManyCheckbox id="selectedProductIds" value="#{userBean.selectedProductIds}" layout="grid" columns="1">
-										<f:selectItems value="#{userBean.products}" var="product" itemLabel="#{product.name} - #{product.location} - $#{product.price}" itemValue="#{product.productId}" />
+										<f:selectItems value="#{userBean.products}" var="product" itemLabel="#{product.name} at #{product.location} for $#{product.price}" itemValue="#{product.productId}" />
 									</p:selectManyCheckbox>
 								</p:scrollPanel>
 								<p:message for="selectedProductIds" />
@@ -92,7 +92,7 @@
 							</h:panelGrid>
 						</p:panel>
 						<br></br>
-						<p:panel header="Date and Time (Required)" style="height:100px">
+						<p:panel header="Date and Time (Required) for custom scheduled pujas" style="height:100px">
 							<h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
 								<p:calendar id="dateAndTime" value="#{userBean.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" />
 								<p:message for="dateAndTime" />
