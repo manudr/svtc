@@ -29,6 +29,7 @@ public class UserProduct implements java.io.Serializable {
 	private String updatedUser;
 	private String createdUser;
 
+
 	public UserProduct() {
 	}
 

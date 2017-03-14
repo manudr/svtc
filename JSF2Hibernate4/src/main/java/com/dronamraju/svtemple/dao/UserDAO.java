@@ -15,17 +15,31 @@ public class UserDAO {
 	EntityManager em = EntityManagerUtil.getEntityManager();
 
 	public void saveCat(Product cat){
-		log.info("Saving cat: " + cat);
-		em.getTransaction().begin();
-		em.persist(cat);
-		em.getTransaction().commit();
+		try {
+			log.info("Saving cat: " + cat);
+			em.getTransaction().begin();
+			em.persist(cat);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			em.clear();
+			em.close();
+			throw new RuntimeException(e);
+		}
 	}
 
 	public void saveUser(User user){
 		log.info("Saving user: " + user);
-		em.getTransaction().begin();
-		em.persist(user);
-		em.getTransaction().commit();
+		try {
+			em.getTransaction().begin();
+			em.persist(user);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			em.clear();
+			em.close();
+			throw new RuntimeException(e);
+		}
 	}
 
 	public User findUser(Long userId){

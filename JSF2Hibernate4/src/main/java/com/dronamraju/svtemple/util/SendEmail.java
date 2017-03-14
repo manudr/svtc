@@ -10,11 +10,11 @@ import java.util.Properties;
  */
 public class SendEmail {
     private static final String SMTP_HOST_NAME = "smtpout.secureserver.net"; //smtp URL
-    private static final int SMTP_HOST_PORT = 80; //port number
+    private static final int SMTP_HOST_PORT = 465; //port number
     private static String SMTP_AUTH_USER = "online@svtempleco.org"; //email_id of sender
     private static String SMTP_AUTH_PWD = "SVTemple2017"; //password of sender email_id
 
-    public static void sendMail(String content) {
+    public static void sendMail(String content, String toEmail) {
         try {
             Properties props = new Properties();
             props.put("mail.transport.protocol", "smtps");
@@ -30,7 +30,7 @@ public class SendEmail {
             message.setContent(content, "text/html");
             Address[] from = InternetAddress.parse("online@svtempleco.org");//Your domain email
             message.addFrom(from);
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress("manu_may@yahoo.com")); //Send email To (Type email ID that you want to send)
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail)); //Send email To (Type email ID that you want to send)
 
             transport.connect(SMTP_HOST_NAME, SMTP_HOST_PORT, SMTP_AUTH_USER, SMTP_AUTH_PWD);
             transport.sendMessage(message, message.getRecipients(Message.RecipientType.TO));

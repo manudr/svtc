@@ -17,6 +17,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.*;
 
 @ManagedBean(name = "userBean")
@@ -38,6 +39,8 @@ public class UserBean implements Serializable {
 	private Date dateAndTime;
 
 	private String additionalNotes;
+
+	private Double totalAmount = 0.00;
 
 	private String[] selectedProductIds;
 
@@ -161,12 +164,18 @@ public class UserBean implements Serializable {
 			StringBuilder sb = new StringBuilder();
 			sb.append("<h4>Thank you. You have registered for the below temple services:</h4>");
 			for (UserProduct userProduct : userProducts) {
+				totalAmount = totalAmount + userProduct.getProduct().getPrice();
+				log.info("totalAmount: " + totalAmount);
 				sb.append("<b>Puja/Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
-				sb.append("<b>Price: </b>" + userProduct.getProduct().getPrice() + "<br></br>");
+				sb.append("<b>Price: $</b>" + userProduct.getProduct().getPrice() + "<br></br>");
 				sb.append("<b>Location: </b>" + userProduct.getProduct().getLocation() + "<br></br>");
-				sb.append("<b>Date and Time: </b>" + userProduct.getDateAndTime() + "<br></br>");
+				sb.append("<b>Date and Time: </b>" + DateFormat.getDateTimeInstance(
+						DateFormat.MEDIUM, DateFormat.SHORT).format(userProduct.getDateAndTime()) + "<br></br>");
 				sb.append("<br></br><br></br>");
 			}
+
+			sb.append("<b>Total Amount to be paid: </b>$" + totalAmount + "<br></br><br></br><br></br>");
+
 			sb.append("<b>Thank you</b><br></br>");
 			sb.append("<b>Sri Venkateswara Swamy Temple Of Colorado</b><br></br>");
 			sb.append("<b>1495 S Ridge Road Castle Rock CO 80104</b><br></br>");
@@ -174,8 +183,8 @@ public class UserBean implements Serializable {
 			sb.append("<b>Website: http://www.svtempleco.org</b><br></br>");
 			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
 			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
-			SendEmail.sendMail(sb.toString());
-			FacesUtil.redirect("userProducts.xhtml");
+			SendEmail.sendMail(sb.toString(), user.getEmail());
+			FacesUtil.redirect("payment.xhtml");
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -254,5 +263,13 @@ public class UserBean implements Serializable {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public Double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(Double totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 }

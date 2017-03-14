@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Sri Venkateswara Swamy Temple Of Colorado-Temple Services</title>
+</h:head>
+
+<h:body>
+    <br></br>
+    <h:form>
+        <p:dataList value="#{userBean.userProducts}" var="userProduct" type="ordered">
+            <f:facet name="header">
+                You have registered the below services/pujas with Sri Venkateswara Swamy Temple Of Colorado.
+            </f:facet>
+            #{userProduct.getProduct().getName()}, #{userProduct.getProduct().getPrice()}, #{userProduct.getProduct().getLocation()}, #{userProduct.getDateAndTime()}
+        </p:dataList>
+
+        <br></br>
+
+        <h2>Please enter the total amount: $#{userBean.totalAmount} in the paypal payment page.</h2>
+
+        <p:button href="https://www.paypal.com/donate/guest/" value="Pay Now" />
+
+    </h:form>
+</h:body>
+</html>
