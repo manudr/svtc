@@ -14,11 +14,12 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.*;
 
 @ManagedBean(name = "userBean")
-@RequestScoped
+@SessionScoped
 public class UserBean implements Serializable {
 
 	private static Log log = LogFactory.getLog(UserBean.class);
@@ -29,9 +30,9 @@ public class UserBean implements Serializable {
 	@ManagedProperty("#{productService}")
 	private ProductService productService;
 
-	//private User user;
+	private User user = new User();
 
-	//private Product product;
+	private Product product = new Product();
 
 	private Date dateAndTime;
 
@@ -39,9 +40,13 @@ public class UserBean implements Serializable {
 
 	private String[] selectedProductIds;
 
+	private Set<UserProduct> userProducts;
+
+	private List<Product> products;
+
 	@PostConstruct
 	public void init() {
-
+		products = productService.getProducts();
 	}
 
 	public UserService getUserService() {
@@ -55,64 +60,32 @@ public class UserBean implements Serializable {
 	public void register() {
 		log.info("register()...");
 		try {
-			for (int i=0; i<50; i++) {
-				User user1 = new User();
-				user1.setUserCode("7052" + "-" + i);
-				user1.setUserName("PADINI" + "-" + i);
-				user1.setIsAdmin("N");
-				user1.setCity("Aurora");
-				user1.setCreatedUser("Manu");
-				user1.setZip("80134");
-				user1.setUpdatedUser("Manu");
-				user1.setUpdatedDate(Calendar.getInstance().getTime());
-				user1.setStreetAddress("10234 Main St");
-				user1.setState("CO");
-				user1.setPrimaryPadam("1st");
-				user1.setPhoneNumber("1234567890");
-				PasswordGenerator passwordGenerator = new PasswordGenerator();
-				user1.setPassword(passwordGenerator.newPassword());
-				user1.setPrimaryNakshathram("UB");
-				user1.setLastName("Dr");
-				user1.setFirstName("Man");
-				user1.setEmail("testemail");
-				user1.setFamilyGothram("TestGothram");
+			user.setCreatedDate(Calendar.getInstance().getTime());
+			user.setUpdatedDate(Calendar.getInstance().getTime());
+			user.setCreatedUser("Manu");
+			user.setUpdatedUser("Manu");
+			user.setPassword(new PasswordGenerator().newPassword());
+			user.setIsAdmin("N");
 
-
-				Product product1 = new Product();
-				product1.setName("Test Puja1" + "-" + i);
-				product1.setSchedule("Any Time" + "-" + i);
-				product1.setLocation("Home" + "-" + i);
-				product1.setCreatedDate(Calendar.getInstance().getTime());
-				product1.setUpdatedDate(Calendar.getInstance().getTime());
-				product1.setUpdatedUser("Tester" + "-" + i);
-				product1.setCreatedUser("Tester" + "-" + i);
-				product1.setDescription("TestDesc" + "-" + i);
-				product1.setPrice(51.00);
-
-				//new product, need save to get the id first
-				userService.saveCat(product1);
-
-				//Product product1 = (Product)session.get(Product.class, 8);
-
+			for (Object prodId : selectedProductIds) {
+				product = productService.findProduct(new Long(prodId.toString()));
 				UserProduct userProduct = new UserProduct();
 				userProduct.setStatus("Scheduled");
 				userProduct.setNotes(additionalNotes);
-				userProduct.setDateAndTime(Calendar.getInstance().getTime());
-				userProduct.setUser(user1);
-				userProduct.setProduct(product1);
+				userProduct.setDateAndTime(dateAndTime);
+				userProduct.setUser(user);
+				userProduct.setProduct(product);
 				userProduct.setCreatedDate(Calendar.getInstance().getTime());
 				userProduct.setUpdatedDate(Calendar.getInstance().getTime());
 				userProduct.setCreatedUser("Manu");
 				userProduct.setUpdatedUser("Manu");
-
-				user1.getUserProducts().add(userProduct);
-
-				userService.saveUser(user1);
+				log.info("userProduct: " + userProduct);
+				user.getUserProducts().add(userProduct);
 			}
-
-
-
-			FacesUtil.redirect("testConfirmation.xhtml");
+			userService.saveUser(user);
+			userProducts = user.getUserProducts();
+			log.info("userProducts: " + userProducts);
+			FacesUtil.redirect("userProducts.xhtml");
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -159,5 +132,37 @@ public class UserBean implements Serializable {
 
 	public void setSelectedProductIds(String[] selectedProductIds) {
 		this.selectedProductIds = selectedProductIds;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public Set<UserProduct> getUserProducts() {
+		return userProducts;
+	}
+
+	public void setUserProducts(Set<UserProduct> userProducts) {
+		this.userProducts = userProducts;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 }

@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Table(name = "PRODUCT_TABLE")
 public class Product implements java.io.Serializable {
 
-	private Integer productId;
+	private Long productId;
 	private String name;
 	private String description;
 	private Double price;
@@ -36,11 +36,11 @@ public class Product implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "PRODUCT_ID", unique = true, nullable = false)
-	public Integer getProductId() {
+	public Long getProductId() {
 		return this.productId;
 	}
 
-	public void setProductId(Integer productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
@@ -133,5 +133,6 @@ public class Product implements java.io.Serializable {
 	public void setUserCategories(Set<UserProduct> userCategories) {
 		this.userCategories = userCategories;
 	}
+
 
 }

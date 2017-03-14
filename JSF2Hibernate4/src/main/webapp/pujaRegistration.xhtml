@@ -7,14 +7,14 @@
 	<title>Sri Venkateswara Swamy Temple Of Colorado</title>
 </h:head>
 
-<h:body style="font-size: 11px;">
+<h:body style="font-size: 12px;">
 	<h:form id="pujaRegistrationForm">
 		<p:messages autoUpdate="true"/>
 		<p:panel header="Sign up for a Puja or a Temple Service. (* = Required)">
 			<div class="ui-g">
 				<div class="ui-g-3">
 					<p:panel header="Your Details">
-						<h:panelGrid columns="4" cellpadding="2" style="font-size: 11px;">
+						<h:panelGrid columns="4" cellpadding="2" style="font-size: 12px;">
 							<p:outputLabel value="First Name"/>
 							<p:inputText id="firstName" size="20" maxlength="30"  placeholder="First Name" value="#{userBean.user.firstName}" label="First Name"/><b>*</b>
 							<p:message for="firstName" />
@@ -63,11 +63,11 @@
 					</p:panel>
 				</div>
 				<div class="ui-g-6">
-					<p:panel header="Selecet Pujas/Services" style="height:200px">
-						<h:panelGrid columns="4" cellpadding="2" style="font-size: 11px;">
-							<p:scrollPanel mode="native" style="height:150px">
+					<p:panel header="Selecet Pujas/Services" style="height:350px">
+						<h:panelGrid columns="4" cellpadding="2" style="font-size: 12px; border-width: 0px;">
+							<p:scrollPanel mode="native" style="height:300px; border-width: 0px;">
 								<p:selectManyCheckbox id="selectedProductIds" value="#{userBean.selectedProductIds}" layout="grid" columns="1">
-									<f:selectItems value="#{productBean.products}" var="product" itemLabel="#{product.name} - #{product.location} - $#{product.price}" itemValue="#{product.id}" />
+									<f:selectItems value="#{userBean.products}" var="product" itemLabel="#{product.name} - #{product.location} - $#{product.price}" itemValue="#{product.productId}" />
 								</p:selectManyCheckbox>
 							</p:scrollPanel>
 							<b>*</b>
@@ -76,15 +76,17 @@
 					</p:panel>
 				</div>
 				<div class="ui-g-3">
-					<p:panel header="Date and Time and Additional Notes" style="height:200px">
-						<h:panelGrid columns="3" cellpadding="2" style="font-size: 11px;">
-							<p:calendar id="dateAndTime" value="#{userBean.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" /><b>*</b>
-							<p:message for="dateAndTime" />
-						</h:panelGrid>
-
-						<h:panelGrid columns="3" cellpadding="2" style="font-size: 11px;">
+					<p:panel header="Additional Notes" style="height:200px">
+						<h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
 							<p:inputTextarea id="additionalNotes" maxlength="500" cols="40" rows="10" placeholder="Any Notes" value="#{userBean.additionalNotes}" label="Additional Notes"/><b>*</b>
 							<p:message for="additionalNotes" />
+						</h:panelGrid>
+					</p:panel>
+					<br></br>
+					<p:panel header="Date and Time" style="height:100px">
+						<h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
+							<p:calendar id="dateAndTime" value="#{userBean.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" /><b>*</b>
+							<p:message for="dateAndTime" />
 						</h:panelGrid>
 					</p:panel>
 				</div>
@@ -93,7 +95,7 @@
 			<div class="ui-g">
 				<div class="ui-g-3">
 					<p:panel header="Spouse Details">
-						<h:panelGrid columns="3" cellpadding="2" style="font-size: 11px;">
+						<h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
 							<p:outputLabel value="Spouse Full Name"/>
 							<p:inputText id="spouseName" size="20" maxlength="30"  placeholder="Spouse Full Name" value="#{userBean.user.spouseName}" label="Spouse Name"/>
 							<p:message for="spouseName" />
@@ -111,7 +113,7 @@
 
 				<div class="ui-g-3">
 					<p:panel header="1st Child details">
-						<h:panelGrid columns="3" cellpadding="2" style="font-size: 11px;">
+						<h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
 							<p:outputLabel value="Name"/>
 							<p:inputText id="child1Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child1Name}" label="Name"/>
 							<p:message for="child1Name" />
@@ -129,7 +131,7 @@
 
 				<div class="ui-g-3">
 					<p:panel header="2nd Child details">
-						<h:panelGrid columns="3" cellpadding="2" style="font-size: 11px;">
+						<h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
 							<p:outputLabel value="Name"/>
 							<p:inputText id="child2Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child2Name}" label="Name"/>
 							<p:message for="child2Name" />
@@ -147,7 +149,7 @@
 
 				<div class="ui-g-3">
 					<p:panel header="3rd Child details">
-						<h:panelGrid columns="3" cellpadding="2" style="font-size: 11px;">
+						<h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
 							<p:outputLabel value="Name"/>
 							<p:inputText id="child3Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child3Name}" label="Name"/>
 							<p:message for="child3Name" />
@@ -165,7 +167,7 @@
 				</div>
 			</div>
 
-			<h:panelGrid columns="2" cellpadding="2" style="font-size: 11px;">
+			<h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
 				<p:commandButton value="Save" actionListener="#{userBean.register}" icon="fa-save"/>
 				<p:commandButton value="Cancel" actionListener="#{userBean.cancel}" icon="fa fa-fw fa-remove"/>
 			</h:panelGrid>

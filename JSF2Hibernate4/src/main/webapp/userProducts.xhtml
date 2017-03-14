@@ -12,10 +12,10 @@
     <h:form>
         <p:dataTable id="userProducts"
                      var="userProduct"
-                     rowKey="#{userProduct.id}"
+                     rowKey="#{userProduct.pk.product.productId}"
                      selection="#{productBean.selectedProduct}"
                      selectionMode="single"
-                     value="#{userBean.user.userProducts}"
+                     value="#{userBean.userProducts}"
                      reflow="true"
                      tableStyleClass="ui-table-columntoggle"
                      rows="10"
@@ -50,6 +50,13 @@
                 <h:outputText value="#{userProduct.status}" />
             </p:column>
 
+            <p:column headerText="Notes" filterBy="#{userProduct.notes}" filterMatchMode="contains" sortBy="#{userProduct.notes}" priority="5">
+                <h:outputText value="#{userProduct.notes}" />
+            </p:column>
+
+            <p:column headerText="Date and Time" filterBy="#{userProduct.dateAndTime}" filterMatchMode="contains" sortBy="#{userProduct.dateAndTime}" priority="5">
+                <h:outputText value="#{userProduct.dateAndTime}" />
+            </p:column>
         </p:dataTable>
 
 

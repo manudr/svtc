@@ -28,5 +28,10 @@ public class UserDAO {
 		em.getTransaction().commit();
 	}
 
+	public User findUser(Long userId){
+		log.info("findUser..");
+		return em.find(User.class, userId);
+	}
+
 
 }

@@ -17,13 +17,13 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "USER_TABLE", uniqueConstraints = {
-		@UniqueConstraint(columnNames = "USER_NAME"),
-		@UniqueConstraint(columnNames = "USER_CODE") })
+		@UniqueConstraint(columnNames = "FIRST_NAME"),
+		@UniqueConstraint(columnNames = "LAST_NAME"),
+		@UniqueConstraint(columnNames = "EMAIL"),
+		@UniqueConstraint(columnNames = "PHONE_NUMBER") })
 public class User implements java.io.Serializable {
 
-	private Integer userId;
-	private String userCode;
-	private String userName;
+	private Long userId;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -66,30 +66,12 @@ public class User implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "USER_ID", unique = true, nullable = false)
-	public Integer getUserId() {
+	public Long getUserId() {
 		return this.userId;
 	}
 
-	public void setUserId(Integer userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
-	}
-
-	@Column(name = "USER_CODE", unique = true, nullable = false, length = 10)
-	public String getUserCode() {
-		return this.userCode;
-	}
-
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
-
-	@Column(name = "USER_NAME", unique = true, nullable = false, length = 20)
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	@Column(name="first_name")
@@ -389,4 +371,5 @@ public class User implements java.io.Serializable {
 		this.userProducts = userProducts;
 	}
 
+	
 }

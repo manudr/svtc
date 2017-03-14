@@ -46,5 +46,6 @@ public class UserProductId implements java.io.Serializable {
         result = 31 * result + (product != null ? product.hashCode() : 0);
         return result;
     }
-    
+
+
 }
