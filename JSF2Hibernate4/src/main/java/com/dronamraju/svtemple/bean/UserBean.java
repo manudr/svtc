@@ -6,14 +6,14 @@ import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.service.ProductService;
 import com.dronamraju.svtemple.service.UserService;
 import com.dronamraju.svtemple.util.FacesUtil;
-import com.dronamraju.svtemple.util.PasswordGenerator;
+import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.*;
@@ -60,11 +60,83 @@ public class UserBean implements Serializable {
 	public void register() {
 		log.info("register()...");
 		try {
+			Boolean hasValidationErrors = false;
+
+			if (user.getFirstName() == null || user.getFirstName().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("firstName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Fisrt Name is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getLastName() == null || user.getLastName().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("lastName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Lst Name is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
+				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid email is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getPhoneNumber() == null || user.getPhoneNumber().trim().length() < 1 || !Util.isValidPhoneNumber(user.getPhoneNumber())) {
+				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Phone Number is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getStreetAddress() == null || user.getStreetAddress().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("streetAddress", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid streetAddress is required.", null));
+				hasValidationErrors = true;
+			}
+
+
+			if (user.getCity() == null || user.getPhoneNumber().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Phone Number is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getState() == null || user.getState().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("state", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid state is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getZip() == null || user.getZip().trim().length() < 1 || !Util.isValidZip(user.getZip())) {
+				FacesUtil.getFacesContext().addMessage("zip", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid zip is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getFamilyGothram() == null || user.getFamilyGothram().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("familyGothram", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid familyGothram is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getPrimaryNakshathram() == null || user.getPrimaryNakshathram().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("primaryNakshathram", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Primary Nakshathram is required.", null));
+				hasValidationErrors = true;
+			}
+
+			log.info("selectedProductIds: " + selectedProductIds);
+			if (selectedProductIds == null || selectedProductIds.length < 1) {
+				FacesUtil.getFacesContext().addMessage("selectedProductIds", new FacesMessage(FacesMessage.SEVERITY_ERROR, "One or more pujas must be selecetd.", null));
+				hasValidationErrors = true;
+			}
+
+			log.info("additionalNotes: " + additionalNotes);
+
+			log.info("dateAndTime: " + dateAndTime);
+			if (dateAndTime == null || !(Util.isValidDate(dateAndTime))) {
+				log.info("date failed");
+				FacesUtil.getFacesContext().addMessage("dateAndTime", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Date and Time is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (hasValidationErrors) {
+				log.info("Validation Failed...");
+				return;
+			}
 			user.setCreatedDate(Calendar.getInstance().getTime());
 			user.setUpdatedDate(Calendar.getInstance().getTime());
 			user.setCreatedUser("Manu");
 			user.setUpdatedUser("Manu");
-			user.setPassword(new PasswordGenerator().newPassword());
+			user.setPassword(Util.newPassword());
 			user.setIsAdmin("N");
 
 			for (Object prodId : selectedProductIds) {
