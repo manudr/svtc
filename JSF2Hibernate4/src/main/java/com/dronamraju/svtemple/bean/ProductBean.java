@@ -14,6 +14,7 @@ import java.io.Serializable;
 
 import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.util.FacesUtil;
+import com.dronamraju.svtemple.util.SendEmail;
 import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -84,7 +85,6 @@ public class ProductBean implements Serializable {
     public void init() {
         products = productService.getProducts();
         product = new Product(); //This is required for: Target Unreachable, 'null' returned null
-
     }
 
     public void addProduct() {

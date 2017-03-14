@@ -6,6 +6,7 @@ import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.service.ProductService;
 import com.dronamraju.svtemple.service.UserService;
 import com.dronamraju.svtemple.util.FacesUtil;
+import com.dronamraju.svtemple.util.SendEmail;
 import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -157,6 +158,23 @@ public class UserBean implements Serializable {
 			userService.saveUser(user);
 			userProducts = user.getUserProducts();
 			log.info("userProducts: " + userProducts);
+			StringBuilder sb = new StringBuilder();
+			sb.append("<h4>Thank you. You have registered for the below temple services:</h4>");
+			for (UserProduct userProduct : userProducts) {
+				sb.append("<b>Puja/Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
+				sb.append("<b>Price: </b>" + userProduct.getProduct().getPrice() + "<br></br>");
+				sb.append("<b>Location: </b>" + userProduct.getProduct().getLocation() + "<br></br>");
+				sb.append("<b>Date and Time: </b>" + userProduct.getDateAndTime() + "<br></br>");
+				sb.append("<br></br><br></br>");
+			}
+			sb.append("<b>Thank you</b><br></br>");
+			sb.append("<b>Sri Venkateswara Swamy Temple Of Colorado</b><br></br>");
+			sb.append("<b>1495 S Ridge Road Castle Rock CO 80104</b><br></br>");
+			sb.append("<b>Manager: 303-898-5514 | Temple: 303-660-9555 | Email: info@svtempleco.org</b><br></br>");
+			sb.append("<b>Website: http://www.svtempleco.org</b><br></br>");
+			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
+			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
+			SendEmail.sendMail(sb.toString());
 			FacesUtil.redirect("userProducts.xhtml");
 		} catch(Exception e) {
 			throw new RuntimeException(e);
