@@ -40,7 +40,6 @@ public class ProductDAO {
     public List getProducts(Long userId) {
         Query query = entityManager.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
         query.setParameter("userId", userId);
-        List results = query.getResultList();
         List<Product> products = query.getResultList();
         log.info("ProductDAO - Products: " + products);
         return products;

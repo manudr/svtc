@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.faces.bean.SessionScoped;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +22,7 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "LAST_NAME"),
 		@UniqueConstraint(columnNames = "EMAIL"),
 		@UniqueConstraint(columnNames = "PHONE_NUMBER") })
+@SessionScoped
 public class User implements java.io.Serializable {
 
 	private Long userId;
@@ -371,5 +373,43 @@ public class User implements java.io.Serializable {
 		this.userProducts = userProducts;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "User{" +
+				"userId=" + userId +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				", phoneNumber='" + phoneNumber + '\'' +
+				", streetAddress='" + streetAddress + '\'' +
+				", city='" + city + '\'' +
+				", state='" + state + '\'' +
+				", zip='" + zip + '\'' +
+				", password='" + password + '\'' +
+				", familyGothram='" + familyGothram + '\'' +
+				", primaryNakshathram='" + primaryNakshathram + '\'' +
+				", primaryPadam='" + primaryPadam + '\'' +
+				", spouseName='" + spouseName + '\'' +
+				", spouseNakshathram='" + spouseNakshathram + '\'' +
+				", spousePadam='" + spousePadam + '\'' +
+				", child1Name='" + child1Name + '\'' +
+				", child1Nakshathram='" + child1Nakshathram + '\'' +
+				", child1Padam='" + child1Padam + '\'' +
+				", child2Name='" + child2Name + '\'' +
+				", child2Nakshathram='" + child2Nakshathram + '\'' +
+				", child2Padam='" + child2Padam + '\'' +
+				", child3Name='" + child3Name + '\'' +
+				", child3Nakshathram='" + child3Nakshathram + '\'' +
+				", child3Padam='" + child3Padam + '\'' +
+				", child4Name='" + child4Name + '\'' +
+				", child4Nakshathram='" + child4Nakshathram + '\'' +
+				", child4Padam='" + child4Padam + '\'' +
+				", isAdmin='" + isAdmin + '\'' +
+				", updatedDate=" + updatedDate +
+				", createdDate=" + createdDate +
+				", updatedUser='" + updatedUser + '\'' +
+				", createdUser='" + createdUser + '\'' +
+				", userProducts=" + userProducts +
+				'}';
+	}
 }

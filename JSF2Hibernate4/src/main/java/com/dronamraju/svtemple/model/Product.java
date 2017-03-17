@@ -134,5 +134,20 @@ public class Product implements java.io.Serializable {
 		this.userCategories = userCategories;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Product{" +
+				"productId=" + productId +
+				", name='" + name + '\'' +
+				", description='" + description + '\'' +
+				", price=" + price +
+				", location='" + location + '\'' +
+				", schedule='" + schedule + '\'' +
+				", updatedDate=" + updatedDate +
+				", createdDate=" + createdDate +
+				", updatedUser='" + updatedUser + '\'' +
+				", createdUser='" + createdUser + '\'' +
+				", userCategories=" + userCategories +
+				'}';
+	}
 }

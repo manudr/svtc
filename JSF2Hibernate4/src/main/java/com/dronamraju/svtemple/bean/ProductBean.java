@@ -136,6 +136,9 @@ public class ProductBean implements Serializable {
     }
 
     public String updateProduct() {
+        if (FacesUtil.getRequest().getSession().getAttribute("loggedInUser") == null) {
+            FacesUtil.redirect("login.xhtml");
+        }
         log.info("updateProduct()...");
         log.info("Product: " + product);
         log.info("selectedProduct: " + selectedProduct);
@@ -152,6 +155,9 @@ public class ProductBean implements Serializable {
     }
 
     public String deleteProduct() {
+        if (FacesUtil.getRequest().getSession().getAttribute("loggedInUser") == null) {
+            FacesUtil.redirect("login.xhtml");
+        }
         productService.removeProduct(selectedProduct);
         products = productService.getProducts();
         selectedProduct = null;

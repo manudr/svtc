@@ -24,4 +24,8 @@ public class UserService {
         userDAO.saveUser(user);
     }
 
+    public User findUser(String email, String password) {
+        return userDAO.findUser(email, password);
+    }
+
 }

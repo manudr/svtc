@@ -16,6 +16,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.*;
@@ -34,7 +35,7 @@ public class UserBean implements Serializable {
 
 	private User user = new User();
 
-	private Product product = new Product();
+	//private Product product = new Product();
 
 	private Date dateAndTime;
 
@@ -42,14 +43,20 @@ public class UserBean implements Serializable {
 
 	private Double totalAmount = 0.00;
 
-	private String[] selectedProductIds;
+	//private String[] selectedProductIds;
 
 	private Set<UserProduct> userProducts;
 
 	private List<Product> products;
 
+	private List<Product> selectedProducts;
+
+	private List<Product> filteredProducts;
+
 	@PostConstruct
 	public void init() {
+		user = new User();
+		selectedProducts = new ArrayList<>();
 		products = productService.getProducts();
 	}
 
@@ -60,6 +67,42 @@ public class UserBean implements Serializable {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
+
+	public void login() {
+		log.info("login()...");
+		try {
+			Boolean hasValidationErrors = false;
+
+			if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
+				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid email is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getPassword() == null || user.getPassword().trim().length() < 1) {
+				FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Password is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (hasValidationErrors) {
+				log.info("Validation Failed...");
+				return;
+			}
+
+			User loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
+			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
+			log.info("loggedInUser: " + loggedInUser);
+			if (loggedInUser == null) {
+				FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Either invalid login or user does not exist.", null));
+				return;
+			}
+			user = loggedInUser;
+			selectedProducts = new ArrayList<>();
+			FacesUtil.redirect("registerServices.xhtml");
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 
 	public void register() {
 		log.info("register()...");
@@ -91,7 +134,6 @@ public class UserBean implements Serializable {
 				hasValidationErrors = true;
 			}
 
-
 			if (user.getCity() == null || user.getPhoneNumber().trim().length() < 1) {
 				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Phone Number is required.", null));
 				hasValidationErrors = true;
@@ -107,6 +149,7 @@ public class UserBean implements Serializable {
 				hasValidationErrors = true;
 			}
 
+			/*
 			if (user.getFamilyGothram() == null || user.getFamilyGothram().trim().length() < 1) {
 				FacesUtil.getFacesContext().addMessage("familyGothram", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid familyGothram is required.", null));
 				hasValidationErrors = true;
@@ -116,10 +159,11 @@ public class UserBean implements Serializable {
 				FacesUtil.getFacesContext().addMessage("primaryNakshathram", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Primary Nakshathram is required.", null));
 				hasValidationErrors = true;
 			}
+			*/
 
-			log.info("selectedProductIds: " + selectedProductIds);
-			if (selectedProductIds == null || selectedProductIds.length < 1) {
-				FacesUtil.getFacesContext().addMessage("selectedProductIds", new FacesMessage(FacesMessage.SEVERITY_ERROR, "One or more pujas must be selecetd.", null));
+			log.info("selectedProducts: " + selectedProducts);
+			if (selectedProducts == null || selectedProducts.size() < 1) {
+				FacesUtil.getFacesContext().addMessage("selectedProducts", new FacesMessage(FacesMessage.SEVERITY_ERROR, "One or more services must be selecetd.", null));
 				hasValidationErrors = true;
 			}
 
@@ -134,6 +178,7 @@ public class UserBean implements Serializable {
 
 			if (hasValidationErrors) {
 				log.info("Validation Failed...");
+				selectedProducts = new ArrayList<>();
 				return;
 			}
 			user.setCreatedDate(Calendar.getInstance().getTime());
@@ -143,14 +188,13 @@ public class UserBean implements Serializable {
 			user.setPassword(Util.newPassword());
 			user.setIsAdmin("N");
 
-			for (Object prodId : selectedProductIds) {
-				product = productService.findProduct(new Long(prodId.toString()));
+			for (Product selectedProd : selectedProducts) {
 				UserProduct userProduct = new UserProduct();
 				userProduct.setStatus("Scheduled");
 				userProduct.setNotes(additionalNotes);
 				userProduct.setDateAndTime(dateAndTime);
 				userProduct.setUser(user);
-				userProduct.setProduct(product);
+				userProduct.setProduct(selectedProd);
 				userProduct.setCreatedDate(Calendar.getInstance().getTime());
 				userProduct.setUpdatedDate(Calendar.getInstance().getTime());
 				userProduct.setCreatedUser("Manu");
@@ -227,28 +271,12 @@ public class UserBean implements Serializable {
 		this.additionalNotes = additionalNotes;
 	}
 
-	public String[] getSelectedProductIds() {
-		return selectedProductIds;
-	}
-
-	public void setSelectedProductIds(String[] selectedProductIds) {
-		this.selectedProductIds = selectedProductIds;
-	}
-
 	public User getUser() {
 		return user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 
 	public Set<UserProduct> getUserProducts() {
@@ -273,5 +301,21 @@ public class UserBean implements Serializable {
 
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
+	}
+
+	public List<Product> getSelectedProducts() {
+		return selectedProducts;
+	}
+
+	public void setSelectedProducts(List<Product> selectedProducts) {
+		this.selectedProducts = selectedProducts;
+	}
+
+	public List<Product> getFilteredProducts() {
+		return filteredProducts;
+	}
+
+	public void setFilteredProducts(List<Product> filteredProducts) {
+		this.filteredProducts = filteredProducts;
 	}
 }

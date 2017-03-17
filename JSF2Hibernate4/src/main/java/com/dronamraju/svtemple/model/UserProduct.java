@@ -124,25 +124,6 @@ public class UserProduct implements java.io.Serializable {
 		this.createdUser = createdUser;
 	}
 
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-
-		UserProduct that = (UserProduct) o;
-
-		if (getPk() != null ? !getPk().equals(that.getPk())
-				: that.getPk() != null)
-			return false;
-
-		return true;
-	}
-
-	public int hashCode() {
-		return (getPk() != null ? getPk().hashCode() : 0);
-	}
-
 	@Override
 	public String toString() {
 		return "UserProduct{" +
