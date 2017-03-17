@@ -37,6 +37,8 @@ public class UserDAO {
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
 			entityTransaction.begin();
+			entityManager.merge(user);
+			/*
 			if (user != null && user.getUserId() != null) {
 				log.info("User already exists...");
 				for (UserProduct userProduct : user.getUserProducts()) {
@@ -47,6 +49,7 @@ public class UserDAO {
 				log.info("Persisting user...");
 				entityManager.persist(user);
 			}
+			*/
 			entityTransaction.commit();
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {

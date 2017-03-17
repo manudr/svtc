@@ -187,7 +187,7 @@ public class UserBean implements Serializable {
 			user.setUpdatedUser("Manu");
 			user.setPassword(Util.newPassword());
 			user.setIsAdmin("N");
-
+			Set<UserProduct> selecetdUserProducts = new HashSet<>();
 			for (Product selectedProd : selectedProducts) {
 				UserProduct userProduct = new UserProduct();
 				userProduct.setStatus("Scheduled");
@@ -200,8 +200,9 @@ public class UserBean implements Serializable {
 				userProduct.setCreatedUser("Manu");
 				userProduct.setUpdatedUser("Manu");
 				log.info("userProduct: " + userProduct);
-				user.getUserProducts().add(userProduct);
+				selecetdUserProducts.add(userProduct);
 			}
+			user.setUserProducts(selecetdUserProducts);
 			userService.saveUser(user);
 			userProducts = user.getUserProducts();
 			log.info("userProducts: " + userProducts);
@@ -229,7 +230,7 @@ public class UserBean implements Serializable {
 			sb.append("<b>Website: http://www.svtempleco.org</b><br></br>");
 			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
 			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
-			SendEmail.sendMail(sb.toString(), user.getEmail());
+			//SendEmail.sendMail(sb.toString(), user.getEmail());
 			FacesUtil.redirect("payment.xhtml");
 		} catch(Exception e) {
 			throw new RuntimeException(e);
@@ -244,6 +245,16 @@ public class UserBean implements Serializable {
 	public String updateUser() {
 		log.info("updateUser()...");
 		return null;
+	}
+
+	public void logout() {
+		try {
+			FacesUtil.getRequest().getSession().removeAttribute("loggedInUser");
+			FacesUtil.getRequest().getSession().invalidate();
+			FacesUtil.redirect("login.xhtml");
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public ProductService getProductService() {

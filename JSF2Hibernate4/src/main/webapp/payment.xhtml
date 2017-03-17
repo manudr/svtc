@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -8,28 +9,23 @@
 </h:head>
 
 <h:body>
+    <ui:include src="menu.xhtml"/>
     <br></br>
-    <h:form  action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <p:panel id="panel" header="You have registered the below services with Sri Venkateswara Swamy Temple Of Colorado.">
         <p:dataList value="#{userBean.userProducts}" var="userProduct" type="ordered">
-            <f:facet name="header">
-                You have registered the below services with Sri Venkateswara Swamy Temple Of Colorado.
-            </f:facet>
             #{userProduct.getProduct().getName()} at #{userProduct.getProduct().getLocation()} for #{userProduct.getProduct().getPrice()} - #{userProduct.getDateAndTime()}
         </p:dataList>
-
         <br></br>
-
         <h2>Please enter the total amount: $#{userBean.totalAmount} in the paypal payment page.</h2>
-
-        <p:button href="https://www.paypal.com/donate/guest/" value="Pay Now" />
-
-        <input type="hidden" name="cmd" value="_s-xclick"/>
-        <input type="hidden" name="hosted_button_id" value="W5CENE8PFK2YS"/>
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
-    </h:form>
-
-
-
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick"/>
+            <input type="hidden" name="hosted_button_id" value="7CGB5PFGR9ZKW"/>
+            <input type="hidden" name="item_name" value="Services Purchased From Sri Venkateswara Swamy Temple of Colorado"/>
+            <input type="hidden" name="item_price" value="#{userBean.totalAmount}"/>
+            <input type="hidden" name="quantity" value="1"/>
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+        </form>
+    </p:panel>
 </h:body>
 </html>
