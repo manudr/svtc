@@ -21,7 +21,7 @@
 
 <h:body>
 
-    <h:form id="pujaRegistrationForm">
+    <h:form id="serviceRegistrationForm">
         <p:messages autoUpdate="true"/>
         <div class="ui-fluid">
             <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
@@ -37,7 +37,7 @@
                              rowsPerPageTemplate="25,100,500"
                              style="margin-bottom:0; font-size: 12px;">
                     <f:facet name="header">
-                        <h4>Selecet Pujas/Services (Required)</h4>
+                        <h4>Selecet Services (Required)</h4>
                     </f:facet>
                     <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
                     <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" >

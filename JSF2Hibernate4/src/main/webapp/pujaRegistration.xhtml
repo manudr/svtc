@@ -8,9 +8,9 @@
 </h:head>
 
 <h:body style="font-size: 12px;">
-	<h:form id="pujaRegistrationForm">
+	<h:form id="RegistrationForm">
 		<p:messages autoUpdate="true"/>
-			<p:panel header="Sign up for a Puja or a Temple Service.">
+			<p:panel header="Sign up for or a Temple Service.">
 				<div class="ui-g">
 					<div class="ui-g-3">
 						<p:panel header="Your Details">
@@ -63,7 +63,7 @@
 						</p:panel>
 					</div>
 					<div class="ui-g-6">
-						<p:panel header="Selecet Pujas/Services (Required)" style="height:350px">
+						<p:panel header="Selecet Services (Required)" style="height:350px">
 							<h:panelGrid columns="2" cellpadding="2" style="font-size: 12px; border-width: 0px;">
 								<p:scrollPanel mode="native" style="height:300px; border-width: 0px;">
 									<p:selectManyCheckbox id="selectedProductIds" value="#{userBean.selectedProductIds}" layout="grid" columns="1">
@@ -82,7 +82,7 @@
 							</h:panelGrid>
 						</p:panel>
 						<br></br>
-						<p:panel header="Date and Time (Required) for custom scheduled pujas" style="height:100px">
+						<p:panel header="Date and Time (Required) for custom scheduled services" style="height:100px">
 							<h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
 								<p:calendar id="dateAndTime" value="#{userBean.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" />
 								<p:message for="dateAndTime" />

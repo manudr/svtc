@@ -210,7 +210,7 @@ public class UserBean implements Serializable {
 			for (UserProduct userProduct : userProducts) {
 				totalAmount = totalAmount + userProduct.getProduct().getPrice();
 				log.info("totalAmount: " + totalAmount);
-				sb.append("<b>Puja/Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
+				sb.append("<b>Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
 				sb.append("<b>Price: $</b>" + userProduct.getProduct().getPrice() + "<br></br>");
 				sb.append("<b>Location: </b>" + userProduct.getProduct().getLocation() + "<br></br>");
 				if (userProduct.getDateAndTime() != null) {
@@ -245,7 +245,6 @@ public class UserBean implements Serializable {
 		log.info("updateUser()...");
 		return null;
 	}
-
 
 	public ProductService getProductService() {
 		return productService;

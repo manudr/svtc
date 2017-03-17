@@ -93,7 +93,7 @@ public class ProductBean implements Serializable {
         Boolean hasValidationErrors = false;
 
         if (product.getName() == null || product.getName().trim().length() < 1) {
-            FacesUtil.getFacesContext().addMessage("name", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Puja/ServiceName is required.", null));
+            FacesUtil.getFacesContext().addMessage("name", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Service Name is required.", null));
             hasValidationErrors = true;
         }
 

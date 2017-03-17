@@ -15,7 +15,7 @@
 			<p:messages autoUpdate="true"/>
 			<h:panelGrid id="grid" columns="4" cellpadding="5">
 				<p:outputLabel value="Name" style="font-weight:bold"/>
-				<p:inputText id="name" placeholder="Puja or Service Name" value="#{productBean.product.name}" label="Name"/>
+				<p:inputText id="name" placeholder="Service Name" value="#{productBean.product.name}" label="Name"/>
 				<b>(Required)</b>
 				<p:message for="name" />
 
@@ -39,7 +39,7 @@
 				<p:message for="location" />
 
 				<p:outputLabel value="Description" style="font-weight:bold"/>
-				<p:inputTextarea id="description" maxlength="500" cols="40" rows="10" placeholder="Puja or Service Description" value="#{productBean.product.description}" label="Description"/>
+				<p:inputTextarea id="description" maxlength="500" cols="40" rows="10" placeholder="Service Description" value="#{productBean.product.description}" label="Description"/>
 				<b>(Required)</b>
 				<p:message for="description" />
 

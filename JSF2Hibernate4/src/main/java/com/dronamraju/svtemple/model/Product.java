@@ -27,7 +27,7 @@ public class Product implements java.io.Serializable {
 	private Date createdDate;
 	private String updatedUser;
 	private String createdUser;
-	private Set<UserProduct> userCategories = new HashSet<UserProduct>(0);
+	private Set<UserProduct> userProducts = new HashSet<UserProduct>(0);
 
 	public Product() {
 	}
@@ -126,12 +126,12 @@ public class Product implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.product")
-	public Set<UserProduct> getUserCategories() {
-		return this.userCategories;
+	public Set<UserProduct> getUserProducts() {
+		return this.userProducts;
 	}
 
-	public void setUserCategories(Set<UserProduct> userCategories) {
-		this.userCategories = userCategories;
+	public void setUserProducts(Set<UserProduct> userProducts) {
+		this.userProducts = userProducts;
 	}
 
 	@Override
@@ -147,7 +147,6 @@ public class Product implements java.io.Serializable {
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +
 				", createdUser='" + createdUser + '\'' +
-				", userCategories=" + userCategories +
 				'}';
 	}
 }

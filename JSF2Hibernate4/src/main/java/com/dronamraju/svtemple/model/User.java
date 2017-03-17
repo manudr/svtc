@@ -409,7 +409,6 @@ public class User implements java.io.Serializable {
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +
 				", createdUser='" + createdUser + '\'' +
-				", userProducts=" + userProducts +
 				'}';
 	}
 }

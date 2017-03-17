@@ -11,7 +11,7 @@
 
     <h:form>
         <p:commandLink action="product.xhtml">
-            <center><h3>Click here to add a new puja or a new temple service</h3></center>
+            <center><h3>Click here to add a new temple service</h3></center>
         </p:commandLink>
         <p:dataTable id="products"
                      var="product"
@@ -27,7 +27,7 @@
                      rowsPerPageTemplate="25,100,500">
 
             <f:facet name="header">
-                List of all Temple Services and Pujas at Home or Temple. Right Click to View Options
+                List of all Temple Services at Home or Temple. Right Click to View Options
             </f:facet>
 
             <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" priority="1">
