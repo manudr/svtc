@@ -171,6 +171,14 @@ public class ProductBean implements Serializable {
         return null;
     }
 
+    public void addNewService() {
+        try {
+            FacesUtil.redirect("product.xhtml");
+        } catch(Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void setProductService(ProductService productService) {
         this.productService = productService;
     }

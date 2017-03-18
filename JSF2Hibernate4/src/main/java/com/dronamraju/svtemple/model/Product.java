@@ -1,17 +1,11 @@
 package com.dronamraju.svtemple.model;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
+
 import static javax.persistence.GenerationType.IDENTITY;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "PRODUCT_TABLE")
@@ -27,7 +21,7 @@ public class Product implements java.io.Serializable {
 	private Date createdDate;
 	private String updatedUser;
 	private String createdUser;
-	private Set<UserProduct> userProducts = new HashSet<UserProduct>(0);
+	private List<UserProduct> userProducts = new ArrayList<UserProduct>(0);
 
 	public Product() {
 	}
@@ -125,12 +119,12 @@ public class Product implements java.io.Serializable {
 		this.createdUser = createdUser;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.product")
-	public Set<UserProduct> getUserProducts() {
+	@Transient
+	public List<UserProduct> getUserProducts() {
 		return this.userProducts;
 	}
 
-	public void setUserProducts(Set<UserProduct> userProducts) {
+	public void setUserProducts(List<UserProduct> userProducts) {
 		this.userProducts = userProducts;
 	}
 

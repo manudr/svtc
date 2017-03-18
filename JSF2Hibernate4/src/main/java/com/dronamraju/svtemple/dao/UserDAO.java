@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Set;
 
 
 public class UserDAO {
@@ -31,25 +32,14 @@ public class UserDAO {
 		}
 	}
 
-	public void saveUser(User user){
+	public User saveUser(User user){
 		log.info("Saving user: " + user);
 		log.info("entityManager: " + entityManager);
+		User savedUser = null;
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
 			entityTransaction.begin();
-			entityManager.merge(user);
-			/*
-			if (user != null && user.getUserId() != null) {
-				log.info("User already exists...");
-				for (UserProduct userProduct : user.getUserProducts()) {
-					log.info("Persisting user product...");
-					entityManager.persist(userProduct);
-				}
-			} else {
-				log.info("Persisting user...");
-				entityManager.persist(user);
-			}
-			*/
+			savedUser = entityManager.merge(user);
 			entityTransaction.commit();
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {
@@ -57,6 +47,7 @@ public class UserDAO {
 			}
 			throw new RuntimeException(e);
 		}
+		return savedUser;
 	}
 
 	public User findUser(Long userId){
@@ -76,5 +67,35 @@ public class UserDAO {
 		return users.get(0);
 	}
 
+	public List<UserProduct> findUserProducts(String orderNumber) {
+		Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct WHERE orderNumber = :orderNumber", UserProduct.class);
+		query.setParameter("orderNumber", orderNumber);
+		List<UserProduct> userProducts = query.getResultList();
+		for (UserProduct userProduct : userProducts) {
+			userProduct.setUser(findUser(userProduct.getUserId()));
+			userProduct.setProduct(findProduct(userProduct.getProductId()));
+		}
+		log.info("userProducts: " + userProducts.size());
+		if (userProducts == null || userProducts.size() < 1) {
+			return null;
+		}
+		return userProducts;
+	}
 
+	public boolean orderNumberExists(String orderNumber) {
+		log.info("orderNumberExists: " + orderNumber);
+		Query query = entityManager.createQuery("SELECT orderNumber FROM UserProduct userProduct WHERE orderNumber = :orderNumber", String.class);
+		query.setParameter("orderNumber", orderNumber);
+		List<String> orderNumbers = query.getResultList();
+		log.info("orderNumbers: " + orderNumbers);
+		if (orderNumbers == null || orderNumbers.size() < 1) {
+			return false;
+		}
+		return true;
+	}
+
+	public Product findProduct(Long productId){
+		log.info("findProduct..");
+		return entityManager.find(Product.class, productId);
+	}
 }

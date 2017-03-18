@@ -26,9 +26,10 @@ public class AuthorizationFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         log.info("request.getServletPath(): " + request.getServletPath());
-        if (request.getSession().getAttribute("loggedInUser") == null && !(request.getServletPath().contains("login.xhtml") ||
-                request.getServletPath().contains("registerServices.xhtml") ||
-                request.getServletPath().contains("product.xhtml"))) {
+        if (request.getSession().getAttribute("loggedInUser") == null && !(request.getServletPath().contains("login.xhtml")
+                || request.getServletPath().contains("registerServices.xhtml")
+                //|| request.getServletPath().contains("product.xhtml")
+        )) {
             response.sendRedirect("login.xhtml");
         } else {
             chain.doFilter(req, res);

@@ -32,7 +32,7 @@ public class ProductService {
         return list;
     }
 
-    public void saveUserProduct(UserProduct userProduct) {
+    public void saveUserProduct(UserProduct userProduct){
         productDAO.save(userProduct);
     }
 

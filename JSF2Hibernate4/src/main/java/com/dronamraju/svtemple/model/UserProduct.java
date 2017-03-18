@@ -2,25 +2,17 @@ package com.dronamraju.svtemple.model;
 
 import java.util.Date;
 
-import javax.persistence.AssociationOverride;
-import javax.persistence.AssociationOverrides;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "USER_PRODUCT_TABLE")
-@AssociationOverrides({
-		@AssociationOverride(name = "pk.user", joinColumns = @JoinColumn(name = "USER_ID")),
-		@AssociationOverride(name = "pk.product", joinColumns = @JoinColumn(name = "PRODUCT_ID")) })
 public class UserProduct implements java.io.Serializable {
-
-	private UserProductId pk = new UserProductId();
+	private Long userProductId;
+	private Long userId;
+	private Long productId;
+	private String orderNumber;
 	private String notes;
 	private String status;
 	private Date dateAndTime;
@@ -28,36 +20,66 @@ public class UserProduct implements java.io.Serializable {
 	private Date createdDate;
 	private String updatedUser;
 	private String createdUser;
-
+	private User user;
+	private Product product;
 
 	public UserProduct() {
 	}
 
-	@EmbeddedId
-	public UserProductId getPk() {
-		return pk;
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "USER_PRODUCT_ID", unique = true, nullable = false)
+	public Long getUserProductId() {
+		return userProductId;
 	}
 
-	public void setPk(UserProductId pk) {
-		this.pk = pk;
+	public void setUserProductId(Long userProductId) {
+		this.userProductId = userProductId;
+	}
+
+	@Column(name="USER_ID")
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	@Column(name="PRODUCT_ID")
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+
+	@Column(name="ORDER_NUMBER")
+	public String getOrderNumber() {
+		return orderNumber;
+	}
+
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 
 	@Transient
 	public User getUser() {
-		return getPk().getUser();
+		return user;
 	}
 
 	public void setUser(User user) {
-		getPk().setUser(user);
+		this.user = user;
 	}
 
 	@Transient
 	public Product getProduct() {
-		return getPk().getProduct();
+		return product;
 	}
 
 	public void setProduct(Product product) {
-		getPk().setProduct(product);
+		this.product = product;
 	}
 
 	@Temporal(TemporalType.DATE)
@@ -127,7 +149,10 @@ public class UserProduct implements java.io.Serializable {
 	@Override
 	public String toString() {
 		return "UserProduct{" +
-				"pk=" + pk +
+				"userProductId=" + userProductId +
+				", userId=" + userId +
+				", productId=" + productId +
+				", orderNumber='" + orderNumber + '\'' +
 				", notes='" + notes + '\'' +
 				", status='" + status + '\'' +
 				", dateAndTime=" + dateAndTime +
@@ -135,6 +160,8 @@ public class UserProduct implements java.io.Serializable {
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +
 				", createdUser='" + createdUser + '\'' +
+				", user=" + user +
+				", product=" + product +
 				'}';
 	}
 }

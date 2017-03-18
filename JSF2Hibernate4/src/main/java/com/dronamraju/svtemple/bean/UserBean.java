@@ -45,7 +45,7 @@ public class UserBean implements Serializable {
 
 	//private String[] selectedProductIds;
 
-	private Set<UserProduct> userProducts;
+	private List<UserProduct> userProducts;
 
 	private List<Product> products;
 
@@ -109,6 +109,8 @@ public class UserBean implements Serializable {
 		try {
 			Boolean hasValidationErrors = false;
 
+			log.info("User: " + user);
+
 			if (user.getFirstName() == null || user.getFirstName().trim().length() < 1) {
 				FacesUtil.getFacesContext().addMessage("firstName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Fisrt Name is required.", null));
 				hasValidationErrors = true;
@@ -126,6 +128,11 @@ public class UserBean implements Serializable {
 
 			if (user.getPhoneNumber() == null || user.getPhoneNumber().trim().length() < 1 || !Util.isValidPhoneNumber(user.getPhoneNumber())) {
 				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Phone Number is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (user.getPassword() == null || user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword()))) {
+				FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password should be at least 10 characters long and should match with re-entered.", null));
 				hasValidationErrors = true;
 			}
 
@@ -185,11 +192,21 @@ public class UserBean implements Serializable {
 			user.setUpdatedDate(Calendar.getInstance().getTime());
 			user.setCreatedUser("Manu");
 			user.setUpdatedUser("Manu");
-			user.setPassword(Util.newPassword());
+			if (user == null && user.getUserId() == null) {
+				user.setPassword(Util.randomAlphaNumeric(10));
+			}
 			user.setIsAdmin("N");
-			Set<UserProduct> selecetdUserProducts = new HashSet<>();
+			user = userService.saveUser(user);
+			String orderNumber = Util.randomAlphaNumeric(10);
+			while (userService.orderNumberExists(orderNumber)) {
+				orderNumber = Util.randomAlphaNumeric(10);
+			}
+			log.info("orderNumber: " + orderNumber + " created at: " + Calendar.getInstance().getTime());
 			for (Product selectedProd : selectedProducts) {
 				UserProduct userProduct = new UserProduct();
+				userProduct.setUserId(user.getUserId());
+				userProduct.setProductId(selectedProd.getProductId());
+				userProduct.setOrderNumber(orderNumber);
 				userProduct.setStatus("Scheduled");
 				userProduct.setNotes(additionalNotes);
 				userProduct.setDateAndTime(dateAndTime);
@@ -200,15 +217,13 @@ public class UserBean implements Serializable {
 				userProduct.setCreatedUser("Manu");
 				userProduct.setUpdatedUser("Manu");
 				log.info("userProduct: " + userProduct);
-				selecetdUserProducts.add(userProduct);
+				productService.saveUserProduct(userProduct);
 			}
-			user.setUserProducts(selecetdUserProducts);
-			userService.saveUser(user);
-			userProducts = user.getUserProducts();
-			log.info("userProducts: " + userProducts);
+			userProducts = userService.findUserProducts(orderNumber);
 			StringBuilder sb = new StringBuilder();
-			sb.append("<h4>Thank you. You have registered for the below temple services:</h4>");
+			sb.append("<h4>Thank you. You have purchased for the below temple services:</h4>");
 			for (UserProduct userProduct : userProducts) {
+				log.info("userProduct: " + userProduct);
 				totalAmount = totalAmount + userProduct.getProduct().getPrice();
 				log.info("totalAmount: " + totalAmount);
 				sb.append("<b>Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
@@ -220,9 +235,7 @@ public class UserBean implements Serializable {
 				}
 				sb.append("<br></br><br></br>");
 			}
-
 			sb.append("<b>Total Amount to be paid: </b>$" + totalAmount + "<br></br><br></br><br></br>");
-
 			sb.append("<b>Thank you</b><br></br>");
 			sb.append("<b>Sri Venkateswara Swamy Temple Of Colorado</b><br></br>");
 			sb.append("<b>1495 S Ridge Road Castle Rock CO 80104</b><br></br>");
@@ -231,6 +244,9 @@ public class UserBean implements Serializable {
 			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
 			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
 			//SendEmail.sendMail(sb.toString(), user.getEmail());
+			User loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
+			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
+			log.info("loggedInUser: " + loggedInUser);
 			FacesUtil.redirect("payment.xhtml");
 		} catch(Exception e) {
 			throw new RuntimeException(e);
@@ -289,11 +305,11 @@ public class UserBean implements Serializable {
 		this.user = user;
 	}
 
-	public Set<UserProduct> getUserProducts() {
+	public List<UserProduct> getUserProducts() {
 		return userProducts;
 	}
 
-	public void setUserProducts(Set<UserProduct> userProducts) {
+	public void setUserProducts(List<UserProduct> userProducts) {
 		this.userProducts = userProducts;
 	}
 

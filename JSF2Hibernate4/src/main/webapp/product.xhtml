@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -8,9 +9,7 @@
 </h:head>
 
 <h:body>
-
 	<h:form id="productForm">
-
 		<p:panel id="panel" header="Add A New Temple Service">
 			<p:messages autoUpdate="true"/>
 			<h:panelGrid id="grid" columns="4" cellpadding="5">
@@ -54,10 +53,8 @@
 				<p:commandButton value="Save" actionListener="#{productBean.addProduct}" icon="fa-save"/>
 				<p:commandButton value="Cancel" actionListener="#{productBean.cancel}" icon="fa fa-fw fa-remove"/>
 			</h:panelGrid>
-
 		</p:panel>
-
 	</h:form>
-
+	<ui:include src="menu.xhtml"/>
 </h:body>
 </html>

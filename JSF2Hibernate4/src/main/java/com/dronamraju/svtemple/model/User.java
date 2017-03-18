@@ -1,20 +1,11 @@
 package com.dronamraju.svtemple.model;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import javax.faces.bean.SessionScoped;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
+
 import static javax.persistence.GenerationType.IDENTITY;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "USER_TABLE", uniqueConstraints = {
@@ -24,7 +15,6 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "PHONE_NUMBER") })
 @SessionScoped
 public class User implements java.io.Serializable {
-
 	private Long userId;
 	private String firstName;
 	private String lastName;
@@ -35,6 +25,7 @@ public class User implements java.io.Serializable {
 	private String state;
 	private String zip;
 	private String password;
+	private String rePassword;
 	private String familyGothram;
 	private String primaryNakshathram;
 	private String primaryPadam;
@@ -58,9 +49,7 @@ public class User implements java.io.Serializable {
 	private Date createdDate;
 	private String updatedUser;
 	private String createdUser;
-
-
-	private Set<UserProduct> userProducts = new HashSet<UserProduct>(0);
+	private List<UserProduct> userProducts = new ArrayList<>(0);
 
 	public User() {
 	}
@@ -155,6 +144,15 @@ public class User implements java.io.Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Transient
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
 	}
 
 	@Column(name="family_gothram")
@@ -364,12 +362,12 @@ public class User implements java.io.Serializable {
 		this.createdUser = createdUser;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.user", cascade=CascadeType.ALL)
-	public Set<UserProduct> getUserProducts() {
+	@Transient
+	public List<UserProduct> getUserProducts() {
 		return this.userProducts;
 	}
 
-	public void setUserProducts(Set<UserProduct> userProducts) {
+	public void setUserProducts(List<UserProduct> userProducts) {
 		this.userProducts = userProducts;
 	}
 
@@ -386,6 +384,7 @@ public class User implements java.io.Serializable {
 				", state='" + state + '\'' +
 				", zip='" + zip + '\'' +
 				", password='" + password + '\'' +
+				", rePassword='" + rePassword + '\'' +
 				", familyGothram='" + familyGothram + '\'' +
 				", primaryNakshathram='" + primaryNakshathram + '\'' +
 				", primaryPadam='" + primaryPadam + '\'' +
@@ -409,6 +408,7 @@ public class User implements java.io.Serializable {
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +
 				", createdUser='" + createdUser + '\'' +
+				", userProducts=" + userProducts +
 				'}';
 	}
 }
