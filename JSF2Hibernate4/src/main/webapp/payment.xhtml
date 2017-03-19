@@ -12,9 +12,35 @@
     <br></br>
     <div class="ui-fluid">
         <p:panel id="panel" header="You have purchased the below services with Sri Venkateswara Swamy Temple Of Colorado.">
-            <p:dataList value="#{userBean.userProducts}" var="userProduct" type="ordered">
-                #{userProduct.getProduct().getName()} at #{userProduct.getProduct().getLocation()} for #{userProduct.getProduct().getPrice()} - #{userProduct.getDateAndTime()}
-            </p:dataList>
+            <ui:repeat var="userProduct" value="#{userBean.userProducts}">
+                <h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
+                    <p:outputLabel value="Order Number: "/>
+                    <p:outputLabel value="#{userProduct.orderNumber}"/>
+
+                    <p:outputLabel value="Name: "/>
+                    <p:outputLabel value="#{userProduct.product.name}"/>
+
+                    <p:outputLabel value="Price: "/>
+                    <p:outputLabel value="#{userProduct.product.price}"/>
+
+                    <p:outputLabel value="Schedule: "/>
+                    <p:outputLabel value="#{userProduct.product.schedule}"/>
+
+                    <p:outputLabel value="Location: "/>
+                    <p:outputLabel value="#{userProduct.product.location}"/>
+
+                    <p:outputLabel value="Status: "/>
+                    <p:outputLabel value="#{userProduct.status}"/>
+
+                    <p:outputLabel value="Date and Time: " rendered="#{userProduct.dateAndTime != null}"/>
+                    <p:outputLabel value="#{userProduct.dateAndTime}" rendered="#{userProduct.dateAndTime != null}"/>
+
+                    <p:outputLabel value="Notes: " rendered="#{userProduct.notes != null}"/>
+                    <p:outputLabel value="#{userProduct.notes}" rendered="#{userProduct.notes != null}"/>
+
+                    <br></br>
+                </h:panelGrid>
+            </ui:repeat>
             <br></br>
             <h2>Please enter the total amount: $#{userBean.totalAmount} in the paypal payment page.</h2>
             <p:panelGrid columns="2" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
@@ -37,6 +63,5 @@
             </p:panelGrid>
         </p:panel>
     </div>
-    <br></br>
 </h:body>
 </html>

@@ -243,7 +243,7 @@ public class UserBean implements Serializable {
 			sb.append("<b>Website: http://www.svtempleco.org</b><br></br>");
 			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
 			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
-			//SendEmail.sendMail(sb.toString(), user.getEmail());
+			SendEmail.sendMail(sb.toString(), user.getEmail());
 			User loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
 			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
 			log.info("loggedInUser: " + loggedInUser);
