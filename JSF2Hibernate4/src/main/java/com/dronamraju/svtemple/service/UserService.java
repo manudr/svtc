@@ -40,4 +40,8 @@ public class UserService {
         return userDAO.orderNumberExists(orderNumber);
     }
 
+    public String findValue(String name) {
+        return userDAO.findValue(name);
+    }
+
 }
