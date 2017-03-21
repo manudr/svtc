@@ -82,6 +82,18 @@ public class UserDAO {
 		return userProducts;
 	}
 
+	public String findValue(String name) {
+		log.info("findValue: " + name);
+		Query query = entityManager.createQuery("SELECT value FROM configuration_table configuration WHERE configuration_name = :name", String.class);
+		query.setParameter("name", name);
+		List<String> values = query.getResultList();
+		log.info("values: " + values);
+		if (values == null || values.size() < 1) {
+			return values.get(0);
+		}
+		return null;
+	}
+
 	public boolean orderNumberExists(String orderNumber) {
 		log.info("orderNumberExists: " + orderNumber);
 		Query query = entityManager.createQuery("SELECT orderNumber FROM UserProduct userProduct WHERE orderNumber = :orderNumber", String.class);
