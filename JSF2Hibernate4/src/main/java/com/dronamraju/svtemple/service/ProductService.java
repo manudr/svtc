@@ -52,4 +52,8 @@ public class ProductService {
         return productDAO.find(id);
     }
 
+    public List<UserProduct> findAllUserProducts() {
+        return productDAO.findAllUserProducts();
+    }
+
 }
