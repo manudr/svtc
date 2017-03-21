@@ -43,6 +43,8 @@ public class ProductBean implements Serializable {
 
     private List<Product> filteredProducts;
 
+    private List<UserProduct> filteredUserProducts;
+
     private Product selectedProduct;
 
     private List<Product> selecetdProducts;
@@ -85,6 +87,7 @@ public class ProductBean implements Serializable {
     public void init() {
         products = productService.getProducts();
         product = new Product(); //This is required for: Target Unreachable, 'null' returned null
+        userProducts = productService.findAllUserProducts();
     }
 
     public void addProduct() {
@@ -201,5 +204,13 @@ public class ProductBean implements Serializable {
 
     public void setUserProducts(List<UserProduct> userProducts) {
         this.userProducts = userProducts;
+    }
+
+    public List<UserProduct> getFilteredUserProducts() {
+        return filteredUserProducts;
+    }
+
+    public void setFilteredUserProducts(List<UserProduct> filteredUserProducts) {
+        this.filteredUserProducts = filteredUserProducts;
     }
 }
