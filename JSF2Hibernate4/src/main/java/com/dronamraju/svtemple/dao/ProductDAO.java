@@ -61,20 +61,6 @@ public class ProductDAO {
         }
     }
 
-    public List<UserProduct> findAllUserProducts() {
-        Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
-        List<UserProduct> userProducts = query.getResultList();
-        for (UserProduct userProduct : userProducts) {
-            userProduct.setUser(findUser(userProduct.getUserId()));
-            userProduct.setProduct(findProduct(userProduct.getProductId()));
-        }
-        log.info("userProducts: " + userProducts.size());
-        if (userProducts == null || userProducts.size() < 1) {
-            return null;
-        }
-        return userProducts;
-    }
-
     public void save(Product product) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
@@ -114,5 +100,19 @@ public class ProductDAO {
     public User findUser(Long userId){
         log.info("findUser..");
         return entityManager.find(User.class, userId);
+    }
+
+    public List<UserProduct> findAllUserProducts() {
+        Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
+        List<UserProduct> userProducts = query.getResultList();
+        for (UserProduct userProduct : userProducts) {
+            userProduct.setUser(findUser(userProduct.getUserId()));
+            userProduct.setProduct(findProduct(userProduct.getProductId()));
+        }
+        log.info("userProducts: " + userProducts.size());
+        if (userProducts == null || userProducts.size() < 1) {
+            return null;
+        }
+        return userProducts;
     }
 }
