@@ -20,6 +20,8 @@ import javax.inject.Inject;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.*;
+import java.util.stream.Stream;
+
 
 @ManagedBean(name = "userBean")
 @SessionScoped
@@ -88,7 +90,7 @@ public class UserBean implements Serializable {
 				return;
 			}
 
-			User loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
+			User loggedInUser = userService.findUser(user.getEmail(), Util.encrypt(user.getPassword()));
 			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
 			log.info("loggedInUser: " + loggedInUser);
 			if (loggedInUser == null) {
@@ -131,7 +133,7 @@ public class UserBean implements Serializable {
 				hasValidationErrors = true;
 			}
 
-			if (user.getPassword() == null || user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword()))) {
+			if (user.getUserId() != null && (user.getPassword() == null || user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword())))) {
 				FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password should be at least 10 characters long and should match with re-entered.", null));
 				hasValidationErrors = true;
 			}
@@ -193,7 +195,7 @@ public class UserBean implements Serializable {
 			user.setCreatedUser("Manu");
 			user.setUpdatedUser("Manu");
 			if (user == null && user.getUserId() == null) {
-				user.setPassword(Util.randomAlphaNumeric(10));
+				user.setPassword(Util.encrypt(Util.randomAlphaNumeric(10)));
 			}
 			user.setIsAdmin("N");
 			user = userService.saveUser(user);
@@ -221,7 +223,7 @@ public class UserBean implements Serializable {
 			}
 			userProducts = userService.findUserProducts(orderNumber);
 			StringBuilder sb = new StringBuilder();
-			sb.append("<h4>Thank you. You have purchased for the below temple services:</h4>");
+			sb.append("<h4>Thank you. You have purchased the below temple services:</h4>");
 			for (UserProduct userProduct : userProducts) {
 				log.info("userProduct: " + userProduct);
 				totalAmount = totalAmount + userProduct.getProduct().getPrice();
@@ -243,13 +245,19 @@ public class UserBean implements Serializable {
 			sb.append("<b>Website: http://www.svtempleco.org</b><br></br>");
 			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
 			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
-			SendEmail.sendMail(sb.toString(), user.getEmail());
-			User loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
+			//String recipients = userService.findValue("recipients");
+			String recipients = "manudr@hotmail.com";
+			SendEmail.sendMail(sb.toString(), user.getEmail(), recipients);
+			User loggedInUser = userService.findUser(user.getEmail(), Util.encrypt(user.getPassword()));
 			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
 			log.info("loggedInUser: " + loggedInUser);
 			FacesUtil.redirect("payment.xhtml");
-		} catch(Exception e) {
-			throw new RuntimeException(e);
+		} catch(Exception exception) {
+			Optional<Throwable> rootCause = Stream.iterate(exception, Throwable::getCause).filter(element -> element.getCause() == null).findFirst();
+			FacesUtil.getFacesContext().addMessage("selectedProducts", new FacesMessage(FacesMessage.SEVERITY_ERROR, rootCause.toString(), null));
+			log.error("error occurred: ", exception);
+			return;
+			//throw new RuntimeException(e);
 		}
 	}
 
