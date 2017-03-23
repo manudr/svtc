@@ -3,7 +3,9 @@ package com.dronamraju.svtemple.dao;
 import com.dronamraju.svtemple.model.Product;
 import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.model.UserProduct;
+import com.dronamraju.svtemple.util.EncryptDecryptStringWithDES;
 import com.dronamraju.svtemple.util.EntityManagerUtil;
+import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -35,6 +37,7 @@ public class UserDAO {
 	public User saveUser(User user){
 		log.info("Saving user: " + user);
 		log.info("entityManager: " + entityManager);
+		user.setPassword(user.getPassword());
 		User savedUser = null;
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
@@ -47,12 +50,18 @@ public class UserDAO {
 			}
 			throw new RuntimeException(e);
 		}
+		//savedUser.setPassword(EncryptDecryptStringWithDES.decrypt(savedUser.getPassword()));
+		//savedUser.setRePassword(EncryptDecryptStringWithDES.decrypt(savedUser.getPassword()));
+		log.info("savedUser: " + savedUser);
 		return savedUser;
 	}
 
 	public User findUser(Long userId){
 		log.info("findUser..");
-		return entityManager.find(User.class, userId);
+		User user = entityManager.find(User.class, userId);
+		//user.setPassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
+		//user.setRePassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
+		return user;
 	}
 
 	public User findUser(String email, String password) {
@@ -60,11 +69,14 @@ public class UserDAO {
 		query.setParameter("email", email);
 		query.setParameter("password", password);
 		List<User> users = query.getResultList();
-		log.info("users - users: " + users);
 		if (users == null || users.size() < 1) {
 			return null;
 		}
-		return users.get(0);
+		User user = users.get(0);
+		//user.setPassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
+		//user.setRePassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
+		log.info("findUser - user: " + user);
+		return user;
 	}
 
 	public List<UserProduct> findUserProducts(String orderNumber) {

@@ -92,7 +92,7 @@ Insert into CONFIGURATION_TABLE (CONFIGURATION_NAME, VALUE, UPDATED_DATE, CREATE
 values ('recipients','manu_may@yahoo.com, manudr@hotmail.com',getdate(),getdate(),'Manu','Manu');
 
 Insert into USER_TABLE (FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,STREET_ADDRESS,CITY,STATE,ZIP,PASSWORD,FAMILY_GOTHRAM,PRIMARY_NAKSHATHRAM,PRIMARY_PADAM,SPOUSE_NAME,SPOUSE_NAKSHATHRAM,SPOUSE_PADAM,CHILD1_NAME,CHILD1_NAKSHATHRAM,CHILD1_PADAM,CHILD2_NAME,CHILD2_NAKSHATHRAM,CHILD2_PADAM,CHILD3_NAME,CHILD3_NAKSHATHRAM,CHILD3_PADAM,CHILD4_NAME,CHILD4_NAKSHATHRAM,CHILD4_PADAM,IS_ADMIN,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER) 
-values ('Test','Test','test@test.com','7868767868','jhkjhkjhkj','kjhkjh','nbmnbmn','67576','password','nbvnvnbv','lkjlkjk','','','','','','','','','','','','','','','','','N',getdate(),getdate(),'Manu','Manu');
+values ('Test','Test','manudr@hotmail.com','7868767868','jhkjhkjhkj','kjhkjh','nbmnbmn','67576','password','nbvnvnbv','lkjlkjk','','','','','','','','','','','','','','','','','N',getdate(),getdate(),'Manu','Manu');
 
 Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
 values ('Sri Mahalakshmi Abhishekam Kumkumarchana', 'Temple', 'Special Event', 51.00, 'Sri Mahalakshmi Abhishekam Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');

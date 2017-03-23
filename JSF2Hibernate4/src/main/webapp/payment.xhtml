@@ -37,12 +37,10 @@
 
                     <p:outputLabel value="Notes: " rendered="#{userProduct.notes != null}"/>
                     <p:outputLabel value="#{userProduct.notes}" rendered="#{userProduct.notes != null}"/>
-
                     <br></br>
                 </h:panelGrid>
             </ui:repeat>
-            <br></br>
-            <h2>Please enter the total amount: $#{userBean.totalAmount} in the paypal payment page.</h2>
+            <h3 style="color: #ff3300;">Please enter the total amount of $#{userBean.totalAmount} in the paypal payment page.</h3>
             <p:panelGrid columns="2" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick"/>

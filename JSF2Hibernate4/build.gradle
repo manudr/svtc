@@ -23,16 +23,9 @@ dependencies {
                 , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/jsf-api-2.2.14.jar'
                 , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/javaee-api-7.0.jar'
                 , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/bootstrap-1.0.10.jar'
-                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/flick-1.0.10.jar'
-                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/pepper-grinder-1.0.10.jar'
-                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/ui-lightness-1.0.10.jar'
-                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/bluesky-1.0.10.jar'
-                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/aristo-1.0.1.jar'
-                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/sunny-1.0.10.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/commons-codec-1.10.jar'
                 , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/cupertino-1.0.10.jar'
+                , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/javax.mail-1.5.6.jar'
                 , '/Users/admin/development/modules/svtco/JSF2Hibernate4/lib/primefaces-6.0.jar')
-
-
-
 
 }
