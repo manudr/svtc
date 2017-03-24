@@ -10,10 +10,15 @@
 </h:head>
 
 <h:body>
+    <center>
+        <h2 style="color: #ff3300">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</h2>
+        <h2 style="color: #ff3300">Please register here for the temple services.</h2>
+    </center>
     <h:form id="serviceRegistrationForm">
         <p:messages autoUpdate="true"/>
         <div class="ui-fluid">
-            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid">
+                <p:panel header="Selecet Services (Required)">
                 <p:dataTable id="checkboxDT"
                              var="product"
                              value="#{userBean.products}"
@@ -25,9 +30,6 @@
                              filteredValue="#{productBean.filteredProducts}"
                              rowsPerPageTemplate="25,100,500"
                              style="margin-bottom:0; font-size: 12px;">
-                    <f:facet name="header">
-                        Selecet Services (Required)
-                    </f:facet>
                     <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
                     <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" >
                         <h:outputText value="#{product.name}" />
@@ -42,6 +44,7 @@
                         <h:outputText value="#{product.price}" />
                     </p:column>
                 </p:dataTable>
+                </p:panel>
             </p:panelGrid>
             <br></br>
             <p:panelGrid columns="3" columnClasses="ui-grid-col-6, ui-grid-col-3, ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
@@ -142,7 +145,7 @@
 
                         <p:panel header="1st Child details">
                             <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                                <p:outputLabel value="Name"/>
+                                <p:outputLabel value="Full Name"/>
                                 <p:inputText id="child1Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child1Name}" label="Name"/>
                                 <p:message for="child1Name" />
 
@@ -160,7 +163,7 @@
 
                         <p:panel header="2nd Child details">
                             <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                                <p:outputLabel value="Name"/>
+                                <p:outputLabel value="Full Name"/>
                                 <p:inputText id="child2Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child2Name}" label="Name"/>
                                 <p:message for="child2Name" />
 
@@ -178,7 +181,7 @@
 
                         <p:panel header="3rd Child details">
                             <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                                <p:outputLabel value="Name"/>
+                                <p:outputLabel value="Full Name"/>
                                 <p:inputText id="child3Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child3Name}" label="Name"/>
                                 <p:message for="child3Name" />
 
@@ -197,7 +200,7 @@
 
                         <p:panel header="4th Child details">
                             <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                                <p:outputLabel value="Name"/>
+                                <p:outputLabel value="Full Name"/>
                                 <p:inputText id="child4Name" size="20" maxlength="30"  placeholder="Name" value="#{userBean.user.child4Name}" label="Name"/>
                                 <p:message for="child4Name" />
 
