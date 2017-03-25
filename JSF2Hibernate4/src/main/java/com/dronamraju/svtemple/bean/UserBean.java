@@ -135,9 +135,16 @@ public class UserBean implements Serializable {
 				hasValidationErrors = true;
 			}
 
-			if (loggedInUser != null && loggedInUser.getUserId() != null && !(loggedInUser.getPassword().equals(user.getPassword())) && (user.getPassword() == null || user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword())))) {
+			if (loggedInUser == null && (user.getPassword() == null || user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword())))) {
 				FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password should be at least 10 characters long and should match with re-entered.", null));
 				hasValidationErrors = true;
+			}
+
+			if (loggedInUser != null && user.getRePassword() != null && user.getRePassword().trim().length() > 1) {
+				if (user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword()))) {
+					FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Both Passwords should match.", null));
+					hasValidationErrors = true;
+				}
 			}
 
 			if (user.getStreetAddress() == null || user.getStreetAddress().trim().length() < 1) {
@@ -261,7 +268,16 @@ public class UserBean implements Serializable {
 
 	public void cancel() {
 		log.info("cancel()..");
-		FacesUtil.redirect("users.xhtml");
+		FacesUtil.redirect("login.xhtml");
+	}
+
+	public void cancelFromRegistration() {
+		log.info("cancel()..");
+		if (loggedInUser != null) {
+			FacesUtil.redirect("userProducts.xhtml");
+		} else {
+			FacesUtil.redirect("login.xhtml");
+		}
 	}
 
 	public String updateUser() {

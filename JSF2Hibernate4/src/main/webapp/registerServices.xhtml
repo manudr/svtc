@@ -17,33 +17,35 @@
     <h:form id="serviceRegistrationForm">
         <p:messages autoUpdate="true"/>
         <div class="ui-fluid">
-            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid">
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
                 <p:panel header="Selecet Services (Required)">
-                <p:dataTable id="checkboxDT"
-                             var="product"
-                             value="#{userBean.products}"
-                             selection="#{userBean.selectedProducts}"
-                             rowKey="#{product.productId}"
-                             rows="20"
-                             paginator="true"
-                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                             filteredValue="#{productBean.filteredProducts}"
-                             rowsPerPageTemplate="25,100,500"
-                             style="margin-bottom:0; font-size: 12px;">
-                    <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
-                    <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" >
-                        <h:outputText value="#{product.name}" />
-                    </p:column>
-                    <p:column headerText="Location" filterBy="#{product.location}" filterMatchMode="contains" sortBy="#{product.location}" >
-                        <h:outputText value="#{product.location}" />
-                    </p:column>
-                    <p:column headerText="Schedule" filterBy="#{product.schedule}" filterMatchMode="contains" sortBy="#{product.schedule}" >
-                        <h:outputText value="#{product.schedule}" />
-                    </p:column>
-                    <p:column headerText="Price" filterBy="#{product.price}" filterMatchMode="contains" sortBy="#{product.price}" >
-                        <h:outputText value="#{product.price}" />
-                    </p:column>
-                </p:dataTable>
+                    <p:dataTable id="checkboxDT"
+                                 var="product"
+                                 value="#{userBean.products}"
+                                 selection="#{userBean.selectedProducts}"
+                                 rowKey="#{product.productId}"
+                                 rows="20"
+                                 paginator="true"
+                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 filteredValue="#{productBean.filteredProducts}"
+                                 rowsPerPageTemplate="25,100,500"
+                                 style="margin-bottom:0; font-size: 12px;">
+                        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+                        <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" >
+                            <h:outputText value="#{product.name}" />
+                        </p:column>
+                        <p:column headerText="Location" filterBy="#{product.location}" filterMatchMode="contains" sortBy="#{product.location}" >
+                            <h:outputText value="#{product.location}" />
+                        </p:column>
+                        <p:column headerText="Schedule" filterBy="#{product.schedule}" filterMatchMode="contains" sortBy="#{product.schedule}" >
+                            <h:outputText value="#{product.schedule}" />
+                        </p:column>
+                        <p:column headerText="Price" filterBy="#{product.price}" filterMatchMode="contains" sortBy="#{product.price}" >
+                            <h:outputText value="#{product.price}" >
+                                <f:convertNumber type="currency" />
+                            </h:outputText>
+                        </p:column>
+                    </p:dataTable>
                 </p:panel>
             </p:panelGrid>
             <br></br>
@@ -220,10 +222,15 @@
                     </p:panelGrid>
                 </p:tab>
             </p:accordionPanel>
-            <br></br>
+
+            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+            <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                <label style="font-size: 20px; font-weight: bold;">Please wait</label>
+            </p:dialog>
+
             <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                <p:commandButton value="Save" actionListener="#{userBean.register}" icon="fa-save"/>
-                <p:commandButton value="Cancel" actionListener="#{userBean.cancel}" icon="fa fa-fw fa-remove"/>
+                <p:commandButton value="Save" actionListener="#{userBean.register}" icon="ui-icon-save"/>
                 <p:commandButton action="#{userBean.logout()}" value="Logout" />
             </h:panelGrid>
         </div>
