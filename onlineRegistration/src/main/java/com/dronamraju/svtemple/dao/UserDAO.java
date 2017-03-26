@@ -29,97 +29,140 @@ public class UserDAO {
 			entityManager.persist(cat);
 			entityTransaction.commit();
 		} catch (Exception e) {
-			entityTransaction.rollback();
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
 			throw new RuntimeException(e);
 		}
 	}
 
 	public User saveUser(User user){
-		log.info("Saving user: " + user);
-		log.info("entityManager: " + entityManager);
-		user.setPassword(user.getPassword());
-		User savedUser = null;
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
+			log.info("Saving user: " + user);
+			log.info("entityManager: " + entityManager);
+			User savedUser = null;
 			entityTransaction.begin();
 			savedUser = entityManager.merge(user);
 			entityTransaction.commit();
+			log.info("savedUser: " + savedUser);
+			return savedUser;
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {
 				entityTransaction.rollback();
 			}
 			throw new RuntimeException(e);
 		}
-		//savedUser.setPassword(EncryptDecryptStringWithDES.decrypt(savedUser.getPassword()));
-		//savedUser.setRePassword(EncryptDecryptStringWithDES.decrypt(savedUser.getPassword()));
-		log.info("savedUser: " + savedUser);
-		return savedUser;
 	}
 
 	public User findUser(Long userId){
+		EntityTransaction entityTransaction = entityManager.getTransaction();
 		log.info("findUser..");
-		User user = entityManager.find(User.class, userId);
-		//user.setPassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
-		//user.setRePassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
-		return user;
+		try {
+			User user = entityManager.find(User.class, userId);
+			return user;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
+		}
 	}
 
 	public User findUser(String email, String password) {
-		Query query = entityManager.createQuery("SELECT user FROM User user WHERE email = :email and password = :password", User.class);
-		query.setParameter("email", email);
-		query.setParameter("password", password);
-		List<User> users = query.getResultList();
-		if (users == null || users.size() < 1) {
-			return null;
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			Query query = entityManager.createQuery("SELECT user FROM User user WHERE email = :email and password = :password", User.class);
+			query.setParameter("email", email);
+			query.setParameter("password", password);
+			List<User> users = query.getResultList();
+			if (users == null || users.size() < 1) {
+				return null;
+			}
+			User user = users.get(0);
+			log.info("findUser - user: " + user);
+			return user;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
 		}
-		User user = users.get(0);
-		//user.setPassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
-		//user.setRePassword(EncryptDecryptStringWithDES.decrypt(user.getPassword()));
-		log.info("findUser - user: " + user);
-		return user;
 	}
 
 	public List<UserProduct> findUserProducts(String orderNumber) {
-		Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct WHERE orderNumber = :orderNumber", UserProduct.class);
-		query.setParameter("orderNumber", orderNumber);
-		List<UserProduct> userProducts = query.getResultList();
-		for (UserProduct userProduct : userProducts) {
-			userProduct.setUser(findUser(userProduct.getUserId()));
-			userProduct.setProduct(findProduct(userProduct.getProductId()));
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct WHERE orderNumber = :orderNumber", UserProduct.class);
+			query.setParameter("orderNumber", orderNumber);
+			List<UserProduct> userProducts = query.getResultList();
+			for (UserProduct userProduct : userProducts) {
+				userProduct.setUser(findUser(userProduct.getUserId()));
+				userProduct.setProduct(findProduct(userProduct.getProductId()));
+			}
+			log.info("userProducts: " + userProducts.size());
+			if (userProducts == null || userProducts.size() < 1) {
+				return null;
+			}
+			return userProducts;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
 		}
-		log.info("userProducts: " + userProducts.size());
-		if (userProducts == null || userProducts.size() < 1) {
-			return null;
-		}
-		return userProducts;
 	}
 
 	public String findValue(String name) {
-		log.info("findValue: " + name);
-		Query query = entityManager.createQuery("SELECT value FROM configuration_table configuration WHERE configuration_name = :name", String.class);
-		query.setParameter("name", name);
-		List<String> values = query.getResultList();
-		log.info("values: " + values);
-		if (values == null || values.size() < 1) {
-			return values.get(0);
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			log.info("findValue: " + name);
+			Query query = entityManager.createQuery("SELECT value FROM configuration_table configuration WHERE configuration_name = :name", String.class);
+			query.setParameter("name", name);
+			List<String> values = query.getResultList();
+			log.info("values: " + values);
+			if (values == null || values.size() < 1) {
+				return values.get(0);
+			}
+			return null;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 
 	public boolean orderNumberExists(String orderNumber) {
-		log.info("orderNumberExists: " + orderNumber);
-		Query query = entityManager.createQuery("SELECT orderNumber FROM UserProduct userProduct WHERE orderNumber = :orderNumber", String.class);
-		query.setParameter("orderNumber", orderNumber);
-		List<String> orderNumbers = query.getResultList();
-		log.info("orderNumbers: " + orderNumbers);
-		if (orderNumbers == null || orderNumbers.size() < 1) {
-			return false;
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			log.info("orderNumberExists: " + orderNumber);
+			Query query = entityManager.createQuery("SELECT orderNumber FROM UserProduct userProduct WHERE orderNumber = :orderNumber", String.class);
+			query.setParameter("orderNumber", orderNumber);
+			List<String> orderNumbers = query.getResultList();
+			log.info("orderNumbers: " + orderNumbers);
+			if (orderNumbers == null || orderNumbers.size() < 1) {
+				return false;
+			}
+			return true;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
 		}
-		return true;
 	}
 
 	public Product findProduct(Long productId){
-		log.info("findProduct..");
-		return entityManager.find(Product.class, productId);
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			log.info("findProduct..");
+			return entityManager.find(Product.class, productId);
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
+		}
 	}
 }

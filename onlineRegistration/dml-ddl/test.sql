@@ -48,6 +48,8 @@ CREATE TABLE PRODUCT_TABLE (
   NAME VARCHAR(200) NOT NULL,
   LOCATION VARCHAR(50) NOT NULL,
   SCHEDULE VARCHAR(50) NOT NULL,
+  DATE_OF_SERVICE DATETIME,
+  TIME_OF_SERVICE DATETIME,
   PRICE DECIMAL(10, 2) NOT NULL,
   DESCRIPTION VARCHAR(500) NOT NULL,
   UPDATED_DATE DATETIME NOT NULL,
@@ -92,16 +94,16 @@ Insert into CONFIGURATION_TABLE (CONFIGURATION_NAME, VALUE, UPDATED_DATE, CREATE
 values ('recipients','manu_may@yahoo.com, manudr@hotmail.com',getdate(),getdate(),'Manu','Manu');
 
 Insert into USER_TABLE (FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,STREET_ADDRESS,CITY,STATE,ZIP,PASSWORD,FAMILY_GOTHRAM,PRIMARY_NAKSHATHRAM,PRIMARY_PADAM,SPOUSE_NAME,SPOUSE_NAKSHATHRAM,SPOUSE_PADAM,CHILD1_NAME,CHILD1_NAKSHATHRAM,CHILD1_PADAM,CHILD2_NAME,CHILD2_NAKSHATHRAM,CHILD2_PADAM,CHILD3_NAME,CHILD3_NAKSHATHRAM,CHILD3_PADAM,CHILD4_NAME,CHILD4_NAKSHATHRAM,CHILD4_PADAM,IS_ADMIN,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER) 
-values ('Manu','D','manudr@hotmail.com','7868767868','jhkjhkjhkj','kjhkjh','nbmnbmn','67576','password','nbvnvnbv','lkjlkjk','','','','','','','','','','','','','','','','','N',getdate(),getdate(),'Manu','Manu');
+values ('Manu','D','manudr@hotmail.com','7868767868','jhkjhkjhkj','kjhkjh','nbmnbmn','67576','pass12345','nbvnvnbv','lkjlkjk','','','','','','','','','','','','','','','','','N',getdate(),getdate(),'Manu','Manu');
 
-Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Sri Mahalakshmi Abhishekam Kumkumarchana', 'Temple', 'Special Event', 51.00, 'Sri Mahalakshmi Abhishekam Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
+Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,TIME_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
+values ('Sri Mahalakshmi Abhishekam Kumkumarchana', 'Temple', 'Special Event',getdate(),getdate(), 51.00, 'Sri Mahalakshmi Abhishekam Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
 
-Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Sri Mahalakshmi Astothara Kumkumarchana', 'Temple', 'Special Event', 31.00, 'Sri Mahalakshmi Astothara Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
+Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,TIME_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
+values ('Sri Mahalakshmi Astothara Kumkumarchana', 'Temple', 'Special Event',getdate(),getdate(), 31.00, 'Sri Mahalakshmi Astothara Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
 
-Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Unjal Seva', 'Temple', 'Special Event', 51.00, 'Unjal Seva', GETDATE(), GETDATE(), 'Manu', 'Manu');
+Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,TIME_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
+values ('Unjal Seva', 'Temple', 'Special Event',getdate(),getdate(), 51.00, 'Unjal Seva', GETDATE(), GETDATE(), 'Manu', 'Manu');
 
-Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Grand Sponsor (All of the above)', 'Temple', 'Special Event', 116.00, 'Grand Sponsor (All of the above)', GETDATE(), GETDATE(), 'Manu', 'Manu');
+Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,TIME_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
+values ('Grand Sponsor (All of the above)', 'Temple', 'Special Event',getdate(),getdate(), 116.00, 'Grand Sponsor (All of the above)', GETDATE(), GETDATE(), 'Manu', 'Manu');

@@ -21,35 +21,58 @@ import java.util.List;
 public class ProductDAO {
 
     private static Log log = LogFactory.getLog(ProductDAO.class);
-
     EntityManager entityManager = EntityManagerUtil.getEntityManager();
 
     public Product findProduct(Long productId){
-        log.info("findProduct..");
-        return entityManager.find(Product.class, productId);
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            log.info("findProduct..");
+            return entityManager.find(Product.class, productId);
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public List getProducts() {
-        Query query = entityManager.createQuery("SELECT product FROM Product product", Product.class);
-        List results = query.getResultList();
-        List<Product> products = query.getResultList();
-        log.info("ProductDAO - Products: " + products);
-        return products;
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            Query query = entityManager.createQuery("SELECT product FROM Product product", Product.class);
+            List results = query.getResultList();
+            List<Product> products = query.getResultList();
+            log.info("ProductDAO - Products: " + products);
+            return products;
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public List getProducts(Long userId) {
-        Query query = entityManager.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
-        query.setParameter("userId", userId);
-        List<Product> products = query.getResultList();
-        log.info("ProductDAO - Products: " + products);
-        return products;
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            Query query = entityManager.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
+            query.setParameter("userId", userId);
+            List<Product> products = query.getResultList();
+            log.info("ProductDAO - Products: " + products);
+            return products;
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public void saveUserProduct(UserProduct userProduct){
-        log.info("Saving userProduct: " + userProduct);
-        log.info("entityManager: " + entityManager);
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
+            log.info("Saving userProduct: " + userProduct);
+            log.info("entityManager: " + entityManager);
             entityTransaction.begin();
             entityManager.merge(userProduct);
             entityTransaction.commit();
@@ -75,44 +98,92 @@ public class ProductDAO {
     }
 
     public void save(UserProduct userProduct){
-        log.info("Saving userProduct: " + userProduct);
-        entityManager.getTransaction().begin();
-        entityManager.persist(userProduct);
-        entityManager.getTransaction().commit();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            log.info("Saving userProduct: " + userProduct);
+            entityManager.getTransaction().begin();
+            entityManager.persist(userProduct);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public void updateProduct(Product selectedProduct) {
-        entityManager.getTransaction().begin();
-        entityManager.persist(selectedProduct);
-        entityManager.getTransaction().commit();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(selectedProduct);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public void removeProduct(Product selectedProduct) {
-        entityManager.getTransaction().begin();
-        entityManager.remove(selectedProduct);
-        entityManager.getTransaction().commit();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.remove(selectedProduct);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public Product find(Long id) {
-        return entityManager.find(Product.class, id);
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            return entityManager.find(Product.class, id);
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public User findUser(Long userId){
-        log.info("findUser..");
-        return entityManager.find(User.class, userId);
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            log.info("findUser..");
+            return entityManager.find(User.class, userId);
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public List<UserProduct> findAllUserProducts() {
-        Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
-        List<UserProduct> userProducts = query.getResultList();
-        for (UserProduct userProduct : userProducts) {
-            userProduct.setUser(findUser(userProduct.getUserId()));
-            userProduct.setProduct(findProduct(userProduct.getProductId()));
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        try {
+            Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
+            List<UserProduct> userProducts = query.getResultList();
+            for (UserProduct userProduct : userProducts) {
+                userProduct.setUser(findUser(userProduct.getUserId()));
+                userProduct.setProduct(findProduct(userProduct.getProductId()));
+            }
+            log.info("userProducts: " + userProducts.size());
+            if (userProducts == null || userProducts.size() < 1) {
+                return null;
+            }
+            return userProducts;
+        } catch (Exception e) {
+            if (entityTransaction.isActive()) {
+                entityTransaction.rollback();
+            }
+            throw new RuntimeException(e);
         }
-        log.info("userProducts: " + userProducts.size());
-        if (userProducts == null || userProducts.size() < 1) {
-            return null;
-        }
-        return userProducts;
     }
 }

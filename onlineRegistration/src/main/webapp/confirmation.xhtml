@@ -102,14 +102,12 @@
 
                             <p:outputLabel value="Padam"/>
                             <p:outputLabel value="#{userBean.user.child3Padam}"/>
-
                         </h:panelGrid>
                     </p:panel>
                 </div>
             </div>
 
             <div class="ui-g">
-
                 <div class="ui-g-7">
                     <p:panel header="Seleceted Services" style="height:200px">
                         <p:outputLabel value="#{userBean.userProduct.product.name}"/>
@@ -127,21 +125,13 @@
                         <p:outputLabel value="#{userBean.userProduct.notes}"/>
                     </p:panel>
                 </div>
-
             </div>
 
             <h:panelGrid columns="2" cellpadding="2" style="font-size: 11px;">
                 <p:commandButton value="Pay" actionListener="https://www.paypal.com/donate/?token=B5lmNSJjHFHWw0ysnY2v8_hhxhjPZm4WbxYfXkwNvt7QVubPG5wgmNWU-xfMOaVCUGbqWm" icon="fa-save"/>
                 <p:commandButton value="Cancel" actionListener="#{userBean.cancel}" icon="fa fa-fw fa-remove"/>
             </h:panelGrid>
-
-
-
-
         </p:panel>
-
-
-
     </h:form>
 </h:body>
 </html>

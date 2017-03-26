@@ -1,6 +1,7 @@
 package com.dronamraju.svtemple.model;
 
 import java.math.BigDecimal;
+import java.sql.Time;
 import java.util.*;
 
 import javax.persistence.*;
@@ -17,6 +18,8 @@ public class Product implements java.io.Serializable {
 	private Double price;
 	private String location;
 	private String schedule;
+	private Date dateOfService;
+	private Date timeOfService;
 	private Date updatedDate;
 	private Date createdDate;
 	private String updatedUser;
@@ -79,6 +82,24 @@ public class Product implements java.io.Serializable {
 		return schedule;
 	}
 
+	@Column(name="date_of_service")
+	public Date getDateOfService() {
+		return dateOfService;
+	}
+
+	public void setDateOfService(Date dateOfService) {
+		this.dateOfService = dateOfService;
+	}
+
+	@Column(name="time_of_service")
+	public Date getTimeOfService() {
+		return timeOfService;
+	}
+
+	public void setTimeOfService(Date timeOfService) {
+		this.timeOfService = timeOfService;
+	}
+
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
 	}
@@ -137,6 +158,8 @@ public class Product implements java.io.Serializable {
 				", price=" + price +
 				", location='" + location + '\'' +
 				", schedule='" + schedule + '\'' +
+				", dateOfService='" + dateOfService + '\'' +
+				", timeOfService='" + timeOfService + '\'' +
 				", updatedDate=" + updatedDate +
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +

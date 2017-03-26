@@ -61,7 +61,11 @@ public class UserBean implements Serializable {
 	public void init() {
 		user = new User();
 		selectedProducts = new ArrayList<>();
-		products = productService.getProducts();
+		if (products == null || products.size() < 1 || FacesUtil.getRequest().getSession().getAttribute("productsInSession") == null) {
+			log.info("products null...");
+			FacesUtil.getRequest().getSession().setAttribute("productsInSession", productService.getProducts());
+			products = (List<Product>)FacesUtil.getRequest().getSession().getAttribute("productsInSession");
+		}
 	}
 
 	public UserService getUserService() {
@@ -112,7 +116,7 @@ public class UserBean implements Serializable {
 		log.info("register()...");
 		try {
 			Boolean hasValidationErrors = false;
-
+			userProducts = null;
 			log.info("User: " + user);
 
 			if (user.getFirstName() == null || user.getFirstName().trim().length() < 1) {

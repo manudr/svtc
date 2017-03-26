@@ -8,16 +8,17 @@
         <title>Sri Venkateswara Swamy Temple Of Colorado-Temple Services</title>
     </h:head>
 
-    <h:body>
-        <h:form>
-            <p:panel>
-                <div class="ui-fluid">
-                    <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
+    <h:body style="font-size: 12px;">
+        <h:form style="font-size: 12px;">
+            <p:panel style="font-size: 12px;">
+                <div class="ui-fluid" style="font-size: 12px;">
+                    <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank" style="font-size: 12px;">
                         <p:dataTable id="products"
                                      var="product"
                                      rowKey="#{product.productId}"
                                      selection="#{productBean.selectedProduct}"
                                      selectionMode="single"
+                                     style="font-size: 12px;"
                                      value="#{productBean.products}"
                                      reflow="true"
                                      rows="10"
@@ -25,30 +26,39 @@
                                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                      filteredValue="#{productBean.filteredProducts}"
                                      rowsPerPageTemplate="25,100,500">
-
                             <f:facet name="header">
                                 List of all Temple Services at Home or Temple. Right Click to View Options
                             </f:facet>
 
-                            <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" priority="1">
+                            <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}">
                                 <h:outputText value="#{product.name}" />
                             </p:column>
 
-                            <p:column headerText="Location" filterBy="#{product.location}" filterMatchMode="contains" sortBy="#{product.location}" priority="2">
+                            <p:column headerText="Location" filterBy="#{product.location}" filterMatchMode="contains" sortBy="#{product.location}">
                                 <h:outputText value="#{product.location}" />
                             </p:column>
 
-                            <p:column headerText="Schedule" filterBy="#{product.schedule}" filterMatchMode="contains" sortBy="#{product.schedule}" priority="3">
+                            <p:column headerText="Schedule" filterBy="#{product.schedule}" filterMatchMode="contains" sortBy="#{product.schedule}">
                                 <h:outputText value="#{product.schedule}" />
                             </p:column>
 
-                            <p:column headerText="Price" filterBy="#{product.price}" filterMatchMode="contains" sortBy="#{product.price}" priority="4">
-                                <h:outputText value="#{product.price}" >
-                                    <f:convertNumber currencySymbol="$" type="currency"/>
+                            <p:column headerText="Date and Time" filterBy="#{product.dateOfService} #{product.timeOfService}" filterMatchMode="contains" sortBy="#{product.dateOfService} #{product.timeOfService}">
+                                <h:outputText value="#{product.dateOfService}">
+                                    <f:convertDateTime pattern = "MM/dd/yyyy" />
+                                </h:outputText>
+                                <p:outputLabel value=" From "/>
+                                <h:outputText value="#{product.timeOfService}">
+                                    <f:convertDateTime pattern = "hh:mm a" />
                                 </h:outputText>
                             </p:column>
 
-                            <p:column headerText="Description" filterBy="#{product.description}" filterMatchMode="contains" sortBy="#{product.description}" priority="5">
+                            <p:column headerText="Price" filterBy="#{product.price}" filterMatchMode="contains" sortBy="#{product.price}">
+                                <h:outputText value="#{product.price}">
+                                    <f:convertNumber type="currency" />
+                                </h:outputText>
+                            </p:column>
+
+                            <p:column headerText="Description" filterBy="#{product.description}" filterMatchMode="contains" sortBy="#{product.description}">
                                 <h:outputText value="#{product.description}" />
                             </p:column>
 
@@ -94,6 +104,16 @@
 
                                 <h:outputText value="Schedule:" />
                                 <h:inputText value="#{productBean.selectedProduct.schedule}"/>
+
+                                <h:outputText value="Date of Service:" />
+                                <h:inputText value="#{productBean.selectedProduct.dateOfService}">
+                                    <f:convertDateTime pattern = "MM/dd/yyyy" />
+                                </h:inputText>
+
+                                <h:outputText value="Time of Service:" />
+                                <h:inputText value="#{productBean.selectedProduct.timeOfService}">
+                                    <f:convertDateTime pattern = "hh:mm a" />
+                                </h:inputText>
 
                                 <h:outputText value="Description:" />
                                 <h:inputText value="#{productBean.selectedProduct.description}"/>

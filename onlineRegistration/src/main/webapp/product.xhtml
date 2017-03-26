@@ -29,6 +29,16 @@
 				<b>(Required)</b>
 				<p:message for="schedule" />
 
+				<p:outputLabel value="Date" style="font-weight:bold"/>
+				<p:calendar id="dateOfService" value="#{productBean.product.dateOfService}" pattern="MM/dd/yyyy" />
+				<b>(Not Required)</b>
+				<p:message for="dateOfService" />
+
+				<p:outputLabel value="Time" style="font-weight:bold"/>
+				<p:calendar id="timeOfService" value="#{productBean.product.timeOfService}" pattern="HH:mm:ss" timeOnly="true"/>
+				<b>(Not Required)</b>
+				<p:message for="timeOfService" />
+
 				<p:outputLabel value="Location" style="font-weight:bold"/>
 				<p:selectOneRadio id="location" value="#{productBean.product.location}" label="Location">
 					<f:selectItem itemLabel="Home" itemValue="Home" />
