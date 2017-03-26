@@ -18,6 +18,14 @@
 				<b>(Required)</b>
 				<p:message for="name" />
 
+				<p:outputLabel value="Location" style="font-weight:bold"/>
+				<p:selectOneRadio id="location" value="#{productBean.product.location}" label="Location">
+					<f:selectItem itemLabel="Home" itemValue="Home" />
+					<f:selectItem itemLabel="Temple" itemValue="Temple" />
+				</p:selectOneRadio>
+				<b>(Required)</b>
+				<p:message for="location" />
+
 				<p:outputLabel value="Schedule" style="font-weight:bold"/>
 				<p:selectOneRadio id="schedule" value="#{productBean.product.schedule}" label="Schedule">
 					<f:selectItem itemLabel="Daily" itemValue="Daily" />
@@ -30,22 +38,9 @@
 				<p:message for="schedule" />
 
 				<p:outputLabel value="Date" style="font-weight:bold"/>
-				<p:calendar id="dateOfService" value="#{productBean.product.dateOfService}" pattern="MM/dd/yyyy" />
+				<p:calendar id="dateOfService" value="#{productBean.product.dateOfService}" pattern="MM/dd/yyyy HH:mm"/>
 				<b>(Not Required)</b>
 				<p:message for="dateOfService" />
-
-				<p:outputLabel value="Time" style="font-weight:bold"/>
-				<p:calendar id="timeOfService" value="#{productBean.product.timeOfService}" pattern="HH:mm:ss" timeOnly="true"/>
-				<b>(Not Required)</b>
-				<p:message for="timeOfService" />
-
-				<p:outputLabel value="Location" style="font-weight:bold"/>
-				<p:selectOneRadio id="location" value="#{productBean.product.location}" label="Location">
-					<f:selectItem itemLabel="Home" itemValue="Home" />
-					<f:selectItem itemLabel="Temple" itemValue="Temple" />
-				</p:selectOneRadio>
-				<b>(Required)</b>
-				<p:message for="location" />
 
 				<p:outputLabel value="Description" style="font-weight:bold"/>
 				<p:inputTextarea id="description" maxlength="500" cols="40" rows="10" placeholder="Service Description" value="#{productBean.product.description}" label="Description"/>

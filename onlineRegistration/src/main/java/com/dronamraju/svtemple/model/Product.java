@@ -1,8 +1,11 @@
 package com.dronamraju.svtemple.model;
 
-import java.math.BigDecimal;
-import java.sql.Time;
-import java.util.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -19,7 +22,7 @@ public class Product implements java.io.Serializable {
 	private String location;
 	private String schedule;
 	private Date dateOfService;
-	private Date timeOfService;
+	//private Time timeOfService;
 	private Date updatedDate;
 	private Date createdDate;
 	private String updatedUser;
@@ -84,6 +87,9 @@ public class Product implements java.io.Serializable {
 
 	@Column(name="date_of_service")
 	public Date getDateOfService() {
+		//SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
+		//return new Date(dateFormat.format(dateOfService));
+		System.out.println("dateOfService: " + dateOfService);
 		return dateOfService;
 	}
 
@@ -91,14 +97,16 @@ public class Product implements java.io.Serializable {
 		this.dateOfService = dateOfService;
 	}
 
+	/*
 	@Column(name="time_of_service")
-	public Date getTimeOfService() {
+	public Time getTimeOfService() {
 		return timeOfService;
 	}
 
-	public void setTimeOfService(Date timeOfService) {
+	public void setTimeOfService(Time timeOfService) {
 		this.timeOfService = timeOfService;
 	}
+	*/
 
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
@@ -159,7 +167,7 @@ public class Product implements java.io.Serializable {
 				", location='" + location + '\'' +
 				", schedule='" + schedule + '\'' +
 				", dateOfService='" + dateOfService + '\'' +
-				", timeOfService='" + timeOfService + '\'' +
+				//", timeOfService='" + timeOfService + '\'' +
 				", updatedDate=" + updatedDate +
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +

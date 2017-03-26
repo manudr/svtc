@@ -42,12 +42,7 @@
                         </p:column>
                         <p:column headerText="Date Of Service" filterBy="#{product.dateOfService}" filterMatchMode="contains" sortBy="#{product.dateOfService}" >
                             <h:outputText value="#{product.dateOfService}">
-                                <f:convertDateTime pattern = "MM/dd/yyyy" />
-                            </h:outputText>
-                        </p:column>
-                        <p:column headerText="Time Of Service" filterBy="#{product.timeOfService}" filterMatchMode="contains" sortBy="#{product.timeOfService}" >
-                            <h:outputText value="#{product.timeOfService}" >
-                                <f:convertDateTime pattern = "hh:mm a" />
+                                <f:convertDateTime type="both" timeZone="US/Mountain"/>
                             </h:outputText>
                         </p:column>
                         <p:column headerText="Price" filterBy="#{product.price}" filterMatchMode="contains" sortBy="#{product.price}" >
