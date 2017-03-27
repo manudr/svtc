@@ -236,23 +236,30 @@ public class UserBean implements Serializable {
 				log.info("userProduct: " + userProduct);
 				totalAmount = totalAmount + userProduct.getProduct().getPrice();
 				log.info("totalAmount: " + totalAmount);
+				sb.append("<b>Order Number: </b>" + userProduct.getOrderNumber() + "<br></br>");
 				sb.append("<b>Service Name: </b>" + userProduct.getProduct().getName() + "<br></br>");
 				sb.append("<b>Price: $</b>" + userProduct.getProduct().getPrice() + "<br></br>");
 				sb.append("<b>Location: </b>" + userProduct.getProduct().getLocation() + "<br></br>");
+				sb.append("<b>Schedule: </b>" + userProduct.getProduct().getSchedule() + "<br></br>");
+				sb.append("<b>Date of Service: </b>" + userProduct.getProduct().getDateOfService() + "<br></br>");
+				sb.append("<b>Description: </b>" + userProduct.getProduct().getDescription() + "<br></br>");
 				if (userProduct.getDateAndTime() != null) {
 					sb.append("<b>Date and Time: </b>" + DateFormat.getDateTimeInstance(
 							DateFormat.MEDIUM, DateFormat.SHORT).format(userProduct.getDateAndTime()) + "<br></br>");
 				}
-				sb.append("<br></br><br></br>");
+				if (userProduct.getNotes() != null && userProduct.getNotes().length() > 0) {
+					sb.append("<b>Notes: </b>" + userProduct.getNotes() + "<br></br>");
+				}
+				sb.append("<br></br>");
 			}
-			sb.append("<b>Total Amount to be paid: </b>$" + totalAmount + "<br></br><br></br><br></br>");
+			sb.append("<b>Total Amount to be paid: </b>$" + totalAmount + "<br></br><br></br>");
 			sb.append("<b>Thank you</b><br></br>");
 			sb.append("<b>Sri Venkateswara Swamy Temple Of Colorado</b><br></br>");
 			sb.append("<b>1495 S Ridge Road Castle Rock CO 80104</b><br></br>");
-			sb.append("<b>Manager: 303-898-5514 | Temple: 303-660-9555 | Email: info@svtempleco.org</b><br></br>");
-			sb.append("<b>Website: http://www.svtempleco.org</b><br></br>");
-			sb.append("<b>Facebook: SVTC.Colorado</b><br></br>");
-			sb.append("<b>PayPal Donation: SVTC PayPal Link</b><br></br>");
+			sb.append("<b>Manager: 303-898-5514 | Temple: 303-660-9555 | Email: <a href='mailto:manager@svtempleco.org'>manager@svtempleco.org</a></b><br></br>");
+			sb.append("<b>Website: <a href='http://www.svtempleco.org/homepage.php'>http://www.svtempleco.org</a></b><br></br>");
+			sb.append("<b>Facebook: <a href='https://www.facebook.com/SVTC.COLORADO/'>SVTC.Colorado</a></b><br></br>");
+			sb.append("<b>PayPal Donation: <a href='https://www.paypal.me/svtempleco'>SVTC PayPal Link</a></b><br></br>");
 			//String recipients = userService.findValue("recipients");
 			String recipients = "manudr@hotmail.com";
 			SendEmail.sendMail(sb.toString(), user.getEmail(), recipients);
