@@ -36,12 +36,20 @@ public class UserService {
         return userDAO.findUserProducts(orderNumber);
     }
 
+    public List<UserProduct> findUserProducts(Long userId) {
+        return userDAO.findUserProducts(userId);
+    }
+
     public boolean orderNumberExists(String orderNumber) {
         return userDAO.orderNumberExists(orderNumber);
     }
 
     public String findValue(String name) {
         return userDAO.findValue(name);
+    }
+
+    public void deleteUserProducts(String orderNumber) {
+        userDAO.deleteUserProducts(orderNumber);
     }
 
 }

@@ -87,9 +87,6 @@ public class Product implements java.io.Serializable {
 
 	@Column(name="date_of_service")
 	public Date getDateOfService() {
-		//SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
-		//return new Date(dateFormat.format(dateOfService));
-		System.out.println("dateOfService: " + dateOfService);
 		return dateOfService;
 	}
 

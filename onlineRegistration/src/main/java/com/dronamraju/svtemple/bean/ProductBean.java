@@ -85,18 +85,7 @@ public class ProductBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        if (products == null || products.size() < 1 || FacesUtil.getRequest().getSession().getAttribute("productsInSession") == null) {
-            log.info("products null...");
-            FacesUtil.getRequest().getSession().setAttribute("productsInSession", productService.getProducts());
-            products = (List<Product>)FacesUtil.getRequest().getSession().getAttribute("productsInSession");
-        }
-
-        if (userProducts == null || userProducts.size() < 1 || FacesUtil.getRequest().getSession().getAttribute("userProductsInSession") == null) {
-            log.info("userProducts null...");
-            FacesUtil.getRequest().getSession().setAttribute("userProductsInSession", productService.findAllUserProducts());
-            userProducts = (List<UserProduct>)FacesUtil.getRequest().getSession().getAttribute("userProductsInSession");
-        }
-
+        products = productService.getProducts();
         product = new Product(); //This is required for: Target Unreachable, 'null' returned null
     }
 

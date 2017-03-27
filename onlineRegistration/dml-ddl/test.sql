@@ -96,13 +96,13 @@ Insert into USER_TABLE (FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,STREET_ADDRESS,C
 values ('Manu','D','manudr@hotmail.com','7868767868','jhkjhkjhkj','kjhkjh','nbmnbmn','67576','pass12345','nbvnvnbv','lkjlkjk','','','','','','','','','','','','','','','','','N',getdate(),getdate(),'Manu','Manu');
 
 Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Sri Mahalakshmi Abhishekam', 'Temple', 'Special Event',convert(datetime,'28-03-17 11:00:00 AM',5), 51.00, 'Sri Mahalakshmi Abhishekam Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
+values ('Sri Mahalakshmi Abhishekam', 'Temple', 'Ugadi Special Event',convert(datetime,'28-03-17 11:00:00 AM',5), 51.00, 'Sri Mahalakshmi Abhishekam Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
 
 Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Sri Mahalakshmi Kumkumarchana', 'Temple', 'Special Event',convert(datetime,'28-03-17 11:00:00 AM',5), 31.00, 'Sri Mahalakshmi Astothara Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
+values ('Sri Mahalakshmi Kumkumarchana', 'Temple', 'Ugadi Special Event',convert(datetime,'28-03-17 11:00:00 AM',5), 31.00, 'Sri Mahalakshmi Astothara Kumkumarchana', GETDATE(), GETDATE(), 'Manu', 'Manu');
 
 Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Unjal Seva', 'Temple', 'Special Event',convert(datetime,'28-03-17 06:00:00 PM',5), 51.00, 'Unjal Seva', '2017-03-28', GETDATE(), 'Manu', 'Manu');
+values ('Unjal Seva', 'Temple', 'Ugadi Special Event',convert(datetime,'28-03-17 06:00:00 PM',5), 51.00, 'Unjal Seva', '2017-03-28', GETDATE(), 'Manu', 'Manu');
 
 Insert into PRODUCT_TABLE (NAME,LOCATION,SCHEDULE,DATE_OF_SERVICE,PRICE,DESCRIPTION,UPDATED_DATE,CREATED_DATE,UPDATED_USER,CREATED_USER)
-values ('Grand Sponsor (All of the above)', 'Temple', 'Special Event',convert(datetime,'28-03-17 00:00:00 AM',5), 116.00, 'Grand Sponsor (All of the above)', GETDATE(), GETDATE(), 'Manu', 'Manu');
+values ('Grand Sponsor (All of the above)', 'Temple', 'Ugadi Special Event',convert(datetime,'28-03-17 00:00:00 AM',5), 116.00, 'Grand Sponsor (All of the above)', GETDATE(), GETDATE(), 'Manu', 'Manu');

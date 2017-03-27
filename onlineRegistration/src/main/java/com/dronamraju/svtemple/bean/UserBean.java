@@ -61,11 +61,7 @@ public class UserBean implements Serializable {
 	public void init() {
 		user = new User();
 		selectedProducts = new ArrayList<>();
-		if (products == null || products.size() < 1 || FacesUtil.getRequest().getSession().getAttribute("productsInSession") == null) {
-			log.info("products null...");
-			FacesUtil.getRequest().getSession().setAttribute("productsInSession", productService.getProducts());
-			products = (List<Product>)FacesUtil.getRequest().getSession().getAttribute("productsInSession");
-		}
+		products = productService.getProducts();
 	}
 
 	public UserService getUserService() {
@@ -116,8 +112,9 @@ public class UserBean implements Serializable {
 		log.info("register()...");
 		try {
 			Boolean hasValidationErrors = false;
-			userProducts = null;
 			log.info("User: " + user);
+
+			totalAmount = 0.00;
 
 			if (user.getFirstName() == null || user.getFirstName().trim().length() < 1) {
 				FacesUtil.getFacesContext().addMessage("firstName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Fisrt Name is required.", null));
@@ -214,6 +211,7 @@ public class UserBean implements Serializable {
 				orderNumber = Util.randomAlphaNumeric(10);
 			}
 			log.info("orderNumber: " + orderNumber + " created at: " + Calendar.getInstance().getTime());
+			FacesUtil.getRequest().getSession().setAttribute("orderNumber", orderNumber);
 			for (Product selectedProd : selectedProducts) {
 				UserProduct userProduct = new UserProduct();
 				userProduct.setUserId(user.getUserId());
