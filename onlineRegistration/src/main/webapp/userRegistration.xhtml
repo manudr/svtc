@@ -16,7 +16,7 @@
         <p:messages autoUpdate="true"/>
         <div class="ui-fluid">
             <p:panel header="Please register" style="font-size: 12px;">
-                <p:panelGrid columns="3" columnClasses="ui-grid-col-6, ui-grid-col-3, ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank" style="font-size: 12px;">
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-6, ui-grid-col-6" layout="grid" styleClass="ui-panelgrid-blank" style="font-size: 12px;">
                     <p:panel header="Your Details" style="font-size: 12px;">
                         <h:panelGrid columns="6" cellpadding="2" style="font-size: 12px;">
                             <p:outputLabel value="First Name (Required)"/>
@@ -75,43 +75,30 @@
                         </h:panelGrid>
                     </p:panel>
 
+                    <p:panel header="Spouse Details">
+                        <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
+                            <p:outputLabel value="Spouse Full Name"/>
+                            <p:inputText id="spouseName" size="20" maxlength="30"  placeholder="Spouse Full Name" value="#{userBean.user.spouseName}" label="Spouse Name"/>
+                            <p:message for="spouseName" />
 
-                    <p:panel header="Additional Notes">
-                        <h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
-                            <p:inputTextarea id="additionalNotes" maxlength="500" cols="40" rows="10" placeholder="Any Notes" value="#{userBean.additionalNotes}" label="Additional Notes"/>
-                            <p:message for="additionalNotes" />
+                            <p:outputLabel value="Spouse Nakshathram"/>
+                            <p:inputText id="spouseNakshathram" size="20" maxlength="30" placeholder="Spouse Nakshathram" value="#{userBean.user.spouseNakshathram}" label="Spouse Nakshathram"/>
+                            <p:message for="spouseNakshathram" />
+
+                            <!--
+                            <p:outputLabel value="Padam"/>
+                            <p:inputText id="spousePadam" size="20" maxlength="30"  placeholder="Padam" value="#{userBean.user.spousePadam}" label="Padam"/>
+                            <p:message for="spousePadam" />
+                            -->
                         </h:panelGrid>
                     </p:panel>
 
-                    <p:panel header="Date and Time are required for custom scheduled services">
-                        <h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
-                            <p:calendar id="dateAndTime" value="#{userBean.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" />
-                            <p:message for="dateAndTime" />
-                        </h:panelGrid>
-                    </p:panel>
                 </p:panelGrid>
                 <br></br>
                 <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank" style="font-size: 12px;">
                     <p:accordionPanel activeIndex="null">
                         <p:tab title="CLICK HERE TO PROVIDE MORE DETAILS...">
-                            <p:panelGrid columns="5" columnClasses="ui-grid-col-3, ui-grid-col-3, ui-grid-col-3, ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
-                                <p:panel header="Spouse Details">
-                                    <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                                        <p:outputLabel value="Spouse Full Name"/>
-                                        <p:inputText id="spouseName" size="20" maxlength="30"  placeholder="Spouse Full Name" value="#{userBean.user.spouseName}" label="Spouse Name"/>
-                                        <p:message for="spouseName" />
-
-                                        <p:outputLabel value="Spouse Nakshathram"/>
-                                        <p:inputText id="spouseNakshathram" size="20" maxlength="30" placeholder="Spouse Nakshathram" value="#{userBean.user.spouseNakshathram}" label="Spouse Nakshathram"/>
-                                        <p:message for="spouseNakshathram" />
-
-                                        <!--
-                                        <p:outputLabel value="Padam"/>
-                                        <p:inputText id="spousePadam" size="20" maxlength="30"  placeholder="Padam" value="#{userBean.user.spousePadam}" label="Padam"/>
-                                        <p:message for="spousePadam" />
-                                        -->
-                                    </h:panelGrid>
-                                </p:panel>
+                            <p:panelGrid columns="4" layout="grid" styleClass="ui-panelgrid-blank">
 
                                 <p:panel header="1st Child details">
                                     <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">

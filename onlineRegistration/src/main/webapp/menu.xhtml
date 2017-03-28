@@ -7,7 +7,7 @@
 
     <center>
         <h1 style="color: #800000">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</h1>
-        <p:panelGrid columns="6" style="margin-top:20px; border: none;">
+        <p:panelGrid columns="12" style="margin-top:20px; font-size: 12px; border: none;">
             <p:commandButton value="View All Temple Services" actionListener="#{userBean.goToAllServicesPage}" rendered="#{userBean.loggedInUser.isAdmin == 'Y'}" />
             <p:commandButton value="View All Devotees and Services" actionListener="#{userBean.goToAllDevoteeServicesPage}" rendered="#{userBean.loggedInUser.isAdmin == 'Y'}" />
             <p:commandButton value="Add New Temple Service" actionListener="#{userBean.goToAddNewServicePage}" rendered="#{userBean.loggedInUser != null and userBean.loggedInUser.isAdmin == 'Y'}" />

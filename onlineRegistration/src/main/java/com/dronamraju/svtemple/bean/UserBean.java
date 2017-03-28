@@ -341,7 +341,7 @@ public class UserBean implements Serializable {
 		log.info("goToAllDevoteeServicesPage()..");
 		if (loggedInUser != null) {
 			userProducts = userService.findUserProducts();
-			FacesUtil.redirect("userProducts.xhtml");
+			FacesUtil.redirect("allDevoteesAndServices.xhtml");
 		} else {
 			FacesUtil.redirect("login.xhtml");
 		}

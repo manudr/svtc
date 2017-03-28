@@ -52,6 +52,22 @@
                         </p:dataTable>
                     </p:panel>
                 </p:panelGrid>
+                <br></br>
+                <p:panelGrid columns="2" columnClasses="ui-grid-col-6, ui-grid-col-6" layout="grid" styleClass="ui-panelgrid-blank" style="font-size: 12px;">
+                    <p:panel header="Additional Notes">
+                        <h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
+                            <p:inputTextarea id="additionalNotes" maxlength="500" cols="40" rows="10" placeholder="Any Notes" value="#{userBean.additionalNotes}" label="Additional Notes"/>
+                            <p:message for="additionalNotes" />
+                        </h:panelGrid>
+                    </p:panel>
+
+                    <p:panel header="Date and Time are required for custom scheduled services">
+                        <h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
+                            <p:calendar id="dateAndTime" value="#{userBean.dateAndTime}" pattern="MM/dd/yyyy HH:mm:ss" />
+                            <p:message for="dateAndTime" />
+                        </h:panelGrid>
+                    </p:panel>
+                </p:panelGrid>
 
                 <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
                 <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
