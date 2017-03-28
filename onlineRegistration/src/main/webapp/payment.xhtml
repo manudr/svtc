@@ -9,9 +9,9 @@
 </h:head>
 
 <h:body>
+    <ui:include src="menu.xhtml"/>
     <br></br>
     <div class="ui-fluid">
-        <center><h2 style="color: #ff3300">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</h2></center>
         <p:panel id="panel" header="You have purchased the below services with Sri Venkateswara Swamy Temple Of Colorado.">
             <ui:repeat var="userProduct" value="#{userBean.userProducts}">
                 <h:panelGrid columns="2" cellpadding="2" style="font-size: 12px;">
@@ -49,7 +49,7 @@
             </p:outputLabel>
             <p:outputLabel value=" in the paypal payment page." style="color: brown; font-weight: bold; font-size: 25px"/>
             <br></br>
-            <p:panelGrid columns="2" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" style="font-size: 12px;">
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick"/>
                     <input type="hidden" name="hosted_button_id" value="7CGB5PFGR9ZKW"/>
@@ -59,11 +59,6 @@
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
                 </form>
-                <h:form>
-                    <h:panelGrid columns="3" cellpadding="2" style="font-size: 12px;">
-                        <p:commandButton action="#{userBean.logout()}" value="Logout" />
-                    </h:panelGrid>
-                </h:form>
             </p:panelGrid>
         </p:panel>
     </div>

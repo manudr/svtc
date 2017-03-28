@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.io.Serializable;
 
+import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.util.FacesUtil;
 import com.dronamraju.svtemple.util.SendEmail;
@@ -91,7 +92,7 @@ public class ProductBean implements Serializable {
 
     public void addProduct() {
         log.info("addProduct()...");
-
+        User loggedInUser = (User)FacesUtil.getRequest().getSession().getAttribute("loggedInUser");
         Boolean hasValidationErrors = false;
 
         if (product.getName() == null || product.getName().trim().length() < 1) {
@@ -128,8 +129,8 @@ public class ProductBean implements Serializable {
         //Product product = new Product(name, description, price, location, schedule, Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "Manu", "Manu");
         product.setCreatedDate(Calendar.getInstance().getTime());
         product.setUpdatedDate(Calendar.getInstance().getTime());
-        product.setCreatedUser("Manu");
-        product.setUpdatedUser("Manu");
+        product.setCreatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
+        product.setUpdatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
         log.info("product: " + product);
         productDAO.save(product);
         log.info("New Temple Service has been successfully saved.");
@@ -141,14 +142,15 @@ public class ProductBean implements Serializable {
         if (FacesUtil.getRequest().getSession().getAttribute("loggedInUser") == null) {
             FacesUtil.redirect("login.xhtml");
         }
+        User loggedInUser = (User)FacesUtil.getRequest().getSession().getAttribute("loggedInUser");
         log.info("updateProduct()...");
         log.info("Product: " + product);
         log.info("selectedProduct: " + selectedProduct);
         product.setProductId(selectedProduct.getProductId());
         product.setCreatedDate(Calendar.getInstance().getTime());
         product.setUpdatedDate(Calendar.getInstance().getTime());
-        product.setCreatedUser("Manu");
-        product.setUpdatedUser("Manu");
+        product.setCreatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
+        product.setUpdatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
         productService.updateProduct(product);
         log.info("Temple Service has been successfully updated.");
         products = productService.getProducts();

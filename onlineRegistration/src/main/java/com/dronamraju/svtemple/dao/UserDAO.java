@@ -3,6 +3,7 @@ package com.dronamraju.svtemple.dao;
 import com.dronamraju.svtemple.model.Product;
 import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.model.UserProduct;
+import com.dronamraju.svtemple.util.AES;
 import com.dronamraju.svtemple.util.EncryptDecryptStringWithDES;
 import com.dronamraju.svtemple.util.EntityManagerUtil;
 import com.dronamraju.svtemple.util.Util;
@@ -46,6 +47,7 @@ public class UserDAO {
 			savedUser = entityManager.merge(user);
 			entityTransaction.commit();
 			log.info("savedUser: " + savedUser);
+			savedUser.setPassword(AES.decrypt(savedUser.getPassword()));
 			return savedUser;
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {
@@ -60,6 +62,7 @@ public class UserDAO {
 		log.info("findUser..");
 		try {
 			User user = entityManager.find(User.class, userId);
+			user.setPassword(AES.decrypt(user.getPassword()));
 			return user;
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {
@@ -80,6 +83,7 @@ public class UserDAO {
 				return null;
 			}
 			User user = users.get(0);
+			user.setPassword(AES.decrypt(user.getPassword()));
 			log.info("findUser - user: " + user);
 			return user;
 		} catch (Exception e) {
@@ -144,7 +148,27 @@ public class UserDAO {
 			query.setParameter("name", name);
 			List<String> values = query.getResultList();
 			log.info("values: " + values);
-			if (values == null || values.size() < 1) {
+			if (values != null && values.size() > 0) {
+				return values.get(0);
+			}
+			return null;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
+		}
+	}
+
+	public String findPassword(String email) {
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			log.info("email: " + email);
+			Query query = entityManager.createQuery("SELECT password FROM User user WHERE email = :email", String.class);
+			query.setParameter("email", email);
+			List<String> values = query.getResultList();
+			log.info("values: " + values);
+			if (values != null && values.size() > 0) {
 				return values.get(0);
 			}
 			return null;

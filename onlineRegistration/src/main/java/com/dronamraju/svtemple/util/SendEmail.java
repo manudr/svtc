@@ -26,7 +26,7 @@ public class SendEmail {
             Transport transport = mailSession.getTransport();
             MimeMessage message = new MimeMessage(mailSession);
 
-            message.setSubject("Sri Venkateswara Swamy Temple Of Colorado: Details of your registerd temple services.");
+            message.setSubject("Sri Venkateswara Swamy Temple Of Colorado");
             message.setContent(content, "text/html");
             Address[] from = InternetAddress.parse("online@svtempleco.org");//Your domain email
             message.addFrom(from);

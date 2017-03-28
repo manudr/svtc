@@ -5,9 +5,11 @@ import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.service.ProductService;
 import com.dronamraju.svtemple.service.UserService;
+import com.dronamraju.svtemple.util.AES;
 import com.dronamraju.svtemple.util.FacesUtil;
 import com.dronamraju.svtemple.util.SendEmail;
 import com.dronamraju.svtemple.util.Util;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -92,7 +94,7 @@ public class UserBean implements Serializable {
 				return;
 			}
 
-			loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
+			loggedInUser = userService.findUser(user.getEmail(), AES.encrypt(user.getPassword()));
 			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
 			log.info("loggedInUser: " + loggedInUser);
 			if (loggedInUser == null) {
@@ -101,97 +103,64 @@ public class UserBean implements Serializable {
 			}
 			user = loggedInUser;
 			selectedProducts = new ArrayList<>();
-			FacesUtil.redirect("registerServices.xhtml");
+			FacesUtil.redirect("purchaseServices.xhtml");
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
 
 
-	public void register() {
-		log.info("register()...");
+	public void registerUser() {
+		log.info("registerUser()...");
 		try {
 			Boolean hasValidationErrors = false;
 			log.info("User: " + user);
-
-			totalAmount = 0.00;
+			if ( FacesUtil.getRequest().getSession().getAttribute("loggedInUser") != null) {
+				loggedInUser = (User) FacesUtil.getRequest().getSession().getAttribute("loggedInUser");
+			}
 
 			if (user.getFirstName() == null || user.getFirstName().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("firstName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Fisrt Name is required.", null));
+				FacesUtil.getFacesContext().addMessage("firstName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid fisrt name is required.", null));
 				hasValidationErrors = true;
 			}
 
 			if (user.getLastName() == null || user.getLastName().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("lastName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Lst Name is required.", null));
+				FacesUtil.getFacesContext().addMessage("lastName", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid last name is required.", null));
 				hasValidationErrors = true;
 			}
 
 			if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
-				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid email is required.", null));
+				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid email is required.", null));
 				hasValidationErrors = true;
 			}
 
 			if (user.getPhoneNumber() == null || user.getPhoneNumber().trim().length() < 1 || !Util.isValidPhoneNumber(user.getPhoneNumber())) {
-				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Phone Number is required.", null));
+				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid phone number is required.", null));
 				hasValidationErrors = true;
 			}
 
-			if (loggedInUser == null && (user.getPassword() == null || user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword())))) {
+			if (StringUtils.isEmpty(user.getPassword()) || !(user.getPassword().equals(user.getRePassword()))) {
 				FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Password should be at least 10 characters long and should match with re-entered.", null));
 				hasValidationErrors = true;
 			}
 
-			if (loggedInUser != null && user.getRePassword() != null && user.getRePassword().trim().length() > 1) {
-				if (user.getPassword().trim().length() < 5 || !(user.getPassword().equals(user.getRePassword()))) {
-					FacesUtil.getFacesContext().addMessage("password", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Both Passwords should match.", null));
-					hasValidationErrors = true;
-				}
-			}
-
 			if (user.getStreetAddress() == null || user.getStreetAddress().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("streetAddress", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid streetAddress is required.", null));
+				FacesUtil.getFacesContext().addMessage("streetAddress", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid street address is required.", null));
 				hasValidationErrors = true;
 			}
 
 			if (user.getCity() == null || user.getPhoneNumber().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Phone Number is required.", null));
+				FacesUtil.getFacesContext().addMessage("phoneNumber", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid phone number is required.", null));
 				hasValidationErrors = true;
 			}
 
 			if (user.getState() == null || user.getState().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("state", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid state is required.", null));
+				FacesUtil.getFacesContext().addMessage("state", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid state is required.", null));
 				hasValidationErrors = true;
 			}
 
 			if (user.getZip() == null || user.getZip().trim().length() < 1 || !Util.isValidZip(user.getZip())) {
-				FacesUtil.getFacesContext().addMessage("zip", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid zip is required.", null));
-				hasValidationErrors = true;
-			}
-
-			/*
-			if (user.getFamilyGothram() == null || user.getFamilyGothram().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("familyGothram", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid familyGothram is required.", null));
-				hasValidationErrors = true;
-			}
-
-			if (user.getPrimaryNakshathram() == null || user.getPrimaryNakshathram().trim().length() < 1) {
-				FacesUtil.getFacesContext().addMessage("primaryNakshathram", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Primary Nakshathram is required.", null));
-				hasValidationErrors = true;
-			}
-			*/
-
-			log.info("selectedProducts: " + selectedProducts);
-			if (selectedProducts == null || selectedProducts.size() < 1) {
-				FacesUtil.getFacesContext().addMessage("selectedProducts", new FacesMessage(FacesMessage.SEVERITY_ERROR, "One or more services must be selecetd.", null));
-				hasValidationErrors = true;
-			}
-
-			log.info("additionalNotes: " + additionalNotes);
-
-			log.info("dateAndTime: " + dateAndTime);
-			if (dateAndTime != null && !(Util.isValidDate(dateAndTime))) {
-				log.info("date failed");
-				FacesUtil.getFacesContext().addMessage("dateAndTime", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid Date and Time is required.", null));
+				FacesUtil.getFacesContext().addMessage("zip", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A valid zip is required.", null));
 				hasValidationErrors = true;
 			}
 
@@ -202,34 +171,99 @@ public class UserBean implements Serializable {
 			}
 			user.setCreatedDate(Calendar.getInstance().getTime());
 			user.setUpdatedDate(Calendar.getInstance().getTime());
-			user.setCreatedUser("Manu");
-			user.setUpdatedUser("Manu");
+			user.setCreatedUser(user.getFirstName() + " " + user.getLastName());
+			user.setUpdatedUser(user.getFirstName() + " " + user.getLastName());
 			user.setIsAdmin("N");
-			user = userService.saveUser(user);
+			user.setPassword(AES.encrypt(user.getPassword()));
+
+			loggedInUser = userService.saveUser(user);
+
+			StringBuilder sb = new StringBuilder();
+			sb.append("<b>Thank you for registering.</b><br></br>");
+			sb.append("<b>Sri Venkateswara Swamy Temple Of Colorado</b><br></br>");
+			sb.append("<b>1495 S Ridge Road Castle Rock CO 80104</b><br></br>");
+			sb.append("<b>Manager: 303-898-5514 | Temple: 303-660-9555 | Email: <a href='mailto:manager@svtempleco.org'>manager@svtempleco.org</a></b><br></br>");
+			sb.append("<b>Website: <a href='http://www.svtempleco.org/homepage.php'>http://www.svtempleco.org</a></b><br></br>");
+			sb.append("<b>Facebook: <a href='https://www.facebook.com/SVTC.COLORADO/'>SVTC.Colorado</a></b><br></br>");
+			sb.append("<b>PayPal Donation: <a href='https://www.paypal.me/svtempleco'>SVTC PayPal Link</a></b><br></br>");
+			String recipients = "manudr@hotmail.com";
+			SendEmail.sendMail(sb.toString(), loggedInUser.getEmail(), recipients);
+			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
+			log.info("loggedInUser: " + loggedInUser);
+			FacesUtil.redirect("login.xhtml");
+		} catch(Exception exception) {
+			Optional<Throwable> rootCause = Stream.iterate(exception, Throwable::getCause).filter(element -> element.getCause() == null).findFirst();
+			FacesUtil.getFacesContext().addMessage("selectedProducts", new FacesMessage(FacesMessage.SEVERITY_ERROR, rootCause.toString(), null));
+			log.error("error occurred: ", exception);
+			return;
+		}
+	}
+
+	public void purchaseServices() {
+		log.info("purchaseServices()...");
+		try {
+			Boolean hasValidationErrors = false;
+			log.info("User: " + user);
+			totalAmount = 0.00;
+
+			if ( FacesUtil.getRequest().getSession().getAttribute("loggedInUser") != null) {
+				loggedInUser = (User) FacesUtil.getRequest().getSession().getAttribute("loggedInUser");
+			}
+
+			log.info("loggedInUser in session: " + loggedInUser);
+			log.info("selectedProducts: " + selectedProducts);
+
+			if (selectedProducts == null || selectedProducts.size() < 1) {
+				FacesUtil.getFacesContext().addMessage("selectedProducts", new FacesMessage(FacesMessage.SEVERITY_ERROR, "One or more services must be selecetd.", null));
+				hasValidationErrors = true;
+			}
+
+			log.info("additionalNotes: " + additionalNotes);
+
+			log.info("dateAndTime: " + dateAndTime);
+
+			if (dateAndTime != null && !(Util.isValidDate(dateAndTime))) {
+				log.info("date failed");
+				FacesUtil.getFacesContext().addMessage("dateAndTime", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A aalid date and time is required.", null));
+				hasValidationErrors = true;
+			}
+
+			if (hasValidationErrors) {
+				log.info("Validation Failed...");
+				selectedProducts = new ArrayList<>();
+				return;
+			}
+
 			String orderNumber = Util.randomAlphaNumeric(10);
+
 			while (userService.orderNumberExists(orderNumber)) {
 				orderNumber = Util.randomAlphaNumeric(10);
 			}
+
 			log.info("orderNumber: " + orderNumber + " created at: " + Calendar.getInstance().getTime());
+
 			FacesUtil.getRequest().getSession().setAttribute("orderNumber", orderNumber);
+
 			for (Product selectedProd : selectedProducts) {
 				UserProduct userProduct = new UserProduct();
-				userProduct.setUserId(user.getUserId());
+				userProduct.setUserId(loggedInUser.getUserId());
 				userProduct.setProductId(selectedProd.getProductId());
 				userProduct.setOrderNumber(orderNumber);
 				userProduct.setStatus("Scheduled");
 				userProduct.setNotes(additionalNotes);
 				userProduct.setDateAndTime(dateAndTime);
-				userProduct.setUser(user);
+				userProduct.setUser(loggedInUser);
 				userProduct.setProduct(selectedProd);
 				userProduct.setCreatedDate(Calendar.getInstance().getTime());
 				userProduct.setUpdatedDate(Calendar.getInstance().getTime());
-				userProduct.setCreatedUser("Manu");
-				userProduct.setUpdatedUser("Manu");
+				userProduct.setCreatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
+				userProduct.setUpdatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
 				log.info("userProduct: " + userProduct);
 				productService.saveUserProduct(userProduct);
 			}
+
 			userProducts = userService.findUserProducts(orderNumber);
+
 			StringBuilder sb = new StringBuilder();
 			sb.append("<h4>Thank you. You have purchased the below temple services:</h4>");
 			for (UserProduct userProduct : userProducts) {
@@ -263,7 +297,7 @@ public class UserBean implements Serializable {
 			//String recipients = userService.findValue("recipients");
 			String recipients = "manudr@hotmail.com";
 			SendEmail.sendMail(sb.toString(), user.getEmail(), recipients);
-			loggedInUser = userService.findUser(user.getEmail(), user.getPassword());
+			loggedInUser = user;
 			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
 			log.info("loggedInUser: " + loggedInUser);
 			FacesUtil.redirect("payment.xhtml");
@@ -277,15 +311,71 @@ public class UserBean implements Serializable {
 
 	public void cancel() {
 		log.info("cancel()..");
+		if (loggedInUser != null) {
+			FacesUtil.getRequest().getSession().removeAttribute("loggedInUser");
+			FacesUtil.getRequest().getSession().invalidate();
+		}
 		FacesUtil.redirect("login.xhtml");
 	}
 
-	public void cancelFromRegistration() {
-		log.info("cancel()..");
+	public void goToAllServicesPage() {
+		log.info("goToAllServicesPage()..");
+		if (loggedInUser != null && loggedInUser.getIsAdmin().equals("Y")) {
+			FacesUtil.redirect("products.xhtml");
+		} else {
+			FacesUtil.redirect("login.xhtml");
+		}
+	}
+
+	public void goToMyServicePage() {
+		log.info("goToMyServicePage()..");
 		if (loggedInUser != null) {
 			FacesUtil.redirect("userProducts.xhtml");
 		} else {
 			FacesUtil.redirect("login.xhtml");
+		}
+	}
+
+	public void goToAddNewServicePage() {
+		log.info("goToAddNewServicePage()..");
+		if (loggedInUser != null && loggedInUser.getIsAdmin().equals("Y")) {
+			FacesUtil.redirect("product.xhtml");
+		} else {
+			FacesUtil.redirect("login.xhtml");
+		}
+	}
+
+	public void goToPurchaseServicesPage() {
+		log.info("goToPurchaseServicesPage()..");
+		if (loggedInUser != null) {
+			FacesUtil.redirect("purchaseServices.xhtml");
+		} else {
+			FacesUtil.redirect("login.xhtml");
+		}
+	}
+
+	public void goToUserProfilePage() {
+		log.info("goToUserProfilePage()..");
+		FacesUtil.redirect("userRegistration.xhtml");
+	}
+
+	public void sendPassword() {
+		log.info("sendPassword()..");
+		if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
+			FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid email is required.", null));
+			return;
+		} else {
+			String password = userService.findPassword(user.getEmail());
+			if (password == null) {
+				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email you provided is not found.", null));
+				return;
+			} else {
+				String emailBody = "Your password: " + AES.decrypt(password);
+				SendEmail.sendMail(emailBody, user.getEmail(), null);
+				log.info("Email has been sent with password.");
+				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_INFO, "Password has been sent to your email.", null));
+				return;
+			}
 		}
 	}
 
@@ -374,5 +464,13 @@ public class UserBean implements Serializable {
 
 	public void setFilteredProducts(List<Product> filteredProducts) {
 		this.filteredProducts = filteredProducts;
+	}
+
+	public User getLoggedInUser() {
+		return loggedInUser;
+	}
+
+	public void setLoggedInUser(User loggedInUser) {
+		this.loggedInUser = loggedInUser;
 	}
 }

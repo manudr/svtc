@@ -20,7 +20,6 @@
 
 <h:body>
     <center>
-        <h2 style="color: #ff3300">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</h2>
     <h2 style="color: #ff3300">If you are an existing user please login here.</h2>
     <h:form id="loginForm"  style="width: 50%">
         <p:panel id="panel" header="Sri Venkateswara Swamy Temple Of Colorado - Login">
@@ -37,9 +36,10 @@
                 <p:message for="password"></p:message>
             </h:panelGrid>
 
-            <h:panelGrid columns="2" cellpadding="5">
+            <h:panelGrid columns="3" cellpadding="5">
                 <p:commandButton value="Login" actionListener="#{userBean.login}"/>
-                <p:button value="Register Now" href="registerServices.xhtml" />
+                <p:commandButton value="Register Now" actionListener="#{userBean.goToUserProfilePage}" />
+                <p:commandButton value="Send My Password" actionListener="#{userBean.sendPassword}" />
             </h:panelGrid>
         </p:panel>
     </h:form>

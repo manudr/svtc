@@ -52,4 +52,8 @@ public class UserService {
         userDAO.deleteUserProducts(orderNumber);
     }
 
+    public String findPassword(String email) {
+        return userDAO.findPassword(email);
+    }
+
 }

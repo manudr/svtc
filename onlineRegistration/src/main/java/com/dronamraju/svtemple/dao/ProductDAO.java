@@ -4,6 +4,7 @@ package com.dronamraju.svtemple.dao;
 import com.dronamraju.svtemple.model.Product;
 import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.model.UserProduct;
+import com.dronamraju.svtemple.util.AES;
 import com.dronamraju.svtemple.util.EntityManagerUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -60,22 +61,6 @@ public class ProductDAO {
             List<Product> products = query.getResultList();
             log.info("ProductDAO - Products: " + products);
             return products;
-        } catch (Exception e) {
-            if (entityTransaction.isActive()) {
-                entityTransaction.rollback();
-            }
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void saveUserProduct(UserProduct userProduct){
-        EntityTransaction entityTransaction = entityManager.getTransaction();
-        try {
-            log.info("Saving userProduct: " + userProduct);
-            log.info("entityManager: " + entityManager);
-            entityTransaction.begin();
-            entityManager.merge(userProduct);
-            entityTransaction.commit();
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
@@ -156,7 +141,9 @@ public class ProductDAO {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
             log.info("findUser..");
-            return entityManager.find(User.class, userId);
+            User user = entityManager.find(User.class, userId);
+            user.setPassword(AES.decrypt(user.getPassword()));
+            return user;
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
