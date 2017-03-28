@@ -117,6 +117,28 @@ public class UserDAO {
 		}
 	}
 
+	public List<UserProduct> findUserProducts() {
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
+			List<UserProduct> userProducts = query.getResultList();
+			for (UserProduct userProduct : userProducts) {
+				userProduct.setUser(findUser(userProduct.getUserId()));
+				userProduct.setProduct(findProduct(userProduct.getProductId()));
+			}
+			log.info("userProducts: " + userProducts.size());
+			if (userProducts == null || userProducts.size() < 1) {
+				return null;
+			}
+			return userProducts;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
+		}
+	}
+
 	public List<UserProduct> findUserProducts(Long userId) {
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {

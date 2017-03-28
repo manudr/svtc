@@ -9,13 +9,13 @@
 	<title>Sri Venkateswara Swamy Temple Of Colorado-Add Temple Service</title>
 </h:head>
 
-<h:body>
+<h:body style="font-size: 12px;">
 	<ui:include src="menu.xhtml"/>
 	<br></br>
-	<h:form id="productForm">
-		<p:panel id="panel" header="Add A New Temple Service">
+	<h:form id="productForm" style="font-size: 12px;">
+		<p:panel id="panel" header="Add A New Temple Service" style="font-size: 12px;">
 			<p:messages autoUpdate="true"/>
-			<h:panelGrid id="grid" columns="4" cellpadding="5">
+			<h:panelGrid id="grid" columns="4" cellpadding="5" style="font-size: 12px;">
 				<p:outputLabel value="Name" style="font-weight:bold"/>
 				<p:inputText id="name" placeholder="Service Name" value="#{productBean.product.name}" label="Name"/>
 				<b>(Required)</b>
@@ -57,7 +57,7 @@
 
 			</h:panelGrid>
 
-			<h:panelGrid columns="2" cellpadding="5">
+			<h:panelGrid columns="2" cellpadding="5" style="font-size: 12px;">
 				<p:commandButton value="Save" actionListener="#{productBean.addProduct}" icon="fa-save"/>
 				<p:commandButton value="Cancel" actionListener="#{productBean.cancel}" icon="fa fa-fw fa-remove"/>
 			</h:panelGrid>

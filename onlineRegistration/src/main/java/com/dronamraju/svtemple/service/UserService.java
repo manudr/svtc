@@ -36,6 +36,10 @@ public class UserService {
         return userDAO.findUserProducts(orderNumber);
     }
 
+    public List<UserProduct> findUserProducts() {
+        return userDAO.findUserProducts();
+    }
+
     public List<UserProduct> findUserProducts(Long userId) {
         return userDAO.findUserProducts(userId);
     }

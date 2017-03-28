@@ -330,6 +330,17 @@ public class UserBean implements Serializable {
 	public void goToMyServicePage() {
 		log.info("goToMyServicePage()..");
 		if (loggedInUser != null) {
+			userProducts = userService.findUserProducts(loggedInUser.getUserId());
+			FacesUtil.redirect("userProducts.xhtml");
+		} else {
+			FacesUtil.redirect("login.xhtml");
+		}
+	}
+
+	public void goToAllDevoteeServicesPage() {
+		log.info("goToAllDevoteeServicesPage()..");
+		if (loggedInUser != null) {
+			userProducts = userService.findUserProducts();
 			FacesUtil.redirect("userProducts.xhtml");
 		} else {
 			FacesUtil.redirect("login.xhtml");
