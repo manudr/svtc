@@ -41,9 +41,15 @@
                                 <h:outputText value="#{product.schedule}" />
                             </p:column>
 
-                            <p:column headerText="Date and Time" filterBy="#{product.dateOfService}" filterMatchMode="contains" sortBy="#{product.dateOfService}">
+                            <p:column headerText="Date of Service" filterBy="#{product.dateOfService}" filterMatchMode="contains" sortBy="#{product.dateOfService}">
                                 <h:outputText value="#{product.dateOfService}">
-                                    <f:convertDateTime type="both" timeZone="US/Mountain"/>
+                                    <f:convertDateTime pattern="MM/dd/YYYY" type="date" timeZone="US/Mountain"/>
+                                </h:outputText>
+                            </p:column>
+
+                            <p:column headerText="Time of Service" filterBy="#{product.timeOfService}" filterMatchMode="contains" sortBy="#{product.timeOfService}">
+                                <h:outputText value="#{product.timeOfService}">
+                                    <f:convertDateTime pattern="HH:mm" type="time" timeZone="US/Mountain"/>
                                 </h:outputText>
                             </p:column>
 
@@ -103,6 +109,11 @@
                                 <h:outputText value="Date of Service:" />
                                 <h:inputText value="#{productBean.selectedProduct.dateOfService}">
                                     <f:convertDateTime pattern = "MM/dd/yyyy" />
+                                </h:inputText>
+
+                                <h:outputText value="Time of Service:" />
+                                <h:inputText value="#{productBean.selectedProduct.timeOfService}">
+                                    <f:convertDateTime pattern = "HH:mm" />
                                 </h:inputText>
 
                                 <h:outputText value="Description:" />

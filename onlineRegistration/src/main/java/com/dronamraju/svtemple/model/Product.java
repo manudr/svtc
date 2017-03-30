@@ -22,7 +22,7 @@ public class Product implements java.io.Serializable {
 	private String location;
 	private String schedule;
 	private Date dateOfService;
-	//private Time timeOfService;
+	private Date timeOfService;
 	private Date updatedDate;
 	private Date createdDate;
 	private String updatedUser;
@@ -94,16 +94,14 @@ public class Product implements java.io.Serializable {
 		this.dateOfService = dateOfService;
 	}
 
-	/*
 	@Column(name="time_of_service")
-	public Time getTimeOfService() {
+	public Date getTimeOfService() {
 		return timeOfService;
 	}
 
-	public void setTimeOfService(Time timeOfService) {
+	public void setTimeOfService(Date timeOfService) {
 		this.timeOfService = timeOfService;
 	}
-	*/
 
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
@@ -164,7 +162,7 @@ public class Product implements java.io.Serializable {
 				", location='" + location + '\'' +
 				", schedule='" + schedule + '\'' +
 				", dateOfService='" + dateOfService + '\'' +
-				//", timeOfService='" + timeOfService + '\'' +
+				", timeOfService='" + timeOfService + '\'' +
 				", updatedDate=" + updatedDate +
 				", createdDate=" + createdDate +
 				", updatedUser='" + updatedUser + '\'' +

@@ -12,24 +12,23 @@
 <h:body style="font-size: 12px;">
 	<ui:include src="menu.xhtml"/>
 	<br></br>
-	<h:form id="productForm" style="font-size: 12px;">
+	<center>
+	<h:form id="productForm" style="font-size: 12px; width: 50%">
 		<p:panel id="panel" header="Add A New Temple Service" style="font-size: 12px;">
 			<p:messages autoUpdate="true"/>
-			<h:panelGrid id="grid" columns="4" cellpadding="5" style="font-size: 12px;">
-				<p:outputLabel value="Name" style="font-weight:bold"/>
+			<h:panelGrid id="grid" columns="3" cellpadding="5" style="font-size: 12px;">
+				<p:outputLabel value="Name (Required)" style="font-weight:bold"/>
 				<p:inputText id="name" placeholder="Service Name" value="#{productBean.product.name}" label="Name"/>
-				<b>(Required)</b>
 				<p:message for="name" />
 
-				<p:outputLabel value="Location" style="font-weight:bold"/>
+				<p:outputLabel value="Location (Required)" style="font-weight:bold"/>
 				<p:selectOneRadio id="location" value="#{productBean.product.location}" label="Location">
 					<f:selectItem itemLabel="Home" itemValue="Home" />
 					<f:selectItem itemLabel="Temple" itemValue="Temple" />
 				</p:selectOneRadio>
-				<b>(Required)</b>
 				<p:message for="location" />
 
-				<p:outputLabel value="Schedule" style="font-weight:bold"/>
+				<p:outputLabel value="Schedule (Required)" style="font-weight:bold"/>
 				<p:selectOneRadio id="schedule" value="#{productBean.product.schedule}" label="Schedule">
 					<f:selectItem itemLabel="Daily" itemValue="Daily" />
 					<f:selectItem itemLabel="Weekly" itemValue="Weekly" />
@@ -37,31 +36,32 @@
 					<f:selectItem itemLabel="Yearly" itemValue="Yearly" />
 					<f:selectItem itemLabel="AnyTime" itemValue="AnyTime" />
 				</p:selectOneRadio>
-				<b>(Required)</b>
 				<p:message for="schedule" />
 
 				<p:outputLabel value="Date" style="font-weight:bold"/>
-				<p:calendar id="dateOfService" value="#{productBean.product.dateOfService}" pattern="MM/dd/yyyy HH:mm"/>
-				<b>(Not Required)</b>
+				<p:calendar id="dateOfService" value="#{productBean.product.dateOfService}" pattern="MM/dd/yyyy"/>
 				<p:message for="dateOfService" />
+
+				<p:outputLabel value="Time (Required)" style="font-weight:bold"/>
+				<p:calendar id="timeOfService" value="#{productBean.product.timeOfService}" pattern="HH:mm" timeOnly="true" size="5"/>
+				<p:message for="timeOfService" />
 
 				<p:outputLabel value="Description" style="font-weight:bold"/>
 				<p:inputTextarea id="description" maxlength="500" cols="40" rows="10" placeholder="Service Description" value="#{productBean.product.description}" label="Description"/>
-				<b>(Required)</b>
 				<p:message for="description" />
 
-				<p:outputLabel value="Price" style="font-weight:bold"/>
+				<p:outputLabel value="Price (Required)" style="font-weight:bold"/>
 				<p:inputText id="price" placeholder="Price" value="#{productBean.product.price}" label="Price"/>
-				<b>(Required)</b>
-				<p:message for="price" />
+				<p:message for="price"/>
 
 			</h:panelGrid>
 
 			<h:panelGrid columns="2" cellpadding="5" style="font-size: 12px;">
-				<p:commandButton value="Save" actionListener="#{productBean.addProduct}" icon="fa-save"/>
-				<p:commandButton value="Cancel" actionListener="#{productBean.cancel}" icon="fa fa-fw fa-remove"/>
+				<p:commandButton value="Save" actionListener="#{productBean.addProduct}"/>
+				<p:commandButton value="Cancel" actionListener="#{productBean.cancel}"/>
 			</h:panelGrid>
 		</p:panel>
 	</h:form>
+	</center>
 </h:body>
 </html>

@@ -276,6 +276,7 @@ public class UserBean implements Serializable {
 				sb.append("<b>Location: </b>" + userProduct.getProduct().getLocation() + "<br></br>");
 				sb.append("<b>Schedule: </b>" + userProduct.getProduct().getSchedule() + "<br></br>");
 				sb.append("<b>Date of Service: </b>" + userProduct.getProduct().getDateOfService() + "<br></br>");
+				sb.append("<b>Time of Service: </b>" + userProduct.getProduct().getTimeOfService() + "<br></br>");
 				sb.append("<b>Description: </b>" + userProduct.getProduct().getDescription() + "<br></br>");
 				if (userProduct.getDateAndTime() != null) {
 					sb.append("<b>Date and Time: </b>" + DateFormat.getDateTimeInstance(
