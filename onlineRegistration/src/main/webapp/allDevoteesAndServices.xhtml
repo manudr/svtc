@@ -13,13 +13,14 @@
     <h:form>
         <p:panel header="All Devotees and Services" style="font-size: 12px;">
             <h3>Export Data</h3>
+
             <h:commandLink>
-                <p:graphicImage name="http://localhost:8080/onlineRegistration-1/images/excel.png"/>
+                <h:outputText name="Export to Excel" style="font-weight: bold; color: brown"/>
                 <p:dataExporter type="xls" target="userProducts" fileName="devoteeServices"/>
             </h:commandLink>
 
             <h:commandLink>
-                <p:graphicImage name="http://localhost:8080/onlineRegistration-1/images/pdf.png"/>
+                <h:outputText name="Export to PDF" style="font-weight: bold; color: brown"/>
                 <p:dataExporter type="pdf" target="userProducts" fileName="devoteeServices"/>
             </h:commandLink>
             <p:dataTable id="userProducts"

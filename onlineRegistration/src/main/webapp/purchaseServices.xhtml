@@ -23,11 +23,11 @@
                                      value="#{userBean.products}"
                                      selection="#{userBean.selectedProducts}"
                                      rowKey="#{product.productId}"
-                                     rows="20"
+                                     rows="15"
                                      paginator="true"
                                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                      filteredValue="#{userBean.filteredProducts}"
-                                     rowsPerPageTemplate="25,100,500"
+                                     rowsPerPageTemplate="15,50,200,500"
                                      style="margin-bottom:0; font-size: 12px;">
                             <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
                             <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}" >
@@ -41,7 +41,12 @@
                             </p:column>
                             <p:column headerText="Date Of Service" filterBy="#{product.dateOfService}" filterMatchMode="contains" sortBy="#{product.dateOfService}" >
                                 <h:outputText value="#{product.dateOfService}">
-                                    <f:convertDateTime type="both" timeZone="US/Mountain"/>
+                                    <f:convertDateTime pattern="MM/dd/YYYY" type="date" timeZone="US/Mountain"/>
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="Time Of Service" filterBy="#{product.timeOfService}" filterMatchMode="contains" sortBy="#{product.timeOfService}" >
+                                <h:outputText value="#{product.timeOfService}">
+                                    <f:convertDateTime pattern="HH:mm" type="time" timeZone="US/Mountain"/>
                                 </h:outputText>
                             </p:column>
                             <p:column headerText="Price" filterBy="#{product.price}" filterMatchMode="contains" sortBy="#{product.price}" >

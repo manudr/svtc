@@ -12,6 +12,17 @@
     <br></br>
     <h:form>
     <p:panel header="User Services" style="font-size: 12px;">
+        <h3>Export Data</h3>
+        <h:commandLink>
+            <h:outputText name="Export to Excel" style="font-weight: bold; color: brown"/>
+            <p:dataExporter type="xls" target="userProducts" fileName="devoteeServices"/>
+        </h:commandLink>
+
+        <h:commandLink>
+            <h:outputText name="Export to PDF" style="font-weight: bold; color: brown"/>
+            <p:dataExporter type="pdf" target="userProducts" fileName="devoteeServices"/>
+        </h:commandLink>
+
         <p:dataTable id="userProducts"
                      var="userProduct"
                      style="font-size: 12px;"
@@ -53,17 +64,6 @@
                 <h:outputText value="#{userProduct.dateAndTime}" />
             </p:column>
         </p:dataTable>
-
-        <h3>Export Page Data Only</h3>
-        <h:commandLink>
-            <p:graphicImage name="./images/excel.png" />
-            <p:dataExporter type="xls" target="userProducts" fileName="devoteeServices"/>
-        </h:commandLink>
-
-        <h:commandLink>
-            <p:graphicImage name="./images/pdf.png" />
-            <p:dataExporter type="pdf" target="userProducts" fileName="devoteeServices"/>
-        </h:commandLink>
 
     </p:panel>
     </h:form>
