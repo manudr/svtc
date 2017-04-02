@@ -54,6 +54,35 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
+	public User(String firstName, String lastName, String email, String phoneNumber, String streetAddress, String city, String state, String zip, String password, String familyGothram, String primaryNakshathram, String spouseName, String spouseNakshathram, String child1Name, String child1Nakshathram, String child2Name, String child2Nakshathram, String child3Name, String child3Nakshathram, String child4Name, String child4Nakshathram, String isAdmin, Date updatedDate, Date createdDate, String updatedUser, String createdUser) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.streetAddress = streetAddress;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.password = password;
+		this.familyGothram = familyGothram;
+		this.primaryNakshathram = primaryNakshathram;
+		this.spouseName = spouseName;
+		this.spouseNakshathram = spouseNakshathram;
+		this.child1Name = child1Name;
+		this.child1Nakshathram = child1Nakshathram;
+		this.child2Name = child2Name;
+		this.child2Nakshathram = child2Nakshathram;
+		this.child3Name = child3Name;
+		this.child3Nakshathram = child3Nakshathram;
+		this.child4Name = child4Name;
+		this.child4Nakshathram = child4Nakshathram;
+		this.isAdmin = isAdmin;
+		this.updatedDate = updatedDate;
+		this.createdDate = createdDate;
+		this.updatedUser = updatedUser;
+		this.createdUser = createdUser;
+	}
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "USER_ID", unique = true, nullable = false)
