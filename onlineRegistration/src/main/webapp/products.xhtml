@@ -93,39 +93,40 @@
                         <p:menuitem value="Delete" update="products" icon="ui-icon-close" actionListener="#{productBean.deleteProduct}"/>
                     </p:contextMenu>
 
-                    <p:dialog header="Product Info" widgetVar="productDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                    <p:dialog header="Product Info" widgetVar="productDialog" style="width: 50%" appendToBody="true" modal="true" showEffect="fade" hideEffect="fade" resizable="true">
                         <p:outputPanel id="productDetail">
-                            <p:panelGrid  columns="2" rendered="#{not empty productBean.selectedProduct}" columnClasses="label,value">
 
-                                <h:outputText value="Name" />
-                                <h:inputText value="#{productBean.selectedProduct.name}" />
+                                <p:panelGrid  columns="2" rendered="#{not empty productBean.selectedProduct}" columnClasses="label,value">
 
-                                <h:outputText value="Location:" />
-                                <h:inputText value="#{productBean.selectedProduct.location}"/>
+                                    <h:outputText value="Name" />
+                                    <h:inputText value="#{productBean.selectedProduct.name}" />
 
-                                <h:outputText value="Schedule:" />
-                                <h:inputText value="#{productBean.selectedProduct.schedule}"/>
+                                    <h:outputText value="Location:" />
+                                    <h:inputText value="#{productBean.selectedProduct.location}"/>
 
-                                <h:outputText value="Date of Service:" />
-                                <h:inputText value="#{productBean.selectedProduct.dateOfService}">
-                                    <f:convertDateTime pattern = "MM/dd/yyyy" />
-                                </h:inputText>
+                                    <h:outputText value="Schedule:" />
+                                    <h:inputText value="#{productBean.selectedProduct.schedule}"/>
 
-                                <h:outputText value="Time of Service:" />
-                                <h:inputText value="#{productBean.selectedProduct.timeOfService}">
-                                    <f:convertDateTime pattern = "HH:mm" />
-                                </h:inputText>
+                                    <h:outputText value="Date of Service:" />
+                                    <h:inputText value="#{productBean.selectedProduct.dateOfService}">
+                                        <f:convertDateTime pattern = "MM/dd/yyyy" timeZone="US/Mountain"/>
+                                    </h:inputText>
 
-                                <h:outputText value="Description:" />
-                                <h:inputText value="#{productBean.selectedProduct.description}"/>
+                                    <h:outputText value="Time of Service:" />
+                                    <h:inputText value="#{productBean.selectedProduct.timeOfService}">
+                                        <f:convertDateTime pattern = "HH:mm" timeZone="US/Mountain"/>
+                                    </h:inputText>
 
-                                <h:outputText value="Price" />
-                                <h:inputText value="$#{productBean.selectedProduct.price}" />
+                                    <h:outputText value="Description:" />
+                                    <h:inputText value="#{productBean.selectedProduct.description}"/>
 
-                                <p:commandButton value="Save" action="#{productBean.updateProduct}" icon="fa-save"/>
-                                <p:commandButton value="Cancel" action="#{productBean.cancel}" icon="fa fa-fw fa-remove"/>
+                                    <h:outputText value="Price" />
+                                    <h:inputText value="$#{productBean.selectedProduct.price}" />
 
-                            </p:panelGrid>
+                                    <p:commandButton id="commandButton1" value="Save" actionListener="#{productBean.updateProduct}" oncomplete="PF('productDialog').hide()"/>
+                                    <p:commandButton value="Cancel" actionListener="#{productBean.cancel()}"/>
+
+                                </p:panelGrid>
                         </p:outputPanel>
                     </p:dialog>
                 </p:panel>

@@ -4,9 +4,7 @@ import com.dronamraju.svtemple.model.Product;
 import com.dronamraju.svtemple.model.User;
 import com.dronamraju.svtemple.model.UserProduct;
 import com.dronamraju.svtemple.util.AES;
-import com.dronamraju.svtemple.util.EncryptDecryptStringWithDES;
 import com.dronamraju.svtemple.util.EntityManagerUtil;
-import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -14,7 +12,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.util.List;
-import java.util.Set;
 
 
 public class UserDAO {
@@ -37,6 +34,21 @@ public class UserDAO {
 		}
 	}
 
+	public void updateUserPassword(String email, String newPassword){
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			entityTransaction.begin();
+			Query query = entityManager.createNativeQuery("UPDATE USER_TABLE SET PASSWORD = '" + newPassword + "' WHERE EMAIL = '" + email + "'");
+			query.executeUpdate();
+			entityTransaction.commit();
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
+		}
+	}
+
 	public User saveUser(User user){
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
@@ -47,7 +59,6 @@ public class UserDAO {
 			savedUser = entityManager.merge(user);
 			entityTransaction.commit();
 			log.info("savedUser: " + savedUser);
-			savedUser.setPassword(AES.decrypt(savedUser.getPassword()));
 			return savedUser;
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {
@@ -62,7 +73,6 @@ public class UserDAO {
 		log.info("findUser..");
 		try {
 			User user = entityManager.find(User.class, userId);
-			user.setPassword(AES.decrypt(user.getPassword()));
 			return user;
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {
@@ -72,7 +82,25 @@ public class UserDAO {
 		}
 	}
 
+	public List<User> findAllUsers(){
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		try {
+			Query query = entityManager.createQuery("SELECT user FROM User user", User.class);
+			List<User> users = query.getResultList();
+			if (users == null || users.size() < 1) {
+				return null;
+			}
+			return users;
+		} catch (Exception e) {
+			if (entityTransaction.isActive()) {
+				entityTransaction.rollback();
+			}
+			throw new RuntimeException(e);
+		}
+	}
+
 	public User findUser(String email, String password) {
+		log.info("email, password: " + email + ", " + password);
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		try {
 			Query query = entityManager.createQuery("SELECT user FROM User user WHERE email = :email and password = :password", User.class);
@@ -83,7 +111,6 @@ public class UserDAO {
 				return null;
 			}
 			User user = users.get(0);
-			user.setPassword(AES.decrypt(user.getPassword()));
 			log.info("findUser - user: " + user);
 			return user;
 		} catch (Exception e) {
@@ -189,7 +216,7 @@ public class UserDAO {
 			Query query = entityManager.createQuery("SELECT password FROM User user WHERE email = :email", String.class);
 			query.setParameter("email", email);
 			List<String> values = query.getResultList();
-			log.info("values: " + values);
+			//log.info("values: " + values);
 			if (values != null && values.size() > 0) {
 				return values.get(0);
 			}

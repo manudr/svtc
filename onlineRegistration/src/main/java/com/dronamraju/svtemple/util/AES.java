@@ -1,18 +1,23 @@
 package com.dronamraju.svtemple.util;
 
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.Base64;
+import java.security.SecureRandom;
+import java.security.Security;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import javax.crypto.AEADBadTagException;
 import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * Created by mdronamr on 3/27/17.
- */
+import static java.nio.charset.StandardCharsets.US_ASCII;
+
 public class AES {
+
     private static SecretKeySpec secretKey;
     private static byte[] key;
     private static String secretKeyString = "ssshhhhhhhhhhh!!!!";
@@ -42,26 +47,14 @@ public class AES {
         }
     }
 
-    public static String decrypt(String strToDecrypt) {
-        try {
-            setKey(secretKeyString);
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
-            cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static void main(String[] args) {
         final String secretKey = "ssshhhhhhhhhhh!!!!";
 
         String originalString = "pass12345";
         String encryptedString = AES.encrypt(originalString) ;
-        String decryptedString = AES.decrypt("6hdLEgwAjr4/R3acmBDiZw==") ;
 
         System.out.println(originalString);
         System.out.println(encryptedString);
-        System.out.println(decryptedString);
     }
+
 }

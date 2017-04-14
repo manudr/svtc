@@ -17,6 +17,7 @@
 		<p:panel id="panel" header="Add A New Temple Service" style="font-size: 12px;">
 			<p:messages autoUpdate="true"/>
 			<h:panelGrid id="grid" columns="3" cellpadding="5" style="font-size: 12px;">
+
 				<p:outputLabel value="Name (Required)" style="font-weight:bold"/>
 				<p:inputText id="name" placeholder="Service Name" value="#{productBean.product.name}" label="Name"/>
 				<p:message for="name" />
@@ -27,6 +28,14 @@
 					<f:selectItem itemLabel="Temple" itemValue="Temple" />
 				</p:selectOneRadio>
 				<p:message for="location" />
+
+				<p:outputLabel value="Category (Required)" style="font-weight:bold"/>
+				<p:selectOneRadio id="category" value="#{productBean.product.category}" label="Category">
+					<f:selectItem itemLabel="Scheduled" itemValue="Scheduled" />
+					<f:selectItem itemLabel="Special" itemValue="Special" />
+					<f:selectItem itemLabel="Personal" itemValue="Personal" />
+				</p:selectOneRadio>
+				<p:message for="category" />
 
 				<p:outputLabel value="Schedule (Required)" style="font-weight:bold"/>
 				<p:selectOneRadio id="schedule" value="#{productBean.product.schedule}" label="Schedule">

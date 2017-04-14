@@ -101,7 +101,7 @@ public class ProductDAO {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(selectedProduct);
+            entityManager.merge(selectedProduct);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
@@ -142,7 +142,6 @@ public class ProductDAO {
         try {
             log.info("findUser..");
             User user = entityManager.find(User.class, userId);
-            user.setPassword(AES.decrypt(user.getPassword()));
             return user;
         } catch (Exception e) {
             if (entityTransaction.isActive()) {

@@ -4,90 +4,59 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-
 <h:head>
     <title>Sri Venkateswara Swamy Temple Of Colorado-Temple Services</title>
 </h:head>
-
 <h:body style="font-size: 12px;">
     <ui:include src="menu.xhtml"/>
     <br></br>
     <h:form>
-        <p:dataTable id="users"
-                     var="user"
-                     rowKey="#{user.id}"
-                     selection="#{userBean.selectedUser}"
-                     selectionMode="single"
-                     value="#{userBean.users}"
-                     reflow="true"
-                     tableStyleClass="ui-table-columntoggle"
-                     rows="10"
-                     paginator="true"
-                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                     filteredValue="#{userBean.filteredUsers}"
-                     rowsPerPageTemplate="25,100,500">
+        <p:panel header="User Services" style="font-size: 12px;">
+            <h3>Export Users</h3>
+            <h:commandLink>
+                <h:outputText name="Export to Excel" style="font-weight: bold; color: brown"/>
+                <p:dataExporter type="xls" target="users" fileName="users"/>
+            </h:commandLink>
 
-            <f:facet name="header">
-                List of all Temple Services and at Home or Temple. RightClick to View Options
-            </f:facet>
+            <h:commandLink>
+                <h:outputText name="Export to PDF" style="font-weight: bold; color: brown"/>
+                <p:dataExporter type="pdf" target="users" fileName="users"/>
+            </h:commandLink>
 
-            <p:column headerText="Name" filterBy="#{user.firstName} #{user.lasttName}" filterMatchMode="contains" sortBy="#{user.firstName} #{user.lastName}" priority="1">
-                <h:outputText value="#{user.firstName} #{user.lastName}" />
-            </p:column>
+            <p:dataTable id="users"
+                         var="user"
+                         style="font-size: 12px;"
+                         value="#{userBean.users}"
+                         reflow="true"
+                         rows="25"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         filteredValue="#{productBean.filteredProducts}"
+                         rowsPerPageTemplate="25,100,500">
 
-            <p:column headerText="Email" filterBy="#{user.email}" filterMatchMode="contains" sortBy="#{user.email}" priority="2">
-                <h:outputText value="#{user.email}" />
-            </p:column>
+                <p:column headerText="First Name" filterBy="#{user.firstName}" filterMatchMode="contains" sortBy="#{user.firstName}">
+                    <h:outputText value="#{user.firstName}" />
+                </p:column>
 
-            <p:column headerText="Phone Number" filterBy="#{user.phoneNumber}" filterMatchMode="contains" sortBy="#{user.phoneNumber}" priority="3">
-                <h:outputText value="#{user.phoneNumber}" />
-            </p:column>
+                <p:column headerText="Last Name" filterBy="#{user.lastName}" filterMatchMode="contains" sortBy="#{user.lastName}">
+                    <h:outputText value="#{user.lastName}" />
+                </p:column>
 
-            <p:column headerText="Family Gothram" filterBy="#{user.familyGothram}" filterMatchMode="contains" sortBy="#{user.familyGothram}" priority="4">
-                <h:outputText value="#{user.familyGothram}"/>
-            </p:column>
+                <p:column headerText="Email" filterBy="#{user.email}" filterMatchMode="contains" sortBy="#{user.email}">
+                    <h:outputText value="#{user.email}" />
+                </p:column>
 
-            <p:column headerText="Primary Nakshathram" filterBy="#{user.primaryNakshathram}" filterMatchMode="contains" sortBy="#{user.primaryNakshathram}" priority="5">
-                <h:outputText value="#{user.primaryNakshathram}" />
-            </p:column>
+                <p:column headerText="Phone" filterBy="#{user.phoneNumber}" filterMatchMode="contains" sortBy="#{user.phoneNumber}">
+                    <h:outputText value="#{user.phoneNumber}"/>
+                </p:column>
 
-        </p:dataTable>
+                <p:column headerText="Address" filterBy="#{user.streetAddress}  #{user.city} #{user.state} #{user.zip}" filterMatchMode="contains" sortBy="#{user.streetAddress}  #{user.city} #{user.state} #{user.zip}">
+                    <h:outputText value="#{user.streetAddress}  #{user.city} #{user.state} #{user.zip}" />
+                </p:column>
 
+            </p:dataTable>
 
-        <p:contextMenu for="users">
-            <p:menuitem value="View" update="userDetail" icon="ui-icon-search" oncomplete="PF('userDialog').show()"/>
-            <p:menuitem value="Edit" update="userDetail" icon="ui-icon-search" oncomplete="PF('userDialog').show()"/>
-            <p:menuitem value="Delete" update="users" icon="ui-icon-close" actionListener="#{userBean.deleteUser}"/>
-        </p:contextMenu>
-
-        <p:dialog header="User Info" widgetVar="userDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-            <p:outputPanel id="userDetail" style="text-align:center; width: 50%">
-                <p:panelGrid  columns="2" rendered="#{not empty userBean.selectedUser}" columnClasses="label,value">
-
-                    <h:outputText value="First Name" />
-                    <h:inputText value="#{userBean.selectedUser.firstName}" />
-
-                    <h:outputText value="Last Name" />
-                    <h:inputText value="#{userBean.selectedUser.lastName}" />
-
-                    <h:outputText value="EMail:" />
-                    <h:inputText value="#{userBean.selectedUser.email}"/>
-
-                    <h:outputText value="Phone Number:" />
-                    <h:inputText value="#{userBean.selectedUser.phoneNumber}"/>
-
-                    <h:outputText value="Family Gothram:" />
-                    <h:inputText value="#{userBean.selectedUser.familyGothram}"/>
-
-                    <h:outputText value="Primary Nakshathram" />
-                    <h:inputText value="$#{userBean.selectedUser.primaryNakshathram}" />
-
-                    <p:commandButton value="Save" action="#{userBean.updateUser}" icon="fa-save"/>
-                    <p:commandButton value="Cancel" action="#{userBean.cancel}" icon="fa fa-fw fa-remove"/>
-
-                </p:panelGrid>
-            </p:outputPanel>
-        </p:dialog>
+        </p:panel>
     </h:form>
 </h:body>
 </html>

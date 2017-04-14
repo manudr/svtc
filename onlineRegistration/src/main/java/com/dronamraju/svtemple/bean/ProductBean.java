@@ -20,6 +20,7 @@ import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 import com.dronamraju.svtemple.service.ProductService;
 
@@ -138,24 +139,20 @@ public class ProductBean implements Serializable {
         FacesUtil.redirect("products.xhtml");
     }
 
-    public String updateProduct() {
+    public void updateProduct() {
+        log.info("selectedProduct: " + selectedProduct);
         if (FacesUtil.getRequest().getSession().getAttribute("loggedInUser") == null) {
             FacesUtil.redirect("login.xhtml");
         }
         User loggedInUser = (User)FacesUtil.getRequest().getSession().getAttribute("loggedInUser");
-        log.info("updateProduct()...");
-        log.info("Product: " + product);
-        log.info("selectedProduct: " + selectedProduct);
-        product.setProductId(selectedProduct.getProductId());
-        product.setCreatedDate(Calendar.getInstance().getTime());
-        product.setUpdatedDate(Calendar.getInstance().getTime());
-        product.setCreatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
-        product.setUpdatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
-        productService.updateProduct(product);
+        selectedProduct.setCreatedDate(Calendar.getInstance().getTime());
+        selectedProduct.setUpdatedDate(Calendar.getInstance().getTime());
+        selectedProduct.setCreatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
+        selectedProduct.setUpdatedUser(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
+        productService.updateProduct(selectedProduct);
         log.info("Temple Service has been successfully updated.");
         products = productService.getProducts();
         FacesUtil.redirect("products.xhtml");
-        return null;
     }
 
     public String deleteProduct() {
@@ -171,6 +168,7 @@ public class ProductBean implements Serializable {
 
     public String cancel() {
         log.info("cancel()..");
+        products = productService.getProducts();
         FacesUtil.redirect("products.xhtml");
         return null;
     }

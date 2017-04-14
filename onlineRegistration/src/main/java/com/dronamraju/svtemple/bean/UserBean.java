@@ -12,6 +12,10 @@ import com.dronamraju.svtemple.util.Util;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -19,6 +23,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.*;
@@ -59,6 +65,8 @@ public class UserBean implements Serializable {
 
 	private User loggedInUser;
 
+	private List users;
+
 	@PostConstruct
 	public void init() {
 		user = new User();
@@ -77,6 +85,7 @@ public class UserBean implements Serializable {
 	public void login() {
 		log.info("login()...");
 		try {
+
 			Boolean hasValidationErrors = false;
 
 			if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
@@ -322,7 +331,18 @@ public class UserBean implements Serializable {
 	public void goToAllServicesPage() {
 		log.info("goToAllServicesPage()..");
 		if (loggedInUser != null && loggedInUser.getIsAdmin().equals("Y")) {
+			products = productService.getProducts();
 			FacesUtil.redirect("products.xhtml");
+		} else {
+			FacesUtil.redirect("login.xhtml");
+		}
+	}
+
+	public void goToAllUsersPage() {
+		log.info("goToAllUsersPage()..");
+		if (loggedInUser != null && loggedInUser.getIsAdmin().equals("Y")) {
+			users = userService.findAllUsers();
+			FacesUtil.redirect("users.xhtml");
 		} else {
 			FacesUtil.redirect("login.xhtml");
 		}
@@ -350,6 +370,9 @@ public class UserBean implements Serializable {
 
 	public void goToAddNewServicePage() {
 		log.info("goToAddNewServicePage()..");
+
+
+
 		if (loggedInUser != null && loggedInUser.getIsAdmin().equals("Y")) {
 			FacesUtil.redirect("product.xhtml");
 		} else {
@@ -373,21 +396,27 @@ public class UserBean implements Serializable {
 
 	public void sendPassword() {
 		log.info("sendPassword()..");
-		if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
-			FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid email is required.", null));
-			return;
-		} else {
-			String password = userService.findPassword(user.getEmail());
-			if (password == null) {
-				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email you provided is not found.", null));
+		try {
+			if (user.getEmail() == null || user.getEmail().trim().length() < 1 || !Util.isValidEmail(user.getEmail())) {
+				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "A Valid email is required.", null));
 				return;
 			} else {
-				String emailBody = "Your password: " + AES.decrypt(password);
-				SendEmail.sendMail(emailBody, user.getEmail(), null);
-				log.info("Email has been sent with password.");
-				FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_INFO, "Password has been sent to your email.", null));
-				return;
+				String password = userService.findPassword(user.getEmail());
+				if (password == null) {
+					FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email you provided is not found.", null));
+					return;
+				} else {
+					String newPassword = Util.randomAlphaNumeric(6);
+					userService.updateUserPassword(user.getEmail(), AES.encrypt(newPassword));
+					String emailBody = "Your password is: " + newPassword + ". We recommend you to change your password.";
+					SendEmail.sendMail(emailBody, user.getEmail(), null);
+					log.info("Email has been sent with password.");
+					FacesUtil.getFacesContext().addMessage("email", new FacesMessage(FacesMessage.SEVERITY_INFO, "Password has been sent to your email.", null));
+					return;
+				}
 			}
+		} catch (Exception ex) {
+			throw new RuntimeException(ex);
 		}
 	}
 
@@ -484,5 +513,13 @@ public class UserBean implements Serializable {
 
 	public void setLoggedInUser(User loggedInUser) {
 		this.loggedInUser = loggedInUser;
+	}
+
+	public List getUsers() {
+		return users;
+	}
+
+	public void setUsers(List users) {
+		this.users = users;
 	}
 }

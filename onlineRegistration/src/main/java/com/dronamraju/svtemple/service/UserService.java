@@ -32,6 +32,10 @@ public class UserService {
         return userDAO.findUser(email, password);
     }
 
+    public List<User> findAllUsers() {
+        return userDAO.findAllUsers();
+    }
+
     public List<UserProduct> findUserProducts(String orderNumber) {
         return userDAO.findUserProducts(orderNumber);
     }
@@ -60,4 +64,7 @@ public class UserService {
         return userDAO.findPassword(email);
     }
 
+    public void updateUserPassword(String email, String newPassword) {
+        userDAO.updateUserPassword(email, newPassword);
+    }
 }
