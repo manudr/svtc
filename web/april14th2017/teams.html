@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Sri Venkateswara Swamy Temple Of Colorado</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <link rel="stylesheet" href="./css/bootstrap.css">
-
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {height: 450px}
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
 
         body {
             margin: 0px;
@@ -19,11 +40,11 @@
             width: 100%;
             box-shadow: 10px 10px 5px #888888;
             background-color: #ffd699;
-            border-radius: 10px;
+            border-radius: 5px;
         }
 
         .box .title {
-            border-radius: 10px;
+            border-radius: 5px;
             background-color: #ff9900;
             font-style: normal;
             font-weight: bold;
@@ -41,378 +62,404 @@
             padding: 5px;
             margin: 5px;
         }
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {height:auto;}
+        }
     </style>
+
 </head>
 <body>
 
-<br>
+<div id="includeHeader"></div>
+<script>
+    $(function(){
+        $("#includeHeader").load("header.html");
+    });
+</script>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
-            <img class="img-responsive" src="./images/banner5.jpg" width="100%">
+        <div class="col-lg-2" style="padding: 10px;">
+            <div id="includedContent"></div>
+            <script>
+                $(function(){
+                    $("#includedContent").load("menu.html");
+                });
+            </script>
         </div>
-    </div>
-    <div class="well well-sm">
-        <center>
-            <h1>2017 TEAM</h1>
-        </center>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="box">
-                <div class="title">
-                    <h4>Board Of Trustees</h4>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            <b>Satyanarayana Velagapudi (Chairman)</b>
-                        </li>
-                        <li>
-                            <b>Ramakrishna Thurimella (Secretary)</b>
-                        </li>
-                        <li>
-                            <b>Mohan Koneru (Treasurer)</b>
-                        </li>
-                        <li>
-                            <b>Nandu Sankaran (Executive Committee President)</b>
-                        </li>
-                        <li>
-                            Gupta B.Kuna, MD
-                        </li>
-                        <li>
-                            V.J.Chukkapalli
-                        </li>
-                        <li>
-                            Sreenivasa Katamaneni
-                        </li>
-                        <li>
-                            Srinivas Panati
-                        </li>
-                        <li>
-                            Srini Surapaneni
-                        </li>
-                        <li>
-                            Venkateswararao Bandla
-                        </li>
-                        <li>
-                            Ramarao Pentela
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="box">
-                <div class="title">
-                    <h4>Executive Committee</h4>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Nandu Sankaran <b>(Executive Committee President)</b>
-                        </li>
-                        <li>
-                            Saiganesh Rajamani <b>(Religious Committee Chair)</b>
-                        </li>
-                        <li>
-                            Baburao Karamsetty <b>(Finance Committee Chair)</b>
-                        </li>
-                        <li>
-                            Madhuri Mohan <b>(Annapurna Committee Chair)</b>
-                        </li>
-                        <li>
-                            Ratnakar Kalangi <b>(Facilities Committee Chair)</b>
-                        </li>
-                        <li>
-                            Sreedhar Donthula <b>(Education & Cultural Committee Chair)</b>
-                        </li>
-                        <li>
-                            Manmohan Dronamraju <b>(Web & Communications Committee Chair)</b>
-                        </li>
-                        <li>
-                            Soummya Nandireddy <b>(Temple Manager)</b>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="box">
-                <div class="title">
-                    <h4>Temple Manager</h4>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Soumya Nandireddy
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-2">
-            <div class="box">
-                <div class="title">
-                    <h4>Religious</h4>
-                    <h5>Saiganesh Rajamani</h5>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Sreenivas Katamaneni
-                        </li>
-                        <li>
-                            Siva Rayala
-                        </li>
-                        <li>
-                            Madhusudhan Rao
-                        </li>
-                        <li>
-                            Smitha Thurimella
-                        </li>
-                        <li>
-                            Venkat Bandla
-                        </li>
-                        <li>
-                            Ramesh Chatari
-                        </li>
-                        <li>
-                            Balaji Maddi
-                        </li>
-                        <li>
-                            Mohan Sagar
-                        </li>
-                        <li>
-                            Nitin Dindukurthy
-                        </li>
-                        <li>
-                            Saikumar
-                        </li>
-                        <li>
-                            Venkatesh Dangeti
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="box">
-                <div class="title">
-                    <h4>Finance</h4>
-                    <h5>Baburao Karamsetty</h5>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Mohan Koneru
-                        </li>
-                        <li>
-                            Jag Kalagiri
-                        </li>
-                        <li>
-                            Ravinder Vookanti
-                        </li>
-                        <li>
-                            Sreenivasa Rao Katamaneni
-                        </li>
-                        <li>
-                            MS Reddy
-                        </li>
-                        <li>
-                            Savan Koppisetti
-                        </li>
-                        <li>
-                            Sai Hanu Nirukurti
-                        </li>
-                        <li>
-                            Surya Immadisetty
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="box">
-                <div class="title">
-                    <h4>Annapurna</h4>
-                    <h5>Madhuri Mohan</h5>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Sandhya Karamsetty
-                        </li>
-                        <li>
-                            Madhavi Panati
-                        </li>
-                        <li>
-                            Lakshmi Pinnamaneni
-                        </li>
-                        <li>
-                            L Nishanti
-                        </li>
-                        <li>
-                            Naveen Murthy
-                        </li>
-                        <li>
-                            Sushma Mamindlapalli
-                        </li>
-                        <li>
-                            Smitha Thurimella
-                        </li>
-                        <li>
-                            Munni Kalagara
-                        </li>
-                        <li>
-                            Karthikeyan Santhanam
-                        </li>
-                        <li>
-                            Madhavi Patibandla
-                        </li>
-                        <li>
-                            Pallavi Kutty
-                        </li>
-                        <li>
-                            Vasanthi Budumgunta
-                        </li>
-                        <li>
-                            Sunitha Mushini
-                        </li>
-                        <li>
-                            Anuradha Imadisetty
-                        </li>
-                        <li>
-                            Parvathi Donthula
-                        </li>
-                        <li>
-                            Soumya Nandireddy
-                        </li>
-                        <li>
-                            Madhavi Surapaneni
-                        </li>
-                        <li>
-                            Vedavathi Manne
-                        </li>
-                        <li>
-                            Deborah Jones
-                        </li>
-                        <li>
-                            Tulasi Indana
-                        </li>
-                        <li>
-                            Sudha Ramesh
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="box">
-                <div class="title">
-                    <h4>Facilities</h4>
-                    <h5>Ratnakar Kalangi</h5>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Aaron Brachfeld
-                        </li>
-                        <li>
-                            Karthik Ginnavaram
-                        </li>
-                        <li>
-                            Lakshmipathy Kannan
-                        </li>
-                        <li>
-                            Ratnakar Kalangi
-                        </li>
-                        <li>
-                            Ravichandran Packirisamy
-                        </li>
-                        <li>
-                            Siva Rayala
-                        </li>
-                        <li>
-                            Krishna Pothuboyina
-                        </li>
-                        <li>
-                            Srinivas Panati
-                        </li>
-                        <li>
-                            Srinu Panthangi
-                        </li>
-                        <li>
-                            Venkata Giri
-                        </li>
-                        <li>
-                            Venu Anumayam
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="box">
-                <div class="title">
-                    <h4>Web & Communications</h4>
-                    <h5>Manmohan Dronamraju</h5>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Smitha Thurimella
-                        </li>
-                        <li>
-                            Saiganesh Rajamani
-                        </li>
-                        <li>
-                            Sreedhar Donthula
-                        </li>
-                        <li>
-                            Suresh Kommula
-                        </li>
-                        <li>
-                            Ravichandran Packirisamy
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="box">
-                <div class="title">
-                    <h4>Education and Cultural</h4>
-                    <h5>Sreedhar Donthula</h5>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li>
-                            Nandu Sankaran
-                        </li>
-                        <li>
-                            Aruna Maddala
-                        </li>
-                        <li>
-                            Gowri Nandakumar
-                        </li>
-                        <li>
-                            Madhavi Panati
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div class="col-lg-10">
+            <div class="row">
+                <br>
+                <div class="col-lg-4">
 
-    </div>
+                    <div class="panel panel-warning" style="box-shadow: 10px 10px 5px #888888; background-color: #ffcc80; border-radius: 5px;">
+                        <div class="panel-heading" style="color: #000000; font-weight: bold; font-size: 18px;">Board Of Trustees</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>
+                                    Satyanarayana Velagapudi <b>(Chairman)</b>
+                                </li>
+                                <li>
+                                    Ramakrishna Thurimella <b>(Secretary)</b>
+                                </li>
+                                <li>
+                                    Mohan Koneru <b>(Treasurer)</b>
+                                </li>
+                                <li>
+                                    Nandu Sankaran <b>(Executive Committee President)</b>
+                                </li>
+                                <li>
+                                    Gupta B.Kuna, MD
+                                </li>
+                                <li>
+                                    V.J.Chukkapalli
+                                </li>
+                                <li>
+                                    Sreenivasa Katamaneni
+                                </li>
+                                <li>
+                                    Srinivas Panati
+                                </li>
+                                <li>
+                                    Srini Surapaneni
+                                </li>
+                                <li>
+                                    Venkateswararao Bandla
+                                </li>
+                                <li>
+                                    Ramarao Pentela
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
 
 
+                </div>
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Executive Committee</h4>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Nandu Sankaran <b>(Executive Committee President)</b>
+                                </li>
+                                <li>
+                                    Saiganesh Rajamani <b>(Religious Committee Chair)</b>
+                                </li>
+                                <li>
+                                    Baburao Karamsetty <b>(Finance Committee Chair)</b>
+                                </li>
+                                <li>
+                                    Madhuri Mohan <b>(Annapurna Committee Chair)</b>
+                                </li>
+                                <li>
+                                    Ratnakar Kalangi <b>(Facilities Committee Chair)</b>
+                                </li>
+                                <li>
+                                    Sreedhar Donthula <b>(Education & Cultural Committee Chair)</b>
+                                </li>
+                                <li>
+                                    Manmohan Dronamraju <b>(Web & Communications Committee Chair)</b>
+                                </li>
+                                <li>
+                                    Soummya Nandireddy <b>(Temple Manager)</b>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Temple Manager</h4>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Soumya Nandireddy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Annapurna</h4>
+                            <h5>Madhuri Mohan</h5>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Sandhya Karamsetty
+                                </li>
+                                <li>
+                                    Madhavi Panati
+                                </li>
+                                <li>
+                                    Lakshmi Pinnamaneni
+                                </li>
+                                <li>
+                                    L Nishanti
+                                </li>
+                                <li>
+                                    Naveen Murthy
+                                </li>
+                                <li>
+                                    Sushma Mamindlapalli
+                                </li>
+                                <li>
+                                    Smitha Thurimella
+                                </li>
+                                <li>
+                                    Munni Kalagara
+                                </li>
+                                <li>
+                                    Karthikeyan Santhanam
+                                </li>
+                                <li>
+                                    Madhavi Patibandla
+                                </li>
+                                <li>
+                                    Pallavi Kutty
+                                </li>
+                                <li>
+                                    Vasanthi Budumgunta
+                                </li>
+                                <li>
+                                    Sunitha Mushini
+                                </li>
+                                <li>
+                                    Anuradha Imadisetty
+                                </li>
+                                <li>
+                                    Parvathi Donthula
+                                </li>
+                                <li>
+                                    Soumya Nandireddy
+                                </li>
+                                <li>
+                                    Madhavi Surapaneni
+                                </li>
+                                <li>
+                                    Vedavathi Manne
+                                </li>
+                                <li>
+                                    Deborah Jones
+                                </li>
+                                <li>
+                                    Tulasi Indana
+                                </li>
+                                <li>
+                                    Sudha Ramesh
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Religious</h4>
+                            <h5>Saiganesh Rajamani</h5>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Sreenivas Katamaneni
+                                </li>
+                                <li>
+                                    Siva Rayala
+                                </li>
+                                <li>
+                                    Madhusudhan Rao
+                                </li>
+                                <li>
+                                    Smitha Thurimella
+                                </li>
+                                <li>
+                                    Venkat Bandla
+                                </li>
+                                <li>
+                                    Ramesh Chatari
+                                </li>
+                                <li>
+                                    Balaji Maddi
+                                </li>
+                                <li>
+                                    Mohan Sagar
+                                </li>
+                                <li>
+                                    Nitin Dindukurthy
+                                </li>
+                                <li>
+                                    Saikumar
+                                </li>
+                                <li>
+                                    Venkatesh Dangeti
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Facilities</h4>
+                            <h5>Ratnakar Kalangi</h5>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Aaron Brachfeld
+                                </li>
+                                <li>
+                                    Karthik Ginnavaram
+                                </li>
+                                <li>
+                                    Lakshmipathy Kannan
+                                </li>
+                                <li>
+                                    Ratnakar Kalangi
+                                </li>
+                                <li>
+                                    Ravichandran Packirisamy
+                                </li>
+                                <li>
+                                    Siva Rayala
+                                </li>
+                                <li>
+                                    Krishna Pothuboyina
+                                </li>
+                                <li>
+                                    Srinivas Panati
+                                </li>
+                                <li>
+                                    Srinu Panthangi
+                                </li>
+                                <li>
+                                    Venkata Giri
+                                </li>
+                                <li>
+                                    Venu Anumayam
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Finance</h4>
+                            <h5>Baburao Karamsetty</h5>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Mohan Koneru
+                                </li>
+                                <li>
+                                    Jag Kalagiri
+                                </li>
+                                <li>
+                                    Ravinder Vookanti
+                                </li>
+                                <li>
+                                    Sreenivasa Rao Katamaneni
+                                </li>
+                                <li>
+                                    MS Reddy
+                                </li>
+                                <li>
+                                    Savan Koppisetti
+                                </li>
+                                <li>
+                                    Sai Hanu Nirukurti
+                                </li>
+                                <li>
+                                    Surya Immadisetty
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Web & Communications</h4>
+                            <h5>Manmohan Dronamraju</h5>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Smitha Thurimella
+                                </li>
+                                <li>
+                                    Saiganesh Rajamani
+                                </li>
+                                <li>
+                                    Sreedhar Donthula
+                                </li>
+                                <li>
+                                    Suresh Kommula
+                                </li>
+                                <li>
+                                    Ravichandran Packirisamy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="box">
+                        <div class="title">
+                            <h4>Education and Cultural</h4>
+                            <h5>Sreedhar Donthula</h5>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    Nandu Sankaran
+                                </li>
+                                <li>
+                                    Aruna Maddala
+                                </li>
+                                <li>
+                                    Gowri Nandakumar
+                                </li>
+                                <li>
+                                    Madhavi Panati
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
+</html>
