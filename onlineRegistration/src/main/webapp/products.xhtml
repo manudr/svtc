@@ -3,6 +3,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jstl/core"
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
@@ -14,6 +15,7 @@
         <br></br>
         <h:form style="font-size: 12px;">
             <div class="ui-fluid">
+                <c:set var="myVar" scope="request" />
                 <p:panel header="All Temple Services">
                     <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
                         <p:dataTable id="products"
@@ -29,6 +31,7 @@
                                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                      filteredValue="#{productBean.filteredProducts}"
                                      rowsPerPageTemplate="25,100,500">
+                            <c:set var="myVar" value="#{product.name}"/>
                             <p:column headerText="Name" filterBy="#{product.name}" filterMatchMode="contains" sortBy="#{product.name}">
                                 <h:outputText value="#{product.name}" />
                             </p:column>
@@ -84,13 +87,16 @@
                                 <h:outputText value="#{product.updatedUser}" />
                             </p:column>
                             -->
+                            Test: #{myVar}
                         </p:dataTable>
+                        Test: #{myVar}
                     </p:panelGrid>
-
+                    Test: #{myVar}
                     <p:contextMenu for="products">
-                        <p:menuitem value="View" update="productDetail" icon="ui-icon-search" oncomplete="PF('productDialog').show()"/>
-                        <p:menuitem value="Edit" update="productDetail" icon="ui-icon-search" oncomplete="PF('productDialog').show()"/>
-                        <p:menuitem value="Delete" update="products" icon="ui-icon-close" actionListener="#{productBean.deleteProduct}"/>
+                        <p:menuitem value="View#{myVar}" update="productDetail" icon="ui-icon-search" oncomplete="PF('productDialog').show()"/>
+                        <p:menuitem value="Edit#{myVar}" update="productDetail" icon="ui-icon-search" oncomplete="PF('productDialog').show()"/>
+                        <p:menuitem value="Delete#{myVar}" update="products" icon="ui-icon-close" actionListener="#{productBean.deleteProduct}"/>
+                        <p:menuitem value="Test#{myVar}" rendered="#{myVar eq 'Sri Mahalakshmi Kumkumarchana'}" update="products" icon="ui-icon-close" actionListener="#{productBean.deleteProduct}"/>
                     </p:contextMenu>
 
                     <p:dialog header="Product Info" widgetVar="productDialog" style="width: 50%" appendToBody="true" modal="true" showEffect="fade" hideEffect="fade" resizable="true">
