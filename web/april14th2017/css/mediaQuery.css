@@ -4,24 +4,8 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
     .bannerText {
         color: #cc0000;
-        font-size: 10px;
+        font-size: 40px;
         letter-spacing: 1px;
-        font-style: normal;
-        font-weight: bold;
-        text-shadow: 2px 2px 2px #663d00;
-        padding-top: 5px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-    }
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-    .bannerText {
-        color: #cc0000;
-        font-size: 20px;
-        letter-spacing: 0px;
         font-style: normal;
         font-weight: bold;
         text-shadow: 2px 2px 2px #663d00;
@@ -33,33 +17,129 @@ and (min-width : 321px) {
     .address {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 31px;
         word-spacing: 1px;
         color: #800000;
         text-decoration: underline;
         padding: 2px;
+        background-color: #00bcd4;
     }
 
     .address a, a:hover, a:focus {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 3px;
         word-spacing: 1px;
         color: #800000;
         text-decoration: none;
         padding: 2px;
+        background-color: #00bcd4;
     }
 
     .details {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 15px;
         color: #993333;
         padding: 2px;
     }
 
     .img {
-        width: 0%;
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+    .bannerText {
+        color: #cc0000;
+        font-size: 40px;
+        letter-spacing: 1px;
+        font-style: normal;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #663d00;
+        padding-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+        background-color: #00bcd4;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #00bcd4;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 }
 
@@ -77,6 +157,61 @@ and (max-width : 320px) {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
     }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -93,6 +228,61 @@ and (max-device-width : 1024px) {
         padding-top: 5px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 }
 
@@ -112,6 +302,61 @@ and (orientation : landscape) {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
     }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
+    }
 }
 
 /* iPads (portrait) ----------- */
@@ -129,6 +374,61 @@ and (orientation : portrait) {
         padding-top: 5px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 }
 
@@ -160,7 +460,7 @@ and (min-width : 1224px) {
     .address a, a:hover, a:focus {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 33px;
+        font-size: 3px;
         word-spacing: 1px;
         color: #800000;
         text-decoration: none;
@@ -218,8 +518,14 @@ and (min-width : 1824px) {
         text-align: center;
     }
 
-    .img {
-        width: 100%;
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
     }
 
     .address a, a:hover, a:focus {
@@ -231,6 +537,40 @@ and (min-width : 1824px) {
         text-decoration: none;
         padding: 2px;
         background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 }
 
@@ -248,6 +588,61 @@ and (max-device-width : 568px) {
         padding-top: 5px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 }
 
@@ -267,6 +662,61 @@ and (orientation : landscape) {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
     }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
+    }
 }
 
 /* iPhone 5 (portrait)----------- */
@@ -284,5 +734,60 @@ and (orientation : portrait) {
         padding-top: 5px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+    }
+
+    .address {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 31px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: underline;
+        padding: 2px;
+    }
+
+    .address a, a:hover, a:focus {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 3px;
+        word-spacing: 1px;
+        color: #800000;
+        text-decoration: none;
+        padding: 2px;
+        background-color: #ffffff;
+    }
+
+    .details {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #993333;
+        padding: 2px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .buttonStyle {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        background-color: #ffcc80;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .buttonStyle a, a:hover, a:focus {
+        background-color: #ffb84d;
+        display: block;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 15px;
     }
 }
