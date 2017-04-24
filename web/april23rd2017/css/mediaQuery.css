@@ -1,0 +1,110 @@
+.body {
+
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+@media screen and (min-width: 991px) {
+    /* start of large tablet styles */
+    .bannerText {
+        color: #e68a00;
+        font-size: 36px;
+        letter-spacing: 3px;
+        font-style: normal;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #663d00;
+        padding-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .address {
+        color: #800000;
+        font-size: 21px;
+        letter-spacing: 3px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .otherDetails {
+        color: #800000;
+        font-size: 16px;
+        letter-spacing: 0px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .otherDetails a, a:hover, a:focus {
+        color: #800000;
+        font-size: 16px;
+        letter-spacing: 0px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+
+}
+
+@media screen and (max-width: 479px) {
+    /* start of phone styles */
+
+    .bannerText {
+        color: #e68a00;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: bold;
+        padding-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .address {
+        color: #800000;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .otherDetails {
+        color: #800000;
+        font-size: 3px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .otherDetails a, a:hover, a:focus {
+        color: #800000;
+        font-size: 3px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .img {
+        width: 0%;
+    }
+}
