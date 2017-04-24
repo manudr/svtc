@@ -1,11 +1,63 @@
 .body {
     background-color: #f2e6d9;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 70%;
     margin: auto;
+}
+
+@media screen and (min-width: 1200px) {
+    /* start of large tablet styles */
+    .bannerText {
+        color: #e68a00;
+        font-size: 44px;
+        letter-spacing: 3px;
+        font-style: normal;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #663d00;
+        padding-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .address {
+        color: #800000;
+        font-size: 27px;
+        letter-spacing: 3px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .otherDetails {
+        color: #800000;
+        font-size: 21px;
+        letter-spacing: 0px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .otherDetails a, a:hover, a:focus {
+        color: #800000;
+        font-size: 21px;
+        letter-spacing: 0px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .img {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 991px) {
