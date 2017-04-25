@@ -1,7 +1,10 @@
 .body {
     background-color: #f2e6d9;
-    margin-left: 10px;
-    margin-right: 10px;
+}
+
+.container-fluid-custom {
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .carousel-inner > .item > img,
@@ -147,7 +150,7 @@
         text-align: center;
     }
 
-    .otherDetails a, a:hover, a:focus {
+    .otherDetails a {
         color: #800000;
         font-size: 3px;
         font-style: normal;
