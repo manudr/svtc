@@ -14,10 +14,7 @@
     <link rel="stylesheet" href="css/mediaQuery.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
-
 <body>
     <div id="includeHeader"></div>
     <script>
@@ -29,10 +26,22 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3">
-                <div class="panel panel-warning">
+                <div class="panel panel-warning-custom">
                     <div class="panel-heading">Daily Schedule</div>
-                    <div class="panel-body">
-
+                    <div class="panel-body" style="height: 355px;">
+                        09:00AM	Suprabhatha Seva<br>
+                        10:00AM	Nitya Archana<br>
+                        10:30AM	First Archana<br>
+                        08:00AM	Last Archana<br>
+                        08:20AM	Ekantha Seva<br>
+                        <b>
+                            Archana - Every 30 Minutes after first archana<br>
+                            (Archana schedule may change on special event day)
+                        </b>
+                        <br><br>
+                        <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
+                            As recommended by our priests, we will not use devotee prepared yogurt / grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring fat free milk instead.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,24 +68,9 @@
                 </script>
             </div>
             <div class="col-lg-3">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">Daily Schedule</div>
-                    <div class="panel-body">
-                        09:00AM	Suprabhatha Seva<br>
-                        10:00AM	Nitya Archana<br>
-                        10:30AM	First Archana<br>
-                        08:00AM	Last Archana<br>
-                        08:20AM	Ekantha Seva<br>
-                        <b>
-                            Archana - Every half an hour after first archana<br>
-                            (Archana schedule may change on special event day)
-                        </b>
-                    </div>
-                </div>
-
-                <div class="panel panel-warning">
-                    <div class="panel-heading">Daily Schedule</div>
-                    <div class="panel-body">
+                <div class="panel panel-warning-custom">
+                    <div class="panel-heading">Temple Needs</div>
+                    <div class="panel-body" style="height: 355px;">
 
                     </div>
                 </div>
@@ -85,25 +79,37 @@
         <br>
         <div class="row">
             <div class="col-lg-4">
-                <div class="panel panel-warning" style="height: 300px;">
+                <div class="panel panel-warning-custom">
                     <div class="panel-heading">Today's Panchangam<br>(Americas (Daylight saving time adjusted), Denver, Colorado)</div>
-                    <div class="panel-body">
-                        <iframe name='iframe1' id='iframe1' src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603&displaymode=full" scrolling="no" width="190px" height="460px" frameborder="0" style="border:none;" allowTransparency="true"></iframe>
+                    <div class="panel-body" style="height: 280px;">
+                        <iframe name='iframe1'
+                                id='iframe1'
+                                src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603&displaymode=full"
+                                scrolling="no"
+                                frameborder="0"
+                                height="280px"
+                                style="border:none;"
+                                allowTransparency="true">
+                        </iframe>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4">
-                <div class="panel panel-warning" style="height: 300px;">
+                <div class="panel panel-warning-custom">
                     <div class="panel-heading">Temple Needs</div>
-                    <div class="panel-body">Panel Content</div>
+                    <div class="panel-body" style="height: 300px;">
+                        Panel Content
+                    </div>
                 </div>
             </div>
 
             <div class="col-lg-4">
-                <div class="panel panel-warning" style="height: 300px;">
+                <div class="panel panel-warning-custom">
                     <div class="panel-heading">Donors</div>
-                    <div class="panel-body">Panel Content</div>
+                    <div class="panel-body" style="height: 300px;">
+                        Panel Content
+                    </div>
                 </div>
             </div>
         </div>

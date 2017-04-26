@@ -3297,7 +3297,7 @@ fieldset[disabled] .btn-info.focus {
 }
 .btn-warning:hover {
   color: #fff;
-  background-color: #ff9900;
+  background-color: #ec971f;
   border-color: #d58512;
 }
 .btn-warning:active,
@@ -5755,15 +5755,12 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #bce8f1;
 }
 .panel-warning {
-  border-color: #ffc266;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+  border-color: #faebcc;
 }
 .panel-warning > .panel-heading {
-  color: #800000;
-  font-weight: bold;
-  background-color: #ffffff;
-  border-color: #ffc266;
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
 }
 .panel-warning > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #faebcc;

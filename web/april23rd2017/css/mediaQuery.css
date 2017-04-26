@@ -13,6 +13,24 @@
     margin: auto;
 }
 
+.panel {
+    -webkit-box-shadow: 5px 5px 5px #a6a6a6;
+    box-shadow: 5px 5px 5px #a6a6a6;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.panel-warning-custom {
+    background-color: #ffcc80;
+    font-weight: bold;
+    color: #800000;
+}
+
+.panel-body {
+    background-color: #fff5e6;
+    font-weight: normal;
+}
+
 .address {
     color: #800000;
     font-size: 75%;
@@ -24,13 +42,43 @@
 
 .otherDetails {
     color: #800000;
-    font-size: 75%;
+    font-size: 100%;
     font-style: normal;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
-.img {
-    width: 100%;
+.navbar-collapse {
+    background-color: #ff9900;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: #cc3300;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #cc3300;
+}
+
+@media screen and (min-width: 200px)
+and (max-width: 1200px) {
+    .otherDetails {
+        color: #800000;
+        font-size: 75%;
+        font-style: normal;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
 }
