@@ -46,26 +46,30 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <img class="img-responsive mySlides w3-animate-fading" src="images/img1.jpg" style="height: 400px; width: 800px;">
-                <img class="img-responsive mySlides w3-animate-fading" src="images/img2.jpg" style="height: 400px; width: 800px;">
-                <img class="img-responsive mySlides w3-animate-fading" src="images/img3.jpg" style="height: 400px; width: 800px;">
-                <img class="img-responsive mySlides w3-animate-fading" src="images/img4.jpg" style="height: 400px; width: 800px;">
+                <div class="panel panel-warning-custom">
+                    <div class="panel-body" style="padding: 0px;">
+                        <img class="img-responsive mySlides w3-animate-fading" src="images/img1.jpg" style="height: 400px; width: 800px;">
+                        <img class="img-responsive mySlides w3-animate-fading" src="images/img2.jpg" style="height: 400px; width: 800px;">
+                        <img class="img-responsive mySlides w3-animate-fading" src="images/img3.jpg" style="height: 400px; width: 800px;">
+                        <img class="img-responsive mySlides w3-animate-fading" src="images/img4.jpg" style="height: 400px; width: 800px;">
 
-                <script>
-                    var myIndex = 0;
-                    carousel();
-                    function carousel() {
-                        var i;
-                        var x = document.getElementsByClassName("mySlides");
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
-                        }
-                        myIndex++;
-                        if (myIndex > x.length) {myIndex = 1}
-                        x[myIndex-1].style.display = "block";
-                        setTimeout(carousel, 5000);
-                    }
-                </script>
+                        <script>
+                            var myIndex = 0;
+                            carousel();
+                            function carousel() {
+                                var i;
+                                var x = document.getElementsByClassName("mySlides");
+                                for (i = 0; i < x.length; i++) {
+                                    x[i].style.display = "none";
+                                }
+                                myIndex++;
+                                if (myIndex > x.length) {myIndex = 1}
+                                x[myIndex-1].style.display = "block";
+                                setTimeout(carousel, 5000);
+                            }
+                        </script>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <div class="panel panel-warning-custom">
