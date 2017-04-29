@@ -1,5 +1,5 @@
 .body {
-    background-color: #f2e6d9;
+
 }
 
 .container-fluid-custom {
@@ -14,20 +14,23 @@
 }
 
 .panel {
+    border: 2px solid #ffcc80;
     -webkit-box-shadow: 5px 5px 5px #a6a6a6;
     box-shadow: 5px 5px 5px #a6a6a6;
     font-weight: normal;
     font-size: 13px;
 }
 
-.panel-warning-custom {
+.panel-heading-custom {
+    border: 2px solid #ffcc80;
     background-color: #ffcc80;
+    padding: 10px;
     font-weight: bold;
     color: #800000;
 }
 
 .panel-body {
-    background-color: #fff5e6;
+    background-color: #ffffff;
     font-weight: normal;
 }
 
