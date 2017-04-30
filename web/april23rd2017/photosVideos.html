@@ -15,6 +15,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
+
 <body>
 <div id="includeHeader"></div>
 <script>
@@ -24,21 +25,70 @@
 </script>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-warning">
-                <div class="panel-heading-custom">Photos</div>
-                <div class="panel-body">
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-warning-custom">
+                <div class="panel-heading-custom">Sri Rama Navmi</div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <script language="JavaScript">
+                        var photo;
+                        for (i=1;i<=721;i++) {
+                            photo="photos/2017/SriRamaNavmi/SriRamaNavmi_"+i+".JPG";
+                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
+                        }
+                    </script>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="col-lg-6">
-            <div class="panel panel-warning">
-                <div class="panel-heading-custom">Videos</div>
-                <div class="panel-body">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-warning-custom">
+                <div class="panel-heading-custom">Shiva Rathri</div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <script language="JavaScript">
+                        var photo;
+                        for (i=1;i<=204;i++) {
+                            photo="photos/2017/ShivaRathri/ShivaRathri_"+i+".JPG";
+                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-warning-custom">
+                <div class="panel-heading-custom">January Photos</div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <script language="JavaScript">
+                        var photo;
+                        for (i=1;i<=40;i++) {
+                            photo="photos/2017/Jan13th2017/January13th2017_"+i+".JPG";
+                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-warning-custom">
+                <div class="panel-heading-custom">New Year Photos</div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
+                    <script language="JavaScript">
+                        var photo;
+                        for (i=1;i<=60;i++) {
+                            photo="photos/2017/NewYear/NewYear_"+i+".JPG";
+                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
+                        }
+                    </script>
                 </div>
             </div>
         </div>
