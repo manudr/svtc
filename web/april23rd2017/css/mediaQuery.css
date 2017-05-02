@@ -14,24 +14,36 @@
 }
 
 .panel {
-    border: 2px solid #ffcc80;
     -webkit-box-shadow: 5px 5px 5px #a6a6a6;
     box-shadow: 5px 5px 5px #a6a6a6;
     font-weight: normal;
     font-size: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ffcc80;
+    border-radius: 4px;
 }
 
 .panel-heading-custom {
-    border: 2px solid #ffcc80;
     background-color: #ffcc80;
-    padding: 10px;
     font-weight: bold;
     color: #800000;
+    padding: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 1px solid #ffcc80;
 }
 
 .panel-body {
     background-color: #ffffff;
     font-weight: normal;
+}
+
+.rcorners6 {
+    border-radius: 15px 50px;
+    background-color: #ffe0b3;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 2px #d9d9d9, 2px 2px 2px 2px #d9d9d9;
+    height: 100%;
 }
 
 .address {
@@ -50,27 +62,6 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-}
-
-.navbar-collapse {
-    background-color: #ff9900;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: #ffffff;
-    padding: 5px;
-    margin: 5px;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
-    background-color: #cc3300;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    background-color: #cc3300;
 }
 
 @media screen and (min-width: 200px)

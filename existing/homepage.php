@@ -89,19 +89,19 @@ document.onclick = mclose;
       <div style="margin-left:10px;">Sri Venkateswara Temple has been a long cherished dream of people of Colorado.
 There are tremendous efforts underway to complete the Sri Venkateswara Swamy Temple of Colorado.
 Please visit this web site frequently to learn more about what is going on regarding this effort.
-Want to be a part of this once in a life time opportunity ? Email to learn more and receive more information <span style="padding-left:25px"><a href="" style="color:#B61500">more »</a></span> </div> 
+Want to be a part of this once in a life time opportunity ? Email to learn more and receive more information <span style="padding-left:25px"><a href="" style="color:#B61500">more »</a></span> </div>
 -->
 
     <td width="100%" align="left" valign="top" class="homeContent">
-<!-- Removed as per EC decision in EC meeting held on 8/8/2015     
+<!-- Removed as per EC decision in EC meeting held on 8/8/2015
 	<img src="resources/image/welcome.jpg" width="116" height="27" />
       <div >Sri Venkateswara Swamy Temple of Colorado has been a long cherished dream of people of Colorado.<br/>
 There are tremendous efforts underway to complete the Sri Venkateswara Swamy Temple of Colorado.<br/>
 Please visit this web site frequently to learn more about what is going on regarding this effort.<br/>
-Want to be a part of this once in a life time opportunity? Email to learn more and receive more information<span style="padding-left:10px"><a href="mailto:info@svtempleco.org?subject=Information%20about%20SVTC" style="color:#B61500">more »</a></span> </div> 
+Want to be a part of this once in a life time opportunity? Email to learn more and receive more information<span style="padding-left:10px"><a href="mailto:info@svtempleco.org?subject=Information%20about%20SVTC" style="color:#B61500">more »</a></span> </div>
 
 <embed src="resources\player\mediaplayer.swf" width="51" height="35"
-type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="always" 
+type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="always"
 flashvars="height=20&width=55&file=NAMO_VENKATESAYA.mp3&volume=1&autostart=true&repeat=true&type=mp3&displaywidth=250&autoscroll=false&thumbsinplaylist=false&showicons=false&usefulscreen=false&searchbar=false&backcolor=0xE59405&frontcolor=0x000000&lightcolor=0xFFFF00&screencolor=0xFFFFFF" /></embed>
 -->
 <!-- added 2015 pavithrotsavam info
@@ -125,10 +125,10 @@ flashvars="height=20&width=55&file=NAMO_VENKATESAYA.mp3&volume=1&autostart=true&
   <tr> <td colspan="2" align="left" valign="top"> <font size="+1">&nbsp; 3:53 PM - 7:48 PM </font> </td> </tr>
 
 
-  <tr> <td colspan="2" align="left" valign="top"><br/> <br/></tr> 
-  <tr> <td colspan="2" align="left" valign="top"></tr> 
+  <tr> <td colspan="2" align="left" valign="top"><br/> <br/></tr>
+  <tr> <td colspan="2" align="left" valign="top"></tr>
   <tr> <td colspan="2" align="left" valign="top">
--->    
+-->
 	<b>
 
   <!--
@@ -156,6 +156,14 @@ flashvars="height=20&width=55&file=NAMO_VENKATESAYA.mp3&volume=1&autostart=true&
     <td colspan="2" align="center" valign="top" style="padding-left:10px; height: 10px;">Phone: Temple - 303-660-9555, Manager - 303-898-5514    Email: manager@svtempleco.org</td>
   </tr>
 
+<!--
+        <tr>
+            <td style="background-color: #cc3300; color: #ffffff; font-size: 13px; padding: 5px;">
+                Today the Saturday April 29th, Temple may be opened around 11AM due to Inclement weather conditions. Please contact temple manager at 303-898-5514 for any updates.
+            </td>
+        </tr>
+
+-->
 <!-- 9/1/2015 - Add upcoming events from google slides-->
 
 
@@ -176,14 +184,14 @@ flashvars="height=20&width=55&file=NAMO_VENKATESAYA.mp3&volume=1&autostart=true&
 
   <tr>
     <td colspan="2" align="left" valign="top">
-      <!-- 
-	  <iframe src="https://www.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver" 
+      <!--
+	  <iframe src="https://www.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver"
 	  style=" border:solid 1px #777 " width="630" height="600" frameborder="0" scrolling="no"></iframe>  -->
-	  <iframe src="https://www.google.com/calendar/embed?title=Events%20Calendar&amp;showTabs=0&amp;mode=AGENDA&amp;height=300&amp;wkst=2&amp;hl=en&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver" 
+	  <iframe src="https://www.google.com/calendar/embed?title=Events%20Calendar&amp;showTabs=0&amp;mode=AGENDA&amp;height=300&amp;wkst=2&amp;hl=en&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver"
 	  style=" border:solid 1px #777 " width="600" height="300" frameborder="0" scrolling="no"></iframe>
     </td>
-  </tr>	
-	
+  </tr>
+
   <tr>
     <td colspan="2" align="left" valign="top" style="padding-left:10px;">
 	<?php

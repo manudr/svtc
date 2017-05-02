@@ -24,97 +24,79 @@
     </script>
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="height: 600px;">
             <div class="col-lg-3">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Daily Schedule</div>
-                    <div class="panel-body" style="height: 355px;">
-                        09:00AM	Suprabhatha Seva<br>
-                        10:00AM	Nitya Archana<br>
-                        10:30AM	First Archana<br>
-                        08:00AM	Last Archana<br>
-                        08:20AM	Ekantha Seva<br>
-                        <b>Archana - Every 30 Minutes after first archana</b>
-                        <br><br>
-                        <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
-                            Archana schedule may change on special event days.
-                        </div>
-                        <br>
-                        <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
-                            Temple will not use devotee prepared yogurt/grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring fat free milk instead.
-                        </div>
+                <div class="rcorners6">
+                    <h5>Daily Schedule</h5>
+                    09:00AM	Suprabhatha Seva<br>
+                    10:00AM	Nitya Archana<br>
+                    10:30AM	First Archana<br>
+                    08:00AM	Last Archana<br>
+                    08:20AM	Ekantha Seva<br>
+                    <b>Archana - Every 30 Minutes after first archana</b>
+                    <br><br>
+                    <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
+                        Archana schedule may change on special event days.
+                    </div>
+                    <br>
+                    <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
+                        Temple will not use devotee prepared yogurt/grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring fat free milk instead.
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6">
-                <div class="panel panel-warning-custom">
-                    <div class="panel-body" style="padding: 0px;">
-                        <img class="img-responsive mySlides w3-animate-fading" src="images/img1.jpg" style="height: 400px; width: 800px;">
-                        <img class="img-responsive mySlides w3-animate-fading" src="images/img2.jpg" style="height: 400px; width: 800px;">
-                        <img class="img-responsive mySlides w3-animate-fading" src="images/img3.jpg" style="height: 400px; width: 800px;">
-                        <img class="img-responsive mySlides w3-animate-fading" src="images/img4.jpg" style="height: 400px; width: 800px;">
+                <img class="img-responsive mySlides w3-animate-fading" src="slides/img1.jpg">
+                <img class="img-responsive mySlides w3-animate-fading" src="slides/img2.jpg">
+                <img class="img-responsive mySlides w3-animate-fading" src="slides/img3.jpg">
+                <img class="img-responsive mySlides w3-animate-fading" src="slides/img4.jpg">
 
-                        <script>
-                            var myIndex = 0;
-                            carousel();
-                            function carousel() {
-                                var i;
-                                var x = document.getElementsByClassName("mySlides");
-                                for (i = 0; i < x.length; i++) {
-                                    x[i].style.display = "none";
-                                }
-                                myIndex++;
-                                if (myIndex > x.length) {myIndex = 1}
-                                x[myIndex-1].style.display = "block";
-                                setTimeout(carousel, 5000);
-                            }
-                        </script>
-                    </div>
-                </div>
+                <script>
+                    var myIndex = 0;
+                    carousel();
+                    function carousel() {
+                        var i;
+                        var x = document.getElementsByClassName("mySlides");
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                        }
+                        myIndex++;
+                        if (myIndex > x.length) {myIndex = 1}
+                        x[myIndex-1].style.display = "block";
+                        setTimeout(carousel, 5000);
+                    }
+                </script>
             </div>
-            <div class="col-lg-3">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Temple Needs</div>
-                    <div class="panel-body" style="height: 355px;">
 
-                    </div>
+            <div class="col-lg-3">
+                <div class="rcorners6">
+                    <iframe name='iframe1'
+                            id='iframe1'
+                            src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603&displaymode=full"
+                            scrolling="no"
+                            frameborder="0"
+                            style="border:none;"
+                            allowTransparency="true">
+                    </iframe>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Today's Panchangam<br>(Americas (Daylight saving time adjusted), Denver, Colorado)</div>
-                    <div class="panel-body" style="height: 280px;">
-                        <iframe name='iframe1'
-                                id='iframe1'
-                                src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603&displaymode=full"
-                                scrolling="no"
-                                frameborder="0"
-                                height="280px"
-                                style="border:none;"
-                                allowTransparency="true">
-                        </iframe>
-                    </div>
+        <br><br>
+        <div class="row" style="height: 600px;">
+            <div class="col-lg-3">
+                <div class="rcorners6">
+                    Panel Content
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Temple Needs</div>
-                    <div class="panel-body" style="height: 300px;">
-                        Panel Content
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <iframe src="https://www.google.com/calendar/embed?title=Events%20Calendar&amp;showTabs=0&amp;mode=AGENDA&amp;wkst=2&amp;hl=en&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver"
+                        style=" border:solid 1px #777 " width="100%" frameborder="0" scrolling="no"></iframe>
             </div>
 
-            <div class="col-lg-4">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Donors</div>
-                    <div class="panel-body" style="height: 300px;">
-                        https://visitor.constantcontact.com/manage/optin?v=001te_v6vSd9jtWP_IatPEFq4OqyqDOpHAXvpJrmBZgsyloOWWu3nqjTffNrVPCm2xlUbs8soPf4e3LOsVfDgYeoP9RdcQxlc2u
-                    </div>
+            <div class="col-lg-3">
+                <div class="rcorners6">
+                    Panel Content
                 </div>
             </div>
         </div>
