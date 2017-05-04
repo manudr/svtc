@@ -24,10 +24,10 @@
     </script>
 
     <div class="container-fluid">
-        <div class="row" style="height: 600px;">
-            <div class="col-lg-3">
-                <div class="rcorners6">
-                    <h5>Daily Schedule</h5>
+        <div class="row">
+            <div class="col-lg-3" style="height: 550px;">
+                <div class="box1">
+                    <h5 style="padding: 5px; background-color: #7b1115; color: #ffffff; border-radius: 5px;">Daily Schedule</h5>
                     09:00AM	Suprabhatha Seva<br>
                     10:00AM	Nitya Archana<br>
                     10:30AM	First Archana<br>
@@ -35,41 +35,41 @@
                     08:20AM	Ekantha Seva<br>
                     <b>Archana - Every 30 Minutes after first archana</b>
                     <br><br>
-                    <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
+                    <div style="background-color: #cc3300; color: #ffff00; border-radius: 5px; padding: 5px;">
                         Archana schedule may change on special event days.
-                    </div>
-                    <br>
-                    <div style="background-color: #cc3300; color: #ffffff; border-radius: 5px; padding: 5px;">
-                        Temple will not use devotee prepared yogurt/grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring fat free milk instead.
+                        <br><br>
+                        Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring fat free milk instead.
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6">
-                <img class="img-responsive mySlides w3-animate-fading" src="slides/img1.jpg">
-                <img class="img-responsive mySlides w3-animate-fading" src="slides/img2.jpg">
-                <img class="img-responsive mySlides w3-animate-fading" src="slides/img3.jpg">
-                <img class="img-responsive mySlides w3-animate-fading" src="slides/img4.jpg">
-
-                <script>
-                    var myIndex = 0;
-                    carousel();
-                    function carousel() {
-                        var i;
-                        var x = document.getElementsByClassName("mySlides");
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
+            <div class="col-lg-6" style="height: 550px;">
+                <div class="box2">
+                    <img class="img-responsive mySlides w3-animate-fading" src="slides/img1.jpg">
+                    <img class="img-responsive mySlides w3-animate-fading" src="slides/img2.jpg">
+                    <img class="img-responsive mySlides w3-animate-fading" src="slides/img3.jpg">
+                    <img class="img-responsive mySlides w3-animate-fading" src="slides/img4.jpg">
+                    <script>
+                        var myIndex = 0;
+                        carousel();
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            myIndex++;
+                            if (myIndex > x.length) {myIndex = 1}
+                            x[myIndex-1].style.display = "block";
+                            setTimeout(carousel, 5000);
                         }
-                        myIndex++;
-                        if (myIndex > x.length) {myIndex = 1}
-                        x[myIndex-1].style.display = "block";
-                        setTimeout(carousel, 5000);
-                    }
-                </script>
+                    </script>
+                </div>
             </div>
 
-            <div class="col-lg-3">
-                <div class="rcorners6">
+            <div class="col-lg-3" style="height: 550px;">
+                <div class="box1">
+                    <h5 style="padding: 5px; background-color: #7b1115; color: #ffffff; border-radius: 5px;">Today's Panchangam</h5>
                     <iframe name='iframe1'
                             id='iframe1'
                             src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603&displaymode=full"
@@ -82,24 +82,31 @@
             </div>
         </div>
         <br><br>
-        <div class="row" style="height: 600px;">
-            <div class="col-lg-3">
-                <div class="rcorners6">
+        <div class="row">
+            <div class="col-lg-6" style="height: 550px;">
+                <iframe src="https://www.google.com/calendar/embed?title=Events%20Calendar&amp;showTabs=0&amp;mode=AGENDA&amp;wkst=2&amp;hl=en&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver"
+                        style="border:solid 1px #777 " height="100%" width="100%" frameborder="0" scrolling="no"></iframe>
+            </div>
+
+            <div class="col-lg-3" style="height: 550px;">
+                <div class="box1">
                     Panel Content
                 </div>
             </div>
 
-            <div class="col-lg-6">
-                <iframe src="https://www.google.com/calendar/embed?title=Events%20Calendar&amp;showTabs=0&amp;mode=AGENDA&amp;wkst=2&amp;hl=en&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver"
-                        style=" border:solid 1px #777 " width="100%" frameborder="0" scrolling="no"></iframe>
-            </div>
-
-            <div class="col-lg-3">
-                <div class="rcorners6">
+            <div class="col-lg-3" style="height: 550px;">
+                <div class="box1">
                     Panel Content
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="includeFooter"></div>
+    <script>
+        $(function(){
+            $("#includeFooter").load("footer.html");
+        });
+    </script>
 </body>
 </html>

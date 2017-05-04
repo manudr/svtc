@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="logs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Dec2015.logs.zip!/" />
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Feb2016.logs.zip!/" />
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Jan2016.logs.zip!/" />
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Nov2015.logs.zip!/" />
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Oct2015.logs.zip!/" />
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Mar2016.logs.zip!/" />
+      <root url="jar://$PROJECT_DIR$/existing/stats/logs/W3SVC2655960.Sep2015.logs.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

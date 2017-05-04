@@ -24,71 +24,29 @@
     });
 </script>
 
-<div class="container-fluid">
-    <h3 style="padding: 5px; font-weight: bold; color: #800000; background-color: #f0ad4e;">To view big picture please right click on the image and click "Open  in new tab"</h3>
-    <div class="row">
-        <div class="col-lg-6">
-            <h3 style="padding: 5px; font-weight: bold; color: #800000; background-color: #f0ad4e;">Sri Rama Navmi</h3>
-           <div class="panel">
-               <div class="panel-body" style="overflow-y: scroll; height: 800px;">
-                   <script language="JavaScript">
-                       var photo;
-                       for (i=1;i<=721;i++) {
-                           photo="photos/2017/SriRamaNavmi/SriRamaNavmi_"+i+".JPG";
-                           document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
-                       }
-                   </script>
-               </div>
-           </div>
-        </div>
+<div class="container">
+    <h2>Large Modal</h2>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
 
-        <div class="col-lg-6">
-            <h3 style="padding: 5px; font-weight: bold; color: #800000; background-color: #f0ad4e;">Shiva Rathri</h3>
-            <div class="panel">
-                <div class="panel-body" style="overflow-y: scroll; height: 800px;">
-                    <script language="JavaScript">
-                        var photo;
-                        for (i=1;i<=204;i++) {
-                            photo="photos/2017/ShivaRathri/ShivaRathri_"+i+".JPG";
-                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
-                        }
-                    </script>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <h3 style="padding: 5px; font-weight: bold; color: #800000; background-color: #f0ad4e;">January Photos</h3>
-            <div class="panel">
-                <div class="panel-body" style="overflow-y: scroll; height: 800px;">
-                    <script language="JavaScript">
-                        var photo;
-                        for (i=1;i<=40;i++) {
-                            photo="photos/2017/Jan13th2017/January13th2017_"+i+".JPG";
-                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
-                        }
-                    </script>
+                <div class="modal-body">
+                    <p>This is a large modal.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <h3 style="padding: 5px; font-weight: bold; color: #800000; background-color: #f0ad4e;">New Year Photos</h3>
-            <div class="panel">
-                <div class="panel-body" style="overflow-y: scroll; height: 800px;">
-                    <script language="JavaScript">
-                        var photo;
-                        for (i=1;i<=60;i++) {
-                            photo="photos/2017/NewYear/NewYear_"+i+".JPG";
-                            document.write("<img src=" + photo + " width=50% style='padding: 5px;'>");
-                        }
-                    </script>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>
