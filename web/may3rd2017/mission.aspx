@@ -25,10 +25,20 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">Vision and Mission</div>
                     <div class="panel-body">
-                        Build Sri Venkateswara (Balaji) Temple with the back drop of majestic rocky mountains in Castle Rock, Colorado as per Agama & Vasthu shastras.
-                        Provide Hindu religious services as per Vedic traditions.
-                        To fulfill the cultural and spiritual needs of devotees by promoting Classical music, dance, art, scriptures and meditation.
-                        Benefit the future generations with Hindu culture and traditions to be responsible and ethical citizens in promoting world peace and brotherhood.
+                    <ul>
+                        <li>
+                            Build Sri Venkateswara (Balaji) Temple with the back drop of majestic rocky mountains in Castle Rock, Colorado as per Agama & Vasthu shastras.
+                        </li>
+                        <li>
+                            Provide Hindu religious services as per Vedic traditions.
+                        </li>
+                        <li>
+                            To fulfill the cultural and spiritual needs of devotees by promoting Classical music, dance, art, scriptures and meditation.
+                        </li>
+                        <li>
+                            Benefit the future generations with Hindu culture and traditions to be responsible and ethical citizens in promoting world peace and brotherhood.
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </div>

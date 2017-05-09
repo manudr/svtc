@@ -22,13 +22,13 @@ import java.util.List;
 public class ProductDAO {
 
     private static Log log = LogFactory.getLog(ProductDAO.class);
-    EntityManager entityManager = EntityManagerUtil.getEntityManager();
+    EntityManager posEntityManager = EntityManagerUtil.getPOSEntityManager();
 
     public Product findProduct(Long productId){
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
             log.info("findProduct..");
-            return entityManager.find(Product.class, productId);
+            return posEntityManager.find(Product.class, productId);
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
@@ -38,9 +38,9 @@ public class ProductDAO {
     }
 
     public List getProducts() {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
-            Query query = entityManager.createQuery("SELECT product FROM Product product", Product.class);
+            Query query = posEntityManager.createQuery("SELECT product FROM Product product", Product.class);
             List results = query.getResultList();
             List<Product> products = query.getResultList();
             log.info("ProductDAO - Products: " + products);
@@ -54,9 +54,9 @@ public class ProductDAO {
     }
 
     public List getProducts(Long userId) {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
-            Query query = entityManager.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
+            Query query = posEntityManager.createQuery("SELECT product FROM Product product WHERE productId = :userId", Product.class);
             query.setParameter("userId", userId);
             List<Product> products = query.getResultList();
             log.info("ProductDAO - Products: " + products);
@@ -70,11 +70,11 @@ public class ProductDAO {
     }
 
     public void save(Product product) {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
             log.info("Saving product: " + product);
             entityTransaction.begin();
-            entityManager.persist(product);
+            posEntityManager.persist(product);
             entityTransaction.commit();
         } catch (Exception e) {
             entityTransaction.rollback();
@@ -83,12 +83,12 @@ public class ProductDAO {
     }
 
     public void save(UserProduct userProduct){
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
             log.info("Saving userProduct: " + userProduct);
-            entityManager.getTransaction().begin();
-            entityManager.persist(userProduct);
-            entityManager.getTransaction().commit();
+            posEntityManager.getTransaction().begin();
+            posEntityManager.persist(userProduct);
+            posEntityManager.getTransaction().commit();
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
@@ -98,11 +98,11 @@ public class ProductDAO {
     }
 
     public void updateProduct(Product selectedProduct) {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
-            entityManager.getTransaction().begin();
-            entityManager.merge(selectedProduct);
-            entityManager.getTransaction().commit();
+            posEntityManager.getTransaction().begin();
+            posEntityManager.merge(selectedProduct);
+            posEntityManager.getTransaction().commit();
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
@@ -112,11 +112,11 @@ public class ProductDAO {
     }
 
     public void removeProduct(Product selectedProduct) {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
-            entityManager.getTransaction().begin();
-            entityManager.remove(selectedProduct);
-            entityManager.getTransaction().commit();
+            posEntityManager.getTransaction().begin();
+            posEntityManager.remove(selectedProduct);
+            posEntityManager.getTransaction().commit();
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
@@ -126,9 +126,9 @@ public class ProductDAO {
     }
 
     public Product find(Long id) {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
-            return entityManager.find(Product.class, id);
+            return posEntityManager.find(Product.class, id);
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
                 entityTransaction.rollback();
@@ -138,10 +138,10 @@ public class ProductDAO {
     }
 
     public User findUser(Long userId){
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
             log.info("findUser..");
-            User user = entityManager.find(User.class, userId);
+            User user = posEntityManager.find(User.class, userId);
             return user;
         } catch (Exception e) {
             if (entityTransaction.isActive()) {
@@ -152,9 +152,9 @@ public class ProductDAO {
     }
 
     public List<UserProduct> findAllUserProducts() {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
+        EntityTransaction entityTransaction = posEntityManager.getTransaction();
         try {
-            Query query = entityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
+            Query query = posEntityManager.createQuery("SELECT userProduct FROM UserProduct userProduct", UserProduct.class);
             List<UserProduct> userProducts = query.getResultList();
             for (UserProduct userProduct : userProducts) {
                 userProduct.setUser(findUser(userProduct.getUserId()));

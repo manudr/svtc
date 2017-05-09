@@ -26,6 +26,7 @@ dependencies {
                 , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/commons-collections4-4.1.jar'
                 , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/com.lowagie.text-2.1.7.3.jar'
                 , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/mssql-jdbc-6.1.4.jre8-preview.jar'
+                , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/mysql-connector-java-5.1.22.jar'
                 , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/jsf-api-2.2.14.jar'
                 , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/javaee-api-7.0.jar'
                 , '/Users/admin/development/modules/svtco/onlineRegistration/src/main/lib/bootstrap-1.0.10.jar'

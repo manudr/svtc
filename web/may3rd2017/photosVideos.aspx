@@ -20,24 +20,28 @@
 <body>
 <!-- #include file ="header.aspx" -->
 
-<div class="container">
-    <h2>Large Modal</h2>
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-warning">
+                <div class="panel-heading-custom">Photos</div>
+                <div class="panel-body">
+                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
+                    <a target="_blank" onclick="window.open('shivaRathri.aspx', '', 'width=800,height=600');">Shiva Rathri</a><br>
+                    <a target="_blank" onclick="window.open('january.aspx', '', 'width=800,height=600');">January Photos</a><br>
+                    <a target="_blank" onclick="window.open('newYear.aspx', '', 'width=800,height=600');">New Year Photos</a><br>
+                </div>
+            </div>
+        </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>This is a large modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="col-lg-6">
+            <div class="panel panel-warning">
+                <div class="panel-heading-custom">Videos</div>
+                <div class="panel-body">
+                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
+                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
+                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
+                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
                 </div>
             </div>
         </div>
