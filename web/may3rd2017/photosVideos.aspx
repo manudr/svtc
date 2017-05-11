@@ -38,10 +38,7 @@
             <div class="panel panel-warning">
                 <div class="panel-heading-custom">Videos</div>
                 <div class="panel-body">
-                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
-                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
-                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
-                    <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
+
                 </div>
             </div>
         </div>

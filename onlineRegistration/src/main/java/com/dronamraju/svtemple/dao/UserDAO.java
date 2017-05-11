@@ -115,13 +115,6 @@ public class UserDAO {
 			User user = users.get(0);
 			log.info("findUser - user: " + user);
 
-			Query parakamaniQuery = parakamaniEntityManager.createQuery("SELECT event FROM Event event ", Event.class);
-			List<Event> events = parakamaniQuery.getResultList();
-			if (events == null || events.size() < 1) {
-				return null;
-			}
-			log.info("findUser - events: " + events);
-
 			return user;
 		} catch (Exception e) {
 			if (entityTransaction.isActive()) {

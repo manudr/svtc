@@ -194,7 +194,7 @@ public class UserBean implements Serializable {
 			sb.append("<b>Manager: 303-898-5514 | Temple: 303-660-9555 | Email: <a href='mailto:manager@svtempleco.org'>manager@svtempleco.org</a></b><br></br>");
 			sb.append("<b>Website: <a href='http://www.svtempleco.org/homepage.php'>http://www.svtempleco.org</a></b><br></br>");
 			sb.append("<b>Facebook: <a href='https://www.facebook.com/SVTC.COLORADO/'>SVTC.Colorado</a></b><br></br>");
-			sb.append("<b>PayPal Donation: <a href='https://www.paypal.me/svtempleco'>SVTC PayPal Link</a></b><br></br>");
+			sb.append("<b>PayPal Donor: <a href='https://www.paypal.me/svtempleco'>SVTC PayPal Link</a></b><br></br>");
 			String recipients = "manudr@hotmail.com";
 			SendEmail.sendMail(sb.toString(), loggedInUser.getEmail(), recipients);
 			FacesUtil.getRequest().getSession().setAttribute("loggedInUser", loggedInUser);
@@ -303,7 +303,7 @@ public class UserBean implements Serializable {
 			sb.append("<b>Manager: 303-898-5514 | Temple: 303-660-9555 | Email: <a href='mailto:manager@svtempleco.org'>manager@svtempleco.org</a></b><br></br>");
 			sb.append("<b>Website: <a href='http://www.svtempleco.org/homepage.php'>http://www.svtempleco.org</a></b><br></br>");
 			sb.append("<b>Facebook: <a href='https://www.facebook.com/SVTC.COLORADO/'>SVTC.Colorado</a></b><br></br>");
-			sb.append("<b>PayPal Donation: <a href='https://www.paypal.me/svtempleco'>SVTC PayPal Link</a></b><br></br>");
+			sb.append("<b>PayPal Donor: <a href='https://www.paypal.me/svtempleco'>SVTC PayPal Link</a></b><br></br>");
 			//String recipients = userService.findValue("recipients");
 			String recipients = "manudr@hotmail.com";
 			SendEmail.sendMail(sb.toString(), user.getEmail(), recipients);

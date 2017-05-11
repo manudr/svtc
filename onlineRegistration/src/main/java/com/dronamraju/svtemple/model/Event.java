@@ -29,7 +29,6 @@ public class Event implements java.io.Serializable {
 
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "EVENT_ID", unique = true, nullable = false)
 	public Long getEventId() {
 		return this.eventId;

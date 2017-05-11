@@ -14,40 +14,27 @@
                 <img class="img-responsive" align="center" src="images/newBanner.jpg" width="100%">
             </div>
         </div>
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="navbar-header"  style="background-color: #800000;">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar" style="background-color: #f7f7f7;"></span>
-                    <span class="icon-bar" style="background-color: #f7f7f7;"></span>
-                    <span class="icon-bar" style="background-color: #f7f7f7;"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="example-navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.aspx">Home</a></li>
-                    <li><a href="mission.aspx">Mission</a></li>
-                    <li><a href="teams.aspx">Teams</a></li>
-                    <li><a href="faq.aspx">FAQ</a></li>
-                    <li><a href="photosVideos.aspx">Photos/Videos</a></li>
-                    <li><a href="//svtempleco.org/GoverningDocs/BYLAWS_April_19_2015.pdf" target="_blank">ByLaws</a></li>
-                    <li><a href="http://svtempleco.org/resources/docs/agbm2016.pdf" target="_blank">AGBM 2016</a></li>
-                    <li><a href="agbm2015.aspx">AGBM 2015</a></li>
-                    <li><a href="devotional.aspx">Devotional Documents</a></li>
-                    <li><a href="school.aspx">School</a></li>
-                    <li><a href="contactUs.aspx">Contact Us</a></li>
-
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi', '', 'width=800,height=600');"><button type="button" class="btn btn-primary btn-xs">Subscribe</button></a></li>
-                    <li><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi', '', 'width=800,height=600');"><button type="button" class="btn btn-primary btn-xs">Login</button></a></li>
-                    <li><a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ', '', 'width=800,height=600');"><button type="button" class="btn btn-primary btn-xs">Donate</button></a></li>
-
-
-                </ul>
-            </div>
-        </nav>
+       <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+           <div class="navbar-header">
+             <a class="navbar-brand" href="#">WebSiteName</a>
+           </div>
+           <ul class="nav navbar-nav">
+             <li class="active"><a href="#">Home</a></li>
+             <li class="dropdown">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+               <span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="#">Page 1-1</a></li>
+                 <li><a href="#">Page 1-2</a></li>
+                 <li><a href="#">Page 1-3</a></li>
+               </ul>
+             </li>
+             <li><a href="#">Page 2</a></li>
+             <li><a href="#">Page 3</a></li>
+           </ul>
+         </div>
+       </nav>
     </div>
 
 

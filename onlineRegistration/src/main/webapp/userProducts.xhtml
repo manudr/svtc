@@ -12,16 +12,7 @@
     <br></br>
     <h:form>
     <p:panel header="User Services" style="font-size: 12px;">
-        <h3>Export Data</h3>
-        <h:commandLink>
-            <h:outputText name="Export to Excel" style="font-weight: bold; color: brown"/>
-            <p:dataExporter type="xls" target="userProducts" fileName="devoteeServices"/>
-        </h:commandLink>
 
-        <h:commandLink>
-            <h:outputText name="Export to PDF" style="font-weight: bold; color: brown"/>
-            <p:dataExporter type="pdf" target="userProducts" fileName="devoteeServices"/>
-        </h:commandLink>
 
         <p:dataTable id="userProducts"
                      var="userProduct"
@@ -30,9 +21,31 @@
                      reflow="true"
                      rows="25"
                      paginator="true"
-                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
                      filteredValue="#{productBean.filteredProducts}"
                      rowsPerPageTemplate="25,100,500">
+
+            <f:facet name="{Exporters}">
+                <h:commandLink>
+                    <p:graphicImage name="/demo/images/excel.png" width="24"/>
+                    <p:dataExporter type="xls" target="tbl" fileName="userProducts" />
+                </h:commandLink>
+
+                <h:commandLink>
+                    <p:graphicImage name="/demo/images/pdf.png" width="24"/>
+                    <p:dataExporter type="pdf" target="tbl" fileName="userProducts"/>
+                </h:commandLink>
+
+                <h:commandLink>
+                    <p:graphicImage name="/demo/images/csv.png" width="24"/>
+                    <p:dataExporter type="csv" target="tbl" fileName="userProducts" />
+                </h:commandLink>
+
+                <h:commandLink>
+                    <p:graphicImage name="/demo/images/xml.png" width="24"/>
+                    <p:dataExporter type="xml" target="tbl" fileName="userProducts" />
+                </h:commandLink>
+            </f:facet>
 
             <p:column headerText="Name" filterBy="#{userProduct.product.name}" filterMatchMode="contains" sortBy="#{userProduct.product.name}">
                 <h:outputText value="#{userProduct.product.name}" />
