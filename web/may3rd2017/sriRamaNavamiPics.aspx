@@ -1,4 +1,7 @@
 <%@ Page Language="C#" %>
+<!DOCTYPE html>
+<html>
+<body>
 <div class="container-fluid">
     <h3 style="padding: 5px; font-weight: bold; color: #800000; background-color: #f0ad4e;">Sri Rama Navmi</h3>
     <div class="panel">
@@ -13,3 +16,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

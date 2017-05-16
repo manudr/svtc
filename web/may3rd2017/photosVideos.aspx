@@ -28,8 +28,8 @@
                 <div class="panel-body">
                     <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
                     <a target="_blank" onclick="window.open('shivaRathri.aspx', '', 'width=800,height=600');">Shiva Rathri</a><br>
-                    <a target="_blank" onclick="window.open('january.aspx', '', 'width=800,height=600');">January Photos</a><br>
-                    <a target="_blank" onclick="window.open('newYear.aspx', '', 'width=800,height=600');">New Year Photos</a><br>
+                    <a target="_blank" onclick="window.open('january.aspx', '', 'width=800,height=600');">January</a><br>
+                    <a target="_blank" onclick="window.open('newYear.aspx', '', 'width=800,height=600');">New Year</a><br>
                 </div>
             </div>
         </div>
