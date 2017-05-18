@@ -89,31 +89,36 @@
     text-align: center;
 }
 
+a:link, a:visited, a:hover {
+    text-decoration: none;
+    color: #800000;
+}
+
+.contactUs {
+    color: #800000;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
 .footer {
     background-color: #800000;
-    font-style: normal;
+    padding: 3px;
     font-size: 11px;
-    font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin-top: 10px;
     color: #ffff00;
 }
 
-.footer > li > a, a:hover, a:focus {
-    background-color: #800000;
-    font-style: normal;
-    font-size: 11px;
-    font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 10px;
+.footer a, a:hover, a:focus {
     color: #ffff00;
 }
 
 .navbar-default {
     background-color: #ffd9b3;
-    border-color: #cc6600;
+    border-color: #ffd9b3;
 }
 .navbar-default .navbar-brand {
     color: #800000;
@@ -165,7 +170,7 @@
     background-color: #ffd9b3;
 }
 .navbar-default .navbar-toggle {
-    border-color: #cc6600;
+    border-color: #ffd9b3;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -176,7 +181,7 @@
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #cc6600;
+    border-color: #ffd9b3;
 }
 .navbar-default .navbar-link {
     color: #800000;

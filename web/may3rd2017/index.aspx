@@ -61,17 +61,12 @@
                         -->
                     </div>
                 </div>
-                <div>
-                    <center>
-                        <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
-                    </center>
-                    <br>
-                </div>
+
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Today's Panchangam</div>
-                    <div class="panel-body">
+                    <div class="panel-body" style="padding: 0px;">
                         <iframe name='iframe1'
-                                height="114px"
+                                height="160px"
                                 id='iframe1'
                                 src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO"
                                 scrolling="no"
@@ -111,13 +106,7 @@
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Temple Calendar</div>
                     <div class="panel-body" style="padding: 1px;">
-                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver"
-                            style="border-width:0"
-                            height=520px
-                            width="100%"
-                            frameborder="0"
-                            scrolling="no">
-                        </iframe>
+                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=520&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver" style="border-width:0" width="100%" height="520" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
 

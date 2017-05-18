@@ -38,18 +38,40 @@
             <div class="panel panel-custom">
                 <div class="panel-heading-custom">Contact</div>
                 <div class="panel-body">
-                    <div class="otherDetails">
+                    <div class="contactUs">
                         <a href="https://www.google.com/maps/place/1495+S+Ridge+Rd,+Castle+Rock,+CO+80104/@39.3403316,-104.817596,17z/data=!3m1!4b1!4m5!3m4!1s0x876cbd6c1b02dcd1:0xfed373be3e2fc1c9!8m2!3d39.3403316!4d-104.8154073" target="_blank">
-                            1495 South Ridge Road Castle Rock CO 80104
-                        </a><br><br>
-                        Temple: 303-660-9555<br><br>
-                        Manager: 303-898-5514<br><br>
-                        <a href="mailto:manager@svtempleco.org" target="_blank">manager@svtempleco.org</a><br><br>
-                        <a href="\\www.facebook.com/SVTC.COLORADO/" target="_blank">Facebook</a><br><br>
-                        <a href="\\www.paypal.me/svtempleco" target="_blank">Paypal Donations</a><br><br>
-                        Weekdays:&nbsp;09:00AM to 12:00PM and 06:00PM to 08:30PM<br><br>
-                        Weekends/Holidays:&nbsp;09:00AM to 08:30PM
+                            <b style="text-decoration: underline;">1495 South Ridge Road Castle Rock CO 80104</b>
+                        </a>
                         <br>
+                        Temple: 303-660-9555
+                        <br>
+                        Manager: 303-898-5514
+                        <br>
+                        <a href="mailto:manager@svtempleco.org" target="_blank">
+                            <b style="text-decoration: underline;">manager@svtempleco.org</b>
+                        </a>
+                        <br>
+                        <a href="\\www.facebook.com/SVTC.COLORADO/" target="_blank">
+                            <b style="text-decoration: underline;">Facebook</b>
+                        </a>
+                        <br><br>
+                        <center>
+                        <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
+                            <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+                        </a>
+                        </center>
+                        <br>
+                        <b style="text-decoration: underline;">Temple Timings</b>
+                        <br>
+                        <b style="text-decoration: underline;">Weekdays</b>
+                        <br>
+                        09:00AM to 12:00PM
+                        <br>
+                        06:00PM to 08:30PM
+                        <br>
+                        <b style="text-decoration: underline;">Weekends/Holidays</b>
+                        <br>
+                        09:00AM to 08:30PM
                     </div>
                 </div>
             </div>

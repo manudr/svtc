@@ -115,7 +115,6 @@
                         <br>Aaron Brachfeld
                         <br>Karthik Ginnavaram
                         <br>Lakshmipathy Kannan
-                        <br>Ratnakar Kalangi
                         <br>Ravichandran Packirisamy
                         <br>Siva Rayala
                         <br>Krishna Pothuboyina
