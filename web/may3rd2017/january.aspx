@@ -6,7 +6,7 @@
             <script language="JavaScript">
                 var photo;
                 for (i=1;i<=40;i++) {
-                    photo="photos/2017/Jan13th2017/January13th2017_"+i+".JPG";
+                    photo="multimedia/photos/2017/Jan13th2017/January13th2017_"+i+".JPG";
                     document.write("<img src=" + photo + " width=100% style='padding: 5px;'>");
                 }
             </script>

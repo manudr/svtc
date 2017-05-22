@@ -6,7 +6,7 @@
           <script language="JavaScript">
               var photo;
               for (i=1;i<=204;i++) {
-                  photo="photos/2017/ShivaRathri/ShivaRathri_"+i+".JPG";
+                  photo="multimedia/photos/2017/ShivaRathri/ShivaRathri_"+i+".JPG";
                   document.write("<img src=" + photo + " width=100% style='padding: 5px;'>");
               }
           </script>

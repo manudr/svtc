@@ -9,7 +9,7 @@
             <script language="JavaScript">
                 var photo;
                 for (i=1;i<=721;i++) {
-                    photo="photos/2017/SriRamaNavmi/SriRamaNavmi_"+i+".JPG";
+                    photo="multimedia/photos/2017/SriRamaNavmi/SriRamaNavmi_"+i+".JPG";
                     document.write("<img src=" + photo + " width=100% style='padding: 5px;'>");
                 }
             </script>
