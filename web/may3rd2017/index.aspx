@@ -23,6 +23,22 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3">
+
+                <div class="panel panel-custom">
+                    <div class="panel-heading-custom">Today's Panchangam</div>
+                    <div class="panel-body" style="padding: 0px;">
+                        <iframe name='iframe1'
+                                height="160px"
+                                id='iframe1'
+                                src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO"
+                                scrolling="no"
+                                frameborder="0"
+                                style="border:none;"
+                                allowTransparency="true">
+                        </iframe>
+                    </div>
+                </div>
+
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Daily Schedule</div>
                     <div class="panel-body">
@@ -42,7 +58,7 @@
                             Archana schedule may change on special event days.
                         </div>
                         <div class="customTextStyle2">
-                            Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring organic whole milk instead.
+                            Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring organic fat free milk instead.
                         </div>
 
                         <!--
@@ -59,21 +75,6 @@
                             Weekends/Holidays:&nbsp;09:00AM to 08:30PM
                         </div>
                         -->
-                    </div>
-                </div>
-
-                <div class="panel panel-custom">
-                    <div class="panel-heading-custom">Today's Panchangam</div>
-                    <div class="panel-body" style="padding: 0px;">
-                        <iframe name='iframe1'
-                                height="160px"
-                                id='iframe1'
-                                src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO"
-                                scrolling="no"
-                                frameborder="0"
-                                style="border:none;"
-                                allowTransparency="true">
-                        </iframe>
                     </div>
                 </div>
             </div>
