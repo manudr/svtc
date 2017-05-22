@@ -60,13 +60,25 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">
                         Temple Manager
                     </div>
                     <div class="panel-body">
                         Soumya Nandireddy
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading-custom">
+                        Internal Audit Committe
+                    </div>
+                    <div class="panel-body">
+                        Rajanikanth Maddhi
+                        <br>Santosh Kunala
+                        <br>Krishna Mullangi
                     </div>
                 </div>
             </div>
@@ -145,6 +157,7 @@
                         <br>Nitin Dindukurthy
                         <br>Saikumar
                         <br>Venkatesh Dangeti
+                        <br>Raghavendra Mamudur
                     </div>
                 </div>
             </div>
