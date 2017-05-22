@@ -42,7 +42,7 @@
                             Archana schedule may change on special event days.
                         </div>
                         <div class="customTextStyle2">
-                            Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring fat free milk instead.
+                            Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring organic whole milk instead.
                         </div>
 
                         <!--
