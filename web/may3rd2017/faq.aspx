@@ -26,6 +26,8 @@
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">FAQ</div>
                     <div class="panel-body">
+                    <h3>Coming Soon...</h3>
+                    <!--
                         <h4 style="background-color: #fbe9d0; padding: 5px;">Why would I need to become a member in order to vote in the up coming elections for Board of Trustees?</h4>
                         The Board of Trustees represents all the members of the temple and act in their best interest. Like any organization, we believe that the members who have contributed and helped to build this temple should have a say in who gets elected to the Board of Trustees and represent their interests. The elections were held on November 17th, 2007. All founding members of the temple are eligible to vote in these elections. There are certain criteria that must be met to compete in the elections. Please review guidelines document under Donate Web Page for directions on how to become founding members and contest in the elections for Board of Trustees.
 
@@ -53,6 +55,7 @@
                         <br>
                         <h4 style="background-color: #fbe9d0; padding: 5px;">Why Venkateswara temple ?</h4>
                         Sri Venkateswara Temple has been long cherished dream of people of Colorado. The desire of the community is to have a temple that is reminiscent of the rituals and poojas performed at Tirumala Tirupati Devastanam (TTD). As per Agama Sasthras, Lord Venkateswara can be the only main deity in a Venkateswara temple.
+                    -->
                     </div>
                 </div>
             </div>
