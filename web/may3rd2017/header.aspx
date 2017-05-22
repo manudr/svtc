@@ -47,14 +47,15 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://svtempleonline-svtempleonline.1d35.starter-us-east-1.openshiftapps.com/onlineRegistration/');"><span class="glyphicon glyphicon-user"></span> Sign Up/Login</a></li>
+      <!--
+        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');"><span class="glyphicon glyphicon-user"></span> Sign Up/Login</a></li>
+        -->
         <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi');"><span class="glyphicon glyphicon-thumbs-up"></span> Subscribe</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<div class="row" style="background-color: #ffe6cc; border: solid 2px #ff9900;">
-
+<div class="row" style="background-color: #fff3e6;">
     <div class="col-lg-3" style="padding: 5px;">
         <div style="font-size: 11px; font-weight: bold; color: #800000;">
         <center>

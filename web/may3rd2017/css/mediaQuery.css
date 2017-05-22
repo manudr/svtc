@@ -116,6 +116,10 @@ a:link, a:visited, a:hover {
     color: #ffff00;
 }
 
+.navbar {
+
+}
+
 .navbar-default {
     background-color: #ffd9b3;
     border-color: #ffd9b3;
