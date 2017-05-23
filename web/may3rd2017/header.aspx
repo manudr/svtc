@@ -27,6 +27,13 @@
               <li><a href="http://svtempleco.org/GoverningDocs/BYLAWS_April_19_2015.pdf" target="_blank">ByLaws</a></li>
               <li><a href="agbm2015.aspx">AGBM 2015</a></li>
               <li><a href="http://svtempleco.org/resources/docs/agbm2016.pdf" target="_blank">AGBM 2016</a></li>
+
+              <li><a href="http://svtempleco.org/Docs/Letter-Pedda%20jeeyar%20swami.jpg" target="_blank">Letter from Sri Sri Pedda Jeeyar Swamy of Tirumala, June 2013</a></li>
+              <li><a href="http://svtempleco.org/Docs/RAMANUJAYA.pdf" target="_blank">Letter from Sri Sri Pedda Jeeyar Swamy of Tirumala, November 2013</a></li>
+              <li><a href="http://svtempleco.org/Docs/AGBM_Report201311142013.pdf" target="_blank">Temple Annual Report, November 2013</a></li>
+
+              <li><a href="mediaCoverage.aspx" target="_blank">Media Coverage</a></li>
+
             </ul>
         </li>
         <li class="dropdown">
@@ -38,28 +45,59 @@
                 <li><a href="http://svtempleco.org/Docs/Pooja_items_list_March2014.pdf" target="_blank">Poojas and Required Items</a></li>
             </ul>
         </li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Calendars<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="frontDeskCalendar.aspx">Front Desk Calendar</a></li>
+              <li><a href="annapurnaCommitteeCalendar.aspx">Annapurna Committee Calendar</a></li>
+              <li><a href="religiousCommitteeCalendar.aspx">Religious Committee Calendar</a></li>
+              <li><a href="allCalendarsMerged.aspx">All Calendars Merged</a></li>
+            </ul>
+        </li>
+
         <li><a href="school.aspx">School</a></li>
 
         <li><a href="photosVideos.aspx">Photos/Videos</a></li>
         <li><a href="contactUs.aspx">Contact Us</a></li>
+        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi');"><span class="glyphicon glyphicon-thumbs-up"></span> Subscribe</a></li>
 
         <li><a href="http://svtempleco.org/homepage.php" target="_blank"><b style="color: #ff3300;">Old Website</b></a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <!--
-        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');"><span class="glyphicon glyphicon-user"></span> Sign Up/Login</a></li>
+        <!--
+            <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');"><span class="glyphicon glyphicon-user"></span> Sign Up/Login</a></li>
         -->
-        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi');"><span class="glyphicon glyphicon-thumbs-up"></span> Subscribe</a></li>
+        <li>
+            <a target="_blank" onclick="window.open('https://www.google.com/maps/place/1495+S+Ridge+Rd,+Castle+Rock,+CO+80104/@39.3403316,-104.8197847,16z/data=!4m5!3m4!1s0x876cbd6c1b02dcd1:0xfed373be3e2fc1c9!8m2!3d39.3403316!4d-104.8154073');">
+                <img class="img-responsive" align="center" src="images/googleMaps.png">
+            </a>
+        </li>
+        <li>
+            <a target="_blank" onclick="window.open('http://www.facebook.com/SVTC.COLORADO/');">
+                <img class="img-responsive" align="center" src="images/facebook.png">
+            </a>
+        </li>
+        <li>
+        <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
+            <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+        </a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
+
+<!--
 <div class="row" style="background-color: #fff3e6;">
     <div class="col-lg-3" style="padding: 5px;">
         <div style="font-size: 11px; font-weight: bold; color: #800000;">
         <center>
-            <a href="https://www.google.com/maps/place/1495+S+Ridge+Rd,+Castle+Rock,+CO+80104/@39.3403316,-104.817596,17z/data=!3m1!4b1!4m5!3m4!1s0x876cbd6c1b02dcd1:0xfed373be3e2fc1c9!8m2!3d39.3403316!4d-104.8154073" target="_blank">
+            <a href="" target="_blank">
                 <b style="font-size: 11px; text-decoration: underline; font-weight: bold; color: #800000;">1495 South Ridge Road Castle Rock CO 80104</b>
             </a>
             <br>
@@ -101,5 +139,5 @@
         </div>
     </div>
 </div>
-
+-->
 <br>

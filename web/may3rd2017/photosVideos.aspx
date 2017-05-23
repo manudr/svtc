@@ -26,10 +26,14 @@
             <div class="panel panel-warning">
                 <div class="panel-heading-custom">Photos</div>
                 <div class="panel-body">
+                    <h4>2017</h4>
                     <a target="_blank" onclick="window.open('sriRamaNavamiPics.aspx', '', 'width=800,height=600');">Sri Rama Navami</a><br>
                     <a target="_blank" onclick="window.open('shivaRathri.aspx', '', 'width=800,height=600');">Shiva Rathri</a><br>
                     <a target="_blank" onclick="window.open('january.aspx', '', 'width=800,height=600');">January</a><br>
                     <a target="_blank" onclick="window.open('newYear.aspx', '', 'width=800,height=600');">New Year</a><br>
+
+                    <h4>2016 and Prior Years</h4>
+                    <a target="_blank" onclick="window.open('http://get.google.com/albumarchive/101238918833592901576?source=pwa');">SV Temple Album</a><br>
                 </div>
             </div>
         </div>

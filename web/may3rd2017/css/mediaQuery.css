@@ -116,10 +116,6 @@ a:link, a:visited, a:hover {
     color: #ffff00;
 }
 
-.navbar {
-
-}
-
 .navbar-default {
     background-color: #ffd9b3;
     border-color: #ffd9b3;
@@ -134,8 +130,14 @@ a:link, a:visited, a:hover {
 .navbar-default .navbar-text {
     color: #800000;
 }
+
+.navbar {
+    min-height:32px !important
+}
+
 .navbar-default .navbar-nav > li > a {
     color: #800000;
+    padding-top:5px !important; padding-bottom:5px !important;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
