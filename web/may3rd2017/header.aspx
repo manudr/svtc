@@ -59,6 +59,31 @@
         </li>
 
         <li><a href="school.aspx">School</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Devotional<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a target="_blank" href="http://svtempleco.org/Event%20Documents/suprabhatam.pdf">Suprabhatam</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/Event%20Documents/vishniusahasranamam.doc">Vishnusahshranamalu</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/HinduRitualsandRoutines.pdf">Hindu Rituals and Routines</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/Significance_of_MahaLakshmi_Jayanthi.docx">Significance of Sri Mahalakshmi Jayanthi</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/Significance_of_Diwali.pdf">Significance of Diwali</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/Significance_of_Durgaashtami.pdf">Significance of Durgaashtami</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/VaraLakshmi_Vratham.pdf">Significance of VaraLakshmi Vratham</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/Significance_of_Gurupoornima.pdf">Significance of Gurupoornima</a></li>
+              <li><a target="_blank" href="http://svtempleco.org/docs/Sri_Ramanujacharya_Jayanthi.pdf">Sri Ramanujacharya Jayanthi</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Forms<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a target="_blank" href="http://svtempleco.org/docs/SVTCExpensesReimbursementForm.xlsx">SVTC Expenses Reimbursement Form</a></li>
+            </ul>
+        </li>
 
         <li><a href="photosVideos.aspx">Photos/Videos</a></li>
         <li><a href="contactUs.aspx">Contact Us</a></li>
@@ -140,4 +165,3 @@
     </div>
 </div>
 -->
-<br>

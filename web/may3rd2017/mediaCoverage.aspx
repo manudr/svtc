@@ -18,7 +18,6 @@
 </head>
 <body>
 <!-- #include file ="header.aspx" -->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
