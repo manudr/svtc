@@ -84,6 +84,7 @@
                     <div class="panel-body" style="padding: 1px;">
                         <img class="img-responsive mySlides w3-animate-fading" src="slides/img1.jpg">
                         <img class="img-responsive mySlides w3-animate-fading" src="slides/img2.jpg">
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/img5.jpg">
                         <script>
                             var myIndex = 0;
                             carousel();
