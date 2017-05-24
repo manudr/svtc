@@ -46,8 +46,7 @@
                             09:00AM	Suprabhatha Seva<br>
                             10:00AM	Nitya Archana<br>
                             10:30AM	First Archana<br>
-                        </div>
-                        <div class="customTextStyle1">
+
                             08:00PM	Last Archana<br>
                             08:20PM	Ekantha Seva
                         </div>
@@ -60,6 +59,15 @@
                         <div class="customTextStyle2">
                             Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring organic fat free milk instead.
                         </div>
+
+                        <div class="customTextStyle1">
+                            <b style="text-decoration: underline;">Temple Timings</b>
+                            <br>
+                            <b>Weekdays:&nbsp;</b>09:00AM to 12:00PM:&nbsp;and&nbsp;06:00PM to 08:30PM
+                            <br>
+                            <b>Weekends/Holidays:&nbsp;</b>09:00AM to 08:30PM
+                        </div>
+
 
                         <!--
                         <div class="customTextStyle1">
@@ -82,9 +90,15 @@
             <div class="col-lg-6">
                 <div class="panel panel-custom">
                     <div class="panel-body" style="padding: 1px;">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/img1.jpg">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/img2.jpg">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/img5.jpg">
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide1.jpg">
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide2.jpg">
+                        <!--
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide3.jpg">
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide4.jpg">
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide5.jpg">
+                        -->
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/defaultSlide1.jpg">
+                        <img class="img-responsive mySlides w3-animate-fading" src="slides/defaultSlide2.jpg">
                         <script>
                             var myIndex = 0;
                             carousel();

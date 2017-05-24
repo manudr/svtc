@@ -89,8 +89,23 @@
     text-align: center;
 }
 
-a:link, a:visited, a:hover {
+a:link, a:visited {
     text-decoration: none;
+    color: #800000;
+}
+
+.panel a:hover {
+    text-decoration: underline;
+    color: #800000;
+}
+
+.panel a:visited {
+    text-decoration: underline;
+    color: #800000;
+}
+
+.panel a:active {
+    text-decoration: underline;
     color: #800000;
 }
 

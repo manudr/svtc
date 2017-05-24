@@ -13,14 +13,14 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="index.aspx">Home</a></li>
+    <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 12px;">
+      <ul class="nav navbar-nav" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 12px;">
+        <li><a href="index.aspx"><b>Home</b></a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            About<span class="caret"></span>
+            <b>About</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="font-size: 12px;">
               <li><a href="mission.aspx">Mission</a></li>
               <li><a href="teams.aspx">Teams</a></li>
               <li><a href="faq.aspx">Faq</a></li>
@@ -38,9 +38,9 @@
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Religious<span class="caret"></span>
+            <b>Religious</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="font-size: 12px;">
                 <li><a href="http://svtempleco.org/Docs/SVTC_PoojaServicesList08252014.pdf" target="_blank">Poojas and Religious Services</a></li>
                 <li><a href="http://svtempleco.org/Docs/Pooja_items_list_March2014.pdf" target="_blank">Poojas and Required Items</a></li>
             </ul>
@@ -48,9 +48,9 @@
 
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Calendars<span class="caret"></span>
+            <b>Calendars</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="font-size: 12px;">
               <li><a href="frontDeskCalendar.aspx">Front Desk Calendar</a></li>
               <li><a href="annapurnaCommitteeCalendar.aspx">Annapurna Committee Calendar</a></li>
               <li><a href="religiousCommitteeCalendar.aspx">Religious Committee Calendar</a></li>
@@ -58,12 +58,17 @@
             </ul>
         </li>
 
-        <li><a href="school.aspx">School</a></li>
+        <li><a href="school.aspx"><b>School</b></a></li>
+
+        <li><a href="volunteer.aspx"><b>How Can I Help</b></a></li>
+
+
+
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Devotional<span class="caret"></span>
+            <b>Devotional</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="font-size: 12px;">
               <li><a target="_blank" href="http://svtempleco.org/Event%20Documents/suprabhatam.pdf">Suprabhatam</a></li>
               <li><a target="_blank" href="http://svtempleco.org/Event%20Documents/vishniusahasranamam.doc">Vishnusahshranamalu</a></li>
               <li><a target="_blank" href="http://svtempleco.org/docs/HinduRitualsandRoutines.pdf">Hindu Rituals and Routines</a></li>
@@ -78,24 +83,28 @@
 
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Forms<span class="caret"></span>
+            <b>Forms</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="font-size: 12px;">
               <li><a target="_blank" href="http://svtempleco.org/docs/SVTCExpensesReimbursementForm.xlsx">SVTC Expenses Reimbursement Form</a></li>
             </ul>
         </li>
-
-        <li><a href="photosVideos.aspx">Photos/Videos</a></li>
-        <li><a href="contactUs.aspx">Contact Us</a></li>
+        <!--
+            <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');"><span class="glyphicon glyphicon-user"></span> Register/Login</a></li>
+        -->
+        <li><a href="photosVideos.aspx"><b>Photos/Videos</b></a></li>
+        <li><a href="contactUs.aspx"><b>Contact Us</b></a></li>
         <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi');"><span class="glyphicon glyphicon-thumbs-up"></span> Subscribe</a></li>
 
         <li><a href="http://svtempleco.org/homepage.php" target="_blank"><b style="color: #ff3300;">Old Website</b></a></li>
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <!--
-            <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');"><span class="glyphicon glyphicon-user"></span> Sign Up/Login</a></li>
-        -->
+      <ul class="nav navbar-nav navbar-right" style="font-size: 12px;">
+        <li>
+            <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
+                <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+            </a>
+        </li>
         <li>
             <a target="_blank" onclick="window.open('https://www.google.com/maps/place/1495+S+Ridge+Rd,+Castle+Rock,+CO+80104/@39.3403316,-104.8197847,16z/data=!4m5!3m4!1s0x876cbd6c1b02dcd1:0xfed373be3e2fc1c9!8m2!3d39.3403316!4d-104.8154073');">
                 <img class="img-responsive" align="center" src="images/googleMaps.png">
@@ -106,11 +115,7 @@
                 <img class="img-responsive" align="center" src="images/facebook.png">
             </a>
         </li>
-        <li>
-        <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-            <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
-        </a>
-        </li>
+
 
       </ul>
     </div>
