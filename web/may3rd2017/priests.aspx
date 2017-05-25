@@ -25,28 +25,49 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">Temple Priests</div>
                     <div class="panel-body" style="padding: 10px;">
-                        <div class="row">
-                            <div class="col-lg-2" style="padding: 10px;">
-                                <img class="img-responsive" align="center" src="images/priests/SriKrishnaMohan.png" width="100%">
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-2">
+                                <img class="img-responsive" align="center" src="images/priests/SriKrishnaMohan.png">
                             </div>
                             <div class="col-lg-10">
-                            <h4>Sri Karanam Krishna Mohan</h4>
+                                <b style="font-size: 21px;">Sri Karanam Krishna Mohan</b>
+                                <p>
+
+                                </p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-2" style="padding: 10px;">
-                                <img class="img-responsive" align="center" src="images/priests/SriManikantaSwamy.png" width="100%">
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-2">
+                                <img class="img-responsive" align="center" src="images/priests/SriRajagopalanViengimooreSwamy.png">
                             </div>
                             <div class="col-lg-10">
-                            <h4>Sri	Manikanta Swamy</h4>
+                                <b style="font-size: 21px;">Sri	Rajagopalan K Viengimoore</b>
+                                <p>
+                                Completed Krishna Yajur VedAyayanam. Well versed with Jayakhyaya Samhitha and Naalayira Divya Prabhandam.
+                                <br>
+                                Have good knowledge and proficiency in conducting KalyanOthsavam, Oonjal Uthsavam, ShayanOthsavam, Navarathri Uthsavam, VasanthOthsavam, PavithrOthsavam and Brahmothsavam.
+                                <br>
+                                Excellence in rendering the Thirumanjana Kattiyam, Bhagavadh Vishayam, Vishesha Dina Satrumurrai Kramam.
+                                <br>
+                                Can perform Sudarshana, Nrisimha, Dhanvanthri, Pancha Sooktha, Maha Mrithyunjaya, Navagraha, Ganapathi Homams.
+                                <br>
+                                Well versed and specialized in conducting Punyahavachanam, Namakaranam, Aayushya Homam, Udakashanthi, Upanayanam, Kalyanam, Pumsavanam, Seemantham, Grihapravesham, PanchaKavya Sammelanam.
+                                <br>
+                                Also well versed in conducting Tharpanam, Shradhdha Kainkarayam, other rituals and ceremonies.
+                                <br>
+                                Can perform Vara Maha Lakshmi pooja & Sathya Narayana pooja.
+                                </p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-2" style="padding: 10px;">
-                                <img class="img-responsive" align="center" src="images/priests/SriRajagopalanViengimooreSwamy.png" width="100%">
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-2">
+                                <img class="img-responsive" align="center" src="images/priests/SriManikantaSwamy.png">
                             </div>
                             <div class="col-lg-10">
-                            <h4>Sri	Rajagopalan Viengimoore Swamy</h4>
+                                <b style="font-size: 21px;">Sri	Manikanta</b>
+                                <p>
+
+                                </p>
                             </div>
                         </div>
                     </div>

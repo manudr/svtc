@@ -13,7 +13,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 13px;">
+    <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 5px; padding-left: 5px; font-size: 13px;">
       <ul class="nav navbar-nav" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 13px;">
         <li><a href="index.aspx"><b>Home</b></a></li>
         <li class="dropdown">
