@@ -26,6 +26,7 @@
                     <div class="panel-heading-custom">Vision and Mission</div>
                     <div class="panel-body">
                     <h4>Sri Venkateswara Swamy Temple Of Colorado needs your support. Depending on your interest, please contact the committee(s) by sending an email.</h4>
+                    <h4>Please click the links to send email.</h4>
                         <a href="mailto:executivecommittee@svtempleco.org">Nandu Sankaran (Executive Committee President)</a>
                         <br><a href="mailto:religiouscommittee@svtempleco.org">Saiganesh Rajamani (Religious Committee Chair)</a>
                         <br><a href="mailto:svtcfinance@svtempleco.org">Baburao Karamsetty (Finance Committee Chair)</a>

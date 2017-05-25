@@ -89,8 +89,7 @@
     text-align: center;
 }
 
-a:link, a:visited {
-    text-decoration: none;
+a:link {
     color: #800000;
 }
 
@@ -99,7 +98,7 @@ a:link, a:visited {
     color: #800000;
 }
 
-.panel a:visited {
+.panel a:visited  {
     text-decoration: underline;
     color: #800000;
 }
