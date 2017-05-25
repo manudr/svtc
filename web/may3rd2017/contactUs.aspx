@@ -47,15 +47,19 @@
                         <br>
                         Manager: 303-898-5514
                         <br>
-                        <a href="mailto:manager@svtempleco.org" target="_blank">
+                        <a href="mailto:manager@svtempleco.org">
                             <b style="text-decoration: underline;">manager@svtempleco.org</b>
                         </a>
                         <br>
-                        <a href="\\www.facebook.com/SVTC.COLORADO/" target="_blank">
-                            <b style="text-decoration: underline;">Facebook</b>
-                        </a>
-                        <br><br>
                         <center>
+                        <a href="mailto:webmaster@svtempleco.org">
+                            <img class="img-responsive" align="center" src="images/feedback.png">
+                        </a>
+                        <br>
+                        <a target="_blank" onclick="window.open('http://www.facebook.com/SVTC.COLORADO/');">
+                            <img class="img-responsive" align="center" src="images/facebook.png">
+                        </a>
+                        <br>
                         <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
                             <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
                         </a>

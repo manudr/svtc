@@ -55,7 +55,7 @@
                         <br>Madhuri Mohan <b>(Annapurna Committee Chair)</b>
                         <br>Ratnakar Kalangi <b>(Facilities Committee Chair)</b>
                         <br>Sreedhar Donthula <b>(Education & Cultural Committee Chair)</b>
-                        <br>Soummya Nandireddy <b>(Temple Manager)</b>
+                        <br>Sowmya Nandireddy <b>(Temple Manager)</b>
                         <br>Manmohan Dronamraju <b>(Web & Communications Committee Chair)</b>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                         Temple Manager
                     </div>
                     <div class="panel-body">
-                        Soumya Nandireddy
+                        Sowmya Nandireddy
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                         <br>Sunitha Mushini
                         <br>Anuradha Imadisetty
                         <br>Parvathi Donthula
-                        <br>Soumya Nandireddy
+                        <br>Sowmya Nandireddy
                         <br>Madhavi Surapaneni
                         <br>Vedavathi Manne
                         <br>Deborah Jones

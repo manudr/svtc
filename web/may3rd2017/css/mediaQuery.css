@@ -40,7 +40,7 @@
 
 .customTextStyle1 {
     color: #009933;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     padding: 2px;
     margin-bottom: 3px;
@@ -48,8 +48,17 @@
 }
 
 .customTextStyle2 {
+    color: #cc7a00;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.customTextStyle3 {
     color: #800000;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     padding: 2px;
     margin-bottom: 3px;
@@ -130,6 +139,10 @@ a:link {
     color: #ffff00;
 }
 
+.navbar {
+    min-height:32px !important
+}
+
 .navbar-default {
     background-color: #ffd9b3;
     border-color: #ffd9b3;
@@ -145,13 +158,13 @@ a:link {
     color: #800000;
 }
 
-.navbar {
-    min-height:32px !important
-}
-
 .navbar-default .navbar-nav > li > a {
     color: #800000;
+    display: block;
     padding-top:5px !important; padding-bottom:5px !important;
+    padding-left:8px !important; padding-right:8px !important;
+    width: 100%;
+
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -164,7 +177,8 @@ a:link {
     color: #800000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:visited {
     color: #c92e2e;
     background-color: #ffd9b3;
 }
@@ -173,13 +187,15 @@ a:link {
 }
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:visited {
     color: #c92e2e;
     background-color: #ffd9b3;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:visited {
     color: #c92e2e;
     background-color: #ffd9b3;
 }

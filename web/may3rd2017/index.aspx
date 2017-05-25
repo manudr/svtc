@@ -26,15 +26,10 @@
 
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Today's Panchangam</div>
-                    <div class="panel-body" style="padding: 0px;">
-                        <iframe name='iframe1'
-                                height="160px"
-                                id='iframe1'
-                                src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO"
-                                scrolling="no"
-                                frameborder="0"
-                                style="border:none;"
-                                allowTransparency="true">
+                    <div class="panel-body">
+                        <a style="padding-left: 7px; text-decoration: underline;" target="_blank" href="http://www.drikpanchang.com/panchang/day-panchang.html">Day Panchang</a>
+                        <br>
+                        <iframe src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO" style="padding: 0px; border: 0px;">
                         </iframe>
                     </div>
                 </div>
@@ -43,31 +38,86 @@
                     <div class="panel-heading-custom">Daily Schedule</div>
                     <div class="panel-body">
                         <div class="customTextStyle1">
-                            09:00AM	Suprabhatha Seva<br>
-                            10:00AM	Nitya Archana<br>
-                            10:30AM	First Archana<br>
-
-                            08:00PM	Last Archana<br>
-                            08:20PM	Ekantha Seva
+                            <table>
+                                <tr>
+                                    <td colspan="2" align="center" valign="top">
+                                        <b style="text-decoration: underline;">Temple Timings</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <b>Weekdays:&nbsp;</b>
+                                    </td>
+                                    <td align="left" valign="top">
+                                        09:00AM to 12:00PM<br>
+                                        06:00PM to 08:30PM
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <b>Weekends/Holidays:&nbsp;</b>
+                                    </td>
+                                    <td align="left" valign="top">
+                                        09:00AM to 08:30PM
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center" valign="top">
+                                        <b style="text-decoration: underline;">Archana Timings</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        09:00AM
+                                    </td>
+                                    <td align="left" valign="top">
+                                        Suprabhatha Seva
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        10:00AM
+                                    </td>
+                                    <td align="left" valign="top">
+                                        Nitya Archana
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        10:30AM
+                                    </td>
+                                    <td align="left" valign="top">
+                                        First Archana
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        08:00PM
+                                    </td>
+                                    <td align="left" valign="top">
+                                        Last Archana
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        08:20PM
+                                    </td>
+                                    <td align="left" valign="top">
+                                        Ekantha Seva
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
-                        <div class="customTextStyle2">
+
+                        <div class="customTextStyle3">
                             Archana - Every 30 Minutes after first archana
                         </div>
-                        <div class="customTextStyle2">
+                        <div class="customTextStyle3">
                             Archana schedule may change on special event days.
                         </div>
-                        <div class="customTextStyle2">
+                        <div class="customTextStyle3">
                             Temple will not use devotee prepared yogurt or grocery store yogurt for any abhishekam at the temple. The temple priests will prepare yogurt as needed for the abhishekam. Devotees can bring organic fat free milk instead.
                         </div>
-
-                        <div class="customTextStyle1">
-                            <b style="text-decoration: underline;">Temple Timings</b>
-                            <br>
-                            <b>Weekdays:&nbsp;</b>09:00AM to 12:00PM:&nbsp;and&nbsp;06:00PM to 08:30PM
-                            <br>
-                            <b>Weekends/Holidays:&nbsp;</b>09:00AM to 08:30PM
-                        </div>
-
 
                         <!--
                         <div class="customTextStyle1">

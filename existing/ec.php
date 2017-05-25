@@ -79,7 +79,7 @@ document.onclick = mclose;
             <p><strong>Sri Ratnakar Kalangi - Facilities Committee Chair</strong></p>
             <p><strong>Sri Sreedhar Donthula - Education and Cultural Committee Chair</strong></p>
             <p><strong>Sri Manmohan Dronamraju - Web and Communications Committee Chair</strong></p>
-            <p><strong>Smt Soummya Nandireddy - Temple Manager</strong></p>
+            <p><strong>Smt Sowmya Nandireddy - Temple Manager</strong></p>
         </td>
     </tr>
 </table>

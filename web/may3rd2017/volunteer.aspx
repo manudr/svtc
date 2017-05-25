@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Vision and Mission</div>
+                    <div class="panel-heading-custom">How can I help?</div>
                     <div class="panel-body">
                     <h4>Sri Venkateswara Swamy Temple Of Colorado needs your support. Depending on your interest, please contact the committee(s) by sending an email.</h4>
                     <h4>Please click the links to send email.</h4>
@@ -33,7 +33,7 @@
                         <br><a href="mailto:annapurnacommittee@svtempleco.org">Madhuri Mohan (Annapurna Committee Chair)</a>
                         <br><a href="mailto:facilitiescommittee@svtempleco.org">Ratnakar Kalangi (Facilities Committee Chair)</a>
                         <br><a href="mailto:svtcschool@svtempleco.org">Sreedhar Donthula (Education & Cultural Committee Chair)</a>
-                        <br><a href="mailto:manager@svtempleco.org">Soummya Nandireddy (Temple Manager)</a>
+                        <br><a href="mailto:manager@svtempleco.org">Sowmya Nandireddy (Temple Manager)</a>
                         <br><a href="mailto:communications@svtempleco.org">Manmohan Dronamraju (Web & Communications Committee Chair)</a>
                     </div>
                 </div>

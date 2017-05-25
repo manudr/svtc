@@ -25,6 +25,8 @@
                 <div class="panel-heading-custom">Media Coverage</div>
                 <div class="panel-body">
                     <ul>
+                        <li><a href="http://svtempleco.org/Docs/Letter-Pedda%20jeeyar%20swami.jpg" target="_blank">Letter from Sri Sri Pedda Jeeyar Swamy of Tirumala, June 2013</a></li>
+                        <li><a href="http://svtempleco.org/Docs/RAMANUJAYA.pdf" target="_blank">Letter from Sri Sri Pedda Jeeyar Swamy of Tirumala, November 2013</a></li>
                         <li><a target="_blank" href="http://youtu.be/w5XVbxQ-bD4">Pavithrotsavam Celerations 2014</a></li>
                         <li><a target="_blank" href="http://youtu.be/WMgUORoiWeI">V6 News coverage - Deepavali Celerations 2014</a></li>
                         <li><a target="_blank" href="https://www.youtube.com/watch?v=qMuEEdo69RQ&feature=youtu.be">6TV News coverage of Brahmotsavam Celebrations</a></li>

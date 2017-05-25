@@ -13,25 +13,19 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 12px;">
-      <ul class="nav navbar-nav" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 12px;">
+    <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 13px;">
+      <ul class="nav navbar-nav" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 13px;">
         <li><a href="index.aspx"><b>Home</b></a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <b>About</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" style="font-size: 12px;">
+            <ul class="dropdown-menu" style="font-size: 13px;">
               <li><a href="mission.aspx">Mission</a></li>
               <li><a href="teams.aspx">Teams</a></li>
               <li><a href="faq.aspx">Faq</a></li>
               <li><a href="http://svtempleco.org/GoverningDocs/BYLAWS_April_19_2015.pdf" target="_blank">ByLaws</a></li>
-              <li><a href="agbm2015.aspx">AGBM 2015</a></li>
-              <li><a href="http://svtempleco.org/resources/docs/agbm2016.pdf" target="_blank">AGBM 2016</a></li>
-
-              <li><a href="http://svtempleco.org/Docs/Letter-Pedda%20jeeyar%20swami.jpg" target="_blank">Letter from Sri Sri Pedda Jeeyar Swamy of Tirumala, June 2013</a></li>
-              <li><a href="http://svtempleco.org/Docs/RAMANUJAYA.pdf" target="_blank">Letter from Sri Sri Pedda Jeeyar Swamy of Tirumala, November 2013</a></li>
-              <li><a href="http://svtempleco.org/Docs/AGBM_Report201311142013.pdf" target="_blank">Temple Annual Report, November 2013</a></li>
-
+              <li><a href="agbm.aspx">AGBM</a></li>
               <li><a href="mediaCoverage.aspx" target="_blank">Media Coverage</a></li>
 
             </ul>
@@ -40,17 +34,17 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <b>Religious</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" style="font-size: 12px;">
+            <ul class="dropdown-menu" style="font-size: 13px;">
                 <li><a href="http://svtempleco.org/Docs/SVTC_PoojaServicesList08252014.pdf" target="_blank">Poojas and Religious Services</a></li>
                 <li><a href="http://svtempleco.org/Docs/Pooja_items_list_March2014.pdf" target="_blank">Poojas and Required Items</a></li>
             </ul>
         </li>
-
+        <li><a href="priests.aspx"><b>Priests</b></a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <b>Calendars</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" style="font-size: 12px;">
+            <ul class="dropdown-menu" style="font-size: 13px;">
               <li><a href="frontDeskCalendar.aspx">Front Desk Calendar</a></li>
               <li><a href="annapurnaCommitteeCalendar.aspx">Annapurna Committee Calendar</a></li>
               <li><a href="religiousCommitteeCalendar.aspx">Religious Committee Calendar</a></li>
@@ -60,15 +54,13 @@
 
         <li><a href="school.aspx"><b>School</b></a></li>
 
-        <li><a href="volunteer.aspx"><b>How Can I Help</b></a></li>
-
-
+        <li><a href="volunteer.aspx"><b>How can I help?</b></a></li>
 
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <b>Devotional</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" style="font-size: 12px;">
+            <ul class="dropdown-menu" style="font-size: 13px;">
               <li><a target="_blank" href="http://svtempleco.org/Event%20Documents/suprabhatam.pdf">Suprabhatam</a></li>
               <li><a target="_blank" href="http://svtempleco.org/Event%20Documents/vishniusahasranamam.doc">Vishnusahshranamalu</a></li>
               <li><a target="_blank" href="http://svtempleco.org/docs/HinduRitualsandRoutines.pdf">Hindu Rituals and Routines</a></li>
@@ -85,21 +77,21 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <b>Forms</b><span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" style="font-size: 12px;">
+            <ul class="dropdown-menu" style="font-size: 13px;">
               <li><a target="_blank" href="http://svtempleco.org/docs/SVTCExpensesReimbursementForm.xlsx">SVTC Expenses Reimbursement Form</a></li>
             </ul>
         </li>
         <!--
-            <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');"><span class="glyphicon glyphicon-user"></span> Register/Login</a></li>
+            <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('');">Register/Login</a></li>
         -->
         <li><a href="photosVideos.aspx"><b>Photos/Videos</b></a></li>
         <li><a href="contactUs.aspx"><b>Contact Us</b></a></li>
-        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi');"><span class="glyphicon glyphicon-thumbs-up"></span> Subscribe</a></li>
+        <li style="font-weight: bold; color: #ffffff;"><a target="_blank" onclick="window.open('http://visitor.constantcontact.com/d.jsp?m=1102887337534&p=oi');">Subscribe</a></li>
 
         <li><a href="http://svtempleco.org/homepage.php" target="_blank"><b style="color: #ff3300;">Old Website</b></a></li>
 
       </ul>
-      <ul class="nav navbar-nav navbar-right" style="font-size: 12px;">
+      <ul class="nav navbar-nav navbar-right" style="font-size: 13px;">
         <li>
             <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
                 <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
@@ -116,6 +108,11 @@
             </a>
         </li>
 
+        <li>
+            <a href="mailto:webmaster@svtempleco.org">
+                <img class="img-responsive" align="center" src="images/feedback.png">
+            </a>
+        </li>
 
       </ul>
     </div>
@@ -135,7 +132,7 @@
             &nbsp;&nbsp;&nbsp;
             Manager: 303-898-5514
             <br>
-            <a href="mailto:manager@svtempleco.org" target="_blank"><b style="font-size: 11px; text-decoration: underline; font-weight: bold; color: #800000;">manager@svtempleco.org</b></a>
+            <a href="mailto:manager@svtempleco.org"><b style="font-size: 11px; text-decoration: underline; font-weight: bold; color: #800000;">manager@svtempleco.org</b></a>
         </center>
         </div>
     </div>
