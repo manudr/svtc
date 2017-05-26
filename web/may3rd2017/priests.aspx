@@ -27,6 +27,18 @@
                     <div class="panel-body" style="padding: 10px;">
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-2">
+                                <img class="img-responsive" align="center" src="images/priests/SriManikantaSwamy.png">
+                            </div>
+                            <div class="col-lg-10">
+                                <b style="font-size: 21px;">Sri	Manikanta</b>
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-lg-2">
                                 <img class="img-responsive" align="center" src="images/priests/SriKrishnaMohan.png">
                             </div>
                             <div class="col-lg-10">
@@ -59,17 +71,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row" style="padding: 10px;">
-                            <div class="col-lg-2">
-                                <img class="img-responsive" align="center" src="images/priests/SriManikantaSwamy.png">
-                            </div>
-                            <div class="col-lg-10">
-                                <b style="font-size: 21px;">Sri	Manikanta</b>
-                                <p>
 
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
