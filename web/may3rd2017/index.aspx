@@ -156,30 +156,75 @@
                   <div class="carousel-inner">
                     <div class="item active">
                       <img src="slides/slide1.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                                <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/slide2.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/slide3.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/slide4.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/slide5.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/slide6.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/slide7.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                                <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/defaultSlide1.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                     <div class="item">
                       <img src="slides/defaultSlide2.jpg">
+                      <div class="well-sm" style="background-color: #ff9900;">
+                            <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
+                              <b style="color: #800000">Clicke here for the flyer</b>
+                            </a>
+                      </div>
                     </div>
                   </div>
 
