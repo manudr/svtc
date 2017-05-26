@@ -161,7 +161,7 @@
                                 myIndex++;
                                 if (myIndex > x.length) {myIndex = 1}
                                 x[myIndex-1].style.display = "block";
-                                setTimeout(carousel, 5000);
+                                setTimeout(carousel, 15000);
                             }
                         </script>
                     </div>
