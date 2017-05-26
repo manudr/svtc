@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mediaQuery.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -138,34 +139,59 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="panel panel-custom">
-                    <div class="panel-body" style="padding: 1px;">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide1.jpg">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide2.jpg">
-                        <!--
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide3.jpg">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide4.jpg">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/slide5.jpg">
-                        -->
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/defaultSlide1.jpg">
-                        <img class="img-responsive mySlides w3-animate-fading" src="slides/defaultSlide2.jpg">
-                        <script>
-                            var myIndex = 0;
-                            carousel();
-                            function carousel() {
-                                var i;
-                                var x = document.getElementsByClassName("mySlides");
-                                for (i = 0; i < x.length; i++) {
-                                    x[i].style.display = "none";
-                                }
-                                myIndex++;
-                                if (myIndex > x.length) {myIndex = 1}
-                                x[myIndex-1].style.display = "block";
-                                setTimeout(carousel, 15000);
-                            }
-                        </script>
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+                  </ol>
+
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="slides/slide1.jpg">
                     </div>
+                    <div class="item">
+                      <img src="slides/slide2.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/slide3.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/slide4.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/slide5.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/slide6.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/slide7.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/defaultSlide1.jpg">
+                    </div>
+                    <div class="item">
+                      <img src="slides/defaultSlide2.jpg">
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
                 </div>
+
             </div>
 
             <div class="col-lg-3">
