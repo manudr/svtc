@@ -27,7 +27,7 @@
 
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Today's Panchangam</div>
-                    <div class="panel-body">
+                    <div class="panel-body" style="padding: 5px;">
                         <a style="padding-left: 7px; text-decoration: underline;" target="_blank" href="http://www.drikpanchang.com/panchang/day-panchang.html">Day Panchang</a>
                         <br>
                         <iframe src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO" style="padding: 0px; border: 0px;">
@@ -39,7 +39,7 @@
                     <div class="panel-heading-custom">Daily Schedule</div>
                     <div class="panel-body">
                         <div class="customTextStyle1">
-                            <table>
+                            <table align="center">
                                 <tr>
                                     <td colspan="2" align="center" valign="top">
                                         <b style="text-decoration: underline;">Temple Timings</b>
@@ -62,6 +62,10 @@
                                         09:00AM to 08:30PM
                                     </td>
                                 </tr>
+                            </table>
+                        </div>
+                        <div class="customTextStyle1">
+                            <table align="center">
                                 <tr>
                                     <td colspan="2" align="center" valign="top">
                                         <b style="text-decoration: underline;">Archana Timings</b>
@@ -160,7 +164,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -170,7 +174,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -180,7 +184,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -190,7 +194,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -200,7 +204,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -210,7 +214,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -220,7 +224,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -230,7 +234,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>
@@ -240,7 +244,7 @@
                         </a>
                       <div class="well-sm" style="background-color: #ff9900; padding-top: 5px; padding-bottom: 5px;">
                         <center>
-                        <b style="color: #800000">Click on the image for the flyer</b>
+                        <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
                     </div>

@@ -3,7 +3,11 @@
         <img class="img-responsive" align="center" src="images/newBanner.jpg" width="100%">
     </div>
 </div>
-
+<div class="row" style="background-color: #FF6600;">
+    <marquee class="GeneratedMarquee" direction="left" scrollamount="5" behavior="scroll">
+        SRI VENKATESWARA SWAMY TEMPLE OF COLORADO CORDIALLY INVITES YOU TO CHATURTHA VAARSHIKA (4TH ANNUAL) BRAHMOTSAVAM FROM MONDAY MAY 29TH TO SUNDAY JUNE 4TH...
+    </marquee>
+</div>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -119,51 +123,14 @@
   </div>
 </nav>
 
-<!--
-<div class="row" style="background-color: #fff3e6;">
-    <div class="col-lg-3" style="padding: 5px;">
-        <div style="font-size: 11px; font-weight: bold; color: #800000;">
-        <center>
-            <a href="" target="_blank">
-                <b style="font-size: 11px; text-decoration: underline; font-weight: bold; color: #800000;">1495 South Ridge Road Castle Rock CO 80104</b>
-            </a>
-            <br>
-            Temple: 303-660-9555
-            &nbsp;&nbsp;&nbsp;
-            Manager: 303-898-5514
-            <br>
-            <a href="mailto:manager@svtempleco.org"><b style="font-size: 11px; text-decoration: underline; font-weight: bold; color: #800000;">manager@svtempleco.org</b></a>
-        </center>
-        </div>
-    </div>
-    <div class="col-lg-3" style="padding: 5px;">
-        <div>
-            <center>
-                <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                    <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
-                </a>
-            </center>
-        </div>
-    </div>
-    <div class="col-lg-3" style="padding: 5px;">
-        <div>
-            <center>
-                <a target="_blank" onclick="window.open('http://www.facebook.com/SVTC.COLORADO/');">
-                    <img class="img-responsive" align="center" src="images/facebook.png">
-                </a>
-            </center>
-        </div>
-    </div>
-    <div class="col-lg-3" style="padding: 5px;">
-        <div style="font-size: 11px; font-weight: bold; color: #800000;">
-        <center>
-            <b style="text-decoration: underline">Temple Timings</b>
-            <br>
-            Weekdays:&nbsp;09:00AM to 12:00PM and 06:00PM to 08:30PM
-            <br>
-            Weekends/Holidays:&nbsp;09:00AM to 08:30PM
-        </center>
-        </div>
-    </div>
-</div>
--->
+<style type="text/css" scoped>
+    .GeneratedMarquee {
+        font-family:Arial, sans-serif;
+        font-size:21px;
+        font-weight:bold;
+        line-height:25px;
+        color:#33FFCC;
+        background-color:#FF6600;
+        padding:5px;
+    }
+</style>
