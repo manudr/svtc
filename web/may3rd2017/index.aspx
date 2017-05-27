@@ -30,8 +30,7 @@
                     <div class="panel-body" style="padding: 5px;">
                         <a style="padding-left: 7px; text-decoration: underline;" target="_blank" href="http://www.drikpanchang.com/panchang/day-panchang.html">Day Panchang</a>
                         <br>
-                        <iframe src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO" style="padding: 0px; border: 0px;">
-                        </iframe>
+                        <iframe name='iframe1' id='iframe1' src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603" scrolling="no" width="100%" frameborder="0" style="border:none;" allowTransparency="true"></iframe>
                     </div>
                 </div>
 
