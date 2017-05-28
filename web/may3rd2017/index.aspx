@@ -141,7 +141,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="padding-bottom: 10px;">
+                <center>
+                <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
+                    <img align="center" src="images/paypalDonateButtonBig.gif">
+                </a>
+                </center>
+                <br>
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -263,7 +269,6 @@
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Temple Calendar</div>
                     <div class="panel-body" style="padding: 1px;">
-                        <br>
                         <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=520&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver" style="border-width:0" width="100%" height="520" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
