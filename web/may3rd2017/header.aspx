@@ -88,7 +88,7 @@
               <li><a target="_blank" href="http://svtempleco.org/docs/SVTCExpensesReimbursementForm.xlsx">SVTC Expenses Reimbursement Form</a></li>
               <li>
                   <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                      <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+                      <img align="center" src="images/paypalDonateButton.gif">
                   </a>
               </li>
             </ul>
@@ -106,23 +106,23 @@
       <ul class="nav navbar-nav navbar-right" style="font-size: 13px;">
         <li>
             <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+                <img align="center" src="images/paypalDonateButton.gif">
             </a>
         </li>
         <li>
             <a target="_blank" onclick="window.open('https://www.google.com/maps/place/1495+S+Ridge+Rd,+Castle+Rock,+CO+80104/@39.3403316,-104.8197847,16z/data=!4m5!3m4!1s0x876cbd6c1b02dcd1:0xfed373be3e2fc1c9!8m2!3d39.3403316!4d-104.8154073');">
-                <img class="img-responsive" align="center" src="images/googleMaps.png">
+                <img align="center" src="images/googleMaps.png">
             </a>
         </li>
         <li>
             <a target="_blank" onclick="window.open('http://www.facebook.com/SVTC.COLORADO/');">
-                <img class="img-responsive" align="center" src="images/facebook.png">
+                <img align="center" src="images/facebook.png">
             </a>
         </li>
 
         <li>
             <a href="mailto:webmaster@svtempleco.org">
-                <img class="img-responsive" align="center" src="images/feedback.png">
+                <img align="center" src="images/feedback.png">
             </a>
         </li>
 

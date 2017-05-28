@@ -21,20 +21,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-custom">
-                <div class="panel-heading-custom">Map</div>
-                <div class="panel-body">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.702225540356!2d-104.81759598463654!3d39.34033157950485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876cbd6c1b02dcd1%3A0xfed373be3e2fc1c9!2s1495+S+Ridge+Rd%2C+Castle+Rock%2C+CO+80104!5e0!3m2!1sen!2sus!4v1493198328798"
-                            width="100%"
-                            height="450"
-                            frameborder="0"
-                            style="border:0">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
+    <div class="col-lg-6">
             <div class="panel panel-custom">
                 <div class="panel-heading-custom">Contact</div>
                 <div class="panel-body">
@@ -50,18 +37,18 @@
                         <a href="mailto:manager@svtempleco.org">
                             <b style="text-decoration: underline;">manager@svtempleco.org</b>
                         </a>
-                        <br>
+                        <br><br>
                         <center>
                         <a href="mailto:webmaster@svtempleco.org">
-                            <img class="img-responsive" align="center" src="images/feedback.png">
+                            <img class="img-responsive" align="center" src="images/feedbackBig.png">
                         </a>
                         <br>
                         <a target="_blank" onclick="window.open('http://www.facebook.com/SVTC.COLORADO/');">
-                            <img class="img-responsive" align="center" src="images/facebook.png">
+                            <img class="img-responsive" align="center" src="images/facebookBig.png">
                         </a>
                         <br>
                         <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                            <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+                            <img class="img-responsive" align="center" src="images/paypalDonateButtonBig.gif">
                         </a>
                         </center>
                         <br>
@@ -80,6 +67,20 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="panel panel-custom">
+                <div class="panel-heading-custom">Map</div>
+                <div class="panel-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.702225540356!2d-104.81759598463654!3d39.34033157950485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876cbd6c1b02dcd1%3A0xfed373be3e2fc1c9!2s1495+S+Ridge+Rd%2C+Castle+Rock%2C+CO+80104!5e0!3m2!1sen!2sus!4v1493198328798"
+                            width="100%"
+                            height="450"
+                            frameborder="0"
+                            style="border:0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 <!-- #include file ="footer.aspx" -->

@@ -25,15 +25,16 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">How can I help?</div>
                     <div class="panel-body">
-                    <h4>Sri Venkateswara Swamy Temple Of Colorado needs your support.</h4>
+                        <center>
+                            <h5>Sri Venkateswara Swamy Temple Of Colorado needs your support.</h5>
+                            <h5>Please generously donate to temple.</h5>
+                            <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
+                              <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+                            </a>
 
-                    <h4>Please generously donate to temple.</h4>
-                    <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                      <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
-                    </a>
-
-                    <h4>Depending on your interest, please contact the committee(s) by sending an email.</h4>
-                    <h4>Please click the links to send email.</h4>
+                            <h5>Depending on your interest, please contact the committee(s) by sending an email.</h5>
+                            <h5>Please click the links to send email.</h5>
+                        </center>
                         <ul>
                             <li><a href="mailto:executivecommittee@svtempleco.org">Nandu Sankaran (Executive Committee President)</a></li>
                             <li><a href="mailto:religiouscommittee@svtempleco.org">Saiganesh Rajamani (Religious Committee Chair)</a></li>
