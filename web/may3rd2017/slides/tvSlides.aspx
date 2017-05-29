@@ -36,98 +36,34 @@
 
                   <div class="carousel-inner">
                     <div class="item active">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide1.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide1.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide2.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide2.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide3.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide3.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide4.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide4.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide5.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide5.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide6.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide6.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide7.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="slide7.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="defaultSlide1.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="defaultSlide1.jpg">
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="defaultSlide2.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900; padding-top: 5px; padding-bottom: 5px;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img class="img-responsive" src="defaultSlide2.jpg">
                     </div>
                   </div>
 
-                  <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                   </a>
