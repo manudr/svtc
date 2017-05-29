@@ -42,6 +42,8 @@
                     <li data-target="#carousel-example-generic" data-slide-to="6"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="7"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="9"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="10"></li>
                   </ol>
 
                   <div class="carousel-inner">
@@ -134,6 +136,12 @@
                         <b style="color: #800000">Click On The Image</b>
                         </center>
                       </div>
+                    </div>
+                    <div class="item">
+                        <img src="slides/SVTCSchool.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="slides/TempleEvents.png">
                     </div>
                   </div>
 
