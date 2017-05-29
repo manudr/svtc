@@ -82,15 +82,15 @@
             <b>Forms</b><span class="caret"></span>
             </a>
             <ul class="dropdown-menu" style="font-size: 13px;">
+              <li>
+                  <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
+                      Click the button to donate&nbsp;<img align="center" src="images/paypalDonateButton.gif">
+                  </a>
+              </li>
               <li><a target="_blank" href="http://svtempleco.org/Pledge%20documents/PledgeForm.pdf">Pledge Form</a></li>
               <li><a target="_blank" href="http://svtempleco.org/Pledge%20documents/SVTC_Credit_Card_Authorization_form.pdf">Monthly Donations Form</a></li>
               <li><a target="_blank" href="http://svtempleco.org/Pledge%20documents/SVTCSchool_CC_AUTHORIZATION.pdf">SVTC School Payment Form</a></li>
               <li><a target="_blank" href="http://svtempleco.org/docs/SVTCExpensesReimbursementForm.xlsx">SVTC Expenses Reimbursement Form</a></li>
-              <li>
-                  <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                      <img align="center" src="images/paypalDonateButton.gif">
-                  </a>
-              </li>
             </ul>
         </li>
         <!--

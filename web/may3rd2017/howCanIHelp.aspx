@@ -27,24 +27,22 @@
                     <div class="panel-body">
                         <center>
                             <h5>Sri Venkateswara Swamy Temple Of Colorado needs your support.</h5>
-                            <h5>Please generously donate to temple.</h5>
+                            <h5>Please generously donate to SV Temple.</h5>
                             <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
-                              <img class="img-responsive" align="center" src="images/paypalDonateButton.gif">
+                              <img class="img-responsive" align="center" src="images/paypalDonateButtonBig.gif">
                             </a>
 
                             <h5>Depending on your interest, please contact the committee(s) by sending an email.</h5>
                             <h5>Please click the links to send email.</h5>
+                            <a href="mailto:executivecommittee@svtempleco.org">Nandu Sankaran (Executive Committee President)</a>
+                            <br><a href="mailto:religiouscommittee@svtempleco.org">Saiganesh Rajamani (Religious Committee Chair)</a>
+                            <br><a href="mailto:svtcfinance@svtempleco.org">Baburao Karamsetty (Finance Committee Chair)</a>
+                            <br><a href="mailto:annapurnacommittee@svtempleco.org">Madhuri Mohan (Annapurna Committee Chair)</a>
+                            <br><a href="mailto:facilitiescommittee@svtempleco.org">Ratnakar Kalangi (Facilities Committee Chair)</a>
+                            <br><a href="mailto:svtcschool@svtempleco.org">Sreedhar Donthula (Education & Cultural Committee Chair)</a>
+                            <br><a href="mailto:manager@svtempleco.org">Sowmya Nandireddy (Temple Manager)</a>
+                            <br><a href="mailto:communications@svtempleco.org">Manmohan Dronamraju (Web & Communications Committee Chair)</a>
                         </center>
-                        <ul>
-                            <li><a href="mailto:executivecommittee@svtempleco.org">Nandu Sankaran (Executive Committee President)</a></li>
-                            <li><a href="mailto:religiouscommittee@svtempleco.org">Saiganesh Rajamani (Religious Committee Chair)</a></li>
-                            <li><a href="mailto:svtcfinance@svtempleco.org">Baburao Karamsetty (Finance Committee Chair)</a></li>
-                            <li><a href="mailto:annapurnacommittee@svtempleco.org">Madhuri Mohan (Annapurna Committee Chair)</a></li>
-                            <li><a href="mailto:facilitiescommittee@svtempleco.org">Ratnakar Kalangi (Facilities Committee Chair)</a></li>
-                            <li><a href="mailto:svtcschool@svtempleco.org">Sreedhar Donthula (Education & Cultural Committee Chair)</a></li>
-                            <li><a href="mailto:manager@svtempleco.org">Sowmya Nandireddy (Temple Manager)</a></li>
-                            <li><a href="mailto:communications@svtempleco.org">Manmohan Dronamraju (Web & Communications Committee Chair)</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
