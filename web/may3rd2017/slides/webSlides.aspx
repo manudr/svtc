@@ -1,23 +1,3 @@
-<%@ Page Language="C#" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Sri Venkateswara Swamy Temple Of Colorado</title>
-    <meta http-equiv="Cache-Control" content="no-store" />
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/mediaQuery.css">
-    <link rel="stylesheet" href="../css/carousel.css">
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-</head>
-<body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12" style="padding-bottom: 10px;">
@@ -37,7 +17,7 @@
                   <div class="carousel-inner">
                     <div class="item active">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide1.jpg">
+                            <img src="../slides/slide1.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -47,7 +27,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide2.jpg">
+                            <img src="../slides/slide2.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -57,7 +37,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide3.jpg">
+                            <img src="../slides/slide3.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -67,7 +47,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide4.jpg">
+                            <img src="../slides/slide4.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -77,7 +57,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide5.jpg">
+                            <img src="../slides/slide5.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -87,7 +67,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide6.jpg">
+                            <img src="../slides/slide6.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -97,7 +77,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slide7.jpg">
+                            <img src="../slides/slide7.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -107,7 +87,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="defaultSlide1.jpg">
+                            <img src="../slides/defaultSlide1.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900;">
                         <center>
@@ -117,7 +97,7 @@
                     </div>
                     <div class="item">
                         <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="defaultSlide2.jpg">
+                            <img src="../slides/defaultSlide2.jpg">
                         </a>
                       <div class="well-sm" style="background-color: #ff9900; padding-top: 5px; padding-bottom: 5px;">
                         <center>
@@ -138,5 +118,3 @@
             </div>
         </div>
     </div>
-</body>
-</html>
