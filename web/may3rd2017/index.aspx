@@ -139,9 +139,19 @@
                     </div>
                     <div class="item">
                         <img src="slides/SVTCSchool.jpg">
+                        <div class="well-sm" style="background-color: #ff9900;">
+                        <center>
+                        <b style="color: #800000">SVTC School</b>
+                        </center>
+                      </div>
                     </div>
                     <div class="item">
                         <img src="slides/TempleEvents.png">
+                        <div class="well-sm" style="background-color: #ff9900;">
+                            <center>
+                            <b style="color: #800000">Temple Events</b>
+                            </center>
+                        </div>
                     </div>
                   </div>
 
