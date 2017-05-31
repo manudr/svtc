@@ -60,6 +60,11 @@
                     </div>
                     <div class="item">
                         <center>
+                            <img class="img-responsive" src="annadanamSponsors1.jpg">
+                        </center>
+                    </div>
+                    <div class="item">
+                        <center>
                             <img class="img-responsive" src="defaultSlide1.jpg">
                         </center>
                     </div>
