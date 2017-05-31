@@ -31,7 +31,7 @@
                 </a>
                 </center>
                 <br>
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
                   <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -44,6 +44,7 @@
                     <li data-target="#carousel-example-generic" data-slide-to="8"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="9"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="10"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="11"></li>
                   </ol>
 
                   <div class="carousel-inner">
@@ -118,24 +119,28 @@
                       </div>
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slides/defaultSlide1.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900;">
+                        <img src="slides/annadanamSponsors1.jpg">
+                        <div class="well-sm" style="background-color: #ff9900;">
                         <center>
-                        <b style="color: #800000">Click On The Image</b>
+                        <b style="color: #800000">Annadanam Sponsors</b>
                         </center>
                       </div>
                     </div>
                     <div class="item">
-                        <a target="_blank" href="http://files.constantcontact.com/e3e3539c001/f00715db-9397-48a3-ab5b-2740035f0d64.pdf">
-                            <img src="slides/defaultSlide2.jpg">
-                        </a>
-                      <div class="well-sm" style="background-color: #ff9900; padding-top: 5px; padding-bottom: 5px;">
-                        <center>
-                        <b style="color: #800000">Click On The Image</b>
-                        </center>
-                      </div>
+                        <img src="slides/defaultSlide1.jpg">
+                          <div class="well-sm" style="background-color: #ff9900;">
+                            <center>
+                            <b style="color: #800000">Support SV Temple</b>
+                            </center>
+                          </div>
+                    </div>
+                    <div class="item">
+                        <img src="slides/defaultSlide2.jpg">
+                          <div class="well-sm" style="background-color: #ff9900; padding-top: 5px; padding-bottom: 5px;">
+                            <center>
+                            <b style="color: #800000">Support SV Temple</b>
+                            </center>
+                          </div>
                     </div>
                     <div class="item">
                         <img src="slides/SVTCSchool.jpg">
