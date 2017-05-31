@@ -20,10 +20,16 @@
     <!-- #include file ="header.aspx" -->
 
     <div class="container-fluid">
+        <div class="panel panel-warning">
+                <div class="panel-heading-custom">Our Priests</div>
+                <div class="panel-body" style="padding: 10px;">
+                    <img class="img-responsive" align="center" src="images/priests/SVTemplePriests.png" width="100%">
+                </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-warning">
-                    <div class="panel-heading-custom">Temple Priests</div>
                     <div class="panel-body" style="padding: 10px;">
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-2">
@@ -40,7 +46,7 @@
 
                         <div class="row" style="padding: 10px;">
                             <div class="col-lg-2">
-                                <img class="img-responsive" align="center" src="images/priests/SriKrishnaMohan.jpg">
+                                <img class="img-responsive" align="center" src="images/priests/SriKrishnaMohan.png">
                             </div>
                             <div class="col-lg-10">
                                 <b style="font-size: 21px;">Sri Karanam Krishna Mohan</b>
