@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
+                  <div class="carousel-inner" style="padding: 5px;">
                     <div class="item active">
                         <center>
                             <img class="img-responsive" src="slide1.jpg">
