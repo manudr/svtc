@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="15000">
                   <div class="carousel-inner">
                     <div class="item active">
                         <center>
