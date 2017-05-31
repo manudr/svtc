@@ -63,22 +63,22 @@
             <div class="col-lg-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">
-                        Temple Manager
-                    </div>
-                    <div class="panel-body">
-                        Sowmya Nandireddy
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">
                         Internal Audit Committe
                     </div>
                     <div class="panel-body">
                         Rajanikanth Maddhi
                         <br>Santosh Kunala
                         <br>Krishna Mullangi
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading-custom">
+                        Temple Manager
+                    </div>
+                    <div class="panel-body">
+                        Sowmya Nandireddy
                     </div>
                 </div>
             </div>
@@ -116,29 +116,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-2">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">
-                        Facilities
-                    </div>
-                    <div class="panel-body">
-                        <b>Ratnakar Kalangi (Chair)</b>
-                        <br>Aaron Brachfeld
-                        <br>Karthik Ginnavaram
-                        <br>Lakshmipathy Kannan
-                        <br>Ravichandran Packirisamy
-                        <br>Siva Rayala
-                        <br>Krishna Pothuboyina
-                        <br>Srinivas Panati
-                        <br>Srinu Panthangi
-                        <br>Venkata Giri
-                        <br>Venu Anumayam
-                        <br>Nithin Dindu
-                    </div>
-                </div>
-            </div>
-
             <div class="col-lg-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">
@@ -165,6 +142,28 @@
             <div class="col-lg-2">
                 <div class="panel panel-warning">
                     <div class="panel-heading-custom">
+                        Facilities
+                    </div>
+                    <div class="panel-body">
+                        <b>Ratnakar Kalangi (Chair)</b>
+                        <br>Aaron Brachfeld
+                        <br>Karthik Ginnavaram
+                        <br>Lakshmipathy Kannan
+                        <br>Ravichandran Packirisamy
+                        <br>Siva Rayala
+                        <br>Krishna Pothuboyina
+                        <br>Srinivas Panati
+                        <br>Srinu Panthangi
+                        <br>Venkata Giri
+                        <br>Venu Anumayam
+                        <br>Nithin Dindu
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading-custom">
                         Finance
                     </div>
                     <div class="panel-body">
@@ -172,11 +171,27 @@
                         <br>Mohan Koneru
                         <br>Jag Kalagiri
                         <br>Ravinder Vookanti
+                        <br>Sankar Chava
                         <br>Sreenivasa Rao Katamaneni
                         <br>MS Reddy
                         <br>Savan Koppisetti
                         <br>Sai Hanu Nirukurti
                         <br>Surya Immadisetty
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="panel panel-warning">
+                    <div class="panel-heading-custom">
+                        Web & Communications
+                    </div>
+                    <div class="panel-body">
+                        <b>Manmohan Dronamraju (Chair)</b>
+                        <br>Smitha Thurimella
+                        <br>Saiganesh Rajamani
+                        <br>Sreedhar Donthula
+                        <br>Suresh Kommula
                     </div>
                 </div>
             </div>
@@ -196,20 +211,6 @@
                 </div>
             </div>
 
-            <div class="col-lg-2">
-                <div class="panel panel-warning">
-                    <div class="panel-heading-custom">
-                        Web & Communications
-                    </div>
-                    <div class="panel-body">
-                        <b>Manmohan Dronamraju (Chair)</b>
-                        <br>Smitha Thurimella
-                        <br>Saiganesh Rajamani
-                        <br>Sreedhar Donthula
-                        <br>Suresh Kommula
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

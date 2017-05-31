@@ -21,7 +21,7 @@
 
     <div class="container-fluid">
         <div class="panel panel-warning">
-                <div class="panel-heading-custom">Our Priests</div>
+                <div class="panel-heading-custom" style="text-align: center; font-size: 21px; font-weight: bold;">Our Priests</div>
                 <div class="panel-body" style="padding: 10px;">
                     <img class="img-responsive" align="center" src="images/priests/SVTemplePriests.png" width="100%">
                 </div>

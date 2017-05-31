@@ -26,7 +26,6 @@
             </a>
             <ul class="dropdown-menu" style="font-size: 13px;">
               <li><a href="mission.aspx">Mission</a></li>
-              <li><a href="teams.aspx">Teams</a></li>
               <li><a href="faq.aspx">Faq</a></li>
               <li><a href="http://svtempleco.org/GoverningDocs/BYLAWS_April_19_2015.pdf" target="_blank">ByLaws</a></li>
               <li><a href="agbm.aspx">AGBM</a></li>
@@ -43,6 +42,7 @@
                 <li><a href="http://svtempleco.org/Docs/Pooja_items_list_March2014.pdf" target="_blank">Poojas and Required Items</a></li>
             </ul>
         </li>
+        <li><a href="teams.aspx"><b>Teams</b></a></li>
         <li><a href="priests.aspx"><b>Priests</b></a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
