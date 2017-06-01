@@ -175,7 +175,17 @@
                         <div class="panel-body" style="padding: 5px;">
                             <a style="padding-left: 7px; text-decoration: underline;" target="_blank" href="http://www.drikpanchang.com/panchang/day-panchang.html">Day Panchang</a>
                             <br>
-                            <iframe name='iframe1' id='iframe1' src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603" scrolling="no" width="100%" frameborder="0" style="border:none;" allowTransparency="true"></iframe>
+                            <iframe name='iframe1'
+                            id='iframe1'
+                            src="http://www.mypanchang.com/mobilewidget.php?cityname=Denver-CO&color=452603"
+                            scrolling="no"
+                            height="190px"
+                            width="100%"
+                            frameborder="0"
+                            style="border:none;"
+                            allowTransparency="true">
+
+                            </iframe>
                         </div>
                     </div>
 
@@ -288,8 +298,8 @@
             <div class="col-md-3 col-sm-6">
                 <div class="panel panel-custom">
                     <div class="panel-heading-custom">Temple Calendar</div>
-                    <div class="panel-body" style="padding: 1px;">
-                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=520&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver" style="border-width:0" width="100%" height="520" frameborder="0" scrolling="no"></iframe>
+                    <div class="panel-body" style="padding: 1px; height:620px;">
+                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;wkst=1&amp;bgcolor=%23ffcc33&amp;src=svtempleofco%40gmail.com&amp;color=%23875509&amp;ctz=America%2FDenver" style="border-width:0" width="100%" height="620" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
             </div>
