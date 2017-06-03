@@ -169,6 +169,7 @@ a:link {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: #c92e2e;
+    background-color: #ffcc66;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
     background-color: #ffd9b3;
@@ -180,7 +181,7 @@ a:link {
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:visited {
     color: #c92e2e;
-    background-color: #ffd9b3;
+    background-color: #ffcc66;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
     background-color: #ffd9b3;

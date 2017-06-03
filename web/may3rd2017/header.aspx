@@ -18,7 +18,7 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 5px; padding-left: 5px; font-size: 13px;">
-      <ul class="nav navbar-nav" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 13px;">
+      <ul class="nav navbar-nav" style="margin-left: -10px; padding-left: 0px; padding: 0px; font-size: 12px;">
         <li><a href="index.aspx"><b>Home</b></a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -46,13 +46,13 @@
         <li><a href="priests.aspx"><b>Priests</b></a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <b>Calendars</b><span class="caret"></span>
+            <b>Committees' Calendars</b><span class="caret"></span>
             </a>
             <ul class="dropdown-menu" style="font-size: 13px;">
-              <li><a href="frontDeskCalendar.aspx">Front Desk Calendar</a></li>
+              <li><a href="frontDeskCalendar.aspx">Front Desk Committee Calendar</a></li>
               <li><a href="annapurnaCommitteeCalendar.aspx">Annapurna Committee Calendar</a></li>
               <li><a href="religiousCommitteeCalendar.aspx">Religious Committee Calendar</a></li>
-              <li><a href="allCalendarsMerged.aspx">All Calendars Merged</a></li>
+              <li><a href="allCalendarsMerged.aspx">All Committee Calendars Merged</a></li>
             </ul>
         </li>
 

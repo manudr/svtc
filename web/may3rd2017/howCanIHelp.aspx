@@ -26,8 +26,11 @@
                     <div class="panel-heading-custom">How can I help?</div>
                     <div class="panel-body">
                         <center>
-                            <h5>Sri Venkateswara Swamy Temple Of Colorado needs your support.</h5>
-                            <h5>Please generously donate to SV Temple.</h5>
+                            <b style="color: #800000; font-size: 21px;">SRI VENKATESWARA SWAMY TEMPLE OF COLORADO</b>
+                            <br>
+                            <b style="color: #800000; font-size: 21px;">NEEDS YOUR SUPPORT</b>
+                            <br>
+                            <b style="color: #800000; font-size: 21px;">PLEASE GENEROUSLY DONATE TO SV TEMPLE</b>
                             <a target="_blank" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3VAWJYJ4K8JJ');">
                               <img class="img-responsive" align="center" src="images/paypalDonateButtonBig.gif">
                             </a>
