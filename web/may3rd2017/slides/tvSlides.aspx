@@ -23,6 +23,7 @@
             <div class="col-lg-12">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="15000">
                   <div class="carousel-inner">
+                  <!--
                     <div class="item active">
                         <center>
                             <img class="img-responsive" src="slide1.jpg">
@@ -63,7 +64,8 @@
                             <img class="img-responsive" src="annadanamSponsors1.jpg">
                         </center>
                     </div>
-                    <div class="item">
+                    -->
+                    <div class="item active">
                         <center>
                             <img class="img-responsive" src="defaultSlide1.jpg">
                         </center>
