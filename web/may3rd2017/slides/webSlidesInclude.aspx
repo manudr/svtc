@@ -3,13 +3,8 @@
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="15000">
 
                   <div class="carousel-inner">
-                    <div class="item active">
-                        <center>
-                            <img class="img-responsive" src="/2017/slides/annadanamSponsorsListForJune2017.jpg">
-                        </center>
-                    </div>
 
-                    <div class="item">
+                    <div class="item active">
                         <center>
                             <img class="img-responsive" src="/2017/slides/guruPournami.png">
                         </center>
@@ -35,8 +30,6 @@
                             <img class="img-responsive" src="/2017/slides/TempleEvents.png">
                         </center>
                     </div>
-
-
                   </div>
 
                   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
