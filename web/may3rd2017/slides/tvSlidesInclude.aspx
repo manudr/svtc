@@ -3,15 +3,40 @@
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="15000">
 
                   <div class="carousel-inner">
+
                     <div class="item active">
                         <center>
-                            <img class="img-responsive" src="/2017/slides/annadanamSponsorsListForJune2017.jpg">
+                            <img class="img-responsive" src="/2017/slides/guruPournami.png">
                         </center>
                     </div>
 
                     <div class="item">
                         <center>
-                            <img class="img-responsive" src="/2017/slides/guruPournami.png">
+                            <img class="img-responsive" src="/2017/slides/andalJayanthi.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/garudaPanchami.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/mahalakshmiHomam.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/annadanam.JPG">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/annadanamSponsorsListForJuly2017.jpg">
                         </center>
                     </div>
 

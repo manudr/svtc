@@ -12,6 +12,36 @@
 
                     <div class="item">
                         <center>
+                            <img class="img-responsive" src="/2017/slides/andalJayanthi.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/garudaPanchami.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/mahalakshmiHomam.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/annadanam.JPG">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
+                            <img class="img-responsive" src="/2017/slides/annadanamSponsorsListForJuly2017.jpg">
+                        </center>
+                    </div>
+
+                    <div class="item">
+                        <center>
                             <img class="img-responsive" src="/2017/slides/defaultSlide1.jpg">
                         </center>
                     </div>
